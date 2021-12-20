@@ -1,0 +1,3 @@
+DirectoryIndex login_check.php
+RewriteEngine On
+RewriteRule ^logining?$ logining.php

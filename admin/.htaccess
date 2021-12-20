@@ -1,0 +1,30 @@
+DirectoryIndex dashboard.php
+RewriteEngine On
+RewriteRule ^home?$ index.php
+RewriteRule ^index?$ index.php
+
+RewriteRule ^login?$ login.php
+RewriteRule ^logining?$ views/logining.php
+RewriteRule ^logout?$ views/logout.php
+
+RewriteRule ^dashboard?$ dashboard.php
+RewriteRule ^settings?$ settings.php
+
+RewriteRule ^teachers?$ teachers.php
+RewriteRule ^users?$ users.php
+RewriteRule ^lessons?$ lessons.php
+RewriteRule ^faqs?$ faqs.php
+RewriteRule ^news?$ news.php
+RewriteRule ^events?$ events.php
+RewriteRule ^pages?$ pages.php
+RewriteRule ^slider?$ slider.php
+RewriteRule ^partners?$ partners.php
+
+RewriteRule ^projects?$ projects.php
+RewriteRule ^membership?$ membership.php
+
+RewriteRule ^volunteers_organisations?$ volunteers_organisations.php
+RewriteRule ^volunteers_persons?$ volunteers_persons.php
+
+
+

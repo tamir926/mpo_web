@@ -1,0 +1,19 @@
+img.img-logo {
+    height: 30px;
+}
+
+.select2-selection__arrow {
+    display: none;
+}
+
+.news-body>img {
+    max-width: 100%;
+}
+
+.ck-editor__editable {
+    min-height: 500px;
+}
+
+.document-editor__editable-container {
+    width: 100%;
+}
