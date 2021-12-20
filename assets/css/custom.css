@@ -1,0 +1,17 @@
+.border-left
+{
+    background: url(../images/border-left.png);
+    background-position:  bottom left;
+    background-repeat: no-repeat;
+    min-height: 70px;
+}
+
+.border-right
+{
+    background: url(../images/border-right.PNG);
+    background-position:  bottom right;
+    background-repeat: no-repeat;
+    min-height: 70px;
+}
+.border-left ul,.border-right ul {padding: 0px; margin: 0px;}
+.border-left ul li, .border-right ul li {width: 150px; text-align: center;}
