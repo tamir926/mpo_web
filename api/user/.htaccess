@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteRule ^index?$ index.php
+RewriteRule ^init?$ mpouser_init.php
+RewriteRule ^links?$ mpouser_links.php
+RewriteRule ^faqs?$ mpouser_faqs.php
+
+RewriteRule ^news?$ mpouser_news.php
+RewriteRule ^news/(.*) mpouser_news.php?id=$1
+RewriteRule ^login?$ mpouser_login.php
+RewriteRule ^register?$ mpouser_register.php
+RewriteRule ^payment?$ mpouser_payment.php
