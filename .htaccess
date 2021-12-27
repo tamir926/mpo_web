@@ -4,6 +4,7 @@ DirectoryIndex index.php
 RewriteEngine On
 RewriteRule ^home?$ index.php
 RewriteRule ^index?$ index.php
+RewriteRule ^mbtbb?$ mbtbb.php
 
 ErrorDocument 404 underconstruction
 

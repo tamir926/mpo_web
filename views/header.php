@@ -8,7 +8,7 @@
                                     <ul class="header-contact">
                                         <li>
                                             <div class="h-adress-content">
-                                                <h6>МБТБД</h6>
+                                                <h6><a href="mbtbb">МБТББ</a></h6>
                                             </div>
                                         </li>
                                         <li>

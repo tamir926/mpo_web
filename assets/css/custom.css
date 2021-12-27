@@ -160,3 +160,42 @@ div.mpo-list
 {
     padding-top:50px
 }
+.pt-100
+ {
+    padding-top:100px
+ }
+.pt-150
+ {
+    padding-top:150px
+ }
+.pt-200
+{
+    padding-top:200px
+}
+
+.pb-50
+{
+    padding-bottom:50px
+}
+.pb-100
+ {
+    padding-bottom:100px
+ }
+.pb-150
+ {
+    padding-bottom:150px
+ }
+.pb-200
+{
+    padding-bottom:200px
+}
+
+
+.green {
+    color: #65ac4c;
+}
+
+.text-black 
+{
+    color:#000;
+}

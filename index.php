@@ -506,7 +506,7 @@
                     <div class="col-lg-5">
                             <img src="assets/images/image2.PNG" alt="MPO" class="img-responsive" />
                     </div>
-                    <div class="col-lg-5">  
+                    <div class="col-lg-5 pt-100">  
                         <div class="d-flex justify-content-between">
                             <div >
                                 <h1 class="text-white">Join Us</h1>
