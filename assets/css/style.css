@@ -237,9 +237,9 @@ h1{
 }
 
 h2{
-	font-size: 36px;
+	font-size: 25px;
 	color: #070707;
-	font-weight: 700;
+	font-weight: 300;
 }
 
 h3{
@@ -248,7 +248,7 @@ h3{
 	font-weight: 700;
 }
 h4{
-	font-size: 20px;
+	font-size: 18px;
     color: #000000;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -271,7 +271,7 @@ h6{
 p{
     margin: 0;
 	padding: 0;
-	font-size: 15px;
+	font-size: 14px;
 	font-weight: 400;
 	color: #696969;
 }
@@ -803,6 +803,64 @@ blockquote:after,
     top: -2%;
     right: -20%;
 }
+
+.btn-default-2 {
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    padding: 9px 19px 7px 19px;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+.btn-default-2:hover, 
+.btn-default-2:focus,
+.btn-default-2:active{
+	color: #53a92c;
+    background-color: transparent;
+    border-color: #fff;
+}
+.btn-default-2:before,
+.btn-default-2:after {
+	content: '';
+    position: absolute;
+    width: 90%;
+    height: 200%;
+    background-color: #fff;
+    z-index: -1;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+    	-ms-transform: rotate(-45deg);
+    	 -o-transform: rotate(-45deg);
+    		transform: rotate(-45deg);
+
+    -webkit-transition: all .25s ease;
+	   -moz-transition: all .25s ease;
+		-ms-transition: all .25s ease;
+		 -o-transition: all .25s ease;
+			transition: all .25s ease;
+}
+.btn-default-2:before {
+    top: -170%;
+    left: -75%;
+}
+.btn-default-2:after {
+    top: -2%;
+    right: -102%;
+}
+.btn-default-2:hover:before {
+    top: -95%;
+    left: -20%;
+}
+.btn-default-2:hover:after {
+    top: -2%;
+    right: -20%;
+}
+
+
 /*=======================
 	End Custom btn Style
 =================================*/
@@ -1833,6 +1891,13 @@ section{
 
 .bg-people-work-section{
 	padding-bottom: 83px;
+	
+}
+
+.people-work-section {
+	padding: 50px;
+	background: #F4F4F4;
+	text-align: left;
 }
 .people-work-items .people-work-img{
 	overflow: hidden;
@@ -1843,13 +1908,17 @@ section{
 .work-content{
 	padding-top: 28px;
 }
-.work-content h4{
-	color: #070707;
+.people-work-section h5{
+	font-size: 20px;
+	font-weight: 700;
+	color: #53a92c;
 	text-transform: uppercase;
 	padding-bottom: 2px;
 }
-.people-work-items:hover .work-content h4 {
-	color: #53a92c;
+.people-work-section h2{
+	font-size: 30px;
+	padding-top: 5px;
+	padding-bottom: 50px;
 }
 
 .people-work-items:hover img{

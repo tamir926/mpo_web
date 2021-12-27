@@ -20,34 +20,55 @@
 
 #content {
     width: 100%;
-    padding: 150px;
+    /* padding: 150px; */
 }
 
 #content .content-info {
     width: 100%;
     background: url('../images/content.jpg');
     background-size: cover;
-    min-height: 80%;
-    border-radius: 10px;
-    color: #ffffff;
+    border-radius: 10px;    
+    padding-top: 100px;
 
 }
 
+#content .content-info *
+{
+    color: #ffffff;
+}
 #content .content-info h5 {
-    font-size: 50px;
-    padding: 10rem;
+    font-size: 30px;
+    margin-left: 100px;
 }
 
 #content .content-info h3 {
     font-size: 50px;
-    padding: 10rem;
+    margin-left: 100px;
+
+}
+
+#content .content-info p {
+    margin-left: 100px;
+}
+
+
+#content .content-info p.txt
+{
+    margin-left: 10px;
+    float: left;
+}
+
+#content .content-info p.txt i
+{
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
 #content .content-info .box {
+    margin-top: 100px;
     display: flex;
     justify-content: space-around;
     color: #ffffff;
-    margin: 0rem;
     text-align: left;
     flex: 1;
     align-items: flex-end;
@@ -58,8 +79,7 @@
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.4);
     margin: 1rem;
-    height: 200px;
-    padding: 3.5rem 3.5rem;
+    padding: 40px 30px;
     width: 30%;
 }
 
@@ -67,7 +87,76 @@
     float: right;
     font-size: 33px;
     padding-top: 20px;
-    width: 100%;
     text-align: right;
     padding: 1rem 1rem;
+}
+
+div.mpo-list 
+{
+    background:#ffffff; 
+    width: 100%;
+    padding:20px;
+    font-size: 17px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+
+
+.mpo-list :hover{
+    transition: all .3s ease-in-out;
+	padding-left: 15px;
+}
+.mpo-list  a:hover{
+	color: #65ac4c;
+}
+
+.mpo-list span 
+{
+    border-radius: 50%;
+    position: absolute;
+    height: 25px;
+    width: 25px;
+}
+.mpo-list :hover span 
+{    
+    transition: all .3s ease-in-out;
+	background-color: #65ac4c;
+    color:#ffffff;
+}
+
+.nav-pills {
+    background: #ECE8E8 ;
+
+}
+.nav-pills .nav-link {
+    border:2px solid #ffffff;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    border-color: #65ac4c;
+    color: #65ac4c;
+    background-color: #fff;
+}
+
+.nav-tabs {
+    background: #ECE8E8 ;
+
+}
+.nav-tabs .nav-link {
+    border:2px solid #ffffff;
+}
+.nav-tabs .nav-link.active, .nav-tabs .show > .nav-link {
+    border-color: #65ac4c;
+    color: #65ac4c;
+    background-color: #fff;
+}
+
+.bg-green 
+{
+    background:#3A9948;
+}
+
+.pt-50
+{
+    padding-top:50px
 }
