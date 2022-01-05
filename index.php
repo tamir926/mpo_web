@@ -528,12 +528,7 @@
         <!-- End About Greenforest Section -->
 
 
-
-        <div class="container">
-            <img src="assets/images/footer.PNG">
-        </div>
-
-        <? //require_once("views/footer.php");?>
+        <? require_once("views/footer.php");?>
 
 
         <!-- Start Scrolling -->

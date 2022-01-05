@@ -65,7 +65,7 @@
                                 <div class="main-menu-area">
                                     <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
                                         <ul>
-                                            <li><a href="#" class="active">Сургалт</a></li>
+                                            <li><a href="training" class="active">Сургалт</a></li>
                                             <li><a href="#">Төсөл</a></li>
                                             <li><a href="#">Арга хэмжээ</a></li>
                                             <li><a href="#">Мэдлэгийн сан</a></li>

@@ -5,72 +5,77 @@
     <div class="box-layout">       
         <? require_once("views/header.php");?>
 
+        <div class="submenu">
+            <div class="container d-flex justify-content-between">
+                <h3 class="text-black">Сургалт</h3>
+                <ul class="submenu-ul">
+                    <li><a href="#">Анхан шат</a></li>
+                    <li><a href="#">Бүтээмж</a></li>
+                    <li><a href="#">Гүнзгийрүүлсэн</a></li>
+                    <li><a href="#">Экспертүүд</a></li>
+                </ul>
+            </div>
+          
+        </div>
+        <div class="pb-50">
+            <section>
+                    <div class="container gray-bg pt-100 pb-100 text-center jambotron">
+                        <div class="row">
+                            <div class="col-lg-6 mx-auto">
+                                <h2>Баталгаажуулалт</h2>
+                                <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis odio ac felis aliquam tincidunt. Praesent non lacus a tortor consequat aliquam at et libero. Suspendisse congue, purus at congue sagittis, tellus nibh elementum mauris, nec tincidunt tortor sapien id nibh. 
+                                </p>
+                                <a href="#" class="btn btn-success btn-xl mt-10">Өргөдөл гаргах</a>
+
+                            </div>
+                        </div>
+                    
+                    </div>
+            </section>
+        </div>
+
+
         <section>
             <div class="container text-center pt-100 pb-100">
                 <div class="row">
-                    <div class="col-8 mx-auto text-justify">
+                    <div class="col-8 mx-auto">
                         <img src="assets/images/logos.jpg" class="mt-50">
 
                         <!-- <h6 class="green">МБТББ</h6> -->
                         <h2 class="text-black">МОНГОЛЫН БҮТЭЭМЖИЙН ТӨВИЙН<br>БАТАЛГААЖУУЛАЛТЫН БАЙГУУЛЛАГА</h2>
-                        <p class="text-justify">МБТББ нь АББ-ын хувь хүнийг итгэмжлэх баталгаажуулалтын тогтолцоонд үндэслэн  бүтээмжийн мэргэжилтний баталгаажуулалтын тогтолцоог АББ/ИБ-ын нэрийн өмнөөс хариуцан  хэрэгжүүлнэ.</p>
-                        <p class="text-justify">МБТББ нь БМБ-ын тогтолцоог АББ/ИБ 1003:2020 Хувь хүний баталгаажуулалтын итгэмжлэлийн тохирол болон ISO 17024:2012 стандартын шаардлагад нийцүүлэн үр дүнтэй хэрэгжүүлж, харилцагч байгууллага эсвэл аж ахуйн нэгжүүдийн бүтээмжийн дээшлүүлэхэд мэргэжлийн туслалцаа үзүүлэх ба харилцагчид болон хувь хүмүүст АББ-ын итгэмжлэлийн байгууллага (АББ/ИБ)-ын итгэмжлэлийн хүрээнд БМБ-ын үйлчилгээг үзүүлнэ.</p>
-
-                        <div class="pt-50">
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#structure">БҮТЭЦ</a>
-                            <a href="#" class="btn btn-warning">БРОШУР</a>
-                            <a href="#" class="btn btn-warning">УДИРДАХ ЗӨВЛӨЛ</a>
-
-                        </div>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="structure" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel"> Баталгаажуулалтын байгууллагын бүтэц </h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                               <img src="assets/images/structure.jpg">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                            
+                        <p class="text-justify">
+                        Монголын Бүтээмжийн Төв нь 1992 оны 3 сард байгуулагдсан, нийгэмд үйлчилдэг ашгийн бус, төрийн бус байгууллага бөгөөд байгуулагдсан өдрөөс хойш Монгол улсад бүтээмжийн хөдөлгөөнийг амжилттай өрнүүлж буй, арвин туршлага бүхий байгууллага юм.
+                        Төвийн үндсэн зорилго бүтээмж, чанарын шинэлэг үзэл баримтлал, ойлголт, тэдгээрийн зарчим, ач холбогдлыг үндэсний хэмжээнд түгээн дэлгэрүүлж, үр өгөөжийг хүртээх замаар бүхий л салбарын аж ахуйн нэгж, байгууллагын өрсөлдөх чадварыг дээшлүүлэн, улс орны эдийн засгийн хөгжлийг хурдасгахад дэмжлэг үзүүлэхэд оршдог.
+                        Монгол Улс 1992 оны 7 дугаар сард Азийн Бүтээмжийн Байгууллага (АББ)-ын гишүүнээр элссэн ба тус байгууллагын Монгол улс дахь албан ёсны төлөөлөгчөөр ажиллаж байна.</p>
                     </div>
                 </div>
                 
             </div>
         </section>
-
-        
 
 
         <section class="gray-bg">
             <div class="container text-center pt-50 pb-50">
                 <div class="row">
                     <div class="col-4 mx-auto">
-                        <h4 class="text-black">Хөтөлбөрийн зорилго</h4>
-                        <p>а. Бүтээмж дээшлүүлэх шийдэл, сайжруулалтын төсөл хэрэгжүүлэх чиглэлээр мэргэшсэн хүний чадамжийг баталгаажуулах</p>
-                        <p>б. Сургалтын хөтөлбөр, зохицуулалт, чиглүүлэг, зөвлөх үйлчилгээ үзүүлэх замаар  бүтээмжийг сайжруулах асуудлыг шийдвэрлэх мэргэшлийн мэдлэг/ мэдээллийг үйлдвэр, байгууллагад дамжуулан түгээх</p>
+                        <h4 class="text-black">Эрхэм зорилго</h4>
+                        <p>Бүтээмжийг бүх нийтийн хүртээл болгоно.</p>
                     </div>
                     <div class="col-4 mx-auto">
-                        <h4 class="text-black">Ач холбогдол</h4>
-                        <p>Шаардлагыг хангасан хувь хүнд бүтээмжийн мэргэжилтний түвшин, шатлалын дагуу мэргэшсэн түвшинг хүлээн зөвшөөрч “Баталгаажсан бүтээмжийн мэргэжилтэн”-ий гэрчилгээ олгох ба мэргэжлийн болон бизнесийн хэтийн төлөвийг сайжруулах, бусад бүтээмжийн мэргэжилтнүүдтэй холбоо тогтоох, АББ-ын олон улсын төсөлд хамрагдах боломж зэрэг давуу талтай. Түүнчлэн баталгаажсан БМ нь ҮБТ-ийн ижил төстэй итгэмжлэлийн тогтолцоотой гишүүн орнуудад хүлээн зөвшөөрөгдөх болно. Баталгаажсан БМ нь МБТББ-ийн  лавлагаа болон АББ портал дээр дэлхийн түвшний бүтээмжийн мэргэжилтнээр бүртгүүлэх болно.</p>
+                        <h4 class="text-black">Хэтийн зорилго</h4>
+                        <p>МБТ-нь 2025 он гэхэд Азийн түвшинд хүрсэн Бүтээмжийн мэдлэгийг түгээгч мэргэжлийн байгууллага болно.</p>
                     </div>
                     <div class="col-4 mx-auto">
-                        <h4 class="text-black text-left">Баталгаажуулалтын төрөл</h4>
-                        <p>МБТББ-ын хариуцаж хэрэгжүүлдэг Бүтээмжийн мэргэжилтний баталгаажуулах тогтолцооны гурван түвшин байна. Үүнд:</p>
-                            <p>1.  АББ-ын баталгаажсан бүтээмжийн мэргэжилтэн</p>
-                            <p>2.  АББ-ын баталгаажсан бүтээмжийн ахлах мэргэжилтэн</p>
-                            <p>3.  АББ-ын баталгаажсан мастер бүтээмжийн мэргэжилтэн</p>
+                        <h4 class="text-black text-left">Үнэт зүйлс</h4>
+                        <p>Бүтээлч, санаачлагатай<br>
+                        Үнэнч шударга<br>
+                        Тасралтгүй сайжруулагч<br>
+                        Эрч хүчтэй<br>
+                        Эерэг хандлагатай<br>
+                        Мэргэшсэн манлайлагч<br>
+                        Журамт ёсыг эрхэмлэгч
+                        </p>
                     </div>
                 </div>
                 
@@ -78,7 +83,7 @@
         </section>
 
         
-        <div class="container mt-20">
+        <div class="container">
             <section id="content" class="pb-200 text-center">
                     <div class="content-info pb-200">
                             <h4 class="fw-100">Хэрхэн баталгаажуулалтын мэргэжилтэн болох вэ?</h4>
@@ -101,22 +106,14 @@
 
         <div class="pb-50">
             <section>
-                    <div class="container gray-bg pt-100 pb-100 jambotron">
+                    <div class="container gray-bg pt-100 pb-100 text-center jambotron">
                         <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h4 class="text-black text-center">Баталгаажуулалт</h4>
+                            <div class="col-lg-6 mx-auto">
+                                <h2>Баталгаажуулалт</h2>
                                 <p>
-                                    <ul class="mpo-ul">
-                                        <li>Бүтээмж сайжруулах шийдэл болон бүтээмж сайжруулах арга зүйг тодорхойлох, хэрэгжүүлэх, тайлбарлах </li>
-                                        <li>Бүтээмжийн асуудалд дүн шинжилгээ хийх, сайжруулах арга замыг тодорхойлох, хэрэгжүүлэх үе шат бүхий бүтээмжийн цогц хөтөлбөрийг байгууллагад хэрэгжүүлэх</li>
-                                        <li>Үндэсний бүтээмжийн төвүүд, харилцагч байгууллага болон бусад байгууллагуудад сурталчилгаа, сургалт, судалгаа, зөвлөх үйлчилгээг үзүүлэх</li>
-                                    </ul>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis odio ac felis aliquam tincidunt. Praesent non lacus a tortor consequat aliquam at et libero. Suspendisse congue, purus at congue sagittis, tellus nibh elementum mauris, nec tincidunt tortor sapien id nibh. 
                                 </p>
-                                <div class="text-center">
-                                    <a href="#" class="btn btn-success btn-xl mt-10 ">ӨРГӨДӨЛ ГАРГАХ</a>
-                                    <a href="#" class="btn btn-success btn-xl mt-10 ">ГАРЫН АВЛАГА</a>
-                                    <a href="#" class="btn btn-success btn-xl mt-10 ">ТӨЛӨВЛӨГӨӨ</a>
-                                </div>
+                                <a href="#" class="btn btn-success btn-xl mt-10">Өргөдөл гаргах</a>
 
                             </div>
                         </div>
@@ -141,8 +138,9 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Даваагийн Ариунзул</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <h4><a href="#">Баатарчулуун Эрдэнэ</a></h4>
+                                            <h5 class="yellow">№1250244</h5>
+                                            <p>Мэргэжсэн талбар</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -156,8 +154,9 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Нэргүйн Ариунжаргал</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <h4><a href="#">Баатарчулуун Эрдэнэ</a></h4>
+                                            <h5 class="yellow">№1250244</h5>
+                                            <p>Мэргэжсэн талбар</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -171,8 +170,9 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Лхайзамын Уранцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <h4><a href="#">Баатарчулуун Эрдэнэ</a></h4>
+                                            <h5 class="yellow">№1250244</h5>
+                                            <p>Мэргэжсэн талбар</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -186,8 +186,9 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Очирвааны Урангоо</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <h4><a href="#">Баатарчулуун Эрдэнэ</a></h4>
+                                            <h5 class="yellow">№1250244</h5>
+                                            <p>Мэргэжсэн талбар</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -201,8 +202,9 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Бямбын Уранчимэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <h4><a href="#">Баатарчулуун Эрдэнэ</a></h4>
+                                            <h5 class="yellow">№1250244</h5>
+                                            <p>Мэргэжсэн талбар</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -216,8 +218,9 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Таванжингийн Оюунцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <h4><a href="#">Баатарчулуун Эрдэнэ</a></h4>
+                                            <h5 class="yellow">№1250244</h5>
+                                            <p>Мэргэжсэн талбар</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -230,23 +233,9 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Цэнд-Аюушын Хишигжаргал</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Мягмарсүрэнгийн Хишигдэлгэр</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <h4><a href="#">Баатарчулуун Эрдэнэ</a></h4>
+                                            <h5 class="yellow">№1250244</h5>
+                                            <p>Мэргэжсэн талбар</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -260,24 +249,9 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Лозолын Оюун</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <!-- .col-md-4 -->
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Сайнбаярын Наранцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <h4><a href="#">Баатарчулуун Эрдэнэ</a></h4>
+                                            <h5 class="yellow">№1250244</h5>
+                                            <p>Мэргэжсэн талбар</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -291,23 +265,9 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Лхагвасүрэнгийн Бадамцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Жаргалын Ариунзул</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <h4><a href="#">Баатарчулуун Эрдэнэ</a></h4>
+                                            <h5 class="yellow">№1250244</h5>
+                                            <p>Мэргэжсэн талбар</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -333,7 +293,7 @@
                     <div class="container gray-bg pt-100 pb-100 text-center jambotron">
                         <div class="row">
                             <div class="col-lg-6 mx-auto">
-                                <h4 class="text-black text-center">Сертификат</h4>
+                                <h2>Сертификат</h2>
                                 <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis odio ac felis aliquam tincidunt. Praesent non lacus a tortor consequat aliquam at et libero. Suspendisse congue, purus at congue sagittis, tellus nibh elementum mauris, nec tincidunt tortor sapien id nibh. 
                                 </p>

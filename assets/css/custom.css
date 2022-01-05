@@ -41,6 +41,10 @@
     margin-left: 100px;
 }
 
+#content .content-info h4 {
+    font-size: 40px;
+}
+
 #content .content-info h3 {
     font-size: 50px;
     margin-left: 100px;
@@ -198,4 +202,126 @@ div.mpo-list
 .text-black 
 {
     color:#000;
+}
+
+
+.banner-btn {
+    margin-top:50px;
+    display: inline-block;
+    margin-left: 70px;
+    margin-top: 80px;
+}
+
+.fw-100 
+{
+    font-weight: 100;
+}
+
+
+.fw-200 
+{
+    font-weight: 200;
+}
+
+.fw-300 
+{
+    font-weight: 300;
+}
+
+.mt-10 
+{
+    margin-top:10px;
+}
+
+.gray-bg 
+{
+    background:#F9F9F9;
+}
+
+.jambotron
+{
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+}
+
+.yellow 
+{
+    color:#faa61a;
+}
+
+.text-right 
+{
+    text-align: right;
+}
+
+ul.footer-ul
+{}
+ul.footer-ul li
+{padding-bottom: 3px;}
+
+ul.footer-ul li a
+{}
+
+ul.footer-ul li a:hover
+{color:#faa61a;}
+
+.wave-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: -1;
+}
+
+.wave-pulse {
+    height: 1px;
+    width: 1px;
+    margin: 0 auto;
+    border: none;
+}
+
+wave-pulse::before {
+    -webkit-animation-delay: 0.75s;
+    animation-delay: 0.75s;
+}
+.wave-pulse::after, .wave-pulse::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    border: 1px solid #ff736e;
+    opacity: 0;
+    -webkit-animation: pluse 5.25s linear 5.25s infinite;
+    animation: pluse 5.25s linear 5.25s infinite;
+    animation-delay: 5.25s;
+}
+
+.submenu 
+{
+    background: #f9f9f9;    
+    border-bottom:1px solid #d9d9d9;
+    padding:5px;
+}
+
+ul.submenu-ul{    
+    display: flex;
+    flex-wrap: wrap;
+    font-style: 22px;
+     line-height: 24px;
+}
+ul.submenu-ul li{ margin-left: 50px ;}
+
+ul.mpo-ul {}
+ul.mpo-ul li:before 
+{
+    content: "✓ ";
+    
+}
+ul.mpo-ul li {
+    padding-left:30px;
 }

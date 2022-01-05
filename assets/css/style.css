@@ -233,29 +233,24 @@ h6 {
 }
 h1{
 	font-size: 60px;
-	color: #ffffff;
 }
 
 h2{
 	font-size: 25px;
-	color: #070707;
 	font-weight: 300;
 }
 
 h3{
 	font-size: 24px;
-	color: #fff;
 	font-weight: 700;
 }
 h4{
 	font-size: 18px;
-    color: #000000;
 	font-weight: 700;
 	text-transform: uppercase;
 }
 h4 a{
 	font-size: 20px;
-    color: #000000;
 	font-weight: 700;
 	-webkit-transition: all .3s ease-in-out;
 	transition: all .3s ease-in-out;
@@ -2381,7 +2376,7 @@ section{
 
 
 .bg-footer-top{
-	background: #000000;
+	/* background: #000000; */
 	padding: 95px 0 85px;
 }
 .widgets-title{
@@ -2503,12 +2498,13 @@ section{
 	height: 84px;
 }
 .bg-footer-bottom{
-	background: #f4f4f4;
-	padding: 28px 0 23px 0;
+	/* background: #f4f4f4; */
+	padding: 13px 0 8px 0;
+	border-top: 1px solid #e8e8e8;
 }
 .footer-bottom{}
 .copyright-txt{
-	float: left;
+	
 }
 .copyright-txt p{
 	font-size: 16px;
@@ -2516,8 +2512,8 @@ section{
 	padding-top: 8px;
 }
 .copyright-txt p a{
-	color: #53a92c;
-	font-weight: 700;
+	/* color: #53a92c; */
+	font-weight: 300;
 }
 .copyright-txt p a:hover{
 	color: #000000;
@@ -2536,9 +2532,9 @@ section{
 }
 .social-icon-rounded li a{
 	display: inline-block;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
 	text-align:center;
 	font-size: 18px;
 	color: #53a92c;

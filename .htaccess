@@ -56,3 +56,5 @@ RewriteRule ^register_organisation?$ register_organisation.php
 RewriteRule ^registering_individual?$ registering_individual.php
 RewriteRule ^registering_organisation?$ registering_organisation.php
 
+RewriteRule ^training?$ training.php
+
