@@ -325,3 +325,9 @@ ul.mpo-ul li:before
 ul.mpo-ul li {
     padding-left:30px;
 }
+
+.wrapper-img 
+{   
+    border-radius: 10px;
+    overflow: hidden;
+}

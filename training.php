@@ -19,15 +19,21 @@
         </div>
         <div class="pb-50">
             <section>
-                    <div class="container gray-bg pt-100 pb-100 text-center jambotron">
+                    <div class="container pt-100 pb-100">
                         <div class="row">
-                            <div class="col-lg-6 mx-auto">
-                                <h2>Баталгаажуулалт</h2>
+                            <div class="col-lg-6">
+                                <h1>Анхан шат</h1>
                                 <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis odio ac felis aliquam tincidunt. Praesent non lacus a tortor consequat aliquam at et libero. Suspendisse congue, purus at congue sagittis, tellus nibh elementum mauris, nec tincidunt tortor sapien id nibh. 
+                                Өөрөө өөрийгөө тэтгэх чадамжтэй нийгэм, эдийн засгийг хамтдаа хөгжүүлье 
                                 </p>
-                                <a href="#" class="btn btn-success btn-xl mt-10">Өргөдөл гаргах</a>
+                                <a href="#" class="btn btn-success btn-xl mt-10">Дэлгэрэнгүй</a>
 
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="wrapper-img">
+                                    <img src="assets/images/training_beginner.webp" alt="upcoming-events-img-3" class="img-responsive"></a>
+                                </div>
                             </div>
                         </div>
                     
