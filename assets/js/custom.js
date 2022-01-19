@@ -30,6 +30,11 @@
                 element.siblings('li').find('ul').slideUp(300, "swing");
             }
         })
+
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		  })
+		  
 		
 		//LightCase
 		

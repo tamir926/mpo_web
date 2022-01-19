@@ -331,3 +331,20 @@ ul.mpo-ul li {
     border-radius: 10px;
     overflow: hidden;
 }
+
+table.mpo_assessment{
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+
+
+
+
+table.mpo_assessment *
+{
+    border:1px solid #d9d9d9;
+}
+thead 
+{
+    background: #d9d9d9;
+}

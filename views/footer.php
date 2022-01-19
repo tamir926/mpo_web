@@ -98,7 +98,7 @@
                         </div>
                         <div class="col-6 text-right">
                             <div class="copyright-txt">
-                                <p> 2011-2021. &copy; <a href="#">МPO</a> |
+                                <p> 2011-2022. &copy; <a href="#">МPO</a> |
                                 <a href="#">Үйлчилгээний нөхцөл</a> |
                                 <a href="#">Нууцлалын бодлого</a>
 

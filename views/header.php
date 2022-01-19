@@ -43,7 +43,7 @@
                                         </li>
                                         <li>
                                             <div class="h-adress-content">
-                                                <h6>Гишүүнчлэл</h6>
+                                                <h6><a href="assessment">Гишүүнчлэл</a></h6>
                                             </div>
                                             <!-- .h-adress-content -->
                                         </li>
