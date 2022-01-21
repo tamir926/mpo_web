@@ -7,19 +7,7 @@
     <div class="box-layout">
         <? require_once("views/header.php");?>
 
-        <div class="submenu">
-            <div class="container d-flex justify-content-between">
-                <h3 class="text-black">Үнэлгээ</h3>
-                <ul class="submenu-ul">
-                    <li><a href="assessment_nuat">Нэмэгдэсэн өртөг</a></li>
-                    <li><a href="#">5C</a></li>
-                    <li><a href="#" title="Бизнесийн төгөлдөршлийн тасралтгүй сайжруулалтын үнэлгээ">БТТСҮ</a></li>
-                    <li><a href="assessment_iso">ISO9001:2015</a></li>
-                    <li><a href="#">Экспертүүд</a></li>
-                </ul>
-            </div>
-        </div>
-
+        <? require_once("views/submenu_assessment.php");?>
     
 
         <!-- Start Campaign Section -->
@@ -51,7 +39,7 @@
                                         <!-- .progress -->
                                         <h4><a href="assessment_nuat">Нэмэгдсэн өртгийн өсөлтийн үзүүлэлт</a></h4>
                                         <p>3-5 жилийн нэмэгдсэн өргийн үнэлгээг тооцон гаргах</p>
-                                        <a href="assessment_nuat" class="btn btn-default">Үнэлгээ хийх</a>
+                                        <a href="assessment_nuat" class="btn btn-default">Үнэлгээ тооцох</a>
                                     </div>
                                     <!-- .cause-content -->
                                 </div>

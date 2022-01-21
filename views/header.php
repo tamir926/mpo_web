@@ -22,8 +22,8 @@
                             </div>
 
                             <div class="col-lg-2 col-12">
-                                <div class="d-flex flex-wrap justify-content-between p-3">
-                                    <a href="index"><img src="assets/images/logo.png" alt="Монголын Бүтээмжийн Төв" class="img-responsive" /></a>
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <a href="index"><img src="assets/images/logo.png" alt="Монголын Бүтээмжийн Төв 30 жил" class="img-responsive" /></a>
                                     <button type="button" class="navbar-toggler collapsed d-lg-none" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false">
                                         <span class="navbar-toggler-icon">
                                             <i class="fa fa-bars"></i>
@@ -70,6 +70,7 @@
                                             <li><a href="events">Арга хэмжээ</a></li>
                                             <li><a href="knowledge">Мэдлэгийн сан</a></li>
                                             <li><a href="cases">Туршлага</a></li>
+                                            <li><a href="#">АББ</a></li>
                                         </ul>                                       
                                     </div>
                                 </div>

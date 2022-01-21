@@ -1016,6 +1016,7 @@ section{
 
 
 #object_one {
+	background-color: #FAA61A;
 	-webkit-animation: object_one 1.5s infinite;
 	animation: object_one 1.5s infinite;
 	}

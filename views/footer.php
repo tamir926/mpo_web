@@ -5,6 +5,18 @@
                     <div class="row">
                         <div class="footer-top">
                             <div class="row">
+
+                                <div class="col-lg-2 col-sm-6">
+                                  <h5>Бидний тухай</h5>
+                                  <ul class="footer-ul">
+                                      <li><a href="#">Танилцуулга</a></li>
+                                      <li><a href="#">Чиглэл</a></li>
+                                      <li><a href="#">Байгууллагын бүтэц</a></li>
+                                      <li><a href="#">Түүхэн замнал</a></li>
+                                      <li><a href="#">Мэндчилгээ</a></li>
+                                  </ul>
+                                </div>
+                                
                                 <div class="col-lg-2 col-sm-6">
                                   <h5>Сургалт</h5>
                                   <ul class="footer-ul">
@@ -57,16 +69,7 @@
                                   </ul>
                                 </div>
 
-                                <div class="col-lg-2 col-sm-6">
-                                  <h5>Компани</h5>
-                                  <ul class="footer-ul">
-                                      <li><a href="#">Танилцуулга</a></li>
-                                      <li><a href="#">Чиглэл</a></li>
-                                      <li><a href="#">Байгууллагын бүтэц</a></li>
-                                      <li><a href="#">Түүхэн замнал</a></li>
-                                      <li><a href="#">Мэндчилгээ</a></li>
-                                  </ul>
-                                </div>
+                               
 
 
                               

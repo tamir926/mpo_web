@@ -68,4 +68,7 @@ RewriteRule ^assessment?$ assessment.php
 
 RewriteRule ^assessment_nuat?$ assessment_nuat.php
 RewriteRule ^assessment_iso?$ assessment_iso.php
-
+RewriteRule ^assessment_5c?$ assessment_5c.php
+RewriteRule ^assessment_tb?$ assessment_tb.php
+RewriteRule ^assessment_jdu?$ assessment_jdu.php
+RewriteRule ^assessment_bt?$ assessment_bt.php

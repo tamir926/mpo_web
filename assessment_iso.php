@@ -7,17 +7,7 @@
     <div class="box-layout">
         <? require_once("views/header.php");?>
 
-        <div class="submenu">
-            <div class="container d-flex justify-content-between">
-                <h3 class="text-black">Үнэлгээ</h3>
-                <ul class="submenu-ul">
-                    <li class="active"><a href="#">Нэмэгдэсэн өртөг</a></li>
-                    <li><a href="#">5C</a></li>
-                    <li><a href="#" title="Бизнесийн төгөлдөршлийн тасралтгүй сайжруулалтын үнэлгээ">БТТСҮ</a></li>
-                    <li><a href="#">Экспертүүд</a></li>
-                </ul>
-            </div>
-        </div>
+        <? require_once("views/submenu_assessment.php");?>
 
     
 
