@@ -1,3 +1,7 @@
+div.box-layout 
+{
+    min-height: 100vh;
+}
 .border-left
 {
     background: url(../images/border-left.png);
@@ -32,43 +36,61 @@
 
 }
 
-#content .content-info *
+#content .event-info {
+    width: 100%;
+    background: url('../images/event_bg.jpg');
+    background-size: cover;
+    border-radius: 10px;    
+    padding: 100px;
+
+}
+
+#content .content-info *,
+#content .event-info *
 {
     color: #ffffff;
 }
-#content .content-info h5 {
+#content .content-info h5,
+#content .event-info h5
+ {
     font-size: 30px;
     margin-left: 100px;
 }
 
-#content .content-info h4 {
+#content .content-info h4,
+#content .event-info h4  {
     font-size: 40px;
 }
 
-#content .content-info h3 {
+#content .content-info h3,
+#content .event-info h3
+ {
     font-size: 50px;
     margin-left: 100px;
 
 }
 
-#content .content-info p {
+#content .content-info p,
+#content .event-info p {
     margin-left: 100px;
 }
 
 
-#content .content-info p.txt
+#content .content-info p.txt,
+#content .event-info p.txt
 {
     margin-left: 10px;
     float: left;
 }
 
-#content .content-info p.txt i
+#content .content-info p.txt i, 
+#content .event-info p.txt i
 {
     font-size: 40px;
     margin-bottom: 10px;
 }
 
-#content .content-info .box {
+#content .content-info .box, #content .event-info .box {
     margin-top: 100px;
     display: flex;
     justify-content: space-around;
@@ -194,6 +216,25 @@ div.mpo-list
     padding-bottom:200px
 }
 
+.mt-30 {
+    margin-top:30px;
+}
+
+.mt-50 {
+    margin-top:50px;
+}
+
+.mb-10
+{
+    margin-bottom: 10px;
+}
+
+.mb-20
+{
+    margin-bottom: 20px;
+}
+
+
 
 .green {
     color: #65ac4c;
@@ -311,8 +352,8 @@ wave-pulse::before {
 ul.submenu-ul{    
     display: flex;
     flex-wrap: wrap;
-    font-style: 22px;
-     line-height: 24px;
+    font-style: 25px;
+     line-height: 33px;
 }
 ul.submenu-ul li{ margin-left: 50px ;}
 
@@ -347,4 +388,15 @@ table.mpo_assessment *
 thead 
 {
     background: #d9d9d9;
+}
+
+.donate-form
+{background: #3A9948; padding: 20px; color: #ffffff ; border-radius: 5px; text-align: left;}
+.donate-form *
+{
+    border-radius: 5px; color: #ffffff;
+}
+.donate-form h3
+{
+    color: #ffffff ;
 }

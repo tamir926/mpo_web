@@ -10,16 +10,20 @@ ErrorDocument 404 underconstruction
 
 RewriteRule ^faqs?$ faqs.php
 RewriteRule ^login?$ login.php
+RewriteRule ^logining?$ views/logining.php
 RewriteRule ^logout?$ views/logout.php
 RewriteRule ^register?$ register.php
 
 
 RewriteRule ^about?$ about.php
+RewriteRule ^experts?$ experts.php
 RewriteRule ^projects?$ projects.php
 RewriteRule ^news?$ news.php
 RewriteRule ^contact?$ contact.php
 RewriteRule ^contacting?$ contacting.php
-
+RewriteRule ^cases?$ cases.php
+RewriteRule ^knowledge?$ knowledge.php
+RewriteRule ^podcast?$ podcast.php
 
 RewriteRule ^career?$ career.php
 
@@ -47,6 +51,9 @@ RewriteRule ^dashboard1?$ dashboard1.php
 RewriteRule ^dashboard2?$ dashboard2.php
 RewriteRule ^history?$ history.php
 RewriteRule ^summit?$ summit.php
+
+
+
 
 RewriteRule ^submit?$ submit.php
 

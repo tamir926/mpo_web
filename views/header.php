@@ -13,7 +13,7 @@
                                         </li>
                                         <li>
                                             <div class="h-adress-content">
-                                                <h6>E-Бүтээмж</h6>
+                                                <h6><a href="assessment">E-Бүтээмж</a></h6>
                                             </div>
                                             <!-- .h-adress-content -->
                                         </li>
@@ -43,7 +43,7 @@
                                         </li>
                                         <li>
                                             <div class="h-adress-content">
-                                                <h6><a href="assessment">Гишүүнчлэл</a></h6>
+                                                <h6><a href="dashboard">Гишүүнчлэл</a></h6>
                                             </div>
                                             <!-- .h-adress-content -->
                                         </li>
@@ -66,10 +66,10 @@
                                     <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
                                         <ul>
                                             <li><a href="training" class="active">Сургалт</a></li>
-                                            <li><a href="#">Төсөл</a></li>
-                                            <li><a href="#">Арга хэмжээ</a></li>
-                                            <li><a href="#">Мэдлэгийн сан</a></li>
-                                            <li><a href="#">Туршлага</a></li>
+                                            <li><a href="projects">Төсөл</a></li>
+                                            <li><a href="events">Арга хэмжээ</a></li>
+                                            <li><a href="knowledge">Мэдлэгийн сан</a></li>
+                                            <li><a href="cases">Туршлага</a></li>
                                         </ul>                                       
                                     </div>
                                 </div>

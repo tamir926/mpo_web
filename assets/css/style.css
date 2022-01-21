@@ -675,6 +675,7 @@ blockquote:after,
 .our-services-box,
 .our-services-items,
 .event-items,
+.event2-items,
 .collection-items,
 .collection-overlay,
 .collection-content h4 a,
@@ -3246,28 +3247,38 @@ ul>li>a:focus, ul>li>a:hover {
 .upcoming-events{
 	padding-bottom: 50px;
 }
-.event-items{
+.event-items,.event2-items,{
 	margin-bottom: 30px;
 }
-.event-img{
+.event-img, .event2-img, .knowledge-img {
 	position: relative;
 	display: block;
 }
-.event-img a, .event-img a img {
+.event-img a, .event-img a img,.event2-img a, .event2-img a img,.knowledge-img a, .knowledge-img a img {
 	display: block;
 	width: 100%;
 	overflow: hidden;
 }
+
+.event-img .date-box
+{
+	background: #53a92c;
+}
+
+.event2-img .date-box
+{
+	background: #FAA61A;
+}
+
 .date-box{
 	position: absolute;
-	width: 80px;
-	height: 80px;
+	width: 50%;
+	/* height: 80px; */
 	line-height: 80px;
-	background: #53a92c;
-	text-align: center;
+	text-align: left;
 	bottom: 0;
 	left: 0;
-	padding: 8px 0;
+	padding: 8px 20px 0px 20px;
 }
 .date-box h3{
 	font-size: 36px;
@@ -3323,12 +3334,21 @@ ul>li>a:focus, ul>li>a:hover {
 .event-items:hover .events-content h3 a{
 	color: #53a92c;
 }
-.event-items:hover .event-img img{
+
+.event2-items:hover .events-content h3 a{
+	color: #FAA61A;
+}
+
+.knowledge-items:hover .knowledge-content h3 a{
+	color: #FAA61A;
+}
+
+.event-items:hover .event-img img, .event2-items:hover .event2-img img, .knowledge-items:hover .knowledge-img img{
 	-webkit-transform: scale(1.05, 1.05);
 	-moz-transform: scale(1.05, 1.05);
 	transform: scale(1.05, 1.05);
 }
-.event-items:hover{
+.event-items:hover, .event2-items:hover, .knowledge-items:hover{
 	box-shadow: 1px 0px 14px 1px #ebebeb;
 }
 
@@ -4228,7 +4248,7 @@ ul>li>a:focus, ul>li>a:hover {
 	border-radius: 0;
 	box-shadow: none;
 	padding-left: 25px;
-	width: 200px;
+	/* width: 200px; */
 	/* margin-bottom: 30px; */
 }
 .contact-form input[type="text"]:focus, 

@@ -1,4 +1,5 @@
 <? require_once("config.php");?>
+<? require_once("views/login_check.php");?>
 <? require_once("views/helper.php");?>
 <? require_once("views/init.php");?>
 
