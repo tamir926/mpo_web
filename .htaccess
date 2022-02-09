@@ -24,6 +24,7 @@ RewriteRule ^contacting?$ contacting.php
 RewriteRule ^cases?$ cases.php
 RewriteRule ^knowledge?$ knowledge.php
 RewriteRule ^podcast?$ podcast.php
+RewriteRule ^report?$ report.php
 
 RewriteRule ^career?$ career.php
 
