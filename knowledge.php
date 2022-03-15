@@ -24,108 +24,29 @@
                 <div class="row">
                     <div class="upcoming-events">
                         <div class="row">
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="#"><img src="assets/images/event1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <!-- .date-box -->
+                            <? 
+                            $sql = "SELECT *FROM news ORDER BY timestamp DESC LIMIT 21";
+                            $result = mysqli_query($conn,$sql);
+                            while ($news = mysqli_fetch_array($result))
+                            {
+                                ?>
+                                <div class="col-lg-4">
+                                    <div class="event-items mb-20">
+                                        <div class="event-img wrapper-img">
+                                            <a href="news?id=<?=$news["id"];?>">
+                                                <img src="<?=$news["image"];?>" alt="upcoming-events-img-1" class="img-responsive" />
+                                            </a>
+                                        </div>
+                                        <div class="events-content">
+                                            <div class="date"><?=substr($news["timestamp"],0,10);?></div>
+                                            <h3><a href="news?id=<?=$news["id"];?>"><?=$news["title"];?></a></h3>
+                                        </div>
                                     </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2022-02-01</div>
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
                                 </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
 
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="#"><img src="assets/images/event1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2022-02-01</div>
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="#"><img src="assets/images/event1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2022-02-01</div>
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="#"><img src="assets/images/event1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2022-02-01</div>
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="#"><img src="assets/images/event1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2022-02-01</div>
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="#"><img src="assets/images/event1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2022-02-01</div>
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
+                                <?
+                            }
+                            ?>
                             
 
                             

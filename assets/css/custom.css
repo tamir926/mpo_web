@@ -371,6 +371,7 @@ ul.mpo-ul li {
 {   
     border-radius: 10px;
     overflow: hidden;
+    max-height: 250px;
 }
 
 table.mpo_assessment{

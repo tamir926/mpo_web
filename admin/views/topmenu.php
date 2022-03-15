@@ -43,7 +43,7 @@
 
                     <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-toggle="dropdown"><i data-feather="chrome"></i><span data-i18n="Apps">Вебсайт</span></a>
                         <ul class="dropdown-menu">
-                            <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-toggle="dropdown" data-i18n="Cards"><i data-feather="credit-card"></i><span data-i18n="Мэдээ">Мэдээ</span></a>
+                            <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-toggle="dropdown" data-i18n="Cards"><i data-feather="credit-card"></i><span data-i18n="Мэдээ">Мэдлэгийн сан</span></a>
                                 <ul class="dropdown-menu">
                                     <li class="active" data-menu="">
                                         <a class="dropdown-item d-flex align-items-center" href="news?action=new" data-toggle="dropdown" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Шинэ мэдээ</span></a>
@@ -81,7 +81,7 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-toggle="dropdown"><i data-feather="chrome"></i><span data-i18n="Apps">Сайн дурын үйл ажиллагаа</span></a>
+                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-toggle="dropdown"><i data-feather="chrome"></i><span data-i18n="Apps">МБТББ</span></a>
                         <ul class="dropdown-menu">
                             <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="projects" data-toggle="dropdown" ><i data-feather="users"></i><span >Үйл ажиллагаа</span></a>
                             </li>
@@ -91,9 +91,9 @@
 
                     <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-toggle="dropdown"><i data-feather="chrome"></i><span data-i18n="Apps">Бүртгэл</span></a>
                         <ul class="dropdown-menu">
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="volunteers_organisations" data-toggle="dropdown" ><i data-feather="home"></i><span >Байгууллага</span></a>
+                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="organisations" data-toggle="dropdown" ><i data-feather="home"></i><span >Байгууллага</span></a>
                             </li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="volunteers_persons" data-toggle="dropdown" ><i data-feather="users"></i><span >Хувь хүн</span></a>
+                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="persons" data-toggle="dropdown" ><i data-feather="users"></i><span >Хувь хүн</span></a>
                             </li>
                         </ul>
                     </li>

@@ -28,7 +28,7 @@
 <!-- BEGIN: Body-->
 
 <body class="horizontal-layout horizontal-menu  navbar-floating footer-static  " data-open="hover" data-menu="horizontal-menu" data-col="">
-    <? if ($_GET["action"]) $action=$_GET["action"]; else $action="grid"; 
+    <? if (isset($_GET["action"])) $action=$_GET["action"]; else $action="grid"; 
     ?>
     <? require_once("views/header.php");?>
 
@@ -63,7 +63,6 @@
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="products?action=new"><i class="mr-1" data-feather="plus-square"></i><span class="align-middle">Бүтээдэхүүн нэмэх</span></a>
                                 <a class="dropdown-item" href="products?action=category_add"><i class="mr-1" data-feather="bar-chart-2"></i><span class="align-middle">Ангилал нэмэх</span></a>
-                                <a class="dropdown-item" href="products?action=form_add"><i class="mr-1" data-feather="check-square"></i><span class="align-left">Форм нэмэх</span></a>
                             </div>
                         </div>
                     </div>

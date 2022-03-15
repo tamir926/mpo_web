@@ -10,6 +10,7 @@ RewriteRule ^logout?$ views/logout.php
 RewriteRule ^dashboard?$ dashboard.php
 RewriteRule ^settings?$ settings.php
 
+RewriteRule ^products?$ products.php
 RewriteRule ^teachers?$ teachers.php
 RewriteRule ^users?$ users.php
 RewriteRule ^lessons?$ lessons.php
@@ -23,8 +24,9 @@ RewriteRule ^partners?$ partners.php
 RewriteRule ^projects?$ projects.php
 RewriteRule ^membership?$ membership.php
 
-RewriteRule ^volunteers_organisations?$ volunteers_organisations.php
-RewriteRule ^volunteers_persons?$ volunteers_persons.php
+RewriteRule ^organisations?$ organisations.php
+RewriteRule ^persons?$ persons.php
+RewriteRule ^podcasts?$ podcasts.php
 
 
 

@@ -78,7 +78,7 @@
                         <div class="row match-height">
                             <?
                             
-                                $sql = "SELECT * FROM news";
+                                $sql = "SELECT * FROM news ORDER BY timestamp DESC";
                           
                             $result = mysqli_query($conn,$sql);
                             while ($data = mysqli_fetch_array($result))
