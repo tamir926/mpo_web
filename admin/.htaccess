@@ -27,6 +27,7 @@ RewriteRule ^membership?$ membership.php
 RewriteRule ^organisations?$ organisations.php
 RewriteRule ^persons?$ persons.php
 RewriteRule ^podcasts?$ podcasts.php
+RewriteRule ^reports?$ reports.php
 
 
 

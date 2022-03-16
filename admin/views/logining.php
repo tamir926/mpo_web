@@ -34,29 +34,29 @@
       }
 
 
-      else {
+      // else {
 
-            $sql = "SELECT *FROM members WHERE username='$username' AND password='$password' LIMIT 1";
-            $result = mysqli_query($conn,$sql);
-            if (mysqli_num_rows($result)==1)
-            {
-               $data = mysqli_fetch_array($result);
+      //       $sql = "SELECT *FROM members WHERE username='$username' AND password='$password' LIMIT 1";
+      //       $result = mysqli_query($conn,$sql);
+      //       if (mysqli_num_rows($result)==1)
+      //       {
+      //          $data = mysqli_fetch_array($result);
                
-               $_SESSION['id']=$data["id"];
-               $_SESSION['name']=$data["name"];
-               $_SESSION['rights']="xt";
-               $_SESSION['avatar']=$data["image"];
-               $_SESSION['timestamp']=date("Y-m-d H:i:s");
-               $_SESSION['logged']=TRUE;
-               $sql = "UPDATE members SET logged_date = '".date("Y-m-d H:i:s")."' WHERE username='$username' AND password='$password' LIMIT 1";
-               mysqli_query($conn,$sql);
+      //          $_SESSION['id']=$data["id"];
+      //          $_SESSION['name']=$data["name"];
+      //          $_SESSION['rights']="xt";
+      //          $_SESSION['avatar']=$data["image"];
+      //          $_SESSION['timestamp']=date("Y-m-d H:i:s");
+      //          $_SESSION['logged']=TRUE;
+      //          $sql = "UPDATE members SET logged_date = '".date("Y-m-d H:i:s")."' WHERE username='$username' AND password='$password' LIMIT 1";
+      //          mysqli_query($conn,$sql);
             
-               header('Location: ../user/dashboard');
+      //          header('Location: ../user/dashboard');
               
-            }
+      //       }
                else
                   header("location: login?error=wrong") ;
-         }
+         // }
             
    }
    else header("location: login?error=empty")

@@ -71,8 +71,16 @@
                                     </li>
                                 </ul>
                             </li>
-
                             
+                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="podcasts"><i data-feather="help-circle"></i><span >Подкаст</span></a>
+                            </li>
+
+
+                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="reports"><i data-feather="help-circle"></i><span >Тайлан</span></a>
+                            </li>
+
+
+
                             <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="faqs" data-toggle="dropdown" ><i data-feather="help-circle"></i><span >Түгээмэл асуулт</span></a>
                             </li>
 

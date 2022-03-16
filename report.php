@@ -24,209 +24,37 @@
                 <div class="row">
                     <div class="upcoming-events">
                         <div class="row">
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="https://www.youtube.com/embed/rmCn-GeYTdk" data-rel="lightcase:myCollection">
-                                            <img src="assets/images/podcast.jpg" alt="video-icon" />
-                                        </a>
+                            <?
+                            $sql = "SELECT *FROM reports ORDER BY timestamp DESC";
+                            $result= mysqli_query($conn,$sql);
+                            while ($podcast = mysqli_fetch_array($result))
+                            {
+                                ?>
+                                <div class="col-lg-4">
+                                    <div class="event-items mb-20">
+                                        <div class="event-img wrapper-img">
+                                            <a href="<?=$podcast["youtube"];?>" data-rel="lightcase:myCollection">
+                                                <img src="<?=$podcast["image"];?>" alt="video-icon" />
+                                            </a>
 
-                                        <!-- <a href="#"><img src="assets/images/podcast.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a> -->
-                                        <!-- .date-box -->
+                                            <!-- <a href="#"><img src="assets/images/podcast.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a> -->
+                                            <!-- .date-box -->
+                                        </div>
+                                        <!-- .event-img -->
+                                        <div class="events-content">
+                                            <div class="date"><?=substr($podcast["timestamp"],0,10);?></div>
+                                            <h3><a href="<?=$podcast["youtube"];?>" data-rel="lightcase:myCollection"><?=$podcast["name"];?></a></h3>
+                                            <p><?=$podcast["brief"];?></p>
+                                        </div>
+                                        <!-- .events-content -->
                                     </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2022-01-27</div>
-                                        <h3><a href="https://www.youtube.com/embed/rmCn-GeYTdk" data-rel="lightcase:myCollection">МБТ. Бүтээмж цуврал. Дугаар-10.Төслийн менежмент Д.Ариунзул</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
+                                    <!-- .events-items -->
                                 </div>
-                                <!-- .events-items -->
-                            </div>
 
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="https://www.youtube.com/embed/dvm8uVeiqDM" data-rel="lightcase:myCollection">
-                                            <img src="assets/images/podcast.jpg" alt="video-icon" />
-                                        </a>
-
-                                        <!-- <a href="#"><img src="assets/images/podcast.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a> -->
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2022-01-13</div>
-                                        <h3><a href="https://www.youtube.com/embed/dvm8uVeiqDM" data-rel="lightcase:myCollection">МБТ.Бүтээмж цуврал. Дугаар-9. Эрчим хүчний хэмнэлт</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="https://www.youtube.com/embed/f13wZVXxmzY" data-rel="lightcase:myCollection">
-                                            <img src="assets/images/podcast.jpg" alt="video-icon" />
-                                        </a>
-
-                                        <!-- <a href="#"><img src="assets/images/podcast.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a> -->
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2021-12-25</div>
-                                        <h3><a href="https://www.youtube.com/embed/f13wZVXxmzY" data-rel="lightcase:myCollection">МБТ. "Бүтээмж" цуврал подкаст. Дугаар-8</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="https://www.youtube.com/embed/Eu1tCuMDWw8" data-rel="lightcase:myCollection">
-                                            <img src="assets/images/podcast.jpg" alt="video-icon" />
-                                        </a>
-
-                                        <!-- <a href="#"><img src="assets/images/podcast.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a> -->
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2021-12-09</div>
-                                        <h3><a href="https://www.youtube.com/embed/Eu1tCuMDWw8" data-rel="lightcase:myCollection">МБТ.Бүтээмж цуврал. Дугаар-7. Процессын хандлага #process #mpo</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-
-
-
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="https://www.youtube.com/embed/agXOGdYxxkQ" data-rel="lightcase:myCollection">
-                                            <img src="assets/images/podcast.jpg" alt="video-icon" />
-                                        </a>
-
-                                        <!-- <a href="#"><img src="assets/images/podcast.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a> -->
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2021-11-25</div>
-                                        <h3><a href="https://www.youtube.com/embed/agXOGdYxxkQ" data-rel="lightcase:myCollection">МБТ "Бүтээмж" цуврал подкаст. Дугаар-6. "Бизнесийн төгөлдөршил"</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-
-
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="https://www.youtube.com/embed/gzEUP56Q6UY" data-rel="lightcase:myCollection">
-                                            <img src="assets/images/podcast.jpg" alt="video-icon" />
-                                        </a>
-
-                                        <!-- <a href="#"><img src="assets/images/podcast.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a> -->
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2021-11-11</div>
-                                        <h3><a href="https://www.youtube.com/embed/gzEUP56Q6UY" data-rel="lightcase:myCollection">МБТ "Бүтээмж" цуврал подкаст. Дугаар-5. Бүтээмжийн мэргэжилтэн гэж хэн бэ?</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="https://www.youtube.com/embed/3e5gPFYpoiI" data-rel="lightcase:myCollection">
-                                            <img src="assets/images/podcast.jpg" alt="video-icon" />
-                                        </a>
-
-                                        <!-- <a href="#"><img src="assets/images/podcast.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a> -->
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2021-11-11</div>
-                                        <h3><a href="https://www.youtube.com/embed/3e5gPFYpoiI" data-rel="lightcase:myCollection">МБТ "Бүтээмж" цуврал подкаст. Дугаар-4. Стратеги удирдлага</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="https://www.youtube.com/embed/tfM_DcrPnsk" data-rel="lightcase:myCollection">
-                                            <img src="assets/images/podcast.jpg" alt="video-icon" />
-                                        </a>
-
-                                        <!-- <a href="#"><img src="assets/images/podcast.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a> -->
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2021-10-14</div>
-                                        <h3><a href="https://www.youtube.com/embed/tfM_DcrPnsk" data-rel="lightcase:myCollection">МБТ "Бүтээмж" цуврал подкаст. Дугаар-3 "Гэмба кайзэн гэж юу вэ"</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="https://www.youtube.com/embed/aHE0kWBpvvY" data-rel="lightcase:myCollection">
-                                            <img src="assets/images/podcast.jpg" alt="video-icon" />
-                                        </a>
-
-                                        <!-- <a href="#"><img src="assets/images/podcast.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a> -->
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2021-09-16</div>
-                                        <h3><a href="https://www.youtube.com/embed/aHE0kWBpvvY" data-rel="lightcase:myCollection">МБТ "Бүтээмж" цуврал подкаст. Дугаар-2 "Ажлын соёл-5С, түүний хэрэгжүүлэлт"</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="event-items mb-20">
-                                    <div class="event-img wrapper-img">
-                                        <a href="https://www.youtube.com/embed/L_IAZPiQ4VM" data-rel="lightcase:myCollection">
-                                            <img src="assets/images/podcast.jpg" alt="video-icon" />
-                                        </a>
-
-                                        <!-- <a href="#"><img src="assets/images/podcast.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a> -->
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <div class="date">2021-09-09</div>
-                                        <h3><a href="https://www.youtube.com/embed/L_IAZPiQ4VM" data-rel="lightcase:myCollection">МБТ "Бүтээмж" цуврал подкаст. Дугаар-1. "Бүтээмж гэж юу вэ?"</a></h3>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-
+                                <?
+                            }
+                            ?>
+                            
 
                             
 

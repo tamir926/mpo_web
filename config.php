@@ -9,7 +9,7 @@ $dbpass = '2xolX15GP#86';
 $dbname = 'townmn_m';
 
 $dbuser = 'root';
-$dbpass = 'sw01b116';
+$dbpass = '';
 $dbname = 'mpo';
 
 
