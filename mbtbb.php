@@ -17,36 +17,13 @@
                         <p class="text-justify">МБТББ нь БМБ-ын тогтолцоог АББ/ИБ 1003:2020 Хувь хүний баталгаажуулалтын итгэмжлэлийн тохирол болон ISO 17024:2012 стандартын шаардлагад нийцүүлэн үр дүнтэй хэрэгжүүлж, харилцагч байгууллага эсвэл аж ахуйн нэгжүүдийн бүтээмжийн дээшлүүлэхэд мэргэжлийн туслалцаа үзүүлэх ба харилцагчид болон хувь хүмүүст АББ-ын итгэмжлэлийн байгууллага (АББ/ИБ)-ын итгэмжлэлийн хүрээнд БМБ-ын үйлчилгээг үзүүлнэ.</p>
 
                         <div class="pt-50">
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#structure">БҮТЭЦ</a>
-                            <a href="#" class="btn btn-warning">БРОШУР</a>
-                            <a href="#" class="btn btn-warning">УДИРДАХ ЗӨВЛӨЛ</a>
-
+                            <a class="btn btn-warning" href="assets/images/mbbtb_structure.png" data-rel="lightcase:myCollection">БҮТЭЦ</a>
+                            <a class="btn btn-warning" href="assets/images/brochure1.jpg" data-rel="lightcase:brochure" >БРОШУР</a>
+                            <a href="assets/images/brochure2.jpg" data-rel="lightcase:brochure"></a>
+                            <a href="assets/images/uz.png" data-rel="lightcase:uz" class="btn btn-warning">УДИРДАХ ЗӨВЛӨЛ</a>
                         </div>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="structure" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel"> Баталгаажуулалтын байгууллагын бүтэц </h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                               <img src="assets/images/structure.jpg">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                            
                     </div>
                 </div>
-                
             </div>
         </section>
 
@@ -56,16 +33,16 @@
         <section class="gray-bg">
             <div class="container text-center pt-50 pb-50">
                 <div class="row">
-                    <div class="col-4 mx-auto">
+                    <div class="col-lg-4 mx-auto">
                         <h4 class="text-black">Хөтөлбөрийн зорилго</h4>
                         <p>а. Бүтээмж дээшлүүлэх шийдэл, сайжруулалтын төсөл хэрэгжүүлэх чиглэлээр мэргэшсэн хүний чадамжийг баталгаажуулах</p>
                         <p>б. Сургалтын хөтөлбөр, зохицуулалт, чиглүүлэг, зөвлөх үйлчилгээ үзүүлэх замаар  бүтээмжийг сайжруулах асуудлыг шийдвэрлэх мэргэшлийн мэдлэг/ мэдээллийг үйлдвэр, байгууллагад дамжуулан түгээх</p>
                     </div>
-                    <div class="col-4 mx-auto">
+                    <div class="col-lg-4  mx-auto">
                         <h4 class="text-black">Ач холбогдол</h4>
                         <p>Шаардлагыг хангасан хувь хүнд бүтээмжийн мэргэжилтний түвшин, шатлалын дагуу мэргэшсэн түвшинг хүлээн зөвшөөрч “Баталгаажсан бүтээмжийн мэргэжилтэн”-ий гэрчилгээ олгох ба мэргэжлийн болон бизнесийн хэтийн төлөвийг сайжруулах, бусад бүтээмжийн мэргэжилтнүүдтэй холбоо тогтоох, АББ-ын олон улсын төсөлд хамрагдах боломж зэрэг давуу талтай. Түүнчлэн баталгаажсан БМ нь ҮБТ-ийн ижил төстэй итгэмжлэлийн тогтолцоотой гишүүн орнуудад хүлээн зөвшөөрөгдөх болно. Баталгаажсан БМ нь МБТББ-ийн  лавлагаа болон АББ портал дээр дэлхийн түвшний бүтээмжийн мэргэжилтнээр бүртгүүлэх болно.</p>
                     </div>
-                    <div class="col-4 mx-auto">
+                    <div class="col-lg-4  mx-auto">
                         <h4 class="text-black text-left">Баталгаажуулалтын төрөл</h4>
                         <p>МБТББ-ын хариуцаж хэрэгжүүлдэг Бүтээмжийн мэргэжилтний баталгаажуулах тогтолцооны гурван түвшин байна. Үүнд:</p>
                             <p>1.  АББ-ын баталгаажсан бүтээмжийн мэргэжилтэн</p>
@@ -73,7 +50,6 @@
                             <p>3.  АББ-ын баталгаажсан мастер бүтээмжийн мэргэжилтэн</p>
                     </div>
                 </div>
-                
             </div>
         </section>
 
@@ -85,13 +61,7 @@
                             <div class="banner-btn">
 								<div class="video-btn">
 									<a href="https://www.youtube.com/embed/JZGvyoEK6sw" data-rel="lightcase" title="Watch Now" class="video-icon">
-										<img src="assets/images/play.png" alt="video">
-										<div class="wave-wrapper">
-							              	<div class="wave-pulse wave-pulse-1"></div>
-							              	<div class="wave-pulse wave-pulse-2"></div>
-							              	<div class="wave-pulse wave-pulse-3"></div>
-							              	<div class="wave-pulse wave-pulse-4"></div>
-							            </div>
+										<img src="assets/images/play.png" alt="video">									
 									</a>
                                 </div>
 							</div>
@@ -113,9 +83,9 @@
                                     </ul>
                                 </p>
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-success btn-xl mt-10 ">ӨРГӨДӨЛ ГАРГАХ</a>
-                                    <a href="#" class="btn btn-success btn-xl mt-10 ">ГАРЫН АВЛАГА</a>
                                     <a href="#" class="btn btn-success btn-xl mt-10 ">ТӨЛӨВЛӨГӨӨ</a>
+                                    <a href="mbbtb_brochure" class="btn btn-success btn-xl mt-10" target="new">ГАРЫН АВЛАГА</a>
+                                    <a href="application" class="btn btn-success btn-xl mt-10">ӨРГӨДӨЛ ГАРГАХ</a>
                                 </div>
 
                             </div>
@@ -337,7 +307,7 @@
                                 <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis odio ac felis aliquam tincidunt. Praesent non lacus a tortor consequat aliquam at et libero. Suspendisse congue, purus at congue sagittis, tellus nibh elementum mauris, nec tincidunt tortor sapien id nibh. 
                                 </p>
-                                <a href="#" class="btn btn-success btn-xl mt-10">Сертификат татах</a>
+                                <a href="certificate" class="btn btn-success btn-xl mt-10">Сертификат татах</a>
 
                             </div>
                         </div>
@@ -349,8 +319,8 @@
 
 
 
-          <!-- Start About Greenforest Section -->
-          <section class="bg-green pt-50">
+        <!-- Start About Greenforest Section -->
+        <section class="bg-green pt-50">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">

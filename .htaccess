@@ -5,7 +5,14 @@ RewriteEngine On
 RewriteRule ^home?$ index.php
 RewriteRule ^index?$ index.php
 RewriteRule ^mbtbb?$ mbtbb.php
-
+RewriteRule ^mbbtb_brochure?$ mbbtb_brochure.php
+RewriteRule ^application?$ application.php
+RewriteRule ^application_bm?$ application_bm.php
+RewriteRule ^application_bam?$ application_bam.php
+RewriteRule ^application_bmm?$ application_bmm.php
+RewriteRule ^application_re?$ application_re.php
+RewriteRule ^certificate?$ certificate.php
+RewriteRule ^certificate_redeem?$ certificate_redeem.php
 ErrorDocument 404 underconstruction
 
 RewriteRule ^faqs?$ faqs.php
