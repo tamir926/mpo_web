@@ -20,6 +20,7 @@ RewriteRule ^login?$ login.php
 RewriteRule ^logining?$ views/logining.php
 RewriteRule ^logout?$ views/logout.php
 RewriteRule ^register?$ register.php
+RewriteRule ^registering?$ registering.php
 
 
 RewriteRule ^about?$ about.php

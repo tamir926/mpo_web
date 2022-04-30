@@ -60,7 +60,7 @@
                             <h4 class="fw-100">Хэрхэн баталгаажуулалтын мэргэжилтэн болох вэ?</h4>
                             <div class="banner-btn">
 								<div class="video-btn">
-									<a href="https://www.youtube.com/embed/JZGvyoEK6sw" data-rel="lightcase" title="Watch Now" class="video-icon">
+									<a href="https://www.youtube.com/embed/P7egbt4gYKw" data-rel="lightcase" title="Watch Now" class="video-icon">
 										<img src="assets/images/play.png" alt="video">									
 									</a>
                                 </div>
@@ -83,7 +83,7 @@
                                     </ul>
                                 </p>
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-success btn-xl mt-10 ">ТӨЛӨВЛӨГӨӨ</a>
+                                    <a href="assets/images/roadmap.jpg" data-rel="lightcase:roadmap" class="btn btn-success btn-xl mt-10 ">ТӨЛӨВЛӨГӨӨ</a>
                                     <a href="mbbtb_brochure" class="btn btn-success btn-xl mt-10" target="new">ГАРЫН АВЛАГА</a>
                                     <a href="application" class="btn btn-success btn-xl mt-10">ӨРГӨДӨЛ ГАРГАХ</a>
                                 </div>

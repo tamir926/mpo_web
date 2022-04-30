@@ -34,32 +34,21 @@
                                             <td>
                                                 <td>
                                                     <?=(file_exists($thumb))?'<img src="'.$thumb.'">':'';?>
-                                                    <button class="btn btn-success btn-xl mt-10" data-toggle="modal" data-target="#payment">Серитификат авах</button>
+                                                    <button class="btn btn-success btn-xl mt-10" 
+                                                    onclick="Swal.fire({
+                                                    title: 'Qpay төлбөр',
+                                                    text: 'Төлбөр төлөгдсөнөөр сертификат татагдах болно.',
+                                                    imageUrl: 'assets/images/qpay.png',
+                                                    imageWidth: 300,
+                                                    imageHeight: 300,
+                                                    imageAlt: 'Qpay',
+                                                    })">Серитификат авах</button>
                                                 </td>
                                             </td>
                                         </tr>
                                     </table>
 
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="payment" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Серитификат төлбөр төлөх</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                ...
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Шалгах</button>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        </div>
+                                    
 
                                     <?
                                 }
@@ -74,32 +63,7 @@
             </section>
         </div>
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Launch demo йыбйыбыйбый
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-
+       
 
 
 
@@ -139,7 +103,7 @@
     <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
     <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
     <script type="text/javascript" src="assets/js/custom.map.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="assets/js/custom.js"></script>
 
 
