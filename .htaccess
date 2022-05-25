@@ -16,6 +16,8 @@ RewriteRule ^certificate_redeem?$ certificate_redeem.php
 ErrorDocument 404 underconstruction
 
 RewriteRule ^faqs?$ faqs.php
+RewriteRule ^contact?$ contact.php
+RewriteRule ^contacting?$ contacting.php
 RewriteRule ^login?$ login.php
 RewriteRule ^logining?$ views/logining.php
 RewriteRule ^logout?$ views/logout.php

@@ -10,10 +10,12 @@
                                   <h5>Бидний тухай</h5>
                                   <ul class="footer-ul">
                                       <li><a href="#">Танилцуулга</a></li>
-                                      <li><a href="#">Чиглэл</a></li>
                                       <li><a href="#">Байгууллагын бүтэц</a></li>
                                       <li><a href="#">Түүхэн замнал</a></li>
                                       <li><a href="#">Мэндчилгээ</a></li>
+                                      <li><a href="faqs">Асуулт хариулт</a></li>
+                                      <li><a href="contact">Холбоо барих</a></li>
+
                                   </ul>
                                 </div>
                                 

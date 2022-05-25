@@ -117,6 +117,7 @@
                                                 
 
                                                 <a href="slider?action=detail&id=<?=$slider_id;?>" class="font-weight-bold">Дэлгэрэнгүй</a>
+                                                <a href="slider?action=edit&id=<?=$slider_id;?>" class="font-weight-bold text-success">Засах</a>
                                             </div>
                                         </div>
                                     </div>
@@ -151,9 +152,9 @@
                                         <!-- Blog -->
                                         <div class="col-12">
                                             <div class="card">
-                                                <img src="../<?=$slider_image;?>" class="img-fluid card-img-top" alt="<?=$slider_name;?>" />
+                                                <img src="../<?=$slider_image;?>" class="img-fluid card-img-top" alt="<?=$slider_title;?>" />
                                                 <div class="card-body">
-                                                    <h4 class="card-title"><?=$slider_name;?></h4>
+                                                    <h4 class="card-title"><?=$slider_title;?></h4>
                                                     <div class="media">
                                                         <div class="avatar mr-50">
                                                             <img src="../<?=$admin_avatar;?>" alt="Avatar" width="24" height="24" />
@@ -271,6 +272,8 @@
                                 </div>
                             </form>
                         </section>
+                        <a class="btn btn-danger waves-effect waves-float waves-light mt-1" href="slider?action=delete&id=<?=$slider_id;?>">Устгах</a>
+
                     <?
                     }
                     else header("location:slider?action=grid");
@@ -297,8 +300,12 @@
                                 $target_file = $target_dir."/".@date("his").rand(0,1000). basename($_FILES["image"]["name"]);
                                 move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
                                 $target_file= substr($target_file,3);
+                                $sql = "SELECT image FROM slider WHERE slider_id='$slider_id'";
+                                $result = mysqli_query($conn,$sql);
+                                $slider = mysqli_fetch_array($result);
+                                $old_image = $slider["image"];
+                                if (file_exists('../'.$old_image)) unlink('../'.$old_image);
                                 $sql = "UPDATE slider SET image='$target_file' WHERE slider_id='$slider_id'";
-
                                 mysqli_query($conn,$sql);
         
                             }
@@ -442,6 +449,52 @@
                     
                 }
                 ?>
+
+                
+                <?
+                if ($action=="delete")
+                {
+                    $slider_id = $_GET["id"];
+                    $sql = "SELECT *FROM slider WHERE slider_id='$slider_id'";
+                    $result = mysqli_query($conn,$sql);
+                    if (mysqli_num_rows($result)==1)
+                    {
+                        $data = mysqli_fetch_array($result);
+                        $slider_title = $data["title"];
+                        $slider_description = $data["description"];
+                        $slider_link = $data["link"];
+                        $slider_image = $data["image"];
+
+                        $sql = "DELETE FROM slider WHERE slider_id='$slider_id'";
+                        if (mysqli_query($conn,$sql))
+                        {
+                            if (file_exists('../'.$slider_image)) unlink('../'.$slider_image);
+                            ?>
+                            <div class="alert alert-success" role="alert">
+                                <div class="alert-body">
+                                   Амжилттай устгалаа
+                                </div>
+                            </div>
+                            <?
+                        }
+                        else 
+                        {
+                            ?>
+                            <div class="alert alert-danger" role="alert">
+                                <div class="alert-body">
+                                   Алдаа гарлаа. <?=mysqli_error($conn);?>
+                                </div>
+                            </div>
+                            <?
+                        }
+                        ?>
+                        <a class="btn btn-primary" href="slider?action=grid">Бүх зураг</a>
+                        <?
+                    }
+                    else header("location:slider?action=grid");
+                }
+                ?>
+
 
             </div>
         </div>

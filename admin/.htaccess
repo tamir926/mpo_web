@@ -29,5 +29,7 @@ RewriteRule ^persons?$ persons.php
 RewriteRule ^podcasts?$ podcasts.php
 RewriteRule ^reports?$ reports.php
 
+RewriteRule ^feedback?$ feedback.php
+
 
 

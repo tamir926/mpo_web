@@ -4,9 +4,9 @@ ob_start();
 
 $dbhost = 'localhost';
 
-$dbuser = 'townmn_m';
-$dbpass = '2xolX15GP#86';
-$dbname = 'townmn_m';
+$dbuser = 'mpoorgmn_new';
+$dbpass = 'mpoorgmn_new';
+$dbname = 'mpoorgmn_new';
 
 $dbuser = 'root';
 $dbpass = 'sw01b116';

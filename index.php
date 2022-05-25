@@ -11,77 +11,37 @@
             <div class="slider-option">
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <!-- <div class="carousel-item active" data-bs-interval="10000">
-                            <div class="slider-item">
-                                <img src="assets/images/slider1.webp" alt="bg-slider-2">
-                                <div class="slider-content-area">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <div class="slider-content">
-                                                    <h3>welcome to green forest</h3>
-                                                    <h2>for solar energy</h2>
-                                                    <p>save the planet using renewable energy</p>
-                                                    <div class="slider-btn">
-                                                        <a href="#" class="btn btn-default">join now</a>
-                                                        <a href="donate.html" class="btn btn-default">donate now</a>
+                        <?
+                        $sql = "SELECT *FROM slider";
+                        $result = mysqli_query($conn,$sql);
+                        while ($slider = mysqli_fetch_array($result))
+                        {
+                            ?>
+                            <div class="carousel-item active" data-bs-interval="2000">
+                                <div class="slider-item">
+                                    <img src="<?=$slider["image"];?>" alt="<?=$slider["title"];?>">
+                                    <div class="slider-content-area">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-8">
+                                                    <div class="slider-content">
+                                                        <h2><?=$slider["title"];?></h2>
+                                                        <p><?=$slider["description"];?></p>
+                                                        <div class="slider-btn">
+                                                            <a href="<?=$slider["link"];?>" class="btn btn-default">Дэлгэрэнгүй</a>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-4"></div>
                                             </div>
-                                            <div class="col-md-4"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
-                        <div class="carousel-item active" data-bs-interval="2000">
-                            <div class="slider-item">
-                                <img src="assets/images/slider1.webp" alt="bg-slider-2">
-                                <div class="slider-content-area">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <div class="slider-content">
-                                                    <!-- <h3>Donate & Help</h3> -->
-                                                    <h2>Бүтээмжээр <br> Төгөлдөршилд<br>хөтөлнө</h2>
-                                                    <p>Өөрөө өөрийгөө тэтгэх чадвартай нийгэм, <br>
-                                                    эдийн засгийг хамтдаа хөгжүүлье</p>
-                                                    <div class="slider-btn">
-                                                        <a href="#" class="btn btn-default">Дэлгэрэнгүй</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-                        <!-- <div class="carousel-item">
-                            <div class="slider-item">
-                                <img src="assets/images/slider1.webp" alt="bg-slider-2">
-                                <div class="slider-content-area">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <div class="slider-content">
-                                                    <h3>MPO</h3>
-                                                    <h2>Монголын бүтээмжийн төв</h2>
-                                                    <p>Вебсайт</p>
-                                                    <div class="slider-btn">
-                                                        <a href="#" class="btn btn-default">join now</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                            <?
+                            
+                        }
+                        ?>
                     <button class="left carousel-control carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>

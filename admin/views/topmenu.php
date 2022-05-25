@@ -24,6 +24,7 @@
                                             <li data-menu="">
                                                 <a class="dropdown-item d-flex align-items-center" href="news?action=category" data-toggle="dropdown" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Мэдээний ангилал</span></a>
                                             </li>
+                                            
                                         </ul>
 
                                     </li>
@@ -42,6 +43,7 @@
 
                             <li><a class="dropdown-item d-flex align-items-center" href="faqs" data-toggle="dropdown" ><i data-feather="help-circle"></i><span >Түгээмэл асуулт</span></a></li>
                             <li><a class="dropdown-item d-flex align-items-center" href="pages" data-toggle="dropdown" ><i data-feather="circle"></i><span >Хуудсууд</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="slider" data-toggle="dropdown" ><i data-feather="image"></i><span >Солигддог зураг</span></a></li>
 
                         </ul>
                     </li>

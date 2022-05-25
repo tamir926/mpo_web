@@ -13,7 +13,7 @@ $dbname = 'townmn_m';
 
 
 $dbuser = 'root';
-$dbpass = '';
+$dbpass = 'sw01b116';
 $dbname = 'mpo';
 
 
