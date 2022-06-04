@@ -29,106 +29,37 @@
                         </div>
                         <!-- .section-header -->
                         <div class="row">
-                            <div class="col-lg-3 col-sm-6 col-12">
-                                <div class="volunteers-items">
-                                    <div class="volunteers-img">
-                                        <img src="assets/images/member.jpg" alt="volunteers-img-1" class="img-responsive" />
+                            <?
+                            $sql = "SELECT *FROM experts ORDER BY name";
+                            $result = mysqli_query($conn,$sql);
+                            while ($experts = mysqli_fetch_array($result))
+                            {
+                                ?>
+                                <div class="col-lg-3 col-sm-6 col-12">
+                                    <div class="volunteers-items">
+                                        <div class="volunteers-img">
+                                            <img src="<?=$experts["avatar"];?>" alt="<?=$experts["name"];?>" class="img-responsive" />
+                                        </div>
+                                        <div class="volunteers-content">
+                                            <h4><a href="#"><?=$experts["name"];?></a></h4>
+                                            <p>Эксперт</p>
+                                        </div>
+                                        <!-- .volunteers-content -->
+                                        <div class="volunteers-social-icon">
+                                            <ul class="social-icon">
+                                                <li><a href="tel:<?=$experts["tel"];?>"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+                                                <li><a href="mailto:<?=$experts["email"];?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- .volunteers-social-icon -->
                                     </div>
-                                    <!-- .volunteers-img -->
-                                    <div class="volunteers-content">
-                                        <h4><a href="#">Эрдэнэчимэг</a></h4>
-                                        <p>Эксперт</p>
-                                    </div>
-                                    <!-- .volunteers-content -->
-                                    <div class="volunteers-social-icon">
-                                        <ul class="social-icon">
-                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- .volunteers-social-icon -->
+                                    <!-- .volunteers-items -->
                                 </div>
-                                <!-- .volunteers-items -->
-                            </div>
-                            <!-- .col-lg-3 -->
-                            <div class="col-lg-3 col-sm-6 col-12">
-                                <div class="volunteers-items">
-                                    <div class="volunteers-img">
-                                        <img src="assets/images/member.jpg" alt="volunteers-img-1" class="img-responsive" />
-                                    </div>
-                                    <!-- .volunteers-img -->
-                                    <div class="volunteers-content">
-                                        <h4><a href="#">Эрдэнэчимэг</a></h4>
-                                        <p>Эксперт</p>
-                                    </div>
-                                    <!-- .volunteers-content -->
-                                    <div class="volunteers-social-icon">
-                                        <ul class="social-icon">
-                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- .volunteers-social-icon -->
-                                </div>
-                                <!-- .volunteers-items -->
-                            </div>
-                            <!-- .col-lg-3 -->
-                            <div class="col-lg-3 col-sm-6 col-12">
-                                <div class="volunteers-items">
-                                    <div class="volunteers-img">
-                                        <img src="assets/images/member.jpg" alt="volunteers-img-3" class="img-responsive" />
-                                    </div>
-                                    <!-- .volunteers-img -->
-                                    <div class="volunteers-content">
-                                        <h4><a href="#">Эрдэнэчимэг</a></h4>
-                                        <p>Эксперт</p>
-                                    </div>
-                                    <!-- .volunteers-content -->
-                                    <div class="volunteers-social-icon">
-                                        <ul class="social-icon">
-                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- .volunteers-social-icon -->
-                                </div>
-                                <!-- .volunteers-items -->
-                            </div>
-                            <!-- .col-lg-3 -->
-                            <div class="col-lg-3 col-sm-6 col-12">
-                                <div class="volunteers-items">
-                                    <div class="volunteers-img">
-                                        <img src="assets/images/member.jpg" alt="volunteers-img-1" class="img-responsive" />
-                                    </div>
-                                    <!-- .volunteers-img -->
-                                    <div class="volunteers-content">
-                                        <h4><a href="#">Эрдэнэчимэг</a></h4>
-                                        <p>Эксперт</p>
-                                    </div>
-                                    <!-- .volunteers-content -->
-                                    <div class="volunteers-social-icon">
-                                        <ul class="social-icon">
-                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- .volunteers-social-icon -->
-                                </div>
-                                <!-- .volunteers-items -->
-                            </div>
-                            <!-- .col-lg-3 -->
+
+                                <?
+                            }
+                            ?>
+                        
                         </div>
                         <!-- .row -->
                     </div>

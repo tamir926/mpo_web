@@ -1,6 +1,7 @@
 <? require_once("config.php");?>
 <? require_once("views/helper.php");?>
 <? require_once("views/init.php");?>
+
 <body>
     <div class="box-layout">       
         <? require_once("views/header.php");?>
@@ -9,9 +10,16 @@
             <div class="container d-flex justify-content-between">
                 <h3 class="text-black">Сургалт</h3>
                 <ul class="submenu-ul">
-                    <li><a href="training">Анхан шат</a></li>
-                    <li><a href="training">Бүтээмж</a></li>
-                    <li><a href="training">Гүнзгийрүүлсэн</a></li>
+                    <?
+                    $sql = "SELECT *FROM courses_category";
+                    $result = mysqli_query($conn,$sql);
+                    while ($data = mysqli_fetch_array($result))
+                    {
+                        ?>
+                            <li><a href="training?category=<?=$data["id"];?>"><?=$data["name"];?></a></li>
+                        <?
+                    }
+                    ?>                    
                     <li><a href="experts">Экспертүүд</a></li>
                 </ul>
             </div>
@@ -21,19 +29,18 @@
             <section>
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-8">
-                                <h1>Анхан шат</h1>
-                                <p>
-                                Өөрөө өөрийгөө тэтгэх чадамжтэй нийгэм, эдийн засгийг хамтдаа хөгжүүлье 
-                                </p>
-                                <a href="#" class="btn btn-success btn-xl mt-10">Дэлгэрэнгүй</a>
+                            <div class="col-lg-12">
+                                <?
+                                if (isset($_GET["category"]))
+                                $category_id = $_GET["category"];
+                                else $category_id = 1;
 
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="wrapper-img">
-                                    <img src="assets/images/training_beginner.webp" alt="upcoming-events-img-3" class="img-responsive"></a>
-                                </div>
+                                $sql = "SELECT *FROM courses_category WHERE id='$category_id'";
+                                $result = mysqli_query($conn,$sql);
+                                $data = mysqli_fetch_array($result);
+                                $category_name = $data["name"];
+                                ?>
+                                <h1><?=$category_name;?></h1>
                             </div>
                         </div>
                     
@@ -50,280 +57,55 @@
                 <div class="row">
                     <div class="upcoming-events">
                         <div class="row">
-                            <div class="col-lg-4">
-                                <div class="event-items">
-                                    <div class="event-img wrapper-img">
-                                        <a href="#"><img src="assets/images/news1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <div class="date-box">
-                                            <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> 76ц / <i class="fa fa-user" aria-hidden="true"></i> 25 хүн</h5>
+                            <?
+                            $sql = "SELECT *FROM courses WHERE category='$category_id'";
+                            $result = mysqli_query($conn,$sql);
+                            while ($courses = mysqli_fetch_array($result))
+                            {
+                                ?>
+                                <div class="col-lg-4">
+                                    <div class="event<?=($category_id>1)?$category_id:'';?>-items">
+                                        <div class="event<?=($category_id>1)?$category_id:'';?>-img wrapper-img">
+                                            <a href="#"><img src="<?=$courses["image"];?>" alt="upcoming-events-img-1" class="img-responsive" /></a>
+                                            <div class="date-box">
+                                                <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> <?=$courses["duration"];?>ц / <i class="fa fa-user" aria-hidden="true"></i> <?=$courses["participants"];?> хүн</h5>
+                                            </div>
                                         </div>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                        <p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event-items">
-                                    <div class="event-img wrapper-img">
-                                        <a href="#"><img src="assets/images/news1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <div class="date-box">
-                                            <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> 76ц / <i class="fa fa-user" aria-hidden="true"></i> 25 хүн</h5>
+                                        <div class="events-content">
+                                            <h3><a href="#" data-bs-toggle="modal" data-bs-target="#modal_id_<?=$courses["id"];?>"><?=$courses["title"];?></a></h3>
+                                            <p><?=$courses["brief"];?></p>
+                                            <a href="#" class="btn btn-success btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#modal_id_<?=$courses["id"];?>">Дэлгэрэнгүй</a>
                                         </div>
-                                        <!-- .date-box -->
                                     </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                        <p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event-items">
-                                    <div class="event-img wrapper-img">
-                                        <a href="#"><img src="assets/images/news1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <div class="date-box">
-                                            <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> 76ц / <i class="fa fa-user" aria-hidden="true"></i> 25 хүн</h5>
+                                    
+                                    <div class="modal fade" id="modal_id_<?=$courses["id"];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel"><?=$courses["title"];?></h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <?=$courses["content"];?>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                            </div>
                                         </div>
-                                        <!-- .date-box -->
                                     </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                        <p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
 
-                            <div class="col-lg-4">
-                                <div class="event-items">
-                                    <div class="event-img wrapper-img">
-                                        <a href="#"><img src="assets/images/news1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <div class="date-box">
-                                            <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> 76ц / <i class="fa fa-user" aria-hidden="true"></i> 25 хүн</h5>
-                                        </div>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                        <p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>
-                                    </div>
-                                    <!-- .events-content -->
                                 </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event-items">
-                                    <div class="event-img wrapper-img">
-                                        <a href="#"><img src="assets/images/news1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <div class="date-box">
-                                            <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> 76ц / <i class="fa fa-user" aria-hidden="true"></i> 25 хүн</h5>
-                                        </div>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                        <p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event-items">
-                                    <div class="event-img wrapper-img">
-                                        <a href="#"><img src="assets/images/news1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <div class="date-box">
-                                            <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> 76ц / <i class="fa fa-user" aria-hidden="true"></i> 25 хүн</h5>
-                                        </div>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                        <p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            
+                                <?
+                            }
+                            ?>                        
                         </div>
-                        <!-- .row -->
-
 
                     </div>
-                    <!-- .upcoming-events -->
                 </div>
-                <!-- .row -->
             </div>
-            <!-- .container -->
         </section>
-        <!-- End Upcoming Events Section -->
 
-        <hr>
-
-        <section class="bg-upcoming-events2">
-            <div class="container">
-                <div class="row">
-                    <div class="upcoming-events">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="event2-items">
-                                    <div class="event2-img wrapper-img">
-                                        <a href="#"><img src="assets/images/news1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <div class="date-box">
-                                            <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> 76ц / <i class="fa fa-user" aria-hidden="true"></i> 25 хүн</h5>
-                                        </div>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                        <p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event2-items">
-                                    <div class="event2-img wrapper-img">
-                                        <a href="#"><img src="assets/images/news1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <div class="date-box">
-                                            <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> 76ц / <i class="fa fa-user" aria-hidden="true"></i> 25 хүн</h5>
-                                        </div>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                        <p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event2-items">
-                                    <div class="event2-img wrapper-img">
-                                        <a href="#"><img src="assets/images/news1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <div class="date-box">
-                                            <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> 76ц / <i class="fa fa-user" aria-hidden="true"></i> 25 хүн</h5>
-                                        </div>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                        <p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event2-items">
-                                    <div class="event2-img wrapper-img">
-                                        <a href="#"><img src="assets/images/news1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <div class="date-box">
-                                            <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> 76ц / <i class="fa fa-user" aria-hidden="true"></i> 25 хүн</h5>
-                                        </div>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                        <p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event2-items">
-                                    <div class="event2-img wrapper-img">
-                                        <a href="#"><img src="assets/images/news1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <div class="date-box">
-                                            <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> 76ц / <i class="fa fa-user" aria-hidden="true"></i> 25 хүн</h5>
-                                        </div>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                        <p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            <div class="col-lg-4">
-                                <div class="event2-items">
-                                    <div class="event2-img wrapper-img">
-                                        <a href="#"><img src="assets/images/news1.jpg" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                        <div class="date-box">
-                                            <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> 76ц / <i class="fa fa-user" aria-hidden="true"></i> 25 хүн</h5>
-                                        </div>
-                                        <!-- .date-box -->
-                                    </div>
-                                    <!-- .event-img -->
-                                    <div class="events-content">
-                                        <h3><a href="#">Бүтээмжийн ойлголт, зарчмууд</a></h3>
-                                        <p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>
-                                    </div>
-                                    <!-- .events-content -->
-                                </div>
-                                <!-- .events-items -->
-                            </div>
-                            <!-- .col-lg-4 -->
-
-                            
-                        </div>
-                        <!-- .row -->
-
-                    </div>
-                    <!-- .upcoming-events -->
-                </div>
-                <!-- .row -->
-            </div>
-            <!-- .container -->
-        </section>
-                
-        <hr>
 
 
 
@@ -361,7 +143,6 @@
     <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
     <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
     <script type="text/javascript" src="assets/js/custom.map.js"></script>
-
     <script type="text/javascript" src="assets/js/custom.js"></script>
 
 

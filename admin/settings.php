@@ -28,7 +28,7 @@
 <!-- BEGIN: Body-->
 
 <body class="horizontal-layout horizontal-menu  navbar-floating footer-static  " data-open="hover" data-menu="horizontal-menu" data-col="">
-    <? if ($_GET["action"]) $action=$_GET["action"]; else $action="list"; 
+    <? if (isset($_GET["action"])) $action=$_GET["action"]; else $action="list"; 
     ?>
     <? require_once("views/header.php");?>
 

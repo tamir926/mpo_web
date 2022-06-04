@@ -83,3 +83,7 @@ RewriteRule ^assessment_5c?$ assessment_5c.php
 RewriteRule ^assessment_tb?$ assessment_tb.php
 RewriteRule ^assessment_jdu?$ assessment_jdu.php
 RewriteRule ^assessment_bt?$ assessment_bt.php
+
+
+RewriteRule ^journals?$ journals.php
+RewriteRule ^library?$ library.php

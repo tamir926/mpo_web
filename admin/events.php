@@ -592,6 +592,7 @@
 
 
 
+                
                 <? 
                 if ($action=="category")
                 {
@@ -604,7 +605,6 @@
                                         <thead>
                                             <tr>
                                                 <th>№</th>
-                                                <th>Зураг</th>
                                                 <th>Нэр</th>
                                                 <th>Үйлдэл</th>
                                             </tr>
@@ -619,7 +619,6 @@
                                                     ?>
                                                     <tr>
                                                         <td><?=++$count;?></td>
-                                                        <td><img src="../<?=$data["image"];?>" width="40"></td>
                                                         <td><?=$data["name"];?></td>
                                                         <td>
                                                             <a class="btn btn-success" href="events?action=category_edit&id=<?=$data["id"];?>">Засах</a>
@@ -648,15 +647,13 @@
                     {
                         $data = mysqli_fetch_array($result);
                         $name = $data["name"];
-                        $image = $data["image"];
-                        $images =explode(',', $data["images"]);
                         $dd = $data["dd"];
                     }
                     ?>
                     <section id="input-group-basic">
                         <form action="events?action=category_editing" method="post" enctype="multipart/form-data">
                             <div class="row">
-
+                            
                                 <!-- Basic -->
                                 <div class="col-md-6">
                                     <div class="card">
@@ -667,27 +664,11 @@
                                             
                                                 <input type="hidden" name="events_category_id" value="<?=$events_category_id;?>">
                                                 <div class="input-group mb-2">
-                                                    <?
-                                                    if ($image<>"")
-                                                    {
-                                                        ?>
-                                                        <img src="../<?=$image;?>" style="max-width:100%;">
-                                                        <?
-                                                        
-                                                    }
-                                                    ?>
-                                                    <input type="file" class="form-control" name="image"/>
-                                                </div>
-
-                                                <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="help-circle"></i></span>
                                                     </div>
                                                     <input type="text" class="form-control" name="name" placeholder="Ангиллын нэр" required  value="<?=$name;?>"/>
                                                 </div>
-
-
-
 
 
                                                 <div class="input-group mb-2">
@@ -701,47 +682,15 @@
 
                                     </div>
                                 </div>
-                                
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4 class="card-title">Нэмэлт зураг</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            
-                                                <div class="input-group mb-2">
-                                                    <?
-                                                    foreach($images as $image)
-                                                    {
-                                                        ?>
-                                                        <img src="../<?=$image;?>" style="max-width:100%;">
-                                                        <br>
-                                                        <?
-                                                        
-                                                    }
-                                                    ?>
-                                                    <input type="file" class="form-control" name="files[]" multiple/>
-                                                </div>
 
-
-
-
-
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                                
                             </div>
 
                             <input type="submit" class="btn btn-success waves-effect waves-float waves-light" value="Засварлах">
 
                         </form>
                     </section>
-                    <a class="btn btn-danger waves-effect waves-float waves-light mt-1" href="events?id=<?=$events_category_id;?>">Устгах</a>
+                    <a class="btn btn-danger waves-effect waves-float waves-light" href="events?action=delete&id=<?=$events_id;?>">Устгах</a>
                     <?
-                    
                 }
                 ?>
 
@@ -753,59 +702,9 @@
                     $name = $_POST["name"];
                     $dd = $_POST["dd"];
                   
-                    if(isset($_FILES['image']) && $_FILES['image']['name']!="")
-                    {
-                        if ($_FILES['image']['name']!="")
-                            {                        
-                                @$folder = date("Ym");
-                                if(!file_exists('../uploads/'.$folder))
-                                mkdir ( '../uploads/'.$folder);
-                                $target_dir = '../uploads/'.$folder;
-                                $target_file = $target_dir."/".@date("his").rand(0,1000). basename($_FILES["image"]["name"]);
-                                move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
-                                $image= substr($target_file,3);     
-                                $sql = "UPDATE events_category SET image='$image' WHERE id='$events_category_id'";
-                                mysqli_query($conn,$sql);            
-                            }
-                    }
 
-                    extract($_POST);
-                    @$folder = date("Ym");
-                    if(!file_exists('../uploads/'.$folder))
-                    mkdir ( '../uploads/'.$folder);
-                    $target_dir = '../uploads/'.$folder;
+                    $sql = "UPDATE events_category SET name='$name',dd='$dd' WHERE id='$events_category_id'";
 
-                    $error=array();
-                    $extension=array("jpeg","jpg","png","gif","JPEG","JPG","PNG","GIF");
-                    $files = array();
-                    if (isset($_FILES["files"]))
-                    {
-                        foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name) {
-                        $file_name=$_FILES["files"]["name"][$key];
-                        $file_tmp=$_FILES["files"]["tmp_name"][$key];
-                        $ext=pathinfo($file_name,PATHINFO_EXTENSION);
-
-                        if(in_array($ext,$extension)) {
-                            $target_file = $target_dir."/".date("his").rand(1000,9999).".".$ext;
-                            if (move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],$target_file))
-                                {
-                                    array_push($files,substr($target_file,3));
-                                }
-                                else 
-                                {
-                                    array_push($error,"$file_name, upload error");
-                                }                            
-                           // }
-                        }
-                        else {
-                            array_push($error,"$file_name, ");
-                        }
-                    }
-                    }
-                    
-                    
-                    $sql = "UPDATE events_category SET name='$name',dd='$dd',images='".implode(',',$files)."' WHERE id='$events_category_id'";
-                    //echo $sql;
                     if (mysqli_query($conn,$sql))
                     {
                         ?>
@@ -849,11 +748,6 @@
                                             <h4 class="card-title">Үндсэн мэдээлэл</h4>
                                         </div>
                                         <div class="card-body">
-                                                <div class="input-group mb-2">                                                 
-                                                    <input type="file" class="form-control" name="image"/>
-                                                </div>
-
-
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="help-circle"></i></span>
@@ -875,22 +769,6 @@
 
                                     </div>
                                 </div>
-
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4 class="card-title">Нэмэлт зураг</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            
-                                            <div class="input-group mb-2">                                                  
-                                                <input type="file" class="form-control" name="files[]" multiple>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
                             </div>
 
                             <input type="submit" class="btn btn-success waves-effect waves-float waves-light" value="Үүсгэх">
@@ -907,57 +785,9 @@
                 {
                     $name = $_POST["name"];
                     $dd = $_POST["dd"];
-                    $image = "";
-                    if(isset($_FILES['image']) && $_FILES['image']['name']!="")
-                    {
-                        if ($_FILES['image']['name']!="")
-                            {                        
-                                @$folder = date("Ym");
-                                if(!file_exists('../uploads/'.$folder))
-                                mkdir ( '../uploads/'.$folder);
-                                $target_dir = '../uploads/'.$folder;
-                                $target_file = $target_dir."/".@date("his").rand(0,1000). basename($_FILES["image"]["name"]);
-                                move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
-                                $image= substr($target_file,3);     
-                            }
-                    }
+                   
 
-                    extract($_POST);
-                    @$folder = date("Ym");
-                    if(!file_exists('../uploads/'.$folder))
-                    mkdir ( '../uploads/'.$folder);
-                    $target_dir = '../uploads/'.$folder;
-
-                    $error=array();
-                    $extension=array("jpeg","jpg","png","gif","JPEG","JPG","PNG","GIF");
-                    $files = array();
-                    if (isset($_FILES["files"]))
-                    {
-                        foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name) {
-                        $file_name=$_FILES["files"]["name"][$key];
-                        $file_tmp=$_FILES["files"]["tmp_name"][$key];
-                        $ext=pathinfo($file_name,PATHINFO_EXTENSION);
-
-                        if(in_array($ext,$extension)) {
-                            $target_file = $target_dir."/".date("his").rand(1000,9999).".".$ext;
-                            if (move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],$target_file))
-                                {
-                                    array_push($files,substr($target_file,3));
-                                }
-                                else 
-                                {
-                                    array_push($error,"$file_name, upload error");
-                                }                            
-                           // }
-                        }
-                        else {
-                            array_push($error,"$file_name, ");
-                        }
-                    }
-                    }
-
-
-                    $sql = "INSERT INTO events_category (name,image,images,dd) VALUES ('$name','$image','".implode(',',$files)."','$dd')";
+                    $sql = "INSERT INTO events_category (name,dd) VALUES ('$name','$dd')";
 
                     if (mysqli_query($conn,$sql))
                     {
@@ -986,6 +816,7 @@
                     <?
                 }
                 ?>
+
 
 
                 

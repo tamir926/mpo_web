@@ -70,7 +70,7 @@
                                             <li><a href="events">Арга хэмжээ</a></li>
                                             <li><a href="knowledge">Мэдлэгийн сан</a></li>
                                             <li><a href="cases">Туршлага</a></li>
-                                            <li><a href="#">АББ</a></li>
+                                            <li><a href="https://www.apo-tokyo.org/" target="new">АББ</a></li>
                                         </ul>                                       
                                     </div>
                                 </div>

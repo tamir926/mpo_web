@@ -13,6 +13,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item d-flex align-items-center" href="podcasts" data-toggle="dropdown" data-i18n="Basic"><i data-feather="play"></i><span data-i18n="Basic">Подкаст</span></a></li>
                                     <li><a class="dropdown-item d-flex align-items-center" href="reports" data-toggle="dropdown" data-i18n="Basic"><i data-feather="play"></i><span data-i18n="Basic">Тайлан</span></a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center" href="magazine" data-toggle="dropdown" data-i18n="Basic"><i data-feather="book"></i><span data-i18n="Basic">Сэтгүүл</span></a></li>
                                     <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-toggle="dropdown" data-i18n="Cards"><i data-feather="credit-card"></i><span data-i18n="Мэдээ">Мэдээ</span></a>
                                         <ul class="dropdown-menu">
                                             <li data-menu="">
@@ -28,9 +29,21 @@
                                         </ul>
 
                                     </li>
-                                </ul>
+                                    <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-toggle="dropdown" data-i18n="Cards"><i data-feather="book"></i><span data-i18n="Мэдээ">Номын сан</span></a>
+                                        <ul class="dropdown-menu">
+                                            <li data-menu="">
+                                                <a class="dropdown-item d-flex align-items-center" href="books?action=list" data-toggle="dropdown" data-i18n="Advance"><i data-feather="book"></i><span data-i18n="Advance">Бүх ном</span></a>
+                                            </li>
+                                            <li data-menu="">
+                                                <a class="dropdown-item d-flex align-items-center" href="books?action=category" data-toggle="dropdown" data-i18n="Basic"><i data-feather="tag"></i><span data-i18n="Basic">Номын ангилал</span></a>
+                                            </li>
+                                            
+                                        </ul>
 
+                                    </li>
+                                </ul>
                             </li>
+
 
                             <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-toggle="dropdown" data-i18n="eCommerce"><i data-feather="shopping-cart"></i><span data-i18n="eCommerce">Арга хэмжээ</span></a>
                                 <ul class="dropdown-menu">
@@ -45,6 +58,14 @@
                             <li><a class="dropdown-item d-flex align-items-center" href="pages" data-toggle="dropdown" ><i data-feather="circle"></i><span >Хуудсууд</span></a></li>
                             <li><a class="dropdown-item d-flex align-items-center" href="slider" data-toggle="dropdown" ><i data-feather="image"></i><span >Солигддог зураг</span></a></li>
 
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-toggle="dropdown"><i data-feather="compass"></i><span data-i18n="Apps">E-бүтээмж</span></a>
+                        <ul class="dropdown-menu">                            
+                            <li><a class="dropdown-item d-flex align-items-center" href="experts" data-toggle="dropdown" ><i data-feather="users"></i><span >Экспертүүд</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="courses" data-toggle="dropdown" ><i data-feather="users"></i><span >Сургалт</span></a></li>
                         </ul>
                     </li>
 

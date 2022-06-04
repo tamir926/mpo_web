@@ -212,6 +212,7 @@
                         $slider_description = $data["description"];
                         $slider_link = $data["link"];
                         $slider_image = $data["image"];
+                        $slider_dd = $data["dd"];
 
                        
 
@@ -259,6 +260,13 @@
                                                     <input type="text" class="form-control" name="link" value="<?=$slider_link;?>" placeholder="Линк" />
                                                 </div>
 
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="hash"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="dd" placeholder="Жагсаалтын эрэмбэ" value="<?=$slider_dd;?>" />
+                                                </div>
+
                                             </div>
 
                                         </div>
@@ -288,6 +296,7 @@
                     $title = $_POST["title"];
                     $description = $_POST["description"];
                     $link = $_POST["link"];
+                    $dd = $_POST["dd"];
 
                     if(isset($_FILES['image']) && $_FILES['image']['name']!="")
                     {
@@ -311,7 +320,7 @@
                             }
                     }
 
-                    $sql = "UPDATE slider SET title='$title',description='$description' WHERE slider_id='$slider_id'";
+                    $sql = "UPDATE slider SET title='$title',description='$description',link='$link',dd='$dd' WHERE slider_id='$slider_id'";
 
 
                     if (mysqli_query($conn,$sql))
@@ -380,6 +389,13 @@
                                                     <input type="text" class="form-control" name="link" placeholder="Линк" />
                                                 </div>
 
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="hash"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="dd" placeholder="Жагсаалтын эрэмбэ" value="0" />
+                                                </div>
+
                                             </div>
 
                                         </div>
@@ -404,6 +420,7 @@
                     $title = $_POST["title"];
                     $description = $_POST["description"];
                     $link = $_POST["link"];
+                    $dd = $_POST["dd"];
 
                     if(isset($_FILES['image']) && $_FILES['image']['name']!="")
                     {
@@ -418,7 +435,7 @@
                                 $image= substr($target_file,3);        
                             }
                     }
-                    $sql = "INSERT INTO slider (title,description,link,image)  VALUES ('$title','$description','$link','$image')";
+                    $sql = "INSERT INTO slider (title,description,link,image,dd)  VALUES ('$title','$description','$link','$image','$dd')";
 
                     if (mysqli_query($conn,$sql))
                     {

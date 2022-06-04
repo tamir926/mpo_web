@@ -12,12 +12,13 @@
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <?
+                        $count =1;
                         $sql = "SELECT *FROM slider";
                         $result = mysqli_query($conn,$sql);
                         while ($slider = mysqli_fetch_array($result))
                         {
                             ?>
-                            <div class="carousel-item active" data-bs-interval="2000">
+                            <div class="carousel-item <?=($count==1)?'active':'';?>" data-bs-interval="2000">
                                 <div class="slider-item">
                                     <img src="<?=$slider["image"];?>" alt="<?=$slider["title"];?>">
                                     <div class="slider-content-area">
@@ -27,9 +28,17 @@
                                                     <div class="slider-content">
                                                         <h2><?=$slider["title"];?></h2>
                                                         <p><?=$slider["description"];?></p>
-                                                        <div class="slider-btn">
-                                                            <a href="<?=$slider["link"];?>" class="btn btn-default">Дэлгэрэнгүй</a>
-                                                        </div>
+                                                        <?
+                                                        if ($slider["link"]!='' && $slider["link"]!='#')
+                                                        {
+                                                            ?>
+                                                            <div class="slider-btn">
+                                                                <a href="<?=$slider["link"];?>" class="btn btn-default">Дэлгэрэнгүй</a>
+                                                            </div>
+                                                            <?
+                                                        }
+                                                        ?>
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4"></div>
@@ -39,6 +48,7 @@
                                 </div>
                             </div>
                             <?
+                            $count ++;
                             
                         }
                         ?>

@@ -10,11 +10,14 @@
                 <div class="row">
                     <div class="col-8 mx-auto text-justify">
                         <img src="assets/images/logos.jpg" class="mt-50">
-
+                        <?
+                        $sql = "SELECT *FROM pages WHERE page_id=1";
+                        $result = mysqli_query($conn,$sql);
+                        $page = mysqli_fetch_array($result);
+                        ?>
                         <!-- <h6 class="green">МБТББ</h6> -->
-                        <h2 class="text-black">МОНГОЛЫН БҮТЭЭМЖИЙН ТӨВИЙН<br>БАТАЛГААЖУУЛАЛТЫН БАЙГУУЛЛАГА</h2>
-                        <p class="text-justify">МБТББ нь АББ-ын хувь хүнийг итгэмжлэх баталгаажуулалтын тогтолцоонд үндэслэн  бүтээмжийн мэргэжилтний баталгаажуулалтын тогтолцоог АББ/ИБ-ын нэрийн өмнөөс хариуцан  хэрэгжүүлнэ.</p>
-                        <p class="text-justify">МБТББ нь БМБ-ын тогтолцоог АББ/ИБ 1003:2020 Хувь хүний баталгаажуулалтын итгэмжлэлийн тохирол болон ISO 17024:2012 стандартын шаардлагад нийцүүлэн үр дүнтэй хэрэгжүүлж, харилцагч байгууллага эсвэл аж ахуйн нэгжүүдийн бүтээмжийн дээшлүүлэхэд мэргэжлийн туслалцаа үзүүлэх ба харилцагчид болон хувь хүмүүст АББ-ын итгэмжлэлийн байгууллага (АББ/ИБ)-ын итгэмжлэлийн хүрээнд БМБ-ын үйлчилгээг үзүүлнэ.</p>
+                        <h2 class="text-black"><?=$page["name"];?></h2>
+                        <p class="text-justify"><?=$page["content"];?></p>
 
                         <div class="pt-50">
                             <a class="btn btn-warning" href="assets/images/mbbtb_structure.png" data-rel="lightcase:myCollection">БҮТЭЦ</a>
