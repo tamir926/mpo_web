@@ -138,7 +138,7 @@
                                         <div class="card-header">
                                             <h4 class="card-title">Үндсэн мэдээлэл</h4>
                                         </div>
-                                        <form action="podcasts?action=adding" method="post" enctype="multipart/form-data">
+                                        <form action="podcasts?action=editing" method="post" enctype="multipart/form-data">
                                             <input type="hidden" name="podcast_id" value="<?=$podcast_id;?>">
                                             <div class="input-group mb-2">
                                                 <div class="input-group-prepend">
