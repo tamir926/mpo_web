@@ -53,7 +53,7 @@
                                             <div class="our-services-content">
                                                 <h4><a href="<?=$magazines["pdf"];?>" target="new"><?=$magazines["title"];?></a></h4>
                                                 <p><?=$magazines["date"];?></p>
-                                                <a href=""<?=$magazines["pdf"];?>" target="new">Унших<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                <a href="<?=$magazines["pdf"];?>" target="new">Унших<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>

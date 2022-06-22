@@ -65,7 +65,7 @@
         </section>
 
         <!-- End Slider Section -->
-
+<!-- 
         <div class="container">
             <section id="content">
                     <div class="content-info">
@@ -108,7 +108,7 @@
                             </div>
                     </div>
             </section>
-        </div>
+        </div> -->
 
 
 

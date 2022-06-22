@@ -93,19 +93,19 @@
                             <div class="d-flex justify-content-start">
                                 <h5 style="line-height: 30px; margin-right:20px;">Сошиал холбоос</h5>
                                 <ul class="social-icon-rounded">
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                    <li><a href="<?=settings("facebook");?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>                                    
+                                    <li><a href="<?=settings("twitter");?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li><a href="<?=settings("instagram");?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="<?=settings("youtube");?>"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                                    
                                 </ul>
                             </div>
                         </div>
                         <div class="col-6 text-right">
                             <div class="copyright-txt">
-                                <p> 2011-2022. &copy; <a href="#">МPO</a> |
-                                <a href="#">Үйлчилгээний нөхцөл</a> |
-                                <a href="#">Нууцлалын бодлого</a>
+                                <p> <?=settings("footer_text");?>
+                                <!-- <a href="#">Үйлчилгээний нөхцөл</a> |
+                                <a href="#">Нууцлалын бодлого</a> -->
 
                                 </p>
                             </div>
