@@ -9,7 +9,7 @@ $dbpass = 'mpoorgmn_new';
 $dbname = 'mpoorgmn_new';
 
 $dbuser = 'root';
-$dbpass = 'sw01b116';
+$dbpass = '';
 $dbname = 'mpo';
 
 

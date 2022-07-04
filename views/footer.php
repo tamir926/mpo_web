@@ -18,24 +18,32 @@
 
                                   </ul>
                                 </div>
+
+                                <div class="col-lg-2 col-sm-6">
+                                  <h5>АББ</h5>
+                                  <ul class="footer-ul">
+                                      <li><a href="abb">Азын бүтээмжийн байгууллага</a></li>
+                                      <li><a href="https://www.apo-tokyo.org/">Үндсэн сайт</a></li>
+                                      <li><a href="abb_join">Баталгаажсан мэргэжилтэн</a></li>
+                                      <li><a href="https://www.apo-tokyo.org/wedo/projects/annual-programs/">АББ Хөтөлбөр</a></li>
+                                  </ul>
+                                </div>
                                 
                                 <div class="col-lg-2 col-sm-6">
                                   <h5>Сургалт</h5>
                                   <ul class="footer-ul">
-                                      <li><a href="#">Анхан шат</a></li>
-                                      <li><a href="#">Бүтээмж</a></li>
-                                      <li><a href="#">Гүнзгийрүүлсэн</a></li>
-                                      <li><a href="#">Экспертүүд</a></li>
+                                      <li><a href="events?category=1">Дотоод</a></li>
+                                      <li><a href="events?category=2">Гадаад</a></li>
                                   </ul>
                                 </div>
 
                                 <div class="col-lg-2 col-sm-6">
                                   <h5>Төсөл</h5>
                                   <ul class="footer-ul">
-                                      <li><a href="#">Хэрэгжиж буй</a></li>
-                                      <li><a href="#">Хэрэгжсэн</a></li>
-                                      <li><a href="#">Загвар</a></li>
-                                      <li><a href="#">E-Бүтээмж</a></li>
+                                      <li><a href="projects">Хэрэгжиж буй</a></li>
+                                      <li><a href="projects">Хэрэгжсэн</a></li>
+                                      <li><a href="projects">Загвар</a></li>
+                                      <li><a href="projects">E-Бүтээмж</a></li>
                                   </ul>
                                 </div>
 
@@ -43,33 +51,26 @@
                                 <div class="col-lg-2 col-sm-6">
                                   <h5>Арга хэмжээ</h5>
                                   <ul class="footer-ul">
-                                      <li><a href="#">Дотоод</a></li>
-                                      <li><a href="#">Гадаад</a></li>
+                                      <li><a href="events?category=1">Дотоод</a></li>
+                                      <li><a href="events?category=2">Гадаад</a></li>
                                   </ul>
                                   <h5>МБТББ</h5>
                                   <ul class="footer-ul">
-                                      <li><a href="#">Өргөдөл гаргах</a></li>
+                                      <li><a href="application">Өргөдөл гаргах</a></li>
                                   </ul>
                                 </div>
 
                                 <div class="col-lg-2 col-sm-6">
                                   <h5>Мэдлэгийн сан</h5>
                                   <ul class="footer-ul">
-                                      <li><a href="#">Сэтгүүл</a></li>
-                                      <li><a href="#">Номын сан</a></li>
-                                      <li><a href="#">Подкаст</a></li>
-                                      <li><a href="#">Тайлан</a></li>
+                                      <li><a href="journals">Сэтгүүл</a></li>
+                                      <li><a href="library">Номын сан</a></li>
+                                      <li><a href="podcast">Подкаст</a></li>
+                                      <li><a href="report">Тайлан</a></li>
                                   </ul>
                                 </div>
 
-                                <div class="col-lg-2 col-sm-6">
-                                  <h5>Туршлага</h5>
-                                  <ul class="footer-ul">
-                                      <li><a href="#">Байгууллагын туршлага</a></li>
-                                      <li><a href="#">Танилцах хүсэлт</a></li>
-                                      <li><a href="#">Туршлагаа илгээх</a></li>
-                                  </ul>
-                                </div>
+                               
 
                                
 

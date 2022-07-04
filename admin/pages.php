@@ -57,7 +57,17 @@
                         </div>
                     </div>
                 </div>
-                
+                <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+                    <div class="form-group breadcrumb-right">
+                        <div class="dropdown">
+                            <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="grid"></i></button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="page?action=new"><i class="mr-1" data-feather="plus-square"></i><span class="align-middle">Шинэ Хуудас</span></a>
+                                <a class="dropdown-item" href="page?action=category_new"><i class="mr-1" data-feather="plus-square"></i><span class="align-middle">Шинэ ангилал</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="content-body">
             <? 
@@ -88,7 +98,7 @@
                                                     <tr>
                                                         <td><?=++$count;?></td>
                                                         <td><?=$data["name"];?></td>
-                                                        <td><?=substr($data["timestamp"],0,10);?></td>
+                                                        <td><?=substr($data["updated_date"],0,10);?></td>
                                                         <td>
                                                             <a class="btn btn-success" href="pages?action=edit&id=<?=$data["page_id"];?>">Засах</a>
                                                             <a class="btn btn-primary" href="pages?action=detail&id=<?=$data["page_id"];?>">Дэлгэрэнгүй</a>
@@ -156,7 +166,9 @@
                                 $data = mysqli_fetch_array($result);                            
                                 $page_name = $data["name"];
                                 $page_content = $data["content"];
+                                $page_image = $data["image"];
                                 $page_timestamp = $data["timestamp"];
+                                $page_updated_date = $data["updated_date"];
 
                                 ?>
                                 <div class="blog-detail-wrapper">
@@ -164,10 +176,33 @@
                                         <!-- Blog -->
                                         <div class="col-12">
                                             <div class="card">
+                                                <?
+                                                if ($page_image<>"" && file_exists('../'.$page_image))
+                                                {
+                                                    ?>
+                                                    <img src="../<?=$page_image;?>" class="img-fluid card-img-top" alt="<?=$page_name;?>" />
+                                                    <?
+                                                }
+                                                ?>
                                                 <div class="card-body">
                                                     <h4 class="card-title"><?=$page_name;?></h4>
+                                                    <div class="media">
+                                                        <div class="avatar mr-50">
+                                                            <img src="../<?=$admin_avatar;?>" alt="Avatar" width="24" height="24" />
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <small class="text-muted mr-25">by</small>
+                                                            <small><a href="javascript:void(0);" class="text-body"><?=$admin_name;?></a></small>
+                                                            <span class="text-muted ml-50 mr-25">|</span>
+                                                            <small class="text-muted"><?=substr($page_updated_date,0,10);?></small>
+                                                        </div>
+                                                    </div>
                                                    
+                                                    <p class="card-text mb-2 mt-3 news-body">
                                                        <?=$page_content;?>
+                                                    </p>
+                                                    
+                                                    
                                                     
                                                     
                                                 </div>
@@ -207,6 +242,7 @@
                         $data = mysqli_fetch_array($result);
                         $page_name = $data["name"];
                         $page_content = $data["content"];
+                        $page_image = $data["image"];
                         $page_timestamp = $data["timestamp"];
                        
 
@@ -217,16 +253,30 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="card">
-                                           
+                                            <div class="card-header">
+                                                <h4 class="card-title">Зураг</h4>
+                                            </div>
                                             <div class="card-body">
-                                               
+                                                <?
+                                                if ($page_image<>"")
+                                                {
+                                                    ?>
+                                                    <img src="../<?=$page_image;?>" style="max-width:100%;">
+                                                    <br>
+                                                    <a  href="pages?action=clear&id=<?=$page_id;?>" class="btn btn-danger btn-sm mb-3">Зурыг цэвэрлэх</a>
+                                                    <?
+                                                    
+                                                }
+                                                ?>
+                                                <input type="file" class="form-control" name="image"/>
+
                                                 <div class="input-group mt-2 mb-2">
                                                     <input type="text" name="name" class="form-control" value="<?=$page_name;?>">
                                                 </div>
 
 
                                                 <div class="input-group mt-2 mb-2">
-                                                    <textarea class="form-control"  name="content" id="editor"><?=$page_content;?></textarea>
+                                                    <textarea class="form-control"  name="content"id="summernote"><?=$page_content;?></textarea>
                                                 </div>
 
                                                 
@@ -254,7 +304,7 @@
                 {
                     $page_id = $_POST["page_id"];
                     $name = $_POST["name"];
-                    $content = mysqli_escape_string($conn,$_POST["content"]);
+                    $content = $_POST["content"];
 
                     if(isset($_FILES['image']) && $_FILES['image']['name']!="")
                     {
@@ -306,6 +356,51 @@
                 }
                 ?>
 
+                <?
+                if ($action=="clear")
+                {
+                    $page_id = $_GET["id"];
+                    $sql = "SELECT *FROM pages WHERE page_id='$page_id'";
+                    $result = mysqli_query($conn,$sql);
+                    if (mysqli_num_rows($result)==1)
+                    {
+                        $data = mysqli_fetch_array($result);
+                        $page_image = $data["image"];
+                        if (file_exists('../'.$page_image)) unlink('../'.$page_image);
+                        $sql = "UPDATE pages SET image=NULL WHERE page_id='$page_id'";
+
+                        if (mysqli_query($conn,$sql))
+                        {
+                            ?>
+                            <div class="alert alert-success" role="alert">
+                                <div class="alert-body">
+                                Амжилттай засагдлаа
+                                </div>
+                            </div>
+                            <?
+                        }
+                        else 
+                        {
+                            ?>
+                            <div class="alert alert-danger" role="alert">
+                                <div class="alert-body">
+                                Алдаа гарлаа. <?=mysqli_error($conn);?>
+                                </div>
+                            </div>
+                            <?
+                        }
+                        ?>
+                        <a class="btn btn-success" href="page?action=edit&id=<?=$page_id;?>">Засах</a>
+                        <a class="btn btn-primary" href="page?action=detail&id=<?=$page_id;?>">Дэлгэрэнгүй</a>
+                        <a class="btn btn-primary" href="page?action=list">Бүх Хуудас</a>
+                        <?
+
+                    
+                    }
+                    else header("location:page?action=list");
+                }
+                ?>
+
 
             </div>
         </div>
@@ -328,8 +423,9 @@
     <script src="app-assets/js/core/app-menu.js"></script>
     <script src="app-assets/js/core/app.js"></script>
 
-    <script src="app-assets/vendors/js/ckeditor/ckeditor.js"></script>
-
+    <link href="app-assets/vendors/js/summernote/summernote.min.css" rel="stylesheet">
+    <script src="app-assets/vendors/js/summernote/summernote.min.js"></script>   
+    
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
@@ -344,21 +440,40 @@
                     height: 14
                 });
             }
+
+            
+            $('#summernote').summernote({
+                height: ($(window).height() - 300),
+                callbacks: {
+                    onImageUpload: function(image) {
+                        uploadImage(image[0]);
+                    }
+                }
+            });
+
+            function uploadImage(image) {
+                var data = new FormData();
+                data.append("image", image);
+                $.ajax({
+                    url: 'views/uploader.php',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    type: "post",
+                    success: function(url) {
+                        var image = $('<img>').attr('src', '<?=settings("base_url");?>' + url);
+                        $('#summernote').summernote("insertNode", image[0]);
+                    },
+                    error: function(data) {
+                        //alert("adsada");
+                        //console.log(data);
+                    }
+                });
+            }
         })
     </script>
 
-    <script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ), {
-                // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
-            } )
-            .then( editor => {
-                window.editor = editor;
-            } )
-            .catch( err => {
-                console.error( err.stack );
-            } );
-    </script>
 
 
 </body>

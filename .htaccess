@@ -87,3 +87,6 @@ RewriteRule ^assessment_bt?$ assessment_bt.php
 
 RewriteRule ^journals?$ journals.php
 RewriteRule ^library?$ library.php
+
+RewriteRule ^abb?$ abb.php
+RewriteRule ^abb_join?$ abb_join.php
