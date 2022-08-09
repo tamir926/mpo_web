@@ -22,7 +22,7 @@
                                 <div class="col-lg-2 col-sm-6">
                                   <h5>АББ</h5>
                                   <ul class="footer-ul">
-                                      <li><a href="abb">Азын бүтээмжийн байгууллага</a></li>
+                                      <li><a href="abb">Азийн бүтээмжийн байгууллага</a></li>
                                       <li><a href="https://www.apo-tokyo.org/">Үндсэн сайт</a></li>
                                       <li><a href="abb_join">Баталгаажсан мэргэжилтэн</a></li>
                                       <li><a href="https://www.apo-tokyo.org/wedo/projects/annual-programs/">АББ Хөтөлбөр</a></li>
