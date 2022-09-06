@@ -9,9 +9,9 @@
             <div class="container d-flex justify-content-between">
                 <h3 class="text-black">Гишүүнчлэл</h3>
                 <ul class="submenu-ul">
-                    <li><a href="#">Хянах самбар</a></li>
-                    <li><a href="#">Хувийн тохиргоо</a></li>
-                    <li><a href="#">Нууц үг солих</a></li>
+                    <li><a href="dashboard">Хянах самбар</a></li>
+                    <li><a href="profile">Хувийн тохиргоо</a></li>
+                    <li><a href="password_change">Нууц үг солих</a></li>
                     <li><a href="logout">Гарах</a></li>
                 </ul>
             </div>

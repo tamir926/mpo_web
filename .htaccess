@@ -62,6 +62,8 @@ RewriteRule ^dashboard1?$ dashboard1.php
 RewriteRule ^dashboard2?$ dashboard2.php
 RewriteRule ^history?$ history.php
 RewriteRule ^summit?$ summit.php
+RewriteRule ^password_change?$ password_change.php
+RewriteRule ^profile?$ profile.php
 
 
 

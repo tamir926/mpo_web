@@ -10,53 +10,126 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-12 mx-auto text-justify">
                         <div class="donate-form">
-                            <form action="registering" method="POST" class="contact-form">
                                 <div class="select-amount">
                                     <!-- .select-amount -->
-                                    <div class="login-form">
+
+                                    <div class="contact-form">
                                         <h3>Бүртгүүлэх</h3>
-                                        <p>Та манайд бүртгэлтэй бол <a href="login" class="mpo_a">энд дарж</a> нэвтэрнэ үү.</p>
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control mt-30" name="name" id="name" placeholder="Нэр">
-                                                </div>
+                                        <?
+                                        if (isset($_POST["name"]) && isset($_POST["tel"]) && isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["password"]))
+                                        {
 
-                                                <div class="form-group">
-                                                    <input type="radio" name="type" value="1"> Байгууллага
-                                                    <input type="radio" name="type" value="0"> Хувь хүн
-                                                </div>
+                                            $name = protect($_POST["name"]);
+                                            $type = protect($_POST["type"]);
+                                            $tel = protect($_POST["tel"]);
+                                            $email = protect($_POST["email"]);
+                                            $username = protect($_POST["username"]);
+                                            $password = protect($_POST["password"]);
+                                            $password2 = protect($_POST["password2"]);
 
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control mt-30" name="tel" id="tel" placeholder="Утас">
-                                                </div>
+                                            $sql = "SELECT id FROM users WHERE username='$username' OR tel='$tel' OR email='$email'";
+                                            $result = mysqli_query($conn,$sql);
+                                            if (mysqli_num_rows($result)==0)
+                                            {
+                                                if ($password==$password2)
+                                                {
+                                                    $sql = "INSERT INTO users (name,type,username,tel,email,password) VALUE ('$name','$type','$username','$tel','$email','$password')";
+                                                    if (mysqli_query($conn,$sql))
+                                                    {
+                                                        ?>
+                                                        <div class="alert">
+                                                            Амжилттай бүртгэлээ
+                                                        </div>                
+                                                        <a href="login" class="btn btn-secondary w-100 mt-30">Нэвтрэх</a>
+                                                        <?
+                                                    }
+                                                    else 
+                                                    {
+                                                        ?>
+                                                        <div class="alert">
+                                                            Алдаа гарлаа. <?=mysqli_error($conn);?>
+                                                        </div>                
+                                                        <a href="register" class="btn btn-warning w-100 mt-30">Бүртгүүлэх</a>
+                                                        <?
+                                                    }
 
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control mt-30" name="email" id="email" placeholder="Имэйл">
-                                                </div>
+                                                }
+                                                else 
+                                                {
+                                                    ?>
+                                                    <div class="alert ">
+                                                        Нууц үг ижил биш байна
+                                                    </div>                
+                                                    <a href="register" class="btn btn-warning w-100 mt-30">Бүртгүүлэх</a>
+                                                    <?
+                                                }
 
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control mt-30" name="username" id="username" placeholder="Нэвтрэх нэр">
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <input type="password" class="form-control mt-30" name="password" id="password" placeholder="Нууц үг">
-                                                </div>
 
-                                                <div class="form-group">
-                                                    <input type="password" class="form-control mt-30" name="password2" id="password2" placeholder="Нууц үг давтах">
+                                            }
+                                            else 
+                                            {
+                                                ?>
+                                                <div class="alert ">
+                                                    Нэвтрэх нэр, утасны дугаар эсвэл имэйл бүртгэлтэй байна. 
+                                                </div>        
+                                                <div class="form-group">       
+                                                    <a href="login" class="btn btn-secondary w-100 mt-30">Нэвтрэх</a>
+                                                    <a href="register" class="btn btn-warning w-100 mt-30">Бүртгүүлэх</a>
                                                 </div>
+                                                <?
+                                            }
 
-                                                <div class="form-group">
-                                                    <input type="submit" class="btn btn-default w-100 mt-30" value="Бүртгүүлэх">
+                                            
+                                        }
+                                        else 
+                                        {
+                                            ?>
+                                            <form action="register" method="POST" class="contact-form">
+                                                <p>Та манайд бүртгэлтэй бол <a href="login" class="login">энд дарж</a> нэвтэрнэ үү.</p>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control mt-30" name="name" id="name" placeholder="Нэр" required>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <input type="radio" name="type" value="1"> Байгууллага
+                                                            <input type="radio" name="type" value="0"> Хувь хүн
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control mt-30" name="tel" id="tel" placeholder="Утас" required>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control mt-30" name="email" id="email" placeholder="Имэйл" required>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control mt-30" name="username" id="username" placeholder="Нэвтрэх нэр" required>
+                                                        </div>
+                                                        
+                                                        <div class="form-group">
+                                                            <input type="password" class="form-control mt-30" name="password" id="password" placeholder="Нууц үг" required>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <input type="password" class="form-control mt-30" name="password2" id="password2" placeholder="Нууц үг давтах" required>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <input type="submit" class="btn btn-default w-100 mt-30" value="Бүртгүүлэх">
+                                                        </div>
+                                                    </div>
+
                                                 </div>
-                                            </div>
-
-                                        </div>
+                                            </form>
+                                            <?
+                                        }
+                                        ?>
 
                                     </div>
                                 </div>
-                            </form>
                         </div>
                             
                     </div>

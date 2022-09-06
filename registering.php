@@ -11,7 +11,7 @@
                     <div class="col-lg-4 col-md-12 mx-auto text-justify">
                         <?
                         $_POST["name"]
-                        asfdasdfas
+                        
 
                         <div class="donate-form">
                             <form action="registering" method="POST" class="contact-form">
