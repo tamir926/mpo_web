@@ -6,39 +6,92 @@
         <? require_once("views/header.php");?>
 
         
+        <div class="mt-30 pb-50">
+            <div class="container">
+                <div class="case">
+                        <div class="case-detail" style="min-height:400px; max-height:50hv; background-image: url(assets/images/case5.webp);">
+                                <h5>Тэргүүн туршлага</h5>
+                                <h3>Эрдэнэт Үйлдвэр ТӨҮГ</h3>
+                                <p>Бүтээмжийн тэргүүн туршлага уралдаанд</p>
+                                <a href="pdfs/case5_m1.pdf" class="btn btn-success">Л.Уранцэцэг</a>
+                                <a href="pdfs/case5_m2.pdf" class="btn btn-success">Г.Эрдэнэдаьваа</a>
+                        </div>
+                </div>
+            </div>
+        </div>
         
+        <hr>
 
         <div class="mt-30 pb-50">
             <div class="container">
-                <section id="content">
-                        <div class="event-info" style="min-height:500px; background-image: url(assets/images/case1.jpg);">
+                <div class="case">
+                        <div class="case-detail" style="min-height:400px; max-height:50hv; background-image: url(assets/images/case4.webp);">
                                 <h5>Тэргүүн туршлага</h5>
-                                <h3>Сонголт...</h3>
-                                <p>Хөгжилд хүрэх бүтээмжийн хязгааргүй <br> аянаа яг одоо эхлээрэй.</p>
+                                <h3>ОРХОН АЙМГИЙН НИЙГМИЙН <br> ДААТГАЛЫН ХЭЛТЭС</h3>
+                                <p>Бүтээмжийн тэргүүн туршлага уралдаанд</p>
+                                <a href="pdfs/case4_ndx.pdf" class="btn btn-warning">Туршлага судлах</a>
+                                <a href="https://www.youtube.com/watch?v=MHzEPQ93iOU" class="btn btn-danger" target="new">Видео үзэх</a>
                         </div>
-                </section>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+
+        <div class="mt-30 pb-50">
+            <div class="container">
+                <div class="case">
+                        <div class="case-detail" style="min-height:400px; max-height:50hv; background-image: url(assets/images/case3.webp);">
+                                <h5>Тэргүүн туршлага</h5>
+                                <h3>ДУЛААНЫ ГУРАВДУГААР ЦАХИЛГААН СТАНЦ ТӨХК</h3>
+                                <p>Сайн саналын сайн туршлага</p>
+                                <a href="pdfs/case3_dtss3.pdf" class="btn btn-warning">Туршлага судлах</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <hr>
+
+        <div class="mt-30 pb-50">
+            <div class="container">
+                <div class="case">
+                        <div class="case-detail" style="min-height:400px; max-height:50hv; background-image: url(assets/images/case2.webp);">
+                                <h5>Тэргүүн туршлага</h5>
+                                <h3>ДАРХАНЫ ДУЛААНЫ ЦАХИЛГААН СТАНЦ ТӨХК</h3>
+                                <p>Бүтээмж дээшлүүлэх арга хэрэгслийн үр дүн</p>
+                                <a href="pdfs/case2_ddtss.pdf" class="btn btn-warning">Туршлага судлах</a>
+                                <a href="https://www.youtube.com/watch?v=EetrFldF3XY" class="btn btn-danger" target="new">Видео үзэх</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <hr>
+
+        <div class="mt-30 pb-50">
+            <div class="container">
+                <div class="case">
+                        <div class="case-detail" style="min-height:400px; max-height:50hv; background-image: url(assets/images/case1.webp);">
+                                <h5>Тэргүүн туршлага</h5>
+                                <h3>“Эрдэнэт үйлдвэр” ТӨҮГ" <br>Баяжуулах үйлдвэр</h3>
+                                <p>Бүтээмж чанарын дугуйлангийн үйл ажиллагаа</p>
+                                <a href="pdfs/case1_bchd.pdf" class="btn btn-warning">Туршлага судлах</a>
+                        </div>
+                </div>
             </div>
         </div>
 
         <hr>
 
-        <div class="mt-30 pb-50">
-            <div class="container">
-                <section id="content">
-                        <div class="event-info" style="min-height:500px; background-image: url(assets/images/case2.jpg);">
-                                <h5>Тэргүүн туршлага</h5>
-                                <h3>Сонголт...</h3>
-                                <p>Хөгжилд хүрэх бүтээмжийн хязгааргүй <br> аянаа яг одоо эхлээрэй.</p>
-                        </div>
-                </section>
-            </div>
-        </div>
-
-        <hr>
-
         
 
+        
+        
 
+3
         <? require_once("views/footer.php");?>
 
 
