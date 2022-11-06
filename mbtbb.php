@@ -106,7 +106,7 @@
                     <div class="our-services-option">
                         <div class="section-header">
                             <h2>Баталгаажсан мэргэжилтэнгүүд</h2>
-                            <p>Professionally mesh enterprise wide imperatives without world class paradigms.Dynamically deliver ubiquitous leadership awesome skills.</p>
+                            <p>Таныг Азийн бүтээмжийн байгууллагын гэрчилгээтэй баталгаажсан бүтээмжийн мэргэжилтэн болохыг урьж байна. Та анкетыг татаж авч мэдээллээ оруулан <a href="maito:info@mpo-org.mn">info@mpo-org.mn</a> мэйлд илгээнэ үү.</p>
                         </div>
                         <!-- .section-header -->
                         <div class="row">
@@ -115,7 +115,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Даваагийн Ариунзул</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -130,7 +130,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Нэргүйн Ариунжаргал</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -145,7 +145,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Лхайзамын Уранцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -160,7 +160,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Очирвааны Урангоо</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -175,7 +175,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Бямбын Уранчимэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -190,7 +190,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Таванжингийн Оюунцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -204,7 +204,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Цэнд-Аюушын Хишигжаргал</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -219,7 +219,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Мягмарсүрэнгийн Хишигдэлгэр</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -234,23 +234,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Лозолын Оюун</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <!-- .col-md-4 -->
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Сайнбаярын Наранцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -265,7 +249,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Лхагвасүрэнгийн Бадамцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -280,7 +264,22 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Жаргалын Ариунзул</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргжилтэй</p>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="#">Алтанцэцэгийн Оюунгэрэл</a></h4>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -290,6 +289,20 @@
                             </div>
                             <!-- .col-md-4 -->
                             
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="#">Баттулгын Балжинням</a></h4>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
                         </div>
                         <!-- .row -->
                     </div>
