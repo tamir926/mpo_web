@@ -63,7 +63,7 @@
                         <div class="dropdown">
                             <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="grid"></i></button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="experts?action=new"><i class="mr-1" data-feather="plus-square"></i><span class="align-middle">Бүртгэх</span></a>
+                                <a class="dropdown-item" href="experts?action=new"><i class="mr-1" data-feather="plus-square"></i><span class="align-middle">Эксперт бүртгэх</span></a>
                             </div>
                         </div>
                     </div>
@@ -112,43 +112,7 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Modal to add new record -->
-                        <div class="modal modal-slide-in fade" id="modals-slide-in">
-                            <div class="modal-dialog sidebar-sm">
-                                <form class="add-new-record modal-content pt-0">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
-                                    <div class="modal-header mb-1">
-                                        <h5 class="modal-title" id="exampleModalLabel">New Record</h5>
-                                    </div>
-                                    <div class="modal-body flex-grow-1">
-                                        <div class="form-group">
-                                            <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
-                                            <input type="text" class="form-control dt-full-name" id="basic-icon-default-fullname" placeholder="John Doe" aria-label="John Doe" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label" for="basic-icon-default-post">Post</label>
-                                            <input type="text" id="basic-icon-default-post" class="form-control dt-post" placeholder="Web Developer" aria-label="Web Developer" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label" for="basic-icon-default-email">Email</label>
-                                            <input type="text" id="basic-icon-default-email" class="form-control dt-email" placeholder="john.doe@example.com" aria-label="john.doe@example.com" />
-                                            <small class="form-text text-muted"> You can use letters, numbers & periods </small>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label" for="basic-icon-default-date">Joining Date</label>
-                                            <input type="text" class="form-control dt-date" id="basic-icon-default-date" placeholder="MM/DD/YYYY" aria-label="MM/DD/YYYY" />
-                                        </div>
-                                        <div class="form-group mb-4">
-                                            <label class="form-label" for="basic-icon-default-salary">Salary</label>
-                                            <input type="text" id="basic-icon-default-salary" class="form-control dt-salary" placeholder="$12000" aria-label="$12000" />
-                                        </div>
-                                        <button type="button" class="btn btn-primary data-submit mr-1">Submit</button>
-                                        <button type="reset" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                        </div>                       
                     </section>
                     <?
                 }
@@ -157,23 +121,27 @@
                 <?
                 if ($action=="edit")
                 {
-                    $member_id = $_GET["id"];
-                    $sql = "SELECT *FROM experts WHERE id='$member_id'";
+                    $expert_id = $_GET["id"];
+                    $sql = "SELECT *FROM experts WHERE id='$expert_id'";
                     $result = mysqli_query($conn,$sql);
                     if (mysqli_num_rows($result)==1)
                     {
                         $data = mysqli_fetch_array($result);
-                        $member_name = $data["name"];
-                        $member_tel = $data["tel"];
-                        $member_email = $data["email"];
-                        $member_avatar = $data["avatar"];
+                        $expert_name = $data["name"];
+                        $expert_tel = $data["tel"];
+                        $expert_email = $data["email"];
+                        $expert_avatar = $data["avatar"];
+                        $expert_position = $data["position"];
+                        $expert_worked = $data["worked"];
+                        $expert_education = $data["education"];
+                        $expert_exprience = $data["experience"];
+                        $expert_fee = $data["fee"];
 
                     }
                     ?>
                     <section id="input-group-basic">
                         <form action="experts?action=editing" method="post" enctype="multipart/form-data">
                             <div class="row">
-                            
                                 <!-- Basic -->
                                 <div class="col-md-6">
                                     <div class="card">
@@ -182,26 +150,63 @@
                                         </div>
                                         <div class="card-body">
                                             
-                                                <input type="hidden" name="member_id" value="<?=$member_id;?>">
+                                                <input type="hidden" name="expert_id" value="<?=$expert_id;?>">
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="user"></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="name" value="<?=$member_name;?>" placeholder="Нэр..." required />
+                                                    <input type="text" class="form-control" name="name" value="<?=$expert_name;?>" placeholder="Нэр..." required />
                                                 </div>
 
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="phone"></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="tel" value="<?=$member_tel;?>" placeholder="Утас..." required/>
+                                                    <input type="text" class="form-control" name="tel" value="<?=$expert_tel;?>" placeholder="Утас..." required/>
                                                 </div>
 
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="mail"></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="email" value="<?=$member_email;?>" placeholder="Имэйл..." required/>
+                                                    <input type="text" class="form-control" name="email" value="<?=$expert_email;?>" placeholder="Имэйл..." required/>
+                                                </div>
+
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="user"></i></span>
+                                                    </div>
+                                                    <input type="number" class="form-control" name="fee" value="<?=$expert_fee;?>"  value="0" placeholder="Төлбөр" required />
+                                                </div>
+
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="user"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="position" value="<?=$expert_position;?>" placeholder="Албан тушаал" required/>
+                                                </div>
+
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="user"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="worked" value="<?=$expert_worked;?>" placeholder="Ажиллласан жил" required/>
+                                                </div>
+
+
+
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="pause"></i></span>
+                                                    </div>
+                                                    <textarea class="form-control"  name="education" placeholder="Боловсролын байдал"><?=$expert_education;?></textarea>
+                                                </div>
+
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="pause"></i></span>
+                                                    </div>
+                                                    <textarea class="form-control"  name="experience" placeholder="Мэргэшсэн чиглэл:"><?=$expert_exprience;?></textarea>
                                                 </div>
 
                                         </div>
@@ -216,7 +221,7 @@
                                         </div>
                                         <div class="card-body">
                                         
-                                            <img class="img-fluid d-block" src="../<?=$member_avatar;?>" />
+                                            <img class="img-fluid d-block" src="../<?=$expert_avatar;?>" />
 
                                             <div class="form-group">
                                                 <label for="customFile1">Зураг сонгох</label>
@@ -233,6 +238,7 @@
                             <input type="submit" class="btn btn-success waves-effect waves-float waves-light" value="Засварлах">
 
                         </form>
+                        <a href="experts?action=delete&id=<?=$expert_id;?>" class="btn btn-danger mt-3">Устгах</a>
                     </section>
                     <?
                 }
@@ -242,36 +248,61 @@
                 <?
                 if ($action=="editing")
                 {
-                    $member_id = $_POST["member_id"];
+                    $expert_id = $_POST["expert_id"];
                     $name = $_POST["name"];
                     $tel = $_POST["tel"];
                     $email = $_POST["email"];
 
-                    if(isset($_FILES['image']) && $_FILES['image']['name']!="")
-                      {
-                          if ($_FILES['image']['name']!="")
-                              {                        
-                                  @$folder = date("Ym");
-                                  if(!file_exists('../uploads/'.$folder))
-                                  mkdir ( '../uploads/'.$folder);
-                                  $target_dir = '../uploads/'.$folder;
-                                  $target_file = $target_dir."/".@date("his").rand(0,1000). basename($_FILES["image"]["name"]);
-                                  move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
-                                  //$image=settings("base_url").$target_file;
-                                //   $thumb_image_content = resize_image($target_file,300,200);
-                                //   $thumb = substr($target_file,0,-4)."_thumb".substr($target_file,-4,4);
-                                //   imagejpeg($thumb_image_content,$thumb,75);
-                                  //$thumb = settings("base_url").$thumb;
-                                  $target_file= substr($target_file,3);
-                                  $sql = "UPDATE experts SET avatar='$target_file' WHERE id='$member_id'";
+                    $position = $_POST["position"];
+                    $worked = $_POST["worked"];
+                    $education = mysqli_escape_string($conn,$_POST["education"]);
+                    $experience = mysqli_escape_string($conn,$_POST["experience"]);
+                    $fee = intval($_POST["fee"]);
 
-                                  //echo $sql;
-                                  mysqli_query($conn,$sql);
-          
-                              }
-                      }
 
-                    $sql = "UPDATE experts SET name='$name',tel='$tel',email='$email' WHERE id='$member_id'";
+                    if (is_uploaded_file($_FILES['image']['tmp_name'])) 
+                    { 
+                            @$folder = date("Ym");
+                            if(!file_exists('../uploads/'.$folder))
+                            mkdir ( '../uploads/'.$folder);
+                            $target_dir = '../uploads/'.$folder."/";
+                            $filename = date("his")."_".rand(0,1000)."_".$expert_id;
+                            $ext = substr(basename($_FILES["image"]["name"]),-3,3);
+                            $target_file = $target_dir.$filename.".".$ext;
+                            move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+                
+                            // echo $target_dir."/".$filename . ".jpg";
+                            if (strtolower($ext)=='png')
+                            {
+                                $image = imagecreatefrompng($target_file);
+                                $bg = imagecreatetruecolor(imagesx($image), imagesy($image));
+                                imagefill($bg, 0, 0, imagecolorallocate($bg, 255, 255, 255));
+                                imagealphablending($bg, TRUE);
+                                imagecopy($bg, $image, 0, 0, 0, 0, imagesx($image), imagesy($image));
+                                imagedestroy($image);
+                                $quality = 50; // 0 = worst / smaller file, 100 = better / bigger file 
+                                imagejpeg($bg, $target_dir.$filename . ".jpg", $quality);
+                                imagedestroy($bg);
+                                unlink($target_dir.$filename . ".png");
+                                $target_file =$target_dir.$filename . ".jpg";
+                                $ext = '.jpg';
+                            }
+                                $image_content = resize_image($target_file,300,300);
+                                imagejpeg($image_content,$target_file,50);
+                                $target_file= substr($target_file,3);
+                                // $sql = "SELECT avatar FROM experts WHERE id='$position_id'";
+                                // $result = mysqli_query($conn,$sql);
+                                // $data = mysqli_fetch_array($result);
+                                // $old_avatar = $data["avatar"];
+                                // if ($old_avatar<>"")  $old_images.=",".$target_file;
+                                // else $old_images=$target_file;
+                                $sql = "UPDATE experts SET avatar='$target_file' WHERE id='$expert_id'";
+                                // echo $sql;
+                               mysqli_query($conn,$sql);
+                               
+                
+                    }
+                    $sql = "UPDATE experts SET name='$name',tel='$tel',email='$email',position='$position',worked='$worked',education='$education',experience='$experience',fee='$fee' WHERE id='$expert_id'";
 
                     if (mysqli_query($conn,$sql))
                     {
@@ -294,8 +325,8 @@
                         <?
                     }
                     ?>
-                    <a class="btn btn-success" href="experts?action=edit&id=<?=$member_id;?>">Засах</a>
-                    <a class="btn btn-primary" href="experts?action=detail&id=<?=$member_id;?>">Дэлгэрэнгүй</a>
+                    <a class="btn btn-success" href="experts?action=edit&id=<?=$expert_id;?>">Засах</a>
+                    <a class="btn btn-primary" href="experts?action=detail&id=<?=$expert_id;?>">Дэлгэрэнгүй</a>
                     <a class="btn btn-primary" href="experts">Жагсаалт</a>
                     <?
                     
@@ -309,7 +340,6 @@
                     <section id="input-group-basic">
                         <form action="experts?action=adding" method="post" enctype="multipart/form-data">
                             <div class="row">
-                            
                                 <!-- Basic -->
                                 <div class="col-md-6">
                                     <div class="card">
@@ -317,26 +347,63 @@
                                             <h4 class="card-title">Үндсэн мэдээлэл</h4>
                                         </div>
                                         <div class="card-body">
-                                                <div class="input-group mb-2">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="user"></i></span>
-                                                    </div>
-                                                    <input type="text" class="form-control" name="name" placeholder="Нэр..." required />
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="user"></i></span>
                                                 </div>
+                                                <input type="text" class="form-control" name="name" value="" placeholder="Нэр..." required />
+                                            </div>
 
-                                                <div class="input-group mb-2">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="phone"></i></span>
-                                                    </div>
-                                                    <input type="text" class="form-control" name="tel" placeholder="Утас..." required/>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="phone"></i></span>
                                                 </div>
+                                                <input type="text" class="form-control" name="tel" value="" placeholder="Утас..." required/>
+                                            </div>
 
-                                                <div class="input-group mb-2">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="mail"></i></span>
-                                                    </div>
-                                                    <input type="text" class="form-control" name="email" placeholder="Имэйл..." required/>
-                                                </div>                                    
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="mail"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" name="email" value="" placeholder="Имэйл..." required/>
+                                            </div>
+
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="user"></i></span>
+                                                </div>
+                                                <input type="number" class="form-control" name="fee" value=""  value="0" placeholder="Төлбөр" required />
+                                            </div>
+
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="user"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" name="position" value="" placeholder="Албан тушаал" required/>
+                                            </div>
+
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="user"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" name="worked" value="" placeholder="Ажиллласан жил" required/>
+                                            </div>
+
+
+
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="pause"></i></span>
+                                                </div>
+                                                <textarea class="form-control"  name="education" placeholder="Боловсролын байдал"></textarea>
+                                            </div>
+
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="pause"></i></span>
+                                                </div>
+                                                <textarea class="form-control"  name="experience" placeholder="Мэргэшсэн чиглэл:"></textarea>
+                                            </div>
 
                                         </div>
 
@@ -349,6 +416,7 @@
                                             <h4 class="card-title">Зураг</h4>
                                         </div>
                                         <div class="card-body">
+
                                             <div class="form-group">
                                                 <label for="customFile1">Зураг сонгох</label>
                                                 <div class="custom-file">
@@ -376,33 +444,62 @@
                     $name = $_POST["name"];
                     $tel = $_POST["tel"];
                     $email = $_POST["email"];
-                    $target_file ="";
-                   
-                    if(isset($_FILES['image']) && $_FILES['image']['name']!="")
-                      {
-                          if ($_FILES['image']['name']!="")
-                              {                        
-                                  @$folder = date("Ym");
-                                  if(!file_exists('../uploads/'.$folder))
-                                  mkdir ( '../uploads/'.$folder);
-                                  $target_dir = '../uploads/'.$folder;
-                                  $target_file = $target_dir."/".@date("his").rand(0,1000). basename($_FILES["image"]["name"]);
-                                  move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
-                                  //$image=settings("base_url").$target_file;
-                                //   $thumb_image_content = resize_image($target_file,300,200);
-                                //   $thumb = substr($target_file,0,-4)."_thumb".substr($target_file,-4,4);
-                                //   imagejpeg($thumb_image_content,$thumb,75);
-                                  //$thumb = settings("base_url").$thumb;
-                                  $target_file= substr($target_file,3);
-          
-                              }
-                      }
 
-                    $sql = "INSERT INTO experts (name,tel,email,avatar) VALUES ('$name','$tel','$email','$target_file')";
+                    $position = $_POST["position"];
+                    $worked = $_POST["worked"];
+                    $education = mysqli_escape_string($conn,$_POST["education"]);
+                    $experience = mysqli_escape_string($conn,$_POST["experience"]);
+                    $fee = intval($_POST["fee"]);
+                 
+
+                    $sql = "INSERT INTO experts (name,tel,email,position,worked,education,experience,fee) VALUES ('$name','$tel','$email','$position','$worked','$education','$experience','$fee')";
 
                     if (mysqli_query($conn,$sql))
                     {
-                        $member_id = mysqli_insert_id($conn);
+                        $expert_id = mysqli_insert_id($conn);
+
+                        if (is_uploaded_file($_FILES['image']['tmp_name'])) 
+                        { 
+                                @$folder = date("Ym");
+                                if(!file_exists('../uploads/'.$folder))
+                                mkdir ( '../uploads/'.$folder);
+                                $target_dir = '../uploads/'.$folder."/";
+                                $filename = date("his")."_".rand(0,1000)."_".$expert_id;
+                                $ext = substr(basename($_FILES["image"]["name"]),-3,3);
+                                $target_file = $target_dir.$filename.".".$ext;
+                                move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+                    
+                                // echo $target_dir."/".$filename . ".jpg";
+                                if (strtolower($ext)=='png')
+                                {
+                                    $image = imagecreatefrompng($target_file);
+                                    $bg = imagecreatetruecolor(imagesx($image), imagesy($image));
+                                    imagefill($bg, 0, 0, imagecolorallocate($bg, 255, 255, 255));
+                                    imagealphablending($bg, TRUE);
+                                    imagecopy($bg, $image, 0, 0, 0, 0, imagesx($image), imagesy($image));
+                                    imagedestroy($image);
+                                    $quality = 50; // 0 = worst / smaller file, 100 = better / bigger file 
+                                    imagejpeg($bg, $target_dir.$filename . ".jpg", $quality);
+                                    imagedestroy($bg);
+                                    unlink($target_dir.$filename . ".png");
+                                    $target_file =$target_dir.$filename . ".jpg";
+                                    $ext = '.jpg';
+                                }
+                                    $image_content = resize_image($target_file,300,300);
+                                    imagejpeg($image_content,$target_file,50);
+                                    $target_file= substr($target_file,3);
+                                    // $sql = "SELECT avatar FROM experts WHERE id='$position_id'";
+                                    // $result = mysqli_query($conn,$sql);
+                                    // $data = mysqli_fetch_array($result);
+                                    // $old_avatar = $data["avatar"];
+                                    // if ($old_avatar<>"")  $old_images.=",".$target_file;
+                                    // else $old_images=$target_file;
+                                    $sql = "UPDATE experts SET avatar='$target_file' WHERE id='$expert_id'";
+                                    // echo $sql;
+                                mysqli_query($conn,$sql);
+                                
+                    
+                        }
                         ?>
                         <div class="alert alert-success" role="alert">
                             <div class="alert-body">
@@ -422,8 +519,8 @@
                         <?
                     }
                     ?>
-                    <a class="btn btn-success" href="experts?action=edit&id=<?=$member_id;?>">Засах</a>
-                    <a class="btn btn-primary" href="experts?action=detail&id=<?=$member_id;?>">Дэлгэрэнгүй</a>
+                    <a class="btn btn-success" href="experts?action=edit&id=<?=$expert_id;?>">Засах</a>
+                    <a class="btn btn-primary" href="experts?action=detail&id=<?=$expert_id;?>">Дэлгэрэнгүй</a>
                     <a class="btn btn-primary" href="experts">Жагсаалт</a>
                     <?
                 }
@@ -432,17 +529,22 @@
                 <?
                 if ($action=="detail")
                 {
-                    $member_id = $_GET["id"];
-                    $sql = "SELECT *FROM experts WHERE id='$member_id'";
+                    $expert_id = $_GET["id"];
+                    $sql = "SELECT *FROM experts WHERE id='$expert_id'";
                     $result = mysqli_query($conn,$sql);
                     if (mysqli_num_rows($result)==1)
                     {
                         $data = mysqli_fetch_array($result);
-                        $member_name = $data["name"];
-                        $member_tel = $data["tel"];
-                        $member_email = $data["email"];
-                        $member_avatar = $data["avatar"];
-                        $member_username = $data["username"];
+                        $expert_name = $data["name"];
+                        $expert_tel = $data["tel"];
+                        $expert_email = $data["email"];
+                        $expert_avatar = $data["avatar"];
+                        $expert_position = $data["position"];
+                        $expert_worked = $data["worked"];
+                        $expert_education = $data["education"];
+                        $expert_exprience = $data["experience"];
+                        $expert_fee = $data["fee"];
+
 
                     }
                     ?>
@@ -460,7 +562,7 @@
                                                     <i data-feather="user" class="mr-1"></i>
                                                     <span class="card-text user-info-title font-weight-bold mb-0">Нэр</span>
                                                 </div>
-                                                <p class="card-text mb-0"><?=$member_name;?></p>
+                                                <p class="card-text mb-0"><?=$expert_name;?></p>
                                             </div>
 
                                             <div class="d-flex flex-wrap">
@@ -468,7 +570,7 @@
                                                     <i data-feather="phone" class="mr-1"></i>
                                                     <span class="card-text user-info-title font-weight-bold mb-0">Утас</span>
                                                 </div>
-                                                <p class="card-text mb-0"><?=$member_tel;?></p>
+                                                <p class="card-text mb-0"><?=$expert_tel;?></p>
                                             </div>
 
                                             <div class="d-flex flex-wrap">
@@ -476,7 +578,7 @@
                                                     <i data-feather="mail" class="mr-1"></i>
                                                     <span class="card-text user-info-title font-weight-bold mb-0">Имэйл</span>
                                                 </div>
-                                                <p class="card-text mb-0"><?=$member_email;?></p>
+                                                <p class="card-text mb-0"><?=$expert_email;?></p>
                                             </div>
 
                                             <div class="d-flex flex-wrap">
@@ -484,7 +586,7 @@
                                                     <i data-feather="lock" class="mr-1"></i>
                                                     <span class="card-text user-info-title font-weight-bold mb-0">Нэвтрэх нэр</span>
                                                 </div>
-                                                <p class="card-text mb-0"><?=$member_username;?></p>
+                                                <p class="card-text mb-0"><?=$expert_username;?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -497,16 +599,158 @@
                                         <h4 class="card-title">Зураг</h4>
                                     </div>
                                     <div class="card-body">
-                                        <img class="img-fluid d-block" src="../<?=$member_avatar;?>" />
+                                        <img class="img-fluid d-block" src="../<?=$expert_avatar;?>" />
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <a class="btn btn-success" href="experts?action=edit&id=<?=$member_id;?>">Засах</a>
+                        <a class="btn btn-success" href="experts?action=edit&id=<?=$expert_id;?>">Засах</a>
                         <a class="btn btn-primary" href="experts">Жагсаалт</a>
                     </section>
                     <?
+                }
+                ?>
+
+                <?
+                if ($action=="delete")
+                {
+                    $expert_id = $_GET["id"];
+                    $sql = "SELECT *FROM experts WHERE id='$expert_id'";
+                    $result = mysqli_query($conn,$sql);
+                    if (mysqli_num_rows($result)==1)
+                    {
+                        $data = mysqli_fetch_array($result);
+                        $expert_avatar = $data["avatar"];
+
+                        $sql = "DELETE FROM experts WHERE id='$expert_id'";
+
+                        if (mysqli_query($conn,$sql))
+                        {
+                            if (file_exists('../'.$expert_avatar)) unlink('../'.$expert_avatar);
+                            ?>
+                            <div class="alert alert-success" role="alert">
+                                <div class="alert-body">
+                                   Амжилттай устгалаа
+                                </div>
+                            </div>
+                            <?
+                        }
+                        else 
+                        {
+                            ?>
+                            <div class="alert alert-danger" role="alert">
+                                <div class="alert-body">
+                                   Алдаа гарлаа. <?=mysqli_error($conn);?>
+                                </div>
+                            </div>
+                            <?
+                        }
+                        ?>
+                        <a class="btn btn-primary" href="experts">Жагсаалт</a>
+                        <?
+                    }
+                   
+                }
+                ?>
+
+                <? 
+                if ($action=="time")
+                {
+                    ?>
+                     <section id="basic-datatable">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <table class="datatables-basic table">
+                                        <thead>
+                                            <tr>
+                                                <th>№</th>
+                                                <th>Өдөр</th>
+                                                <th>Цаг</th>
+                                                <th>Эксперт</th>
+                                                <th>Төлөв</th>                                                
+                                                <th>Захиалга өгсөн</th>                                                
+                                                <th>Захиалсан</th>                                                                                                
+                                                <th>Төлбөр</th>                                                
+                                                <th>Үйлдэл</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?
+                                                $count =0;
+                                                $sql = "SELECT expert_time.*,name expert_name,fee FROM expert_time LEFT JOIN experts ON expert_time.expert=experts.id WHERE date>='".date("Y-m-d")."' ORDER BY time";
+                                                $result = mysqli_query($conn,$sql);
+                                                while ($data = mysqli_fetch_array($result))
+                                                {
+                                                    ?>
+                                                    <tr>
+                                                        <td><?=++$count;?></td>
+                                                        <td><?=$data["date"];?></td>
+                                                        <td><?=$data["time"];?></td>
+                                                        <td><?=$data["expert_name"];?></td>
+                                                        <td><?=($data["status"])?'<span class="badge badge-success">Батаглаажсан</span>':'<span class="badge badge-danger">Баталгаажаагүй</span>';?></td>
+                                                        <td><?=$data["created_date"];?></td>
+                                                        <td><?=$data["cust_name"];?><br><?=$data["cust_tel"];?><br><?=$data["cust_email"];?></td>
+
+                                                        <td><?=number_format($data["fee"]);?></td>
+                                                        <td>
+                                                            <?
+                                                            if ($data["status"]==0)                                                            
+                                                            {
+                                                                ?>
+                                                                <a class="btn btn-success" href="experts?action=timeverify&id=<?=$data["id"];?>">Баталгаажуулах</a>
+                                                                <a class="btn btn-danger" href="experts?action=timedelete&id=<?=$data["id"];?>">Устгах</a>
+                                                                <?
+                                                            }
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                    <?
+                                                }
+                                                ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>                       
+                    </section>
+                    <?
+                }
+                ?>
+
+                
+                <?
+                if ($action=="timeverify")
+                {
+                    $time_id = intval($_GET["id"]);
+                  
+                    $sql = "UPDATE expert_time SET status=1,verified_date=current_timestamp() WHERE id='$time_id'";
+
+                    if (mysqli_query($conn,$sql))
+                    {
+                        ?>
+                        <div class="alert alert-success" role="alert">
+                            <div class="alert-body">
+                               Амжилттай засагдлаа
+                            </div>
+                        </div>
+                        <?
+                    }
+                    else 
+                    {
+                        ?>
+                        <div class="alert alert-danger" role="alert">
+                            <div class="alert-body">
+                               Алдаа гарлаа. <?=mysqli_error($conn);?>
+                            </div>
+                        </div>
+                        <?
+                    }
+                    ?>
+                    <a class="btn btn-primary" href="experts?action=time">Жагсаалт</a>
+                    <?
+                    
                 }
                 ?>
 

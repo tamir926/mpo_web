@@ -25,7 +25,7 @@
                     <div class="volunteers-option">
                         <div class="section-header">
                             <h2>Экспертүүд</h2>
-                            <p>Professionally mesh enterprise wide imperatives without world class paradigms.Dynamically deliver ubiquitous leadership awesome skills.</p>
+                            <p>Манай экспертүүдээс цаг сонгох захиалах боломжтой</p>
                         </div>
                         <!-- .section-header -->
                         <div class="row">
@@ -42,7 +42,8 @@
                                         </div>
                                         <div class="volunteers-content">
                                             <h4><a href="#"><?=$experts["name"];?></a></h4>
-                                            <p>Эксперт</p>
+                                            <p><?=$experts["position"];?></p>
+                                            <p><?=$experts["worked"];?></p>
                                         </div>
                                         <!-- .volunteers-content -->
                                         <div class="volunteers-social-icon">
@@ -51,10 +52,66 @@
                                                 <li><a href="mailto:<?=$experts["email"];?>"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </div>
+                                        <button class="btn btn-success mb-10" data-bs-toggle="modal" data-bs-target="#expert_<?=$experts["id"];?>">Цаг захиалах</button>
                                         <!-- .volunteers-social-icon -->
                                     </div>
                                     <!-- .volunteers-items -->
                                 </div>
+
+                                <div class="modal" tabindex="-1" id="expert_<?=$experts["id"];?>">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Экспертийн цаг захиалах</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h4>Эксперт <?=$experts["name"];?></h4>
+                                            <p><?=$experts["experience"];?></p>
+                                            <p><?=$experts["education"];?></p>
+                                            <p class="text-danger">Төлбөр: <?=number_format($experts["fee"]);?>₮</p>
+                                            <form action="expert_time" method="post" id="timeselect">
+                                                <input type="hidden" name="expert" value="<?=$experts["id"];?>">
+                                                <div class="row">        
+                                                    <div class="col-lg-4">Таны нэр
+                                                        <input type="text" name="cust_name" class="form-control p-1" required>
+                                                    </div>
+                                                    <div class="col-lg-4">Утас
+                                                        <input type="text" name="cust_tel" class="form-control p-1" required>
+                                                    </div>
+                                                    <div class="col-lg-4">Имэйл
+                                                        <input type="text" name="cust_email" class="form-control p-1" required>
+                                                    </div>
+
+                                                    <div class="col-lg-4">Өдөр сонгох
+                                                        <input type="date" name="date" class="form-control" required>
+                                                    </div>
+                                                    <div class="col-lg-4">Цаг сонгох
+                                                        <select class="form-control" name="time" required>
+                                                            <option disabled>Цаг сонгох</option>
+                                                            <option value="10:00-11:00">10:00-11:00</option>
+                                                            <option value="11:00-12:00">11:00-12:00</option>
+                                                            <option value="12:00-13:00">12:00-13:00</option>
+                                                            <option value="14:00-15:00">14:00-15:00</option>
+                                                            <option value="15:00-16:00">15:00-16:00</option>
+                                                            <option value="16:00-17:00">16:00-17:00</option>
+                                                            <option value="17:00-18:00">10:00-11:00</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <br>
+                                                        <button class="btn btn-warning btn-sm" onclick="submit();">Цаг захиалах</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Хаах</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+
 
                                 <?
                             }

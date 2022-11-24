@@ -27,6 +27,7 @@ RewriteRule ^registering?$ registering.php
 
 RewriteRule ^about?$ about.php
 RewriteRule ^experts?$ experts.php
+RewriteRule ^expert_time?$ expert_time.php
 RewriteRule ^projects?$ projects.php
 RewriteRule ^news?$ news.php
 RewriteRule ^contact?$ contact.php

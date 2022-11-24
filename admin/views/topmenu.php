@@ -65,6 +65,7 @@
                     <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-toggle="dropdown"><i data-feather="compass"></i><span data-i18n="Apps">E-бүтээмж</span></a>
                         <ul class="dropdown-menu">                            
                             <li><a class="dropdown-item d-flex align-items-center" href="experts" data-toggle="dropdown" ><i data-feather="users"></i><span >Экспертүүд</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="experts?action=time" data-toggle="dropdown" ><i data-feather="watch"></i><span >Экспертийн цаг</span></a></li>
                             <li><a class="dropdown-item d-flex align-items-center" href="courses" data-toggle="dropdown" ><i data-feather="users"></i><span >Сургалт</span></a></li>
                         </ul>
                     </li>
