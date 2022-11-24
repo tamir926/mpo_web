@@ -22,8 +22,9 @@
                         <div class="pt-50">
                             <a class="btn btn-warning" href="https://www.apo-tokyo.org/" target="new">АББ ҮНДСЭН ВЕБСАЙТ</a>
                             <a class="btn btn-warning" href="https://www.apo-tokyo.org/wedo/projects/annual-programs/" target="new">АББ ХӨТӨЛБӨР</a>
-                            <a href="assets/images/brochure2.jpg" data-rel="lightcase:brochure"></a>
                             <a class="btn btn-warning" href="abb_join">МЭРГЭЖИЛТЭН БОЛОХ</a>
+                            <a class="btn btn-warning" href="pdfs/apo_vision_2025.pdf">AББ алсын хараа 2025</a>
+
                         </div>
                     </div>
                 </div>

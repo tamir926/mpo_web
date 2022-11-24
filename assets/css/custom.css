@@ -412,3 +412,20 @@ a.mpo_a:hover {color:#FAA61A;}
     height: 250px;
     border: 1px solid #CCCCCC;
 }
+
+.case .case-detail {padding: 100px; background-size: cover;}
+.case .case-detail h3
+ {
+    color: #ffffff;
+    font-size: 50px;
+}
+.case .case-detail p {
+    color: #ffffff;
+}
+
+
+.case .case-detail h5 {
+    font-size: 30px;
+    color: #ffffff;
+
+}

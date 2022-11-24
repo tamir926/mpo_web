@@ -25,7 +25,8 @@
                                       <li><a href="abb">Азийн бүтээмжийн байгууллага</a></li>
                                       <li><a href="https://www.apo-tokyo.org/">Үндсэн сайт</a></li>
                                       <li><a href="abb_join">Баталгаажсан мэргэжилтэн</a></li>
-                                      <li><a href="https://www.apo-tokyo.org/list-of-projects/">АББ Хөтөлбөр</a></li>
+                                      <li><a href="https://www.apo-tokyo.org/wedo/projects/annual-programs/">АББ Хөтөлбөр</a></li>
+                                      <li><a href="pdfs/apo_vision_2025.pdf">AББ алсын хараа 2025</a></li>
                                   </ul>
                                 </div>
                                 
