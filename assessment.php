@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="cause-items">
-                            <a href="assessment_bt"><img src="assets/images/placeholder1.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <a href="assessment_bt"><img src="assets/images/bt.jpg" alt="cause-img-1" class="img-responsive" /></a>
                             <div class="cause-content">
                                 <div class="price-title">
                                     <div class="price-left">
@@ -44,12 +44,11 @@
                             <!-- .cause-content -->
                         </div>
                         <!-- .cause-items -->
-                    </div>
-                    
+                    </div>                    
 
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="cause-items">
-                            <a href="assessment_tb"><img src="assets/images/placeholder1.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <a href="assessment_tb"><img src="assets/images/tb.jpg" alt="cause-img-1" class="img-responsive" /></a>
                             <div class="cause-content">
                                 <div class="price-title">
                                     <div class="price-left">
@@ -79,7 +78,7 @@
                     
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="cause-items">
-                            <a href="assessment_jdu"><img src="assets/images/placeholder1.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <a href="assessment_jdu"><img src="assets/images/jdu.jpg" alt="cause-img-1" class="img-responsive" /></a>
                             <div class="cause-content">
                                 <div class="price-title">
                                     <div class="price-left">
@@ -109,7 +108,7 @@
                     
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="cause-items">
-                            <a href="assessment_climate"><img src="assets/images/placeholder1.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <a href="assessment_climate"><img src="assets/images/climate.jpg" alt="cause-img-1" class="img-responsive" /></a>
                             <div class="cause-content">
                                 <div class="price-title">
                                     <div class="price-left">
@@ -139,7 +138,7 @@
                     
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="cause-items">
-                            <a href="assessment_nuat"><img src="assets/images/placeholder1.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <a href="assessment_nuat"><img src="assets/images/nuat.jpg" alt="cause-img-1" class="img-responsive" /></a>
                             <div class="cause-content">
                                 <div class="price-title">
                                     <div class="price-left">
@@ -170,7 +169,7 @@
 
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="cause-items">
-                            <a href="assessment_5c"><img src="assets/images/placeholder2.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <a href="assessment_5c"><img src="assets/images/5s.jpg" alt="cause-img-1" class="img-responsive" /></a>
                             <div class="cause-content">
                                 <div class="price-title">
                                     <div class="price-left">
@@ -201,7 +200,7 @@
 
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="cause-items">
-                            <a href="assessment_iso"><img src="assets/images/placeholder3.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <a href="assessment_iso"><img src="assets/images/iso_2001_2015.jpg" alt="cause-img-1" class="img-responsive" /></a>
                             <div class="cause-content">
                                 <div class="price-title">
                                     <div class="price-left">
