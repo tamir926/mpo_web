@@ -110,11 +110,11 @@
                                                         </div>
                                                         
                                                         <div class="form-group">
-                                                            <input type="password" class="form-control mt-30" name="password" id="password" placeholder="Нууц үг" required>
+                                                            <input type="password" class="form-control mt-30" name="password" id="password" placeholder="Нууц үг"  minlength="6" required>
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <input type="password" class="form-control mt-30" name="password2" id="password2" placeholder="Нууц үг давтах" required>
+                                                            <input type="password" class="form-control mt-30" name="password2" id="password2" placeholder="Нууц үг давтах" minlength="6" required>
                                                         </div>
 
                                                         <div class="form-group">

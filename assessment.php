@@ -13,109 +13,225 @@
         <!-- Start Campaign Section -->
         <section class="bg-campaing-section">
             <div class="container">
+                <h4>Цахим үнэлгээ хийснээр ямар ач холбогдолтой вэ?</h4>
+                <p>Монголын бүтээмжийн төвөөс санал болгож буй цахим үнэлгээний арга хэрэгсэл нь Танай байгууллагад хэзээд ч, хаанаас ч өөрсдийн үйл ажиллагааны одоогийн түвшин, давуу тал болон сайжруулах талбараа хялбар аргаар, цахимаар тодорхойлж, сайжруулалтын чиг баримжаа олж авахад тустай юм. Та манай вэб хуудсанд байгууллагаа бүртгүүлсэн байх шаардлагатай ба доорх үнэлгээний арга хэрэгслүүдээс сонгон асуулгыг бөглөснөөр Танай байгууллагад тохирсон зөвлөмж, график мэдээллийн хамт гарч ирэх болно. Мөн, гарч ирсэн зөвлөмжид тулгуурлан Та Монголын бүтээмжийн төвийн мэргэшсэн багш, зөвлөхүүдээс сонгон цахимаар болон танхимаар сургалт, зөвлөгөөний цаг авах боломжтой юм. Уг үнэлгээ нь үнэ төлбөргүй бөгөөд Та хэдэн ч удаа өөрийн байгууллагаа үнэлж, сайжруулалтын ахицаа хянаж болно. </p>
                 <div class="row">
-                    <div class="focus-cause">
-                        <div class="row">
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="cause-items">
-                                    <a href="assessment_nuat"><img src="assets/images/placeholder1.jpg" alt="cause-img-1" class="img-responsive" /></a>
-                                    <div class="cause-content">
-                                        <div class="price-title">
-                                            <div class="price-left">
-                                                <h5>Жил:<span>3-5</span></h5>
-                                            </div>
-                                            <!-- .price-left -->
-                                            <div class="price-right">
-                                                <h5>Өгөгдөл:<span>5</span></h5>
-                                            </div>
-                                            <!-- .price-left -->
-                                        </div>
-                                        <!-- .price-title -->
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                            </div>
-                                            <!-- .progress-bar -->
-                                        </div>
-                                        <!-- .progress -->
-                                        <h4><a href="assessment_nuat">Нэмэгдсэн өртгийн өсөлтийн үзүүлэлт</a></h4>
-                                        <p>3-5 жилийн нэмэгдсэн өргийн үнэлгээг тооцон гаргах</p>
-                                        <a href="assessment_nuat" class="btn btn-default">Үнэлгээ тооцох</a>
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="cause-items">
+                            <a href="assessment_bt"><img src="assets/images/placeholder1.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <div class="cause-content">
+                                <div class="price-title">
+                                    <div class="price-left">
+                                        <h5>Жил:<span>3-5</span></h5>
                                     </div>
-                                    <!-- .cause-content -->
-                                </div>
-                                <!-- .cause-items -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="cause-items">
-                                    <a href="assessment_5c"><img src="assets/images/placeholder2.jpg" alt="cause-img-1" class="img-responsive" /></a>
-                                    <div class="cause-content">
-                                        <div class="price-title">
-                                            <div class="price-left">
-                                                <h5>Асуулт:<span>35</span></h5>
-                                            </div>
-                                            <!-- .price-left -->
-                                            <div class="price-right">
-                                                <h5>Өгөгдөл:<span>35</span></h5>
-                                            </div>
-                                            <!-- .price-left -->
-                                        </div>
-                                        <!-- .price-title -->
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                            </div>
-                                            <!-- .progress-bar -->
-                                        </div>
-                                        <!-- .progress -->
-                                        <h4><a href="assessment_5c">5C үнэлгээ</a></h4>
-                                        <p>5С үнэлгээгээр байнгууллагаар бүртгүүлэх үнэлгээ өгөх боломжтой</p>
-                                        <a href="assessment_5c" class="btn btn-default">Үнэлгээ хийх</a>
+                                    <!-- .price-left -->
+                                    <div class="price-right">
+                                        <h5>Өгөгдөл:<span>5</span></h5>
                                     </div>
-                                    <!-- .cause-content -->
+                                    <!-- .price-left -->
                                 </div>
-                                <!-- .cause-items -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="cause-items">
-                                    <a href="assessment_iso"><img src="assets/images/placeholder3.jpg" alt="cause-img-1" class="img-responsive" /></a>
-                                    <div class="cause-content">
-                                        <div class="price-title">
-                                            <div class="price-left">
-                                                <h5>Асуулт:<span>35</span></h5>
-                                            </div>
-                                            <!-- .price-left -->
-                                            <div class="price-right">
-                                                <h5>Өгөгдөл:<span>35</span></h5>
-                                            </div>
-                                            <!-- .price-left -->
-                                        </div>
-                                        <!-- .price-title -->
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                            </div>
-                                            <!-- .progress-bar -->
-                                        </div>
-                                        <!-- .progress -->
-                                        <h4><a href="assessment_iso">ISO9001:2015</a></h4>
-                                        <p>ISO 9001:2015 стандартын хэрэгжилтийг шалгах хуудас</p>
-                                        <a href="assessment_iso" class="btn btn-default">Шалгах</a>
+                                <!-- .price-title -->
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
                                     </div>
-                                    <!-- .cause-content -->
+                                    <!-- .progress-bar -->
                                 </div>
-                                <!-- .cause-items -->
+                                <!-- .progress -->
+                                <h4><a href="assessment_bt">Бизнесийн төгөлдөршил</a></h4>
+                                <p>Бизнесийн төгөлдөршлийн тасралтгүй сайжруулалтын үнэлгээ</p>
+                                <a href="assessment_bt" class="btn btn-default">Үнэлгээ тооцох</a>
                             </div>
-                            <!-- .col-md-4 -->
-                           
-                            
+                            <!-- .cause-content -->
                         </div>
-                        <!-- .row -->
+                        <!-- .cause-items -->
                     </div>
-                    <!-- .focus-cause -->
+                    
+
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="cause-items">
+                            <a href="assessment_tb"><img src="assets/images/placeholder1.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <div class="cause-content">
+                                <div class="price-title">
+                                    <div class="price-left">
+                                        <h5>Жил:<span>3-5</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                    <div class="price-right">
+                                        <h5>Өгөгдөл:<span>5</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                </div>
+                                <!-- .price-title -->
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                    </div>
+                                    <!-- .progress-bar -->
+                                </div>
+                                <!-- .progress -->
+                                <h4><a href="assessment_tb">Төрийн байгууллагын бүтээмж</a></h4>
+                                <p>Төрийн байгууллагын бүтээмжийн гүйцэтгэлийн түвшин тогтоох үнэлгээ</p>
+                                <a href="assessment_tb" class="btn btn-default">Үнэлгээ тооцох</a>
+                            </div>
+                            <!-- .cause-content -->
+                        </div>
+                        <!-- .cause-items -->
+                    </div>
+                    
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="cause-items">
+                            <a href="assessment_jdu"><img src="assets/images/placeholder1.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <div class="cause-content">
+                                <div class="price-title">
+                                    <div class="price-left">
+                                        <h5>Жил:<span>3-5</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                    <div class="price-right">
+                                        <h5>Өгөгдөл:<span>5</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                </div>
+                                <!-- .price-title -->
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                    </div>
+                                    <!-- .progress-bar -->
+                                </div>
+                                <!-- .progress -->
+                                <h4><a href="assessment_jdu">ЖДҮ-н бүтээмж</a></h4>
+                                <p>ЖДҮ-ийн бүтээмж, сайжруулалтын хөтөлбөрийн анхан шатны үнэлгээ</p>
+                                <a href="assessment_jdu" class="btn btn-default">Үнэлгээ тооцох</a>
+                            </div>
+                            <!-- .cause-content -->
+                        </div>
+                        <!-- .cause-items -->
+                    </div>
+                    
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="cause-items">
+                            <a href="assessment_climate"><img src="assets/images/placeholder1.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <div class="cause-content">
+                                <div class="price-title">
+                                    <div class="price-left">
+                                        <h5>Жил:<span>3-5</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                    <div class="price-right">
+                                        <h5>Өгөгдөл:<span>5</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                </div>
+                                <!-- .price-title -->
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                    </div>
+                                    <!-- .progress-bar -->
+                                </div>
+                                <!-- .progress -->
+                                <h4><a href="assessment_climate">Байгууллагын уур амьсгалын судалгаа</a></h4>
+                                <p>Байгууллагын уур амьсгалын судалгаа</p>
+                                <a href="assessment_climate" class="btn btn-default">Үнэлгээ тооцох</a>
+                            </div>
+                            <!-- .cause-content -->
+                        </div>
+                        <!-- .cause-items -->
+                    </div>
+                    
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="cause-items">
+                            <a href="assessment_nuat"><img src="assets/images/placeholder1.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <div class="cause-content">
+                                <div class="price-title">
+                                    <div class="price-left">
+                                        <h5>Жил:<span>3-5</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                    <div class="price-right">
+                                        <h5>Өгөгдөл:<span>5</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                </div>
+                                <!-- .price-title -->
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                    </div>
+                                    <!-- .progress-bar -->
+                                </div>
+                                <!-- .progress -->
+                                <h4><a href="assessment_nuat">Нэмэгдсэн өртгийн өсөлтийн үзүүлэлт</a></h4>
+                                <p>Бүтээмжийн хэмжилт/Нэмэгдсэн өртөг</p>
+                                <a href="assessment_nuat" class="btn btn-default">Үнэлгээ тооцох</a>
+                            </div>
+                            <!-- .cause-content -->
+                        </div>
+                        <!-- .cause-items -->
+                    </div>
+                    
+
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="cause-items">
+                            <a href="assessment_5c"><img src="assets/images/placeholder2.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <div class="cause-content">
+                                <div class="price-title">
+                                    <div class="price-left">
+                                        <h5>Асуулт:<span>35</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                    <div class="price-right">
+                                        <h5>Өгөгдөл:<span>35</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                </div>
+                                <!-- .price-title -->
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                    </div>
+                                    <!-- .progress-bar -->
+                                </div>
+                                <!-- .progress -->
+                                <h4><a href="assessment_5c">5C үнэлгээ</a></h4>
+                                <p>Ажлын байрны соёл 5С - Байгууллагын одоогийн түвшний үнэлгээ</p>
+                                <a href="assessment_5c" class="btn btn-default">Үнэлгээ хийх</a>
+                            </div>
+                            <!-- .cause-content -->
+                        </div>
+                        <!-- .cause-items -->
+                    </div>
+                    
+
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="cause-items">
+                            <a href="assessment_iso"><img src="assets/images/placeholder3.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <div class="cause-content">
+                                <div class="price-title">
+                                    <div class="price-left">
+                                        <h5>Асуулт:<span>35</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                    <div class="price-right">
+                                        <h5>Өгөгдөл:<span>35</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                </div>
+                                <!-- .price-title -->
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                    </div>
+                                    <!-- .progress-bar -->
+                                </div>
+                                <!-- .progress -->
+                                <h4><a href="assessment_iso">ISO9001:2015</a></h4>
+                                <p>ISO 9001:2015 стандартын хэрэгжилтийг шалгах хуудас</p>
+                                <a href="assessment_iso" class="btn btn-default">Шалгах</a>
+                            </div>
+                            <!-- .cause-content -->
+                        </div>
+                        <!-- .cause-items -->
+                    </div>
+                    
                 </div>
                 <!-- .row -->
+                <p class="text-danger">Санамж: Эдгээр үнэлгээний асуулгууд нь Монголын бүтээмжийн төвийн оюуны өмч бөгөөд зөвхөн байгууллагын дотоод хэрэгцээнд ашиглана. Оюуны өмчийн бүтээлийг хууль бусаар хуулбарлан ашиглахыг хориглоно. Мөн үнэлгээний явцад цуглуулсан аливаа байгууллагын мэдээллийн нууцлалыг чандлан хадгалж, цааш задруулахгүй байх үүргийг Монголын бүтээмжийн төв хүлээнэ.</p>
             </div>
             <!-- .container -->
         </section>

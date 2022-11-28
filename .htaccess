@@ -1,6 +1,6 @@
 DirectoryIndex index.php
-#RewriteCond %{HTTPS} off
-#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteEngine On
 RewriteRule ^home?$ index.php
 RewriteRule ^index?$ index.php
@@ -86,6 +86,7 @@ RewriteRule ^assessment_5c?$ assessment_5c.php
 RewriteRule ^assessment_tb?$ assessment_tb.php
 RewriteRule ^assessment_jdu?$ assessment_jdu.php
 RewriteRule ^assessment_bt?$ assessment_bt.php
+RewriteRule ^assessment_climate?$ assessment_climate.php
 
 
 RewriteRule ^journals?$ journals.php

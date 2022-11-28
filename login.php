@@ -15,7 +15,7 @@
                                     <!-- .select-amount -->
                                     <div class="login-form">
                                         <h3>Нэвтрэх</h3>
-                                        <p>Та манайд бүртгэлгүй бол <a href="register" class="mpo_a">энд дарж</a> бүртгүүлнэ үү.</p>
+                                        <p>Та манайд бүртгэлгүй бол <a href="register" class="mpo_a text-warning">энд дарж</a> бүртгүүлнэ үү.</p>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group">
