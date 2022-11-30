@@ -429,3 +429,7 @@ a.mpo_a:hover {color:#FAA61A;}
     color: #ffffff;
 
 }
+
+.assesstment_intro {}
+.assesstment_intro *{ text-align: justify !important;}
+.assesstment_intro a {color: #FAA61A; font-weight: bold;}

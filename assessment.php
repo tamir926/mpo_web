@@ -142,11 +142,11 @@
                             <div class="cause-content">
                                 <div class="price-title">
                                     <div class="price-left">
-                                        <h5>Жил:<span>3-5</span></h5>
+                                        <h5>Жил:<span>Сүүлийн 5жил</span></h5>
                                     </div>
                                     <!-- .price-left -->
                                     <div class="price-right">
-                                        <h5>Өгөгдөл:<span>5</span></h5>
+                                        <h5>Өгөгдөл:<span>21</span></h5>
                                     </div>
                                     <!-- .price-left -->
                                 </div>
@@ -157,9 +157,9 @@
                                     <!-- .progress-bar -->
                                 </div>
                                 <!-- .progress -->
-                                <h4><a href="assessment_nuat">Нэмэгдсэн өртгийн өсөлтийн үзүүлэлт</a></h4>
-                                <p>Бүтээмжийн хэмжилт/Нэмэгдсэн өртөг</p>
-                                <a href="assessment_nuat" class="btn btn-default">Үнэлгээ тооцох</a>
+                                <h4><a href="assessment_nuat">БҮТЭЭМЖИЙН ХЭМЖИЛТ, НЭМЭГДСЭН ӨРТӨГ ТООЦОХ АРГАЧЛАЛ</a></h4>
+                                <p>Өнөө үед байгууллагууд бүтээмжийн талаар өргөн ойлголттой болж, байгууллага дээрээ бүтээмжийг дээшлүүлэх аргуудыг хэрэгжүүлэн ашиг орлого, үйл ажиллагааныхаа чанарыг дээшлүүлж байгаа ч нийт хүчин зүйлийн бүтээмж, хөдөлмөрийн бүтээмж хэр хэмжээгээр дээшилж, буурч байгаа үр нөлөөг бодитоор хэмжих нь асуудалтай хэвээр байгаа юм. </p>
+                                <a href="assessment_nuat_intro" class="btn btn-default">Үнэлгээ хийх</a>
                             </div>
                             <!-- .cause-content -->
                         </div>
