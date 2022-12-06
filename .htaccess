@@ -1,6 +1,6 @@
 DirectoryIndex index.php
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteEngine On
 RewriteRule ^home?$ index.php
 RewriteRule ^index?$ index.php

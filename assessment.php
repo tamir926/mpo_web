@@ -18,6 +18,36 @@
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="cause-items">
+                            <a href="assessment_bt"><img src="assets/images/dt.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <div class="cause-content">
+                                <div class="price-title">
+                                    <div class="price-left">
+                                        <h5>Жил:<span>3-5</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                    <div class="price-right">
+                                        <h5>Өгөгдөл:<span>5</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                </div>
+                                <!-- .price-title -->
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                    </div>
+                                    <!-- .progress-bar -->
+                                </div>
+                                <!-- .progress -->
+                                <h4><a href="assessment_bt">Бизнесийн төгөлдөршил</a></h4>
+                                <p>Бизнесийн төгөлдөршлийн тасралтгүй сайжруулалтын үнэлгээ</p>
+                                <a href="assessment_bt" class="btn btn-default">Үнэлгээ тооцох</a>
+                            </div>
+                            <!-- .cause-content -->
+                        </div>
+                        <!-- .cause-items -->
+                    </div>                    
+
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="cause-items">
                             <a href="assessment_bt"><img src="assets/images/bt.jpg" alt="cause-img-1" class="img-responsive" /></a>
                             <div class="cause-content">
                                 <div class="price-title">
