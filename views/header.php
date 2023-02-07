@@ -71,6 +71,7 @@
                                             <li><a href="knowledge">Мэдлэгийн сан</a></li>
                                             <li><a href="cases">Туршлага</a></li>
                                             <li><a href="abb" target="new">АББ</a></li>
+                                            <li><a href="awards">Шагнал</a></li>
                                         </ul>                                       
                                     </div>
                                 </div>

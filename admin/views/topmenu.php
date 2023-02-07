@@ -57,6 +57,21 @@
                             <li><a class="dropdown-item d-flex align-items-center" href="faqs" data-toggle="dropdown" ><i data-feather="help-circle"></i><span >Түгээмэл асуулт</span></a></li>
                             <li><a class="dropdown-item d-flex align-items-center" href="pages" data-toggle="dropdown" ><i data-feather="circle"></i><span >Хуудсууд</span></a></li>
                             <li><a class="dropdown-item d-flex align-items-center" href="slider" data-toggle="dropdown" ><i data-feather="image"></i><span >Солигддог зураг</span></a></li>
+                            <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-toggle="dropdown" data-i18n="Cards"><i data-feather="thumbs-up"></i><span data-i18n="Шагнал">Шагнал</span></a>
+                                <ul class="dropdown-menu">
+                                    <li data-menu="">
+                                        <a class="dropdown-item d-flex align-items-center" href="awards?action=new" data-toggle="dropdown" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Шинэ шагнал</span></a>
+                                    </li>
+                                    <li data-menu="">
+                                        <a class="dropdown-item d-flex align-items-center" href="awards?action=list" data-toggle="dropdown" data-i18n="Advance"><i data-feather="circle"></i><span data-i18n="Advance">Бүх шагналтан</span></a>
+                                    </li>
+                                    <li data-menu="">
+                                        <a class="dropdown-item d-flex align-items-center" href="awards?action=category" data-toggle="dropdown" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Шагналын ангилал</span></a>
+                                    </li>
+                                    
+                                </ul>
+
+                            </li>
 
                         </ul>
                     </li>
