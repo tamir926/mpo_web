@@ -89,6 +89,9 @@ RewriteRule ^assessment_tb?$ assessment_tb.php
 RewriteRule ^assessment_jdu?$ assessment_jdu.php
 RewriteRule ^assessment_bt?$ assessment_bt.php
 RewriteRule ^assessment_climate?$ assessment_climate.php
+RewriteRule ^assessment_bc?$ assessment_bc.php
+RewriteRule ^assessment_dt_intro?$ assessment_dt_intro.php
+RewriteRule ^assessment_dt?$ assessment_dt.php
 
 
 RewriteRule ^journals?$ journals.php

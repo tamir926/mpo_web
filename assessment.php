@@ -15,7 +15,67 @@
             <div class="container">
                 <h4>Цахим үнэлгээ хийснээр ямар ач холбогдолтой вэ?</h4>
                 <p>Монголын бүтээмжийн төвөөс санал болгож буй цахим үнэлгээний арга хэрэгсэл нь Танай байгууллагад хэзээд ч, хаанаас ч өөрсдийн үйл ажиллагааны одоогийн түвшин, давуу тал болон сайжруулах талбараа хялбар аргаар, цахимаар тодорхойлж, сайжруулалтын чиг баримжаа олж авахад тустай юм. Та манай вэб хуудсанд байгууллагаа бүртгүүлсэн байх шаардлагатай ба доорх үнэлгээний арга хэрэгслүүдээс сонгон асуулгыг бөглөснөөр Танай байгууллагад тохирсон зөвлөмж, график мэдээллийн хамт гарч ирэх болно. Мөн, гарч ирсэн зөвлөмжид тулгуурлан Та Монголын бүтээмжийн төвийн мэргэшсэн багш, зөвлөхүүдээс сонгон цахимаар болон танхимаар сургалт, зөвлөгөөний цаг авах боломжтой юм. Уг үнэлгээ нь үнэ төлбөргүй бөгөөд Та хэдэн ч удаа өөрийн байгууллагаа үнэлж, сайжруулалтын ахицаа хянаж болно. </p>
-                <div class="row">
+                <div class="row mt-3">
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="cause-items">
+                            <a href="assessment_dt_intro"><img src="assets/images/dt.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <div class="cause-content">
+                                <div class="price-title">
+                                    <div class="price-left">
+                                        <h5>Зөвлөмж:<span>5</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                    <div class="price-right">
+                                        <h5>Асуумж:<span>12</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                </div>
+                                <!-- .price-title -->
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                    </div>
+                                    <!-- .progress-bar -->
+                                </div>
+                                <!-- .progress -->
+                                <h4><a href="assessment_dt_intro">Дижитал шилжилтийн төлөвшил</a></h4>
+                                <p>ЖДҮ-д зориулсан дижитал шилжилтийн төлөвшлийн цахим үнэлгээ</p>
+                                <a href="assessment_dt_intro" class="btn btn-default">Үнэлэх</a>
+                            </div>
+                            <!-- .cause-content -->
+                        </div>
+                        <!-- .cause-items -->
+                    </div>    
+
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="cause-items">
+                            <a href="assessment_bc"><img src="assets/images/bc.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <div class="cause-content">
+                                <div class="price-title">
+                                    <div class="price-left">
+                                        <h5>Зөвлөмж:<span>3</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                    <div class="price-right">
+                                        <h5>Асуулт:<span>28</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                </div>
+                                <!-- .price-title -->
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                    </div>
+                                    <!-- .progress-bar -->
+                                </div>
+                                <!-- .progress -->
+                                <h4><a href="assessment_bc">Тасралтгүй байдлын үнэлгээ</a></h4>
+                                <p>Бизнесийн тасралтгүй байдлын цахим үнэлгээ</p>
+                                <a href="assessment_bc" class="btn btn-default">Үнэлэх</a>
+                            </div>
+                            <!-- .cause-content -->
+                        </div>
+                        <!-- .cause-items -->
+                    </div>                    
+
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="cause-items">
                             <a href="assessment_bt"><img src="assets/images/bt.jpg" alt="cause-img-1" class="img-responsive" /></a>
@@ -39,7 +99,7 @@
                                 <!-- .progress -->
                                 <h4><a href="assessment_bt">Бизнесийн төгөлдөршил</a></h4>
                                 <p>Бизнесийн төгөлдөршлийн тасралтгүй сайжруулалтын үнэлгээ</p>
-                                <a href="assessment_bt" class="btn btn-default">Үнэлгээ тооцох</a>
+                                <a href="assessment_bt" class="btn btn-default">Үнэлэх</a>
                             </div>
                             <!-- .cause-content -->
                         </div>
@@ -69,7 +129,7 @@
                                 <!-- .progress -->
                                 <h4><a href="assessment_tb">Төрийн байгууллагын бүтээмж</a></h4>
                                 <p>Төрийн байгууллагын бүтээмжийн гүйцэтгэлийн түвшин тогтоох үнэлгээ</p>
-                                <a href="assessment_tb" class="btn btn-default">Үнэлгээ тооцох</a>
+                                <a href="assessment_tb" class="btn btn-default">Үнэлэх</a>
                             </div>
                             <!-- .cause-content -->
                         </div>
@@ -99,7 +159,7 @@
                                 <!-- .progress -->
                                 <h4><a href="assessment_jdu">ЖДҮ-н бүтээмж</a></h4>
                                 <p>ЖДҮ-ийн бүтээмж, сайжруулалтын хөтөлбөрийн анхан шатны үнэлгээ</p>
-                                <a href="assessment_jdu" class="btn btn-default">Үнэлгээ тооцох</a>
+                                <a href="assessment_jdu" class="btn btn-default">Үнэлэх</a>
                             </div>
                             <!-- .cause-content -->
                         </div>
@@ -129,7 +189,7 @@
                                 <!-- .progress -->
                                 <h4><a href="assessment_climate">Байгууллагын уур амьсгалын судалгаа</a></h4>
                                 <p>Байгууллагын уур амьсгалын судалгаа</p>
-                                <a href="assessment_climate" class="btn btn-default">Үнэлгээ тооцох</a>
+                                <a href="assessment_climate" class="btn btn-default">Үнэлэх</a>
                             </div>
                             <!-- .cause-content -->
                         </div>
@@ -138,7 +198,7 @@
                     
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="cause-items">
-                            <a href="assessment_nuat"><img src="assets/images/nuat.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <a href="assessment_nuat_intro"><img src="assets/images/nuat.jpg" alt="cause-img-1" class="img-responsive" /></a>
                             <div class="cause-content">
                                 <div class="price-title">
                                     <div class="price-left">
@@ -157,7 +217,7 @@
                                     <!-- .progress-bar -->
                                 </div>
                                 <!-- .progress -->
-                                <h4><a href="assessment_nuat">БҮТЭЭМЖИЙН ХЭМЖИЛТ, НЭМЭГДСЭН ӨРТӨГ ТООЦОХ АРГАЧЛАЛ</a></h4>
+                                <h4><a href="assessment_nuat_intro">БҮТЭЭМЖИЙН ХЭМЖИЛТ, НЭМЭГДСЭН ӨРТӨГ ТООЦОХ АРГАЧЛАЛ</a></h4>
                                 <p>Өнөө үед байгууллагууд бүтээмжийн талаар өргөн ойлголттой болж, байгууллага дээрээ бүтээмжийг дээшлүүлэх аргуудыг хэрэгжүүлэн ашиг орлого, үйл ажиллагааныхаа чанарыг дээшлүүлж байгаа ч нийт хүчин зүйлийн бүтээмж, хөдөлмөрийн бүтээмж хэр хэмжээгээр дээшилж, буурч байгаа үр нөлөөг бодитоор хэмжих нь асуудалтай хэвээр байгаа юм. </p>
                                 <a href="assessment_nuat_intro" class="btn btn-default">Үнэлгээ хийх</a>
                             </div>
