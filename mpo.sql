@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.11
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Mar 15, 2022 at 11:07 PM
--- Server version: 8.0.17
--- PHP Version: 7.3.10
+-- Host: localhost:3306
+-- Generation Time: Apr 03, 2023 at 12:47 PM
+-- Server version: 5.7.41-cll-lve
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,8 +19,908 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mpo`
+-- Database: `mpoorgmn_new`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `awards`
+--
+
+CREATE TABLE `awards` (
+  `id` int(6) NOT NULL,
+  `avatar` varchar(123) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `organization` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `position` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `category` int(11) NOT NULL DEFAULT '0',
+  `dd` int(3) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `awards_category`
+--
+
+CREATE TABLE `awards_category` (
+  `id` int(3) NOT NULL,
+  `name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `dd` int(2) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `awards_category`
+--
+
+INSERT INTO `awards_category` (`id`, `name`, `dd`) VALUES
+(4, 'Оны шилдэг ажилтан', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books`
+--
+
+CREATE TABLE `books` (
+  `id` int(6) NOT NULL,
+  `title` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `code` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `published` year(4) DEFAULT NULL,
+  `editor` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `unit` int(3) NOT NULL DEFAULT '1',
+  `category` int(3) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`id`, `title`, `code`, `published`, `editor`, `unit`, `category`, `created_at`) VALUES
+(1, 'A year with Peter Drucker 52 weeks of coaching for leadership effectiveness', 'P&Q-A1', 0000, 'Josepha A.Maciariello', 1, 1, '2022-06-03 04:25:59'),
+(2, 'Answers manual of profitability analysis Japanese Approach', 'P&Q-A2', 0000, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(3, 'Profitability analysis Japanese approach', 'P&Q-A3', 1989, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(4, 'APO Workshop on NPO\'s Best Practices in Productivity Promotion', 'P&Q-A4', 2014, 'APO, KPC', 2, 1, '2022-06-03 04:25:59'),
+(5, 'A fifth discipline resource the Dance of change', 'P&Q-A5', 1999, 'Peter senge, Art kleiner, Charlotte roberts, Richard ross, George Roth, Bryan Smith', 1, 1, '2022-06-03 04:25:59'),
+(6, 'A focused approach corporate finance', 'P&Q-A6', 2003, 'Michael C.Ehrhardt, Eugene F.Brigham', 1, 1, '2022-06-03 04:25:59'),
+(7, 'Benchmarking Compensation system for executive staff', 'P&Q-B1', 1997, 'PSB Singapore', 1, 1, '2022-06-03 04:25:59'),
+(8, 'Best practice cases: Manufacturing Process Management', 'P&Q-B2', 1997, 'PSB Singapore', 1, 1, '2022-06-03 04:25:59'),
+(9, 'Better factory planning key to higher productivity and profitability', 'P&Q-B3', 2000, 'PSB Singapore', 1, 1, '2022-06-03 04:25:59'),
+(10, 'Business excellence FRAMEWORK', 'P&Q-B4', 2011, 'MPC', 1, 1, '2022-06-03 04:25:59'),
+(11, 'Business its Legal, Ethical, and Glabal Environment 7th edition', 'P&Q-B5', 0000, 'Marianne M.Jennings', 1, 1, '2022-06-03 04:25:59'),
+(12, 'Built to change how to achieve sustained organizational effectiveness', 'P&Q-B7', 2006, 'Edward E.Lawler III, Christopher G.Worley', 1, 1, '2022-06-03 04:25:59'),
+(13, 'Business Excellence Framework', 'P&Q-B8', 0000, 'Singapore', 1, 1, '2022-06-03 04:25:59'),
+(14, 'Capturing critical knowledge from a shifting work force', 'P&Q-C1', 2003, 'American productivity & quality center', 1, 1, '2022-06-03 04:25:59'),
+(15, 'Changing productivity movement in Asia and the pacific', 'P&Q-C2', 1999, 'APO', 5, 1, '2022-06-03 04:25:59'),
+(16, 'Companywide total quality control', 'P&Q-C3', 1990, 'Shigeru Mizuno', 1, 1, '2022-06-03 04:25:59'),
+(17, 'Compendium of Best practice Case studies in Asia', 'P&Q-C4', 2004, 'APO', 3, 1, '2022-06-03 04:25:59'),
+(18, 'Compendium of Best practice Case studies in Asia – Vol3', 'P&Q-C5', 2007, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(19, 'Compendium of Best practice case studies in asia  volume 2', 'P&Q-C6', 2007, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(20, 'Corporate performance assessment', 'P&Q-C7', 2001, 'APO', 3, 1, '2022-06-03 04:25:59'),
+(21, 'Creation of Motivations for Work and Life', 'P&Q-C8', 0000, 'Takeo Ednoh and Juzo Iwanaga', 1, 1, '2022-06-03 04:25:59'),
+(22, 'Criteria for Performance Excellence', 'P&Q-C9', 2007, 'Bill Denny', 1, 1, '2022-06-03 04:25:59'),
+(23, 'Change management a guide to effective implementation 2nd edition', 'P&Q-C10', 2000, 'Robert A.Palton, James McCalman', 1, 1, '2022-06-03 04:25:59'),
+(24, 'Cross-functional management principles and practical applications', 'P&Q-C11', 1993, 'Kenji Kurogame, Edithor in chief', 1, 1, '2022-06-03 04:25:59'),
+(25, 'Corporate financial reporting a global perspective', 'P&Q-C12', 2002, 'Herve Stolowy and Michael J.Lebas', 1, 1, '2022-06-03 04:25:59'),
+(26, 'Company accounts analysis, interpratation and understanding fifth edition', 'P&Q-C13', 2001, 'Maurice Pendlebury, Roger Groves', 1, 1, '2022-06-03 04:25:59'),
+(27, 'Design review casebook a systematic approach to japanese design review practices with case studies from leading companies', 'P&Q-D1', 1998, 'Ayatomo Kanno, Keizo Nukada Katsuyoshi yamada', 1, 1, '2022-06-03 04:25:59'),
+(28, 'Education and Training of rural youth', 'P&Q-E1', 2002, 'APO', 2, 1, '2022-06-03 04:25:59'),
+(29, 'Education skills training and national development', 'P&Q-E2', 2000, 'Linda Low', 4, 1, '2022-06-03 04:25:59'),
+(30, 'Enhancing Competitiveness through Total quality management', 'P&Q-E3', 2005, 'Network for quality, productivity and competitiveness-nepal', 1, 1, '2022-06-03 04:25:59'),
+(31, 'Essentials of Cost management', 'P&Q-E4', 2003, 'Catherine Stenzel, Joe stenzel', 1, 1, '2022-06-03 04:25:59'),
+(32, 'Examiner training logistics information', 'P&Q-E5', 2007, 'Baldridge national quality program', 1, 1, '2022-06-03 04:25:59'),
+(33, 'Executive summary report', 'P&Q-E6', 2011, 'SQA', 1, 1, '2022-06-03 04:25:59'),
+(34, 'Export credit insurance and guarantee schemes', 'P&Q-E7', 1998, 'ITC', 1, 1, '2022-06-03 04:25:59'),
+(35, 'Enhancing consultancy competency in national productivity organizations', 'P&Q-E8', 2002, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(36, 'Education and training of Rural women in asia and the pacific', 'P&Q-E9', 2002, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(37, 'Foreign exchange Practice, concepts &control', 'P&Q-F1', 2004, 'Sultan chand & sons', 1, 1, '2022-06-03 04:25:59'),
+(38, 'Financial statement analysis an international perspective', 'P&Q-F2', 2000, 'Peter Walton', 1, 1, '2022-06-03 04:25:59'),
+(39, 'Guide to Quality Control', 'P&Q-G2', 2000, 'Kaoru Ishikawa', 1, 1, '2022-06-03 04:25:59'),
+(40, 'GUIDE to TQM in Service Industries', 'P&Q-G3', 1996, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(41, 'Handbook on Productivity', 'P&Q-H1', 2015, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(42, 'How to evaluate trade credit requests', 'P&Q-H3', 1999, 'ITC', 1, 1, '2022-06-03 04:25:59'),
+(43, 'How to measure maintenance performance', 'P&Q-H4', 1977, 'Dr. Sohei HIBI', 1, 1, '2022-06-03 04:25:59'),
+(44, 'How to succeed as an independent consultant fourth edition', 'P&Q-H5', 2004, 'David Zahn', 1, 1, '2022-06-03 04:25:59'),
+(45, 'Impact of Corporate governance on Productivity', 'P&Q-I1', 2004, 'APO', 2, 1, '2022-06-03 04:25:59'),
+(46, 'Implementing ISO 14000 Standards in Asia and the pacific', 'P&Q-I2', 1999, 'APO', 2, 1, '2022-06-03 04:25:59'),
+(47, 'Improving Productivity and Effectiveness', 'P&Q-I4', 1983, 'Marvin E. Mundel, Ph.D', 1, 1, '2022-06-03 04:25:59'),
+(48, 'Innovations in appropriate technology: A case study', 'P&Q-I5', 1981, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(49, 'International sub-contracting: A tool of technology transfer', 'P&Q-I6', 1978, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(50, 'International trade in textiles MFA quotas and a developing exporting country', 'P&Q-I7', 1991, 'Sri Ram Khanna', 1, 1, '2022-06-03 04:25:59'),
+(51, 'Introduction to quality engineering', 'P&Q-I8', 1990, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(52, 'Investing in value', 'P&Q-I9', 1975, 'Warburton-Brown', 1, 1, '2022-06-03 04:25:59'),
+(53, 'Industrial democracy in europe Industrial Democracy in Europe (IDE) international research group', 'P&Q-I10', 1981, 'United states by oxford university press,new york', 1, 1, '2022-06-03 04:25:59'),
+(54, 'If only we knew what we know', 'P&Q-I11', 1998, 'Carla O.Dell, C.Jackson grayson, Jr. with nilly essaides', 1, 1, '2022-06-03 04:25:59'),
+(55, 'Intelligent testing wisc-III', 'P&Q-I12', 1994, 'Alan S.Kaufman', 1, 1, '2022-06-03 04:25:59'),
+(56, 'Japan quality award, award criteria, application guidebook', 'P&Q-J1', 1998, 'JQA', 1, 1, '2022-06-03 04:25:59'),
+(57, 'Japan Quality control circles', 'P&Q-J2', 1972, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(58, 'Japanese management: a forward- looking analysis', 'P&Q-J3', 1984, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(59, 'Japanese -style management: Its foundations and prospects', 'P&Q-J4', 1982, 'Prof. Ryushi Iwata', 1, 1, '2022-06-03 04:25:59'),
+(60, 'Job insecurity coping with jobs at risk', 'P&Q-J5', 1991, 'Jean hartley, Dan jacobson, Bert Klandermans and tinka van vuuren', 1, 1, '2022-06-03 04:25:59'),
+(61, 'HConference', 'P&Q-K2', 2017, 'KPC, APO', 1, 1, '2022-06-03 04:25:59'),
+(62, 'Law of the republic of Indonesia number 37 of 2008 on ombudsman of the republic of and law of the republic of Indonesia number 25 of 2009', 'P&Q-L1', 2009, 'O of the republic of indosia', 1, 1, '2022-06-03 04:25:59'),
+(63, 'Lean six sigma combining six sigma quality with Lean Speed', 'P&Q-L2', 0000, 'Michael L.George', 1, 1, '2022-06-03 04:25:59'),
+(64, 'Management cunsultants 1996 world conference', 'P&Q-M2', 1996, 'Zen-Noh-Ren', 1, 1, '2022-06-03 04:25:59'),
+(65, 'Management plus series 5s good housekeeping', 'P&Q-M3', 2000, 'PSB Singapore', 1, 1, '2022-06-03 04:25:59'),
+(66, 'Management plus series the ABC of TFP', 'P&Q-M4', 1999, 'Spring singapore', 1, 1, '2022-06-03 04:25:59'),
+(67, 'Management plus series wise up to patent information', 'P&Q-M5', 1999, 'PSB Singapore', 1, 1, '2022-06-03 04:25:59'),
+(68, 'Managing Organizational Change: A multiple Persectives Approach 2nd edition', 'P&Q-M6', 2009, 'Palmer', 1, 1, '2022-06-03 04:25:59'),
+(69, 'Manual on Material Flow cost accounting ISO 14051', 'P&Q-M7', 2014, 'APO', 2, 1, '2022-06-03 04:25:59'),
+(70, 'Marketing Management, Eleventh edition', 'P&Q-M8', 2003, 'Philip Kotler', 1, 1, '2022-06-03 04:25:59'),
+(71, 'Metrological control', 'P&Q-M10', 1991, 'Hiroshi Yano', 1, 1, '2022-06-03 04:25:59'),
+(72, 'Modern Production Management a Japanese experience', 'P&Q-M11', 1984, 'Eiji ogawa', 1, 1, '2022-06-03 04:25:59'),
+(73, 'Modernizing small-scale industries and businesses', 'P&Q-M12', 1992, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(74, 'Management & Cost accounting 5th edition', 'P&Q-M14', 2000, 'Colin drury', 1, 1, '2022-06-03 04:25:59'),
+(75, 'National cost of quality programme primer on cost of quality', 'P&Q-N1', 1998, 'PSB Singapore', 1, 1, '2022-06-03 04:25:59'),
+(76, 'New currents in productivity analysis', 'P&Q-N2', 2002, 'RenukaMahadevan', 2, 1, '2022-06-03 04:25:59'),
+(77, 'New Paradigm of productivity movement  in Japan', 'P&Q-N3', 1989, 'Japan productivity center', 1, 1, '2022-06-03 04:25:59'),
+(78, 'Not one dollar more 2nd edition', 'P&Q-N4', 1999, 'Joseph Eamon Cummins', 1, 1, '2022-06-03 04:25:59'),
+(79, 'National cost of quality programme guide to reducing the cost of quality', 'P&Q-N5', 1998, 'PSP Singapore', 1, 1, '2022-06-03 04:25:59'),
+(80, 'Observational Study Mission on Innovation and competitiveness in SMEs', 'P&Q-O1', 2015, 'APO, KPC', 1, 1, '2022-06-03 04:25:59'),
+(81, 'Once again with flying colours', 'P&Q-O2', 2011, 'SQA', 1, 1, '2022-06-03 04:25:59'),
+(82, 'Organizational behavior', 'P&Q-O3', 2000, 'Steven L. McShane, Mary Ann Von Glinow', 1, 1, '2022-06-03 04:25:59'),
+(83, 'Organizational Behavior 8th edition', 'P&Q-O5', 2003, 'John R. Schermerhorn, Jr James G.Hunt, Richard N.Osborn', 1, 1, '2022-06-03 04:25:59'),
+(84, 'Organizing buyers-sellers meetings', 'P&Q-O6', 1998, 'International Trade Center', 1, 1, '2022-06-03 04:25:59'),
+(85, 'Organizing for higher productivity: An analysis of japanese systems and practices', 'P&Q-O7', 1986, 'Koji Matsumoto', 1, 1, '2022-06-03 04:25:59'),
+(86, 'Population Aging and Productivity in Asian Countries', 'P&Q-P1', 2011, 'APO', 2, 1, '2022-06-03 04:25:59'),
+(87, 'Practical Productivity Analysis for Innovative Action', 'P&Q-P2', 2001, 'APO', 3, 1, '2022-06-03 04:25:59'),
+(88, 'Preparing Feasibility Studies in Asia', 'P&Q-P4', 1971, 'John E.Walsh, Jr', 1, 1, '2022-06-03 04:25:59'),
+(89, 'Preparing for Standardization Certification and quality control', 'P&Q-P5', 1979, 'Kenneth S. Stephens', 1, 1, '2022-06-03 04:25:59'),
+(90, 'Primer on best practices', 'P&Q-P6', 0000, 'National productivity corporation', 1, 1, '2022-06-03 04:25:59'),
+(91, 'Proceedings', 'P&Q-P7', 1996, 'Union of Japanese scientists and engineers', 1, 1, '2022-06-03 04:25:59'),
+(92, 'Proceedings of the Mongolian academy of sciences', 'P&Q-P8', 2003, 'Academicians', 1, 1, '2022-06-03 04:25:59'),
+(93, 'Production engineering', 'P&Q-P9', 1971, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(94, 'Productivity & economic transformation', 'P&Q-P10', 1996, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(95, 'Productivity & Quality in Civil Service', 'P&Q-P11', 1998, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(96, 'Productivity digest', 'P&Q-P13', 1996, 'PSB Singapore', 1, 1, '2022-06-03 04:25:59'),
+(97, 'Productivity in the asia- pacific: past, present, and future', 'P&Q-P14', 2015, '50 years APO', 5, 1, '2022-06-03 04:25:59'),
+(98, 'Productivity in the e-Age', 'P&Q-P15', 2002, 'APO', 3, 1, '2022-06-03 04:25:59'),
+(99, 'Productivity Measurement in the Service Sector', 'P&Q-P16', 2001, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(100, 'Productivity Measures at Sectoral and Enterprise levels', 'P&Q-P17', 2003, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(101, 'Productivity movement in Mongolia', 'P&Q-P18', 1992, 'NPDC', 4, 1, '2022-06-03 04:25:59'),
+(102, 'Productivity movement in Mongolia', 'P&Q-P19', 1992, 'National productivity and development center', 1, 1, '2022-06-03 04:25:59'),
+(103, 'Productivity promotion organizations: evolution and experience', 'P&Q-P20', 1999, 'Joseph prokopenko', 1, 1, '2022-06-03 04:25:59'),
+(104, 'Productivity statistics', 'P&Q-P21', 1996, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(105, 'Productivity strategies in the changing times', 'P&Q-P23', 1997, 'APO', 2, 1, '2022-06-03 04:25:59'),
+(106, 'Productivity everywhere wealth and prosperity for all', 'P&Q-P27', 1997, 'M.R.Ramsay', 1, 1, '2022-06-03 04:25:59'),
+(107, 'QCC annual 1995', 'P&Q-Q1', 1995, 'Singapore productivity and standards board', 1, 1, '2022-06-03 04:25:59'),
+(108, 'QCC annual 1996', 'P&Q-Q2', 1996, 'Singapore productivity and standards board', 1, 1, '2022-06-03 04:25:59'),
+(109, 'QCC annual 1997', 'P&Q-Q3', 1997, 'Singapore productivity and standards board', 1, 1, '2022-06-03 04:25:59'),
+(110, 'QFD The costumer –driven approach to quality planning and deployment', 'P&Q-Q4', 1994, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(111, 'Quality circles handbook', 'P&Q-Q5', 1997, 'Spring singapore', 1, 1, '2022-06-03 04:25:59'),
+(112, 'Readings on production planning and control', 'P&Q-R1', 1972, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(113, 'Reliability guide book', 'P&Q-R2', 1972, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(114, 'Risk report for mongolia', 'P&Q-R3', 2012, 'ERI', 1, 1, '2022-06-03 04:25:59'),
+(115, 'Renewable energy sources for rural ares in asia and the pacific', 'P&Q-R5', 2000, 'APO', 1, 1, '2022-06-03 04:25:59'),
+(116, 'Six  sigma for quality and productivity promotion', 'P&Q-S1', 2003, 'Sung H.Park', 1, 1, '2022-06-03 04:25:59'),
+(117, 'Social dialogue at enterprise level Successful experiences', 'P&Q-S2', 2004, 'International Labour Organisation', 1, 1, '2022-06-03 04:25:59'),
+(118, 'A year with Peter Drucker 52 weeks of coaching for leadership effectiveness', 'P&Q-A1', 0000, 'Josepha A.Maciariello', 1, 1, '2022-06-03 05:00:11'),
+(119, 'Answers manual of profitability analysis Japanese Approach', 'P&Q-A2', 0000, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(120, 'Profitability analysis Japanese approach', 'P&Q-A3', 1989, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(121, 'APO Workshop on NPO\'s Best Practices in Productivity Promotion', 'P&Q-A4', 2014, 'APO, KPC', 2, 1, '2022-06-03 05:00:11'),
+(122, 'A fifth discipline resource the Dance of change', 'P&Q-A5', 1999, 'Peter senge, Art kleiner, Charlotte roberts, Richard ross, George Roth, Bryan Smith', 1, 1, '2022-06-03 05:00:11'),
+(123, 'A focused approach corporate finance', 'P&Q-A6', 2003, 'Michael C.Ehrhardt, Eugene F.Brigham', 1, 1, '2022-06-03 05:00:11'),
+(124, 'Benchmarking Compensation system for executive staff', 'P&Q-B1', 1997, 'PSB Singapore', 1, 1, '2022-06-03 05:00:11'),
+(125, 'Best practice cases: Manufacturing Process Management', 'P&Q-B2', 1997, 'PSB Singapore', 1, 1, '2022-06-03 05:00:11'),
+(126, 'Better factory planning key to higher productivity and profitability', 'P&Q-B3', 2000, 'PSB Singapore', 1, 1, '2022-06-03 05:00:11'),
+(127, 'Business excellence FRAMEWORK', 'P&Q-B4', 2011, 'MPC', 1, 1, '2022-06-03 05:00:11'),
+(128, 'Business its Legal, Ethical, and Glabal Environment 7th edition', 'P&Q-B5', 0000, 'Marianne M.Jennings', 1, 1, '2022-06-03 05:00:11'),
+(129, 'Built to change how to achieve sustained organizational effectiveness', 'P&Q-B7', 2006, 'Edward E.Lawler III, Christopher G.Worley', 1, 1, '2022-06-03 05:00:11'),
+(130, 'Business Excellence Framework', 'P&Q-B8', 0000, 'Singapore', 1, 1, '2022-06-03 05:00:11'),
+(131, 'Capturing critical knowledge from a shifting work force', 'P&Q-C1', 2003, 'American productivity & quality center', 1, 1, '2022-06-03 05:00:11'),
+(132, 'Changing productivity movement in Asia and the pacific', 'P&Q-C2', 1999, 'APO', 5, 1, '2022-06-03 05:00:11'),
+(133, 'Companywide total quality control', 'P&Q-C3', 1990, 'Shigeru Mizuno', 1, 1, '2022-06-03 05:00:11'),
+(134, 'Compendium of Best practice Case studies in Asia', 'P&Q-C4', 2004, 'APO', 3, 1, '2022-06-03 05:00:11'),
+(135, 'Compendium of Best practice Case studies in Asia – Vol3', 'P&Q-C5', 2007, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(136, 'Compendium of Best practice case studies in asia  volume 2', 'P&Q-C6', 2007, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(137, 'Corporate performance assessment', 'P&Q-C7', 2001, 'APO', 3, 1, '2022-06-03 05:00:11'),
+(138, 'Creation of Motivations for Work and Life', 'P&Q-C8', 0000, 'Takeo Ednoh and Juzo Iwanaga', 1, 1, '2022-06-03 05:00:11'),
+(139, 'Criteria for Performance Excellence', 'P&Q-C9', 2007, 'Bill Denny', 1, 1, '2022-06-03 05:00:11'),
+(140, 'Change management a guide to effective implementation 2nd edition', 'P&Q-C10', 2000, 'Robert A.Palton, James McCalman', 1, 1, '2022-06-03 05:00:11'),
+(141, 'Cross-functional management principles and practical applications', 'P&Q-C11', 1993, 'Kenji Kurogame, Edithor in chief', 1, 1, '2022-06-03 05:00:11'),
+(142, 'Corporate financial reporting a global perspective', 'P&Q-C12', 2002, 'Herve Stolowy and Michael J.Lebas', 1, 1, '2022-06-03 05:00:11'),
+(143, 'Company accounts analysis, interpratation and understanding fifth edition', 'P&Q-C13', 2001, 'Maurice Pendlebury, Roger Groves', 1, 1, '2022-06-03 05:00:11'),
+(144, 'Design review casebook a systematic approach to japanese design review practices with case studies from leading companies', 'P&Q-D1', 1998, 'Ayatomo Kanno, Keizo Nukada Katsuyoshi yamada', 1, 1, '2022-06-03 05:00:11'),
+(145, 'Education and Training of rural youth', 'P&Q-E1', 2002, 'APO', 2, 1, '2022-06-03 05:00:11'),
+(146, 'Education skills training and national development', 'P&Q-E2', 2000, 'Linda Low', 4, 1, '2022-06-03 05:00:11'),
+(147, 'Enhancing Competitiveness through Total quality management', 'P&Q-E3', 2005, 'Network for quality, productivity and competitiveness-nepal', 1, 1, '2022-06-03 05:00:11'),
+(148, 'Essentials of Cost management', 'P&Q-E4', 2003, 'Catherine Stenzel, Joe stenzel', 1, 1, '2022-06-03 05:00:11'),
+(149, 'Examiner training logistics information', 'P&Q-E5', 2007, 'Baldridge national quality program', 1, 1, '2022-06-03 05:00:11'),
+(150, 'Executive summary report', 'P&Q-E6', 2011, 'SQA', 1, 1, '2022-06-03 05:00:11'),
+(151, 'Export credit insurance and guarantee schemes', 'P&Q-E7', 1998, 'ITC', 1, 1, '2022-06-03 05:00:11'),
+(152, 'Enhancing consultancy competency in national productivity organizations', 'P&Q-E8', 2002, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(153, 'Education and training of Rural women in asia and the pacific', 'P&Q-E9', 2002, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(154, 'Foreign exchange Practice, concepts &control', 'P&Q-F1', 2004, 'Sultan chand & sons', 1, 1, '2022-06-03 05:00:11'),
+(155, 'Financial statement analysis an international perspective', 'P&Q-F2', 2000, 'Peter Walton', 1, 1, '2022-06-03 05:00:11'),
+(156, 'Guide to Quality Control', 'P&Q-G2', 2000, 'Kaoru Ishikawa', 1, 1, '2022-06-03 05:00:11'),
+(157, 'GUIDE to TQM in Service Industries', 'P&Q-G3', 1996, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(158, 'Handbook on Productivity', 'P&Q-H1', 2015, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(159, 'How to evaluate trade credit requests', 'P&Q-H3', 1999, 'ITC', 1, 1, '2022-06-03 05:00:11'),
+(160, 'How to measure maintenance performance', 'P&Q-H4', 1977, 'Dr. Sohei HIBI', 1, 1, '2022-06-03 05:00:11'),
+(161, 'How to succeed as an independent consultant fourth edition', 'P&Q-H5', 2004, 'David Zahn', 1, 1, '2022-06-03 05:00:11'),
+(162, 'Impact of Corporate governance on Productivity', 'P&Q-I1', 2004, 'APO', 2, 1, '2022-06-03 05:00:11'),
+(163, 'Implementing ISO 14000 Standards in Asia and the pacific', 'P&Q-I2', 1999, 'APO', 2, 1, '2022-06-03 05:00:11'),
+(164, 'Improving Productivity and Effectiveness', 'P&Q-I4', 1983, 'Marvin E. Mundel, Ph.D', 1, 1, '2022-06-03 05:00:11'),
+(165, 'Innovations in appropriate technology: A case study', 'P&Q-I5', 1981, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(166, 'International sub-contracting: A tool of technology transfer', 'P&Q-I6', 1978, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(167, 'International trade in textiles MFA quotas and a developing exporting country', 'P&Q-I7', 1991, 'Sri Ram Khanna', 1, 1, '2022-06-03 05:00:11'),
+(168, 'Introduction to quality engineering', 'P&Q-I8', 1990, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(169, 'Investing in value', 'P&Q-I9', 1975, 'Warburton-Brown', 1, 1, '2022-06-03 05:00:11'),
+(170, 'Industrial democracy in europe Industrial Democracy in Europe (IDE) international research group', 'P&Q-I10', 1981, 'United states by oxford university press,new york', 1, 1, '2022-06-03 05:00:11'),
+(171, 'If only we knew what we know', 'P&Q-I11', 1998, 'Carla O.Dell, C.Jackson grayson, Jr. with nilly essaides', 1, 1, '2022-06-03 05:00:11'),
+(172, 'Intelligent testing wisc-III', 'P&Q-I12', 1994, 'Alan S.Kaufman', 1, 1, '2022-06-03 05:00:11'),
+(173, 'Japan quality award, award criteria, application guidebook', 'P&Q-J1', 1998, 'JQA', 1, 1, '2022-06-03 05:00:11'),
+(174, 'Japan Quality control circles', 'P&Q-J2', 1972, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(175, 'Japanese management: a forward- looking analysis', 'P&Q-J3', 1984, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(176, 'Japanese -style management: Its foundations and prospects', 'P&Q-J4', 1982, 'Prof. Ryushi Iwata', 1, 1, '2022-06-03 05:00:11'),
+(177, 'Job insecurity coping with jobs at risk', 'P&Q-J5', 1991, 'Jean hartley, Dan jacobson, Bert Klandermans and tinka van vuuren', 1, 1, '2022-06-03 05:00:11'),
+(178, 'HConference', 'P&Q-K2', 2017, 'KPC, APO', 1, 1, '2022-06-03 05:00:11'),
+(179, 'Law of the republic of Indonesia number 37 of 2008 on ombudsman of the republic of and law of the republic of Indonesia number 25 of 2009', 'P&Q-L1', 2009, 'O of the republic of indosia', 1, 1, '2022-06-03 05:00:11'),
+(180, 'Lean six sigma combining six sigma quality with Lean Speed', 'P&Q-L2', 0000, 'Michael L.George', 1, 1, '2022-06-03 05:00:11'),
+(181, 'Management cunsultants 1996 world conference', 'P&Q-M2', 1996, 'Zen-Noh-Ren', 1, 1, '2022-06-03 05:00:11'),
+(182, 'Management plus series 5s good housekeeping', 'P&Q-M3', 2000, 'PSB Singapore', 1, 1, '2022-06-03 05:00:11'),
+(183, 'Management plus series the ABC of TFP', 'P&Q-M4', 1999, 'Spring singapore', 1, 1, '2022-06-03 05:00:11'),
+(184, 'Management plus series wise up to patent information', 'P&Q-M5', 1999, 'PSB Singapore', 1, 1, '2022-06-03 05:00:11'),
+(185, 'Managing Organizational Change: A multiple Persectives Approach 2nd edition', 'P&Q-M6', 2009, 'Palmer', 1, 1, '2022-06-03 05:00:11'),
+(186, 'Manual on Material Flow cost accounting ISO 14051', 'P&Q-M7', 2014, 'APO', 2, 1, '2022-06-03 05:00:11'),
+(187, 'Marketing Management, Eleventh edition', 'P&Q-M8', 2003, 'Philip Kotler', 1, 1, '2022-06-03 05:00:11'),
+(188, 'Metrological control', 'P&Q-M10', 1991, 'Hiroshi Yano', 1, 1, '2022-06-03 05:00:11'),
+(189, 'Modern Production Management a Japanese experience', 'P&Q-M11', 1984, 'Eiji ogawa', 1, 1, '2022-06-03 05:00:11'),
+(190, 'Modernizing small-scale industries and businesses', 'P&Q-M12', 1992, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(191, 'Management & Cost accounting 5th edition', 'P&Q-M14', 2000, 'Colin drury', 1, 1, '2022-06-03 05:00:11'),
+(192, 'National cost of quality programme primer on cost of quality', 'P&Q-N1', 1998, 'PSB Singapore', 1, 1, '2022-06-03 05:00:11'),
+(193, 'New currents in productivity analysis', 'P&Q-N2', 2002, 'RenukaMahadevan', 2, 1, '2022-06-03 05:00:11'),
+(194, 'New Paradigm of productivity movement  in Japan', 'P&Q-N3', 1989, 'Japan productivity center', 1, 1, '2022-06-03 05:00:11'),
+(195, 'Not one dollar more 2nd edition', 'P&Q-N4', 1999, 'Joseph Eamon Cummins', 1, 1, '2022-06-03 05:00:11'),
+(196, 'National cost of quality programme guide to reducing the cost of quality', 'P&Q-N5', 1998, 'PSP Singapore', 1, 1, '2022-06-03 05:00:11'),
+(197, 'Observational Study Mission on Innovation and competitiveness in SMEs', 'P&Q-O1', 2015, 'APO, KPC', 1, 1, '2022-06-03 05:00:11'),
+(198, 'Once again with flying colours', 'P&Q-O2', 2011, 'SQA', 1, 1, '2022-06-03 05:00:11'),
+(199, 'Organizational behavior', 'P&Q-O3', 2000, 'Steven L. McShane, Mary Ann Von Glinow', 1, 1, '2022-06-03 05:00:11'),
+(200, 'Organizational Behavior 8th edition', 'P&Q-O5', 2003, 'John R. Schermerhorn, Jr James G.Hunt, Richard N.Osborn', 1, 1, '2022-06-03 05:00:11'),
+(201, 'Organizing buyers-sellers meetings', 'P&Q-O6', 1998, 'International Trade Center', 1, 1, '2022-06-03 05:00:11'),
+(202, 'Organizing for higher productivity: An analysis of japanese systems and practices', 'P&Q-O7', 1986, 'Koji Matsumoto', 1, 1, '2022-06-03 05:00:11'),
+(203, 'Population Aging and Productivity in Asian Countries', 'P&Q-P1', 2011, 'APO', 2, 1, '2022-06-03 05:00:11'),
+(204, 'Practical Productivity Analysis for Innovative Action', 'P&Q-P2', 2001, 'APO', 3, 1, '2022-06-03 05:00:11'),
+(205, 'Preparing Feasibility Studies in Asia', 'P&Q-P4', 1971, 'John E.Walsh, Jr', 1, 1, '2022-06-03 05:00:11'),
+(206, 'Preparing for Standardization Certification and quality control', 'P&Q-P5', 1979, 'Kenneth S. Stephens', 1, 1, '2022-06-03 05:00:11'),
+(207, 'Primer on best practices', 'P&Q-P6', 0000, 'National productivity corporation', 1, 1, '2022-06-03 05:00:11'),
+(208, 'Proceedings', 'P&Q-P7', 1996, 'Union of Japanese scientists and engineers', 1, 1, '2022-06-03 05:00:11'),
+(209, 'Proceedings of the Mongolian academy of sciences', 'P&Q-P8', 2003, 'Academicians', 1, 1, '2022-06-03 05:00:11'),
+(210, 'Production engineering', 'P&Q-P9', 1971, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(211, 'Productivity & economic transformation', 'P&Q-P10', 1996, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(212, 'Productivity & Quality in Civil Service', 'P&Q-P11', 1998, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(213, 'Productivity digest', 'P&Q-P13', 1996, 'PSB Singapore', 1, 1, '2022-06-03 05:00:11'),
+(214, 'Productivity in the asia- pacific: past, present, and future', 'P&Q-P14', 2015, '50 years APO', 5, 1, '2022-06-03 05:00:11'),
+(215, 'Productivity in the e-Age', 'P&Q-P15', 2002, 'APO', 3, 1, '2022-06-03 05:00:11'),
+(216, 'Productivity Measurement in the Service Sector', 'P&Q-P16', 2001, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(217, 'Productivity Measures at Sectoral and Enterprise levels', 'P&Q-P17', 2003, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(218, 'Productivity movement in Mongolia', 'P&Q-P18', 1992, 'NPDC', 4, 1, '2022-06-03 05:00:11'),
+(219, 'Productivity movement in Mongolia', 'P&Q-P19', 1992, 'National productivity and development center', 1, 1, '2022-06-03 05:00:11'),
+(220, 'Productivity promotion organizations: evolution and experience', 'P&Q-P20', 1999, 'Joseph prokopenko', 1, 1, '2022-06-03 05:00:11'),
+(221, 'Productivity statistics', 'P&Q-P21', 1996, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(222, 'Productivity strategies in the changing times', 'P&Q-P23', 1997, 'APO', 2, 1, '2022-06-03 05:00:11'),
+(223, 'Productivity everywhere wealth and prosperity for all', 'P&Q-P27', 1997, 'M.R.Ramsay', 1, 1, '2022-06-03 05:00:11'),
+(224, 'QCC annual 1995', 'P&Q-Q1', 1995, 'Singapore productivity and standards board', 1, 1, '2022-06-03 05:00:11'),
+(225, 'QCC annual 1996', 'P&Q-Q2', 1996, 'Singapore productivity and standards board', 1, 1, '2022-06-03 05:00:11'),
+(226, 'QCC annual 1997', 'P&Q-Q3', 1997, 'Singapore productivity and standards board', 1, 1, '2022-06-03 05:00:11'),
+(227, 'QFD The costumer –driven approach to quality planning and deployment', 'P&Q-Q4', 1994, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(228, 'Quality circles handbook', 'P&Q-Q5', 1997, 'Spring singapore', 1, 1, '2022-06-03 05:00:11'),
+(229, 'Readings on production planning and control', 'P&Q-R1', 1972, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(230, 'Reliability guide book', 'P&Q-R2', 1972, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(231, 'Risk report for mongolia', 'P&Q-R3', 2012, 'ERI', 1, 1, '2022-06-03 05:00:11'),
+(232, 'Renewable energy sources for rural ares in asia and the pacific', 'P&Q-R5', 2000, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(233, 'Six  sigma for quality and productivity promotion', 'P&Q-S1', 2003, 'Sung H.Park', 1, 1, '2022-06-03 05:00:11'),
+(234, 'Six sigma for business excellence A manager\'s guide to supervising six sigma projects and teams', 'P&Q-S1 (2)', 2006, 'McGraw-Hill', 1, 1, '2022-06-03 05:00:11'),
+(235, 'Social dialogue at enterprise level Successful experiences', 'P&Q-S2', 2004, 'International Labour Organisation', 1, 1, '2022-06-03 05:00:11'),
+(236, 'Strengthening consultancy capabilities of national productivity organizations', 'P&Q-S3', 1995, 'APO', 2, 1, '2022-06-03 05:00:11'),
+(237, 'Strengthening of supporting industries', 'P&Q-S4', 2002, 'APO', 3, 1, '2022-06-03 05:00:11'),
+(238, 'Successful Services exporting', 'P&Q-S5', 1997, 'ITC', 1, 1, '2022-06-03 05:00:11'),
+(239, 'Successful Project Management', 'P&Q-S6', 2006, 'Jack W. Calhoun', 1, 1, '2022-06-03 05:00:11'),
+(240, 'Study guide for use with introduction to accounting an integrated approach', 'P&Q-S7', 1997, 'Debra K.Kerby, Scott R.Founch', 1, 1, '2022-06-03 05:00:11'),
+(241, 'Techno economics: Concepts and Cases', 'P&Q-T1', 1983, 'J.C.Wright', 1, 1, '2022-06-03 05:00:11'),
+(242, 'Technology development in developing countries', 'P&Q-T2', 1986, 'Hyung Sup Choi', 1, 1, '2022-06-03 05:00:11'),
+(243, 'Thailand Productivity institute annual report', 'P&Q-T3', 2005, 'TPI', 1, 1, '2022-06-03 05:00:11'),
+(244, 'The IRAS story', 'P&Q-T5', 2011, 'SQA', 1, 1, '2022-06-03 05:00:11'),
+(245, 'The new work programme of the WTO', 'P&Q-T6', 0000, 'Third world network', 1, 1, '2022-06-03 05:00:11'),
+(246, 'The Quest for Global Competitiveness through national quality and business excellence awards', 'P&Q-T7', 2002, 'APO', 2, 1, '2022-06-03 05:00:11'),
+(247, 'The report Mongolia', 'P&Q-T8', 2012, 'Oxford business group', 2, 1, '2022-06-03 05:00:11'),
+(248, 'The SME and the export development company', 'P&Q-T9', 1999, 'ITC', 1, 1, '2022-06-03 05:00:11'),
+(249, 'The SME and the global market place', 'P&Q-T10', 1997, 'ITC', 1, 1, '2022-06-03 05:00:11'),
+(250, 'The trainer\'s tool kit 2nd edition', 'P&Q-T11', 2005, 'CY charney & Kathy conway', 1, 1, '2022-06-03 05:00:11'),
+(251, 'The WTO dispute settlement procedures a collection of the legal texts', 'P&Q-T12', 1995, 'Frieder Roessler', 1, 1, '2022-06-03 05:00:11'),
+(252, 'The WTO, thE Post-Doha Agenda and the future of the trade system: A development perspective', 'P&Q-T13', 0000, 'Martin Khor', 1, 1, '2022-06-03 05:00:11'),
+(253, 'Top management Forum Features of Excellent firms: Experience of quality award winning firms', 'P&Q-T14', 2000, 'APO', 4, 1, '2022-06-03 05:00:11'),
+(254, 'Total factor productivity growth', 'P&Q-T15', 2004, 'Survey Report', 4, 1, '2022-06-03 05:00:11'),
+(255, 'TPM: Total Productive Maintenance', 'P&Q-T16', 1990, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(256, 'TQC and TPM', 'P&Q-T17', 1992, 'APO', 2, 1, '2022-06-03 05:00:11'),
+(257, 'TQM in the CONSTRUCTION industry/ MAEDA CORPORATION', 'P&Q-T18', 1997, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(258, 'TQM with Generating KAIZEN', 'P&Q-T19', 1996, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(259, 'TQM: Concepts and practices', 'P&Q-T20', 1999, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(260, 'Training course on Stregthening NPOs for Productivity Promotion Practices and Strategies', 'P&Q-T21', 2016, 'KPC, APO', 2, 1, '2022-06-03 05:00:11'),
+(261, 'The fifth discipline fieldbook', 'P&Q-T22', 1994, 'Peter M.Senge, Art Kleiner, Charlotte roberts, Richard B.Ross, Bryan J.Smith', 1, 1, '2022-06-03 05:00:11'),
+(262, 'The parent\'s success guide to organizing', 'P&Q-T24', 2004, 'H.Dismore', 1, 1, '2022-06-03 05:00:11'),
+(263, 'Top management forum human-centred management', 'P&Q-T25', 1993, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(264, 'Top management forum kyosei with asia : corporate strategy of japanese firms towards the 21st century', 'P&Q-T26', 1994, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(265, 'Tracking productivity growth through the Value added productivity measurement (VAPM) approach', 'P&Q-T27', 1998, 'Dr.Shurchuluu', 1, 1, '2022-06-03 05:00:11'),
+(266, 'Women and productivity', 'P&Q-W1', 1996, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(267, 'Benchmark guide book', 'BEN-B1', 2003, 'National productivity corporation', 2, 1, '2022-06-03 05:00:11'),
+(268, 'Benchmarking A quality and productivity improvement tool', 'BEN-B2', 2001, 'APO', 3, 1, '2022-06-03 05:00:11'),
+(269, 'Benchmarking for competitiveness building', 'BEN-B3', 2001, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(270, 'Benchmarking Training Manual', 'BEN-B4', 2005, 'APO', 6, 1, '2022-06-03 05:00:11'),
+(271, 'Country report survey on benchmarking: case studies', 'BEN-C1', 1999, 'MNP&Development center', 1, 1, '2022-06-03 05:00:11'),
+(272, 'E-Government of Korea Best Practices', 'BEN-E1', 0000, 'Ministry of Government Administration and home affiars', 1, 1, '2022-06-03 05:00:11'),
+(273, '100 management charts', 'MAN-1-1', 1992, 'Soichiro Nagashima', 1, 1, '2022-06-03 05:00:11'),
+(274, 'A handbook of Management A-Z', 'MAN-A1', 1971, 'Thomas Kempner', 1, 1, '2022-06-03 05:00:11'),
+(275, 'Creative entrepreneurship in Asia', 'MAN-C1', 2002, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(276, 'Cost management strategies for business decisions', 'MAN-C2', 2000, 'Ronald W.Hilton, Michael W.Maher, Frank H.Selto', 1, 1, '2022-06-03 05:00:11'),
+(277, 'Enhancing Competitiveness through People and Value Creation', 'MAN-E1', 2001, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(278, 'Execution the discipline of getting things done', 'MAN-E2', 2002, 'Larry Bossidy & Ram charan with Charles Burck', 1, 1, '2022-06-03 05:00:11'),
+(279, 'Guidebook on the strategic performance management system', 'MAN-G1', 0000, 'Civil service comission', 1, 1, '2022-06-03 05:00:11'),
+(280, 'Interface between manufacturing and service', 'MAN-I1', 1999, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(281, 'Inspection and inspection management', 'MAN-I2', 1993, 'Charles suntag', 1, 1, '2022-06-03 05:00:11'),
+(282, 'International comparative study of management consulting services', 'MAN-I3', 1996, 'All japan federation of management organizations zen-non-ren', 1, 1, '2022-06-03 05:00:11'),
+(283, 'International Management', 'MAN-I4', 2000, 'Richard M. Hodgetts', 1, 1, '2022-06-03 05:00:11'),
+(284, 'Japanese management overseas', 'MAN-J1', 1989, 'Hiroshi Komai', 1, 1, '2022-06-03 05:00:11'),
+(285, 'Local Social development', 'MAN-L1', 2000, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(286, 'Managerial and Entrepreneurship Developmennt in supporting industry', 'MAN-M1', 2002, 'APO', 4, 1, '2022-06-03 05:00:11'),
+(287, 'Modernizing small-scale industries and businesses', 'MAN-M2', 1992, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(288, 'Managing time', 'MAN-M3', 0000, 'Harvard business school press', 1, 1, '2022-06-03 05:00:11'),
+(289, 'Management in western Europe', 'MAN-M4', 1993, 'J. Hickson', 1, 1, '2022-06-03 05:00:11'),
+(290, 'New study of technology management', 'MAN-N1', 1995, 'Terro Yamanouchi', 1, 1, '2022-06-03 05:00:11'),
+(291, 'Niche Marketing 60 Success stories', 'MAN-N2', 2007, 'SoichiroNagashima', 3, 1, '2022-06-03 05:00:11'),
+(292, 'Privatizing state-owned enterprises', 'MAN-P1', 1996, 'Kenichi Yanagi Secretary-General', 1, 1, '2022-06-03 05:00:11'),
+(293, 'Productivity and quality management a modular programme /Erkhembayar zahirald ugsun/', 'MAN-P2', 1996, 'APO, International labour office geneva', 1, 1, '2022-06-03 05:00:11'),
+(294, 'Role of General trading firms in Trade and development', 'MAN-R1', 1987, 'Terutomo Ozawa', 1, 1, '2022-06-03 05:00:11'),
+(295, 'Root cause analysis a tool for total quality management', 'MAN-R2', 0000, 'Paule F.Wilson, Larry D.Dell, Gaylord F.Anderson', 1, 1, '2022-06-03 05:00:11'),
+(296, 'Report on study of the erdenet mine modernization and development program Vol2', 'MAN-R3', 1993, 'Mitsui mineral development engineering co.LTD', 1, 1, '2022-06-03 05:00:11'),
+(297, 'Report on study of the erdenet mine modernization and development program Vol3', 'MAN-R4', 1993, 'Mitsui mineral development engineering co.LTD', 1, 1, '2022-06-03 05:00:11'),
+(298, 'Facility design and management handbook', 'MAN-F1', 2001, 'McGraw-Hill', 1, 1, '2022-06-03 05:00:11'),
+(299, 'Hedging instruments & Risk management how to use derivatives to control financial risk in any market', 'MAN-H1', 2005, 'McGraw-Hill company', 1, 1, '2022-06-03 05:00:11'),
+(300, 'How to become CEO', 'MAN-H2', 1998, 'Jeffrey J.Fox', 1, 1, '2022-06-03 05:00:11'),
+(301, 'Social Capital and Business Transformation in Asia', 'MAN-S1', 2008, 'APO', 2, 1, '2022-06-03 05:00:11'),
+(302, 'Successful RFPs in construction', 'MAN-S2', 2005, 'Rick Fria', 1, 1, '2022-06-03 05:00:11'),
+(303, 'Top management forum Asian Dynamism and Global Management', 'MAN-T1', 2011, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(304, 'Top management forum Corporate Brand Management', 'MAN-T2', 2007, 'APO', 2, 1, '2022-06-03 05:00:11'),
+(305, 'Top management forum Corporate Governance', 'MAN-T3', 2003, 'APO', 2, 1, '2022-06-03 05:00:11'),
+(306, 'Top management forum Corporate Social Responsibility', 'MAN-T4', 2006, 'APO', 1, 1, '2022-06-03 05:00:11'),
+(307, 'The way of strategy', 'MAN-T5', 1994, 'William A.Levinson', 1, 1, '2022-06-03 05:00:11'),
+(308, 'Enhancing SME competitiveness in the age of globalization', 'SME-E1', 2002, 'APO', 3, 1, '2022-06-03 05:00:11'),
+(309, 'Entrepreneurship Development for Competitive small and medium enterprises', 'SME-E2', 2007, 'APO', 4, 1, '2022-06-03 05:00:11'),
+(310, 'Export orientation for Small & Medium Enterprises: Policies Strategies and Programs', 'SME-E3', 2001, 'APO', 1, 1, '2022-06-03 05:00:12'),
+(311, 'Promotion of rural-Based small industries in Asia and the pacific', 'SME-P1', 2000, 'APO', 1, 1, '2022-06-03 05:00:12'),
+(312, 'Road to competitiveness', 'SME-R1', 2010, 'MPC', 1, 1, '2022-06-03 05:00:12'),
+(313, 'SMEs in Competitive Markets', 'SME-S1', 2002, 'APO', 3, 1, '2022-06-03 05:00:12'),
+(314, 'The RoHS Manual for SMEs', 'SME-T1', 2008, 'APO', 3, 1, '2022-06-03 05:00:12'),
+(315, 'Top management forum Management renovation through networking in small and medium enterprises', 'SME-T2', 2001, 'APO', 2, 1, '2022-06-03 05:00:12'),
+(316, 'APO International Productivity Conference', 'KM-A1', 2007, '', 1, 2, '2022-06-03 05:01:25'),
+(317, 'Assessment Criteria for Performance Excellence', 'KM-A2', 2005, 'Japan Quality Award', 1, 2, '2022-06-03 05:01:25'),
+(318, 'Capitalizing on Knowledge Workers', 'KM-C1', 2002, 'APO', 1, 2, '2022-06-03 05:01:25'),
+(319, 'Communities of practice', 'KM-C2', 2002, 'Craig henderson and Paige leavitt', 1, 2, '2022-06-03 05:01:26'),
+(320, 'Green procurement and its impact on the green supply chain', 'KM-G1', 2010, 'MPO', 1, 2, '2022-06-03 05:01:26'),
+(321, 'Knowledge Management -Case studies for Small and medium enterprises', 'KM-K1', 2009, 'APO', 5, 2, '2022-06-03 05:01:26'),
+(322, 'Knowledge Management Facilitators Guide', 'KM-K2', 2010, 'APO', 3, 2, '2022-06-03 05:01:26'),
+(323, 'Knowledge Management for the public sector ', 'KM-K3', 2013, 'APO', 3, 2, '2022-06-03 05:01:26'),
+(324, 'Knowledge Management from brain to business', 'KM-K4', 2007, 'APO', 4, 2, '2022-06-03 05:01:26'),
+(325, 'Knowledge Management in Asia experience and lessons', 'KM-K5', 2008, 'APO', 3, 2, '2022-06-03 05:01:26'),
+(326, 'Knowledge Management Tools and Techniques manual', 'KM-K6', 2010, 'APO', 1, 2, '2022-06-03 05:01:26'),
+(327, 'Practical KM guide for SME Owners/ Managers', 'KM-P1', 2010, 'APO', 3, 2, '2022-06-03 05:01:26'),
+(328, 'Stages of Implementation', 'KM-S1', 2000, 'APO', 1, 2, '2022-06-03 05:01:26'),
+(329, 'The financing of exports', 'KM-T1', 1997, 'ITC', 1, 2, '2022-06-03 05:01:26'),
+(330, 'Top Management Forum Knowledge Management a key for Corporate competitiveness', 'KM-T2', 2002, 'APO', 3, 2, '2022-06-03 05:01:26'),
+(331, 'Top Management Forum Knowledge Management for Corporate Innovation', 'KM-T3', 2002, 'APO', 5, 2, '2022-06-03 05:01:26'),
+(332, 'A Strategy for corporate innovation', 'INNO-A1', 1997, 'Shiroy Fujita', 2, 2, '2022-06-03 05:01:26'),
+(333, 'Collection of innovations vol5', 'INNO-C1', 2011, 'MPO', 1, 2, '2022-06-03 05:01:26'),
+(334, 'Entrepreneurship  and Innovation in the knowledge – based Economy', 'INNO-E1', 2003, 'APO', 3, 2, '2022-06-03 05:01:26'),
+(335, 'From conflict to creativity', 'INNO-F1', 2001, 'John wiley & Sons, Inc', 1, 2, '2022-06-03 05:01:26'),
+(336, 'Innovation framework and strategies', 'INNO-I1', 2009, 'APO', 4, 2, '2022-06-03 05:01:26'),
+(337, 'One asia foundation:Seven years of progress 2009-2016 references', 'INNO-O1', 2017, 'One asia foundation', 1, 2, '2022-06-03 05:01:26'),
+(338, '/Batbileg zahirald baigaa/', '', 0000, '', 0, 2, '2022-06-03 05:01:26'),
+(339, 'Innovator malaysia', 'INNO-P1', 0000, 'MPO', 1, 2, '2022-06-03 05:01:26'),
+(340, 'Strategies for Innovative product development', 'INNO-S1', 2000, 'Yoshinibu Nayatani, Shuzo Moroto, Taizo Nakamura', 3, 2, '2022-06-03 05:01:26'),
+(341, 'Top Management forum Innovative Corporate Strategy in Global Competition', 'INNO-T1', 2008, 'APO', 2, 2, '2022-06-03 05:01:26'),
+(342, 'Top Management forum Management Innovation for Productivity Improvement in the Service Sector', 'INNO-T2', 2009, 'APO', 2, 2, '2022-06-03 05:01:26'),
+(343, 'Top Management forum Strategic Management of Technology and Innovation', 'INNO-T3', 2007, 'APO', 5, 2, '2022-06-03 05:01:26'),
+(344, 'The innovator’s dilemma when new technologies cause great firms to fail', 'INNO-T6', 2000, 'Clayton M.Christensen', 1, 2, '2022-06-03 05:01:26'),
+(345, 'The lean startup how today’s entrepreneurs use continuous innovation to create radically successful businesses', 'INNO-T7', 2001, 'Eric ries', 1, 2, '2022-06-03 05:01:26'),
+(346, 'Agricultural Credit Asia and the Pacific', 'AGR-A1', 2001, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(347, 'Agricultural Policies in Selected APO Member Countries: An Overview throught Transfer Analysis', 'AGR-A2', 2013, 'APO', 5, 3, '2022-06-03 05:03:44'),
+(348, 'Agricultural Policy for More Competitive Economies in Asia and the Pacific', 'AGR-A3', 2002, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(349, 'Aquaculture management', 'AGR-A4', 2003, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(350, 'Business Potential for Agricultural Biotechnology Products', 'AGR-B1', 2007, 'APO', 4, 3, '2022-06-03 05:03:44'),
+(351, 'Biotechnology in agriculture in asia', 'AGR-B2', 1999, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(352, 'Development and operation of agricultural insurance schemes in Asia', 'AGR-D1', 1999, 'APO', 5, 3, '2022-06-03 05:03:44'),
+(353, 'Fishery cooperatives in Asia', 'AGR-F1', 1996, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(354, 'Food standards and labeling systems in asia and the pacific', 'AGR-F2', 2002, 'APO', 3, 3, '2022-06-03 05:03:44'),
+(355, 'Impact of land Utilization Systems on agriculture Produce', 'AGR-I1', 2003, 'APO', 4, 3, '2022-06-03 05:03:44'),
+(356, 'Impact of the Changing Economy on Small Farmers in Asia and the pacific', 'AGR-I2', 2001, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(357, 'Improving management of aquaculture in asia', 'AGR-I3', 1998, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(358, 'International trade and Food security in asia', 'AGR-I4', 2000, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(359, 'Hides and skins a survey of the Netherlands and other major in the European union', 'AGR-H1', 1995, 'Ronald W. van den Bosch', 1, 3, '2022-06-03 05:03:44'),
+(360, 'Magnificent cashmere', 'AGR-M1', 2000, 'Ts.Khishigjargal, Ts.Sedvanchig', 1, 3, '2022-06-03 05:03:44'),
+(361, 'Manual on Good Agricultural Practices (GAP)', 'AGR-M2', 2016, 'APO', 4, 3, '2022-06-03 05:03:44'),
+(362, 'Marketing of vegetables & fruits in Asia and the Pacific', 'AGR-M3', 2001, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(363, 'Meat and meat products a survey of the Netherlands and other major markets in the European union', 'AGR-M4', 1995, '', 1, 3, '2022-06-03 05:03:44'),
+(364, 'Operation of agricultural Wholesale Markets', 'AGR-O1', 2002, 'APO', 3, 3, '2022-06-03 05:03:44'),
+(365, 'Organization Change for Participatory Irrigation Management', 'AGR-O2', 2002, 'APO', 4, 3, '2022-06-03 05:03:44'),
+(366, 'Productivity improvement in rainfed area in asia', 'AGR-P2', 2002, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(367, 'Quality Enhancement in food processing through HACCP', 'AGR-Q1', 2005, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(368, 'Role of multifunctionality in agricultural policy reforms', 'AGR-R1', 2001, 'APO', 4, 3, '2022-06-03 05:03:44'),
+(369, 'Structural adjustment of agriculture in Asia', 'AGR-S1', 1999, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(370, 'Structural adjustments in agriculture  in asia and the pacific', 'AGR-S3', 2002, 'APO', 3, 3, '2022-06-03 05:03:44'),
+(371, 'Annual report  on the Environment and the sound material cycle society in Japan', 'GP-A1', 2007, 'Ministry of the Environment', 1, 3, '2022-06-03 05:03:44'),
+(372, 'Biomass as fuel – in small boilers', 'GP-B1', 2009, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(373, 'Eco-products directory for sustainable production & consumption', 'GP-E1', 2008, 'APO', 3, 3, '2022-06-03 05:03:44'),
+(374, 'Energy management', 'GP-E2', 0000, 'Quarterly journal of national productivity council', 2, 3, '2022-06-03 05:03:44'),
+(375, 'Environmental  impact assessment for farms', 'GP-E3', 2000, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(376, 'Environmental assessment for agricultural development in asia and the pacific', 'GP-E4', 1998, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(377, 'Environmental impact assessment for farms', 'GP-E5', 2000, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(378, 'Environmental public awareness', 'GP-E6', 1999, 'Sylvie Goyet', 7, 3, '2022-06-03 05:03:44'),
+(379, 'Environmental science 3rd edition', 'GP-E7', 1995, 'William P.Cunningham', 1, 3, '2022-06-03 05:03:44'),
+(380, 'Extension system for livestock production in asia and the pacific', 'GP-E8', 1998, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(381, 'Intellectual property,Biodicersity and sustainable development', 'GP-I1', 2002, 'Martin Khor', 1, 3, '2022-06-03 05:03:44'),
+(382, 'Green House gas Emissions : Estimation and Reduction', 'GP-G1', 2009, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(383, 'Green impact : Low Carbon green growth', 'GP-G2', 2010, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(384, 'Green productivity and sustainable devepolment', 'GP-G3', 2002, 'APO world conference', 2, 3, '2022-06-03 05:03:44'),
+(385, 'Green the deserts', 'GP-G4', 1995, 'Susan B.Murata', 1, 3, '2022-06-03 05:03:44'),
+(386, 'Handbook on Green Productivity', 'GP-H1', 0000, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(387, 'Hazardous Waste Management Policies and practices in asian countries', 'GP-H2', 2001, 'APO', 3, 3, '2022-06-03 05:03:44'),
+(388, 'Impact of agriculture  Practices on Environmental Sustainability in Asia', 'GP-I1', 2002, 'APO', 3, 3, '2022-06-03 05:03:44'),
+(389, 'Material cost saving guide on material flow cost accounting', 'GP-M1', 2013, 'MPO', 1, 3, '2022-06-03 05:03:44'),
+(390, 'Planning of rural development in Asia and the pacific', 'GP-P1', 2002, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(391, 'Processung and utilization of legumes', 'GP-P2', 2003, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(392, 'Rainfed agriculture in asia', 'GP-R1', 1997, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(393, 'Renewable energy sources for rural areas in Asia and the Pacific', 'GP-R2', 2000, 'APO', 3, 3, '2022-06-03 05:03:44'),
+(394, 'Role of rural women in food security in Asia and the pacific', 'GP-R3', 2002, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(395, 'Rural development & Environmental Conservation', 'GP-R4', 2003, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(396, 'Rural transformation in Asia and the pacific', 'GP-R5', 2001, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(397, 'Top management forum Environmental Management for Sustainable Productivity Enhancement', 'GP-T2', 2010, 'APO', 3, 3, '2022-06-03 05:03:44'),
+(398, 'Top management forum green productivity and role of top management in search of sustainable asia through green products and services', 'GP-T3', 1998, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(399, 'Training manual on energy efficiency for small medium enterprises', 'GP-T4', 2010, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(400, 'Urban fringe agriculture', 'GP-U1', 2002, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(401, 'Waste minimization practices', 'GP-W1', 2000, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(402, 'Water  use efficiency in irrigation in Asia', 'GP-W2', 2001, 'APO', 3, 3, '2022-06-03 05:03:44'),
+(403, 'Water pollution and water treatment technology', 'GP-W3', 0000, 'APO, JPC', 1, 3, '2022-06-03 05:03:44'),
+(404, 'Export processing zones & science parks in Asia', 'RUR-E1', 1987, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(405, 'Handbook on Integrated community development', 'RUR-H1', 2009, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(406, 'Infrastructure development for higher productivity', 'RUR-I1', 2001, 'APO', 3, 3, '2022-06-03 05:03:44'),
+(407, 'Infrastructure for Community  development', 'RUR-I2', 2002, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(408, 'Mergers and Acquisitions Issues and perspectives from the Asia Pacific region', 'RUR-M1', 2009, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(409, 'Mini scale rural infrastructure development', 'RUR-M2', 2001, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(410, 'Planning of rural Development in Asia and the Pacific', 'RUR-P1', 2002, 'APO', 3, 3, '2022-06-03 05:03:44'),
+(411, 'Potential of social capital for community development', 'RUR-P2', 2006, 'APO', 2, 3, '2022-06-03 05:03:44'),
+(412, 'Regulatory Architecture for Microfinance in Asia', 'RUR-R1', 2006, 'APO', 3, 3, '2022-06-03 05:03:44'),
+(413, 'Successful Community Development', 'RUR-S1', 2002, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(414, 'Training methods for Community development', 'RUR-T1', 2002, 'APO', 1, 3, '2022-06-03 05:03:44'),
+(415, 'Globalization and Labour-Management Relations dynamics of change', 'HR-G1', 2001, 'C.S. Venkata Rathnam', 1, 4, '2022-06-03 05:05:20'),
+(416, 'Health Care Criteria for performance excellence', 'HR-H1', 2008, 'Baldrige national quality program', 2, 4, '2022-06-03 05:05:20'),
+(417, 'Health care management', 'HR-H2', 2001, 'APO', 2, 4, '2022-06-03 05:05:20'),
+(418, 'Human centered Productivity', 'HR-H3', 0000, 'Choi Dong-Kyu', 1, 4, '2022-06-03 05:05:20'),
+(419, 'Human resource development in Japanese companies', 'HR-H4', 1990, 'Hideo Inohara', 1, 4, '2022-06-03 05:05:20');
+INSERT INTO `books` (`id`, `title`, `code`, `published`, `editor`, `unit`, `category`, `created_at`) VALUES
+(420, 'Human Resources Development in Agriculture', 'HR-H5', 2002, 'APO', 2, 4, '2022-06-03 05:05:20'),
+(421, 'Human resource development for Adjustment at the enterprise level', 'HR-H6', 1999, 'International labour organisation', 1, 4, '2022-06-03 05:05:20'),
+(422, 'International Comparisons of Labor Productivity', 'HR-I1', 2006, 'JPC', 3, 4, '2022-06-03 05:05:20'),
+(423, 'International Comparisons of Labor Productivity', 'HR-I2', 1997, '', 3, 4, '2022-06-03 05:05:20'),
+(424, 'International Comparisons of Labor Productivity', 'HR-I3', 2003, 'JPC', 1, 4, '2022-06-03 05:05:20'),
+(425, 'Improving on-the-job training how to Establish and Operate a Comprehensive OJT Program', 'HR-I4', 2004, 'William J.Rothwell H.C.Kazanas', 1, 4, '2022-06-03 05:05:20'),
+(426, 'Labor management cooperation – Collective bargaining as a Means to Promote Cooperation', 'HR-L1', 1999, 'APO', 3, 4, '2022-06-03 05:05:20'),
+(427, 'Labor-Management Relations 05/06', 'HR-L2', 2001, 'McGraw-Hill/Dushkin', 1, 4, '2022-06-03 05:05:20'),
+(428, 'Longevity and Productivity', 'HR-L3', 2008, 'APO', 4, 4, '2022-06-03 05:05:20'),
+(429, 'Labour-Management cooperation enterprise restructuring and workforce reductions', 'HR-L4', 2001, 'APO', 1, 4, '2022-06-03 05:05:20'),
+(430, 'Managing health an International per spective', 'HR-M1', 2003, 'Nancy M. Kane', 1, 4, '2022-06-03 05:05:20'),
+(431, 'Manual on Labor-Management Relations: Japanese experiences and best practices', 'HR-M2', 2014, 'APO', 3, 4, '2022-06-03 05:05:20'),
+(432, 'Mismatch in the Labor market', 'HR-M3', 2003, 'APO', 3, 4, '2022-06-03 05:05:20'),
+(433, 'Main report of labour force survey', 'HR-M4', 2004, 'National statistical office of Mongolia', 1, 4, '2022-06-03 05:05:20'),
+(434, 'Research and Practice in Human resource management', 'HR-R1', 2005, 'School of Management Curtin University of Technology', 1, 4, '2022-06-03 05:05:20'),
+(435, 'Survey Report Changing labor market and women employment', 'HR-S1', 2000, 'APO', 2, 4, '2022-06-03 05:05:20'),
+(436, 'Vocational Training Strategies', 'HR-V1', 2002, 'APO', 3, 4, '2022-06-03 05:05:21'),
+(437, 'Workers\' participation in an internationalized economy', 'HR-W1', 1978, 'Bernhard Wilpert, Ayse Kudat, Yilmaz Ozkan', 1, 4, '2022-06-03 05:05:21'),
+(438, 'A new study of technology management', 'IT-A1', 1995, 'Teruo Yamanouchi', 1, 15, '2022-06-03 05:06:55'),
+(439, 'Application of IT  in Asian small Enterprises', 'IT-A2', 2003, 'APO', 3, 15, '2022-06-03 05:06:55'),
+(440, 'Best Practice cases: Scope and management of Information systems', 'IT-B1', 1997, 'Singapore productivity and standards board', 1, 15, '2022-06-03 05:06:55'),
+(441, 'Case Studies on Application of Information Technology in Manufacturing Firms in Asia', 'IT-C1', 1998, 'APO', 1, 15, '2022-06-03 05:06:55'),
+(442, 'Digital divide in Asia', 'IT-D1', 2003, 'APO', 3, 15, '2022-06-03 05:06:55'),
+(443, 'Graphic communication technology 2nd edition', 'IT-G1', 1993, 'John R.Karsnitz', 1, 15, '2022-06-03 05:06:55'),
+(444, 'ISDN Implementor\'s Guide standards, protocols and services', 'IT-I1', 1995, 'McGraw-Hill Series on Computer Communications', 1, 15, '2022-06-03 05:06:55'),
+(445, 'Multimedia & e-learning', 'IT-M1', 2003, 'APO', 1, 15, '2022-06-03 05:06:55'),
+(446, 'Technology and employment in industry 3rd edition', 'IT-T1', 1985, 'International labour organisation', 1, 15, '2022-06-03 05:06:55'),
+(447, 'Top management forum development of interterm information networks the global economy', 'IT-T2', 1998, 'APO', 3, 15, '2022-06-03 05:06:55'),
+(448, 'APO Annual report', 'N&M-A1', 1994, 'APO', 3, 5, '2022-06-03 05:07:55'),
+(449, 'APO Annual report', 'N&M-A2', 1995, 'APO', 3, 5, '2022-06-03 05:07:55'),
+(450, 'APO Annual report', 'N&M-A3', 1996, 'APO', 2, 5, '2022-06-03 05:07:55'),
+(451, 'APO Annual report', 'N&M-A4', 1997, 'APO', 2, 5, '2022-06-03 05:07:55'),
+(452, 'APO Annual report', 'N&M-A5', 1998, 'APO', 5, 5, '2022-06-03 05:07:55'),
+(453, 'APO Annual report', 'N&M-A6', 1999, 'APO', 2, 5, '2022-06-03 05:07:55'),
+(454, 'APO Annual report', 'N&M-A7', 2000, 'APO', 2, 5, '2022-06-03 05:07:55'),
+(455, 'APO Annual report', 'N&M-A8', 2001, 'APO', 4, 5, '2022-06-03 05:07:55'),
+(456, 'APO Annual report', 'N&M-A9', 2002, 'APO', 5, 5, '2022-06-03 05:07:55'),
+(457, 'APO Annual report', 'N&M-A10', 2003, 'APO', 3, 5, '2022-06-03 05:07:55'),
+(458, 'APO Annual report', 'N&M-A11', 2004, 'APO', 5, 5, '2022-06-03 05:07:55'),
+(459, 'APO Annual report', 'N&M-A12', 2005, 'APO', 6, 5, '2022-06-03 05:07:55'),
+(460, 'APO Annual report', 'N&M-A13', 2007, 'APO', 4, 5, '2022-06-03 05:07:55'),
+(461, 'APO Annual report', 'N&M-A14', 2008, 'APO', 5, 5, '2022-06-03 05:07:55'),
+(462, 'APO Annual report', 'N&M-A15', 2009, 'APO', 6, 5, '2022-06-03 05:07:55'),
+(463, 'APO Annual report', 'N&M-A16', 2010, 'APO', 3, 5, '2022-06-03 05:07:55'),
+(464, 'APO Annual report', 'N&M-A17', 2011, 'APO', 2, 5, '2022-06-03 05:07:55'),
+(465, 'APO Annual report', 'N&M-A18', 2013, 'APO', 3, 5, '2022-06-03 05:07:55'),
+(466, 'APO Annual report', 'N&M-A19', 2014, 'APO', 4, 5, '2022-06-03 05:07:55'),
+(467, 'APO Annual report', 'N&M-A20', 2015, 'APO', 3, 5, '2022-06-03 05:07:55'),
+(468, 'Apo news', 'N&M-A21', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(469, 'Apo news', 'N&M-A22', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(470, 'Apo news', 'N&M-A23', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(471, 'Apo news', 'N&M-A24', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(472, 'Apo news', 'N&M-A25', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(473, 'Apo news', 'N&M-A26', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(474, 'Apo news', 'N&M-A27', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(475, 'Apo news', 'N&M-A28', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(476, 'Apo news', 'N&M-A29', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(477, 'Apo news', 'N&M-A30', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(478, 'APO News', 'N&M-A31', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(479, 'APO News', 'N&M-A32', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(480, 'APO News', 'N&M-A33', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(481, 'APO News', 'N&M-A34', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(482, 'APO News', 'N&M-A35', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(483, 'APO News', 'N&M-A36', 0000, 'APO', 1, 5, '2022-06-03 05:07:55'),
+(484, 'APO News', 'N&M-A37', 0000, 'APO', 16, 5, '2022-06-03 05:07:56'),
+(485, 'APO News', 'N&M-A38', 0000, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(486, 'APO News', 'N&M-A39', 0000, 'APO', 18, 5, '2022-06-03 05:07:56'),
+(487, 'APO Productivity Databook', 'N&M-A40', 2009, 'APO', 4, 5, '2022-06-03 05:07:56'),
+(488, 'APO Productivity Databook', 'N&M-A41', 2010, 'APO', 3, 5, '2022-06-03 05:07:56'),
+(489, 'APO Productivity Databook', 'N&M-A42', 2011, 'APO', 3, 5, '2022-06-03 05:07:56'),
+(490, 'APO Productivity Databook', 'N&M-', 2012, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(491, 'APO Productivity Databook', 'N&M-A43', 2013, 'APO', 5, 5, '2022-06-03 05:07:56'),
+(492, 'APO Productivity Databook', 'N&M-A44', 2014, 'APO', 1, 5, '2022-06-03 05:07:56'),
+(493, 'APO Productivity Databook', 'N&M-A45', 2015, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(494, 'APO Productivity Databook', 'N&M-A46', 2016, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(495, 'APO productivity journal spring', 'N&M-A47', 1993, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(496, 'APO productivity journal summer', 'N&M-A48', 1995, 'APO', 3, 5, '2022-06-03 05:07:56'),
+(497, 'APO productivity journal summer', 'N&M-A49', 1996, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(498, 'APO productivity journal summer', 'N&M-A50', 1997, 'APO', 3, 5, '2022-06-03 05:07:56'),
+(499, 'APO productivity journal summer', 'N&M-A51', 1999, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(500, 'APO productivity journal winter', 'N&M-A52', 1995, 'APO', 3, 5, '2022-06-03 05:07:56'),
+(501, 'APO productivity journal winter', 'N&M-A53', 1996, 'APO', 3, 5, '2022-06-03 05:07:56'),
+(502, 'APO productivity journal winter', 'N&M-A54', 1997, 'APO', 3, 5, '2022-06-03 05:07:56'),
+(503, 'APO productivity journal winter', 'N&M-A55', 2000, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(504, 'APO productivity journal winter', 'N&M-A56', 1993, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(505, 'Apo 40th anniversary', 'N&M-A57', 1961, 'APO', 1, 5, '2022-06-03 05:07:56'),
+(506, 'Apo regional and national awards conditions & procedure', 'N&M-A58', 1985, 'APO', 1, 5, '2022-06-03 05:07:56'),
+(507, 'Rules of procedure of the Asian productivity organization', 'N&M-R1', 1976, 'APO', 1, 5, '2022-06-03 05:07:56'),
+(508, 'Financial regulations of the Asian productivity organization', 'N&M-F1', 1961, 'APO', 1, 5, '2022-06-03 05:07:56'),
+(509, 'The convention on the Asian productivity organization', 'N&M-T1', 2013, 'APO', 1, 5, '2022-06-03 05:07:56'),
+(510, 'Proceedings of the governing body 48th session', 'N&M-P1', 2006, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(511, 'Proceedings of the governing body 49th session', 'N&M-P2', 2007, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(512, 'Proceedings of the governing body 50th session', 'N&M-', 2008, 'APO', 1, 5, '2022-06-03 05:07:56'),
+(513, 'Proceedings of the governing body 51st session', 'N&M-', 2009, 'APO', 1, 5, '2022-06-03 05:07:56'),
+(514, 'Proceedings of the governing body 52th session', 'N&M-P3', 2010, 'APO', 1, 5, '2022-06-03 05:07:56'),
+(515, 'Proceedings of the governing body 53th session', 'N&M-P4', 2011, 'APO', 1, 5, '2022-06-03 05:07:56'),
+(516, 'Proceedings of the governing body 54th session', 'N&M-P5', 2012, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(517, 'Proceedings of the governing body 55th session', 'N&M-P6', 2013, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(518, 'Proceedings of the governing body 56th session', 'N&M-P7', 2014, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(519, 'Proceedings of the governing body 57th session', 'N&M-P8', 2015, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(520, 'Proceedings of the governing body 58th session', 'N&M-P9', 2016, 'APO', 2, 5, '2022-06-03 05:07:56'),
+(521, 'Project regulations of the Asian productivity organization', 'N&M-P10', 1961, 'APO', 1, 5, '2022-06-03 05:07:56'),
+(522, 'A Guide on E-Commerce Application for SMEs', 'ECO-A1', 2002, 'KOICA', 1, 6, '2022-06-03 05:10:40'),
+(523, 'Annual report on national accounts', 'ECO-A2', 2008, 'Department of national accounts', 1, 6, '2022-06-03 05:10:40'),
+(524, 'Catch sunflake', 'ECO-C1', 1993, 'Macmillan Mcgraw-hill', 1, 6, '2022-06-03 05:10:41'),
+(525, 'Economic engineering for executives a common-sense approach to business decisions', 'ECO-E1', 1990, 'APO', 1, 6, '2022-06-03 05:10:41'),
+(526, 'European management education a handbook', 'ECO-E2', 1987, 'Alan hale & sybren tijmstra', 1, 6, '2022-06-03 05:10:41'),
+(527, 'Economics a contemporary introduction 6th edition', 'ECO-E3', 2003, 'William A.McEachern, Professor of economics university of connecticut', 1, 6, '2022-06-03 05:10:41'),
+(528, 'Economics 2nd edition', 'ECO-E4', 1991, 'David N.Hyman', 1, 6, '2022-06-03 05:10:41'),
+(529, 'Economics fourteenth edition', 'ECO-E5', 1992, 'Paul A.Samuelson & William D.Nordhaus', 1, 6, '2022-06-03 05:10:41'),
+(530, 'Eco-products international fair report 24- hour eco-life', 'ECO-E6', 2016, 'Thailand integrated communication Co.,Ltd', 2, 6, '2022-06-03 05:10:41'),
+(531, 'Integrated manufacting systems', 'ECO-I1', 2002, 'Dr. Stephen Lee', 1, 6, '2022-06-03 05:10:41'),
+(532, 'The economics of the common market new edition', 'ECO-T1', 1988, 'Dennis Swann', 1, 6, '2022-06-03 05:10:41'),
+(533, 'Macroeconomics thirteenth edition', 'ECO-M1', 1996, 'Campbell R.McConnell, Stanley L.Brue', 1, 6, '2022-06-03 05:10:41'),
+(534, 'Microeconomics 3rd edition', 'ECO-M2', 1998, 'David C.Colander', 1, 6, '2022-06-03 05:10:41'),
+(535, 'Managerial economics eighteenth revised and Englarged edition', 'ECO-M3', 2004, 'Sultan chand & Songs', 1, 6, '2022-06-03 05:10:41'),
+(536, 'Mongolian wonders Vol.2', 'ECO-M4', 2006, 'N.Batjargal', 1, 6, '2022-06-03 05:10:41'),
+(537, 'Population growth and economic development', 'ECO-P1', 1992, 'United Nations population fund', 1, 6, '2022-06-03 05:10:41'),
+(538, 'Spotling on literature', 'ECO-S1', 1997, 'Macmillan Mcgraw-hill', 1, 6, '2022-06-03 05:10:41'),
+(539, 'Systems development a project management approach', 'ECO-S2', 2002, 'Raymond Mcleod, Jr.Eleanor Jordan', 1, 6, '2022-06-03 05:10:41'),
+(540, 'Welcome to Australia guest information 97-98 edition', 'ECO-W1', 0000, 'Awaivata publication', 1, 6, '2022-06-03 05:10:41'),
+(541, 'World development indicators', 'ECO-W2', 2003, 'The world bank', 1, 6, '2022-06-03 05:10:41'),
+(542, 'Entrepreneur Magazine bringing your product to market', 'MAR-E1', 1997, 'John wiley and Sons, Inc', 1, 7, '2022-06-03 05:11:25'),
+(543, 'International Marketing 6th edition', 'MAR-I1', 2001, 'Michael R.Czinkota llkka A.Ronkainen', 1, 7, '2022-06-03 05:11:25'),
+(544, 'International Marketing 6th edition', 'MAR-I2', 2001, 'Subhash C.Jain', 1, 7, '2022-06-03 05:11:25'),
+(545, 'Managing and marketing technology', 'MAR-M1', 2001, 'David ford Michael Saren', 1, 7, '2022-06-03 05:11:25'),
+(546, 'American business a two-minute warning', 'BUS-A1', 1988, 'C.Jackson Grayson,           Jr. Carla O\'Dell', 1, 8, '2022-06-03 05:13:36'),
+(547, 'Angels in the workplace stories and inspirations for creating a new world of work', 'BUS-A2', 1999, 'Melissa Giovagnoli', 1, 8, '2022-06-03 05:13:36'),
+(548, 'Business the ultimate resource', 'BUS-B1', 2002, 'Bloomsbury', 1, 8, '2022-06-03 05:13:36'),
+(549, 'Business economics', 'BUS-B2', 2003, 'C.M. Chaudhary', 1, 8, '2022-06-03 05:13:36'),
+(550, 'Developing supporting industries outsourcers\' perspectives', 'BUS-D1', 1998, 'APO', 1, 8, '2022-06-03 05:13:36'),
+(551, 'Emyth mastery the seven essential disciplines for building a world class company', 'BUS-E1', 2005, 'Michael E.Gerber', 1, 8, '2022-06-03 05:13:36'),
+(552, 'Mastering business in asia succceeding with the balanced scorecard', 'BUS-M1', 2005, 'DR. David Norton', 1, 8, '2022-06-03 05:13:36'),
+(553, 'Global business review international management institute', 'BUS-G1', 0000, 'C.S.Venkata Ratnam', 1, 8, '2022-06-03 05:13:36'),
+(554, 'Global business review international management institute', 'BUS-G2', 0000, 'C.S.Venkata Ratnam', 1, 8, '2022-06-03 05:13:36'),
+(555, 'Industrial Engineering and Technology Management primer', 'BUS-I1', 1972, 'Karl E.Ettinger, Revised & edited by Ralph C.Hook and John R.Overton', 1, 8, '2022-06-03 05:13:36'),
+(556, 'Intertnational purchasing and management', 'BUS-I2', 2001, 'Alan branch', 1, 8, '2022-06-03 05:13:36'),
+(557, 'Top management role of new ventures: in search of new business frontiers for revitalizing japanese economy', 'BUS-T1', 1997, 'APO', 1, 8, '2022-06-03 05:13:36'),
+(558, 'Work organization research: American and European perspectives', 'BUS-W1', 1978, 'Anant R.Negandhi, Bernhard wilpert', 1, 8, '2022-06-03 05:13:36'),
+(559, 'Alternate Exercises and Problems for use with Intermediate Accounting 3rd edition', 'STAT-A1', 2004, 'J.David Spiceland James F.Sepe', 1, 9, '2022-06-03 05:14:58'),
+(560, 'Applied Statistics Improving business processes', 'STAT-A2', 1997, 'Bruce Bowerman, Richard T.O\'Connell', 1, 9, '2022-06-03 05:14:58'),
+(561, 'A Microsoft excel Companion for business statistics 2nd edition', 'STAT-A3', 2002, 'David L.Eldredge', 1, 9, '2022-06-03 05:14:58'),
+(562, 'Contemporary business statistics with microsoft excel', 'STAT-C1', 2001, 'Anderson sweeney williams', 1, 9, '2022-06-03 05:14:58'),
+(563, 'Crafting and executing strategy the quest for competitive advantage concepts and cases 14th edition', 'STAT-C2', 0000, 'Arthur A.Thompson Jr., A.J.Strickland III, John E.Gamble', 1, 9, '2022-06-03 05:14:58'),
+(564, 'Contemporary business statistics with microsoft excel', 'STAT-C3', 2001, 'Anderson, Sweeney, and Williams', 1, 9, '2022-06-03 05:14:58'),
+(565, 'International training Programs in Labor statistics', 'STAT-I1', 2004, 'US. Department of Labour Bureau of Labour statistics international labour statistics center', 2, 9, '2022-06-03 05:14:58'),
+(566, 'Monthly bulletin of statistics', 'STAT-M1', 2000, 'National statistical office Mongolia', 1, 9, '2022-06-03 05:14:59'),
+(567, 'Monthly bulletin of statistics', 'STAT-M2', 2004, 'National statistical office Mongolia', 1, 9, '2022-06-03 05:14:59'),
+(568, 'Monthly bulletin of statistics', 'STAT-M3', 2001, 'National statistical office Mongolia', 1, 9, '2022-06-03 05:14:59'),
+(569, 'Statistics for Business and Economics', 'STAT-S1', 2002, 'Heinz Kohler', 1, 9, '2022-06-03 05:14:59'),
+(570, 'Statistics for Business and Economics 8th edition', 'STAT-S2', 2002, 'Anderson sweeney williams', 1, 9, '2022-06-03 05:14:59'),
+(571, 'Productivity statistics Productivity indexes and levels in Apo member countries', 'STAT-P1', 1997, 'APO', 1, 9, '2022-06-03 05:14:59'),
+(572, 'Productivity statistics Productivity indexes and levels in Apo member countries', 'STAT-P2', 1996, 'APO', 1, 9, '2022-06-03 05:14:59'),
+(573, 'Practical handbook of productivity and labour statistics', 'STAT-P3', 1989, 'JPC', 1, 9, '2022-06-03 05:14:59'),
+(574, 'Analysis and control of variation', 'FIN-A1', 1987, 'John McConnell', 1, 10, '2022-06-03 05:16:01'),
+(575, 'Credit Analysis for Small Business at National Life Finance Corporation', 'FIN-C1', 0000, 'International Cooperation Office National Life Finance Corporation Japan', 2, 10, '2022-06-03 05:16:01'),
+(576, 'Fundamentals of Corporate Finance', 'FIN-F1', 1999, 'Brealey Myers Marcus', 1, 10, '2022-06-03 05:16:01'),
+(577, 'Goldmining in Foreclosure Properties', 'FIN-G1', 2003, 'George Achenbach', 1, 10, '2022-06-03 05:16:01'),
+(578, 'International Accounting', 'FIN-I1', 1998, 'Peter Walton, Axel Haller and Bernard Raffournier', 1, 10, '2022-06-03 05:16:01'),
+(579, 'Introduction to Accounting: An Integrated Approach', 'FIN- I2', 1997, 'Michael W.Junior', 1, 10, '2022-06-03 05:16:01'),
+(580, 'Managerial Accounting third edition', 'FIN-M1', 1997, 'Ronald W.Hilton', 1, 10, '2022-06-03 05:16:01'),
+(581, 'Mastering Technical Analysis', 'FIN-M2', 2006, 'John C.Brooks', 1, 10, '2022-06-03 05:16:01'),
+(582, 'Riding The Bull, breating the bear', 'FIN-R1', 2002, 'Edward M.Yanis', 1, 10, '2022-06-03 05:16:01'),
+(583, 'The speculative strategist', 'FIN-T1', 1996, 'Will Slatyer', 1, 10, '2022-06-03 05:16:01'),
+(584, 'The basics of investing', 'FIN-T2', 0000, 'Benton E.GUP', 1, 10, '2022-06-03 05:16:01'),
+(585, 'American constitutional law', 'GOV-A1', 1990, 'Louis Fisher', 1, 11, '2022-06-03 05:16:57'),
+(586, 'American government', 'GOV-A2', 1994, 'Stephen E.Frantzich, Stephen L.Percy', 1, 11, '2022-06-03 05:16:57'),
+(587, 'Best practices in social dialogue', 'GOV-B2', 2003, 'A.Sivananthiran, C.S.Venkata ratnam', 1, 11, '2022-06-03 05:16:57'),
+(588, 'Keep a city moving: Urban transport management in Hong kong', 'GOV-K1', 1993, 'APO', 1, 11, '2022-06-03 05:16:57'),
+(589, 'Mongolian small and medium enterprises', 'GOV-M1', 2007, 'Ministry of industry and trade Mongolia', 1, 11, '2022-06-03 05:16:57'),
+(590, 'Regulary architecture for microfinance in asia', 'GOV-R1', 2006, 'APO', 1, 11, '2022-06-03 05:16:57'),
+(591, 'Residential mobility and public policy vol19', 'GOV-R2', 1980, 'W.A.V Clark, Eric.G.Moore', 1, 11, '2022-06-03 05:16:57'),
+(592, 'Social capital in asia an exploratory study', 'GOV-S1', 2006, 'APO', 1, 11, '2022-06-03 05:16:57'),
+(593, 'State and local government in a changing society', 'GOV-S2', 1991, 'Richard D.Bingham, David hedge 2nd edition', 1, 11, '2022-06-03 05:16:57'),
+(594, 'A writer\'s resource a handbook for writhing and research', 'OTH-A1', 2003, 'McGraw-Hill company', 1, 12, '2022-06-03 05:19:32'),
+(595, 'Anticipating the future', 'OTH-A2', 2007, 'Bettina Buchel, Benoit Leleux, Anna Moncef', 1, 12, '2022-06-03 05:19:32'),
+(596, 'Builders of the ancient world', 'OTH-B1', 0000, 'National geography society', 1, 12, '2022-06-03 05:19:32'),
+(597, 'High visibility', 'OTH-H2', 2020, 'Irving Rein, Philip Kotler, Michael Hamlin geh met', 1, 12, '2022-06-03 05:19:32'),
+(598, 'Introduction Korea Productivity center', 'OTH-I1', 0000, 'KPC', 2, 12, '2022-06-03 05:19:32'),
+(599, 'Motives for writing', 'OTH-M1', 2006, 'Robert Keith Miller', 1, 12, '2022-06-03 05:19:32'),
+(600, 'Negotiated change', 'OTH-N3', 2003, 'C. S. Venkata Ratnam', 1, 12, '2022-06-03 05:19:32'),
+(601, 'The Metropolis Era', 'OTH-T2', 1988, 'Mattei Dogan, John D.Kasarda', 1, 12, '2022-06-03 05:19:32'),
+(602, 'The Ship and the Storm', 'OTH-T3', 2001, 'Jim Carrier', 1, 12, '2022-06-03 05:19:32'),
+(603, 'The best English ', 'OTH-T1', 1960, 'G.H.Vallins', 1, 12, '2022-06-03 05:19:32'),
+(604, 'Guide to the INTERNET', 'OTH-K1', 2000, 'Willie Lubka & Nancy Holden', 1, 12, '2022-06-03 05:19:32'),
+(605, 'Writer’s Choice grammar and composition', 'OTH-W1', 1946, 'William Strong', 1, 12, '2022-06-03 05:19:32'),
+(606, 'Sherris MEDICAL MICROBIOLOGY', 'OTH-S1', 2004, 'Kenneth J.Ryan &C.George', 1, 12, '2022-06-03 05:19:32'),
+(607, 'В МИРЕ НАУКИ', 'OTH-S2', 1988, 'С.П.КАПИЦА', 1, 12, '2022-06-03 05:19:32'),
+(608, 'Аж ахуйн нэгж байгууллагын бүтээмж чанарыг дээшлүүлэх хөтөлбөр', 'Мон/Бүт-А1', 0000, '2002', 2, 13, '2022-06-03 05:24:17'),
+(609, 'Ажлын байрны бүтээмжийг дээшлүүлэх хөтөлбөрийг хэрэгжүүлэх нь', 'Мон/Бүт-А2', 0000, '2013', 53, 13, '2022-06-03 05:24:17'),
+(610, 'Ажилчид удирдлагын зөвлөлдөөн', 'Мон/Бүт-А3', 0000, '2002', 4, 13, '2022-06-03 05:24:17'),
+(611, 'Ачаа тээврийн төлөвлөлт, зохион байгуулалтанд математикийн арга хэрэглэх нь', 'Мон/Бүт-А4', 0000, '1978', 1, 13, '2022-06-03 05:24:17'),
+(612, 'Аж ахуйн нэгж байгууллагад бүтээмжийн удирдлагыг боловсронгуй болгох нь', 'Мон/Бүт-А5', 0000, '2003', 1, 13, '2022-06-03 05:24:17'),
+(613, 'Бүтээмжийн үндэс', 'Мон/Бүт-Б2', 0000, '2001', 32, 13, '2022-06-03 05:24:17'),
+(614, 'Бүтээмж, урамшлын холбооны талаарх  гадаадын туршлагаас', 'Мон/Бүт-Б3', 0000, '', 9, 13, '2022-06-03 05:24:17'),
+(615, 'Байгууллагын бүтээмжийг дээшлүүлэх хөтөлбөрийн хэрэгжилт', 'Мон/Бүт-Б4', 0000, '2013', 69, 13, '2022-06-03 05:24:17'),
+(616, 'Бүтээмжийн өгөөжөөс хүртээх тогтолцоог хэрэгжүүлэх нь', 'Мон/Бүт-Б5', 0000, '2002', 261, 13, '2022-06-03 05:24:17'),
+(617, 'Бүх нийтэд бүтээмжийн ухамсар суулгах нь', 'Мон/Бүт-Б6', 0000, '2000', 51, 13, '2022-06-03 05:24:17'),
+(618, 'Бүтээмж ба бүтээмж дээшлүүлэх хөтөлбөрүүд /”Витафит” группын ажилтнуудын дотод хэрэгцээнд', 'Мон/Бүт-Б7', 0000, '2014', 195, 13, '2022-06-03 05:24:17'),
+(619, 'Бүтээмжийн лавлах', 'Мон/Бүт-Б8', 0000, '2000', 2, 13, '2022-06-03 05:24:17'),
+(620, 'Бүтээмжийн удирдлагыг боловсронгуй болгох нь', 'Мон/Бүт-Б9', 0000, '1998', 1, 13, '2022-06-03 05:24:17'),
+(621, 'ИБМ Компани: Боловсон хүчний менежмент', 'Мон/Бүт-Б10', 0000, '1996', 1, 13, '2022-06-03 05:24:17'),
+(622, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт-Б11', 0000, '1-2/2006', 1, 13, '2022-06-03 05:24:17'),
+(623, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт-Б12', 0000, '5-6/2006', 2, 13, '2022-06-03 05:24:17'),
+(624, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б13', 0000, '1-2/2007', 3, 13, '2022-06-03 05:24:17'),
+(625, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б14', 0000, '3-4/2007', 1, 13, '2022-06-03 05:24:17'),
+(626, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б15', 0000, '7-8/2007', 1, 13, '2022-06-03 05:24:17'),
+(627, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б16', 0000, '1-2/2008', 1, 13, '2022-06-03 05:24:17'),
+(628, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б16', 0000, '5-6/2008', 1, 13, '2022-06-03 05:24:17'),
+(629, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б17', 0000, '1-2/2009', 3, 13, '2022-06-03 05:24:17'),
+(630, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б18', 0000, '1/2010', 1, 13, '2022-06-03 05:24:17'),
+(631, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б19', 0000, '9/2010', 1, 13, '2022-06-03 05:24:17'),
+(632, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б20', 0000, '7/2012', 1, 13, '2022-06-03 05:24:17'),
+(633, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б21', 0000, '11-12/2012', 4, 13, '2022-06-03 05:24:17'),
+(634, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б22', 0000, '1/2013', 1, 13, '2022-06-03 05:24:17'),
+(635, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б23', 0000, '3/2013', 1, 13, '2022-06-03 05:24:17'),
+(636, 'Бүтээмжийн мэдээ сонин', 'Мон/Бүт- Б24', 0000, '11-12/2013', 1, 13, '2022-06-03 05:24:17'),
+(637, 'Гадаад худалдааны барааны статистикийн мэдээлэл', 'Мон/Бүт-Г1', 0000, '2013', 1, 13, '2022-06-03 05:24:17'),
+(638, 'Гадаад худалдааны гэрээ ба түүний үндсэн элементүүд', 'Мон/Бүт-Г2', 0000, '2013', 1, 13, '2022-06-03 05:24:17'),
+(639, 'Гэмба кайзэн', 'Мон/Бүт-Г3', 0000, '2015', 407, 13, '2022-06-03 05:24:17'),
+(640, 'Гадаад худалдааны хэлэлцээр ба түүний эрх зүйн зохицуулалт', 'Мон/Бүт-Г4', 0000, '2013', 1, 13, '2022-06-03 05:24:17'),
+(641, 'Дэлхий дахины өрсөлдөх чадварын тайлан', 'Мон/Бүт-Д1', 0000, '2005-2006', 1, 13, '2022-06-03 05:24:17'),
+(642, 'Даяар бүртгэлийн давхар бичилтийн түүх', 'Мон/Бүт-Д2', 0000, '2003', 1, 13, '2022-06-03 05:24:17'),
+(643, 'Зогсонги байдлаас урагшлахуй', 'Мон/Бүт-З1', 0000, '2010', 2, 13, '2022-06-03 05:24:17'),
+(644, 'Загвар аж ахуйн нэгжийг хөгжүүлэх хөтөлбөр', 'Мон/Бүт-З2', 0000, '2011', 1, 13, '2022-06-03 05:24:17'),
+(645, 'Илтгэх урлагийн нууц жор Дейл карнеги', 'Мон/Бүт-И1', 0000, '2007', 1, 13, '2022-06-03 05:24:17'),
+(646, 'Инноваци руу шилжих үед', 'Мон/Бүт-И2', 0000, '2011', 1, 13, '2022-06-03 05:24:17'),
+(647, 'Инновацийн менежмент нэвтрүүлэх алхамууд', 'Мон/Бүт-И3', 0000, '2014', 1, 13, '2022-06-03 05:24:17'),
+(648, 'Кайзен бүтээмжийн үндэс', 'Мон/Бүт-К1', 0000, '2007', 48, 13, '2022-06-03 05:24:17'),
+(649, 'Монгол улсын статистикийн эмхтгэл', 'Мон/Бүт-М1', 0000, '2008', 1, 13, '2022-06-03 05:24:17'),
+(650, 'Монгол улсын статистикийн эмхтгэл', 'Мон/Бүт-М2', 0000, '2014', 1, 13, '2022-06-03 05:24:17'),
+(651, 'Монгол улсын статистикийн эмхтгэл', 'Мон/Бүт-М3', 0000, '2015', 1, 13, '2022-06-03 05:24:17'),
+(652, 'Монгол улсын статистикийн эмхтгэл', 'Мон/Бүт-М4', 0000, '2016', 1, 13, '2022-06-03 05:24:17'),
+(653, 'Монгол улсын статистикийн эмхтгэл', 'Мон/Бүт-М5', 0000, '2017', 1, 13, '2022-06-03 05:24:17'),
+(654, 'Монгол улсад үндэсний инновацийн тогтолцоо хөгжүүлэх хөтөлбөр', 'Мон/Бүт-М6', 0000, '2008-2015', 1, 13, '2022-06-03 05:24:17'),
+(655, 'Менежмент /удирдах ажилтан, бизнес эрхлэгчид болон мэргэжлийн ангийн оюутнууд зориулсан сурах бичиг/ хоёрдугаар дэвтэр', 'Мон/Бүт-М7', 0000, '1996', 1, 13, '2022-06-03 05:24:17'),
+(656, 'Монгол улсын өрсөлдөх чадварын тайлан', 'Мон/Бүт-М8', 0000, '2014', 1, 13, '2022-06-03 05:24:17'),
+(657, 'Монгол нутаг дахь түүх, соёлын үл хөдлөх дурсгал', 'Мон/Бүт-М9', 0000, '2012', 1, 13, '2022-06-03 05:24:17'),
+(658, 'Монгол Улсын төрийн бус байгууллагуудын лавлах', 'Мон/Бүт-М10', 0000, '', 1, 13, '2022-06-03 05:24:17'),
+(659, 'Монголын менежментийн сэтгэлгээний хөгжилт', 'Мон/Бүт-М11', 0000, '2011', 1, 13, '2022-06-03 05:24:17'),
+(660, 'Микро эдийн засаг зурагт ном тэргүүн дэвтэр', 'Мон/Бүт-М12', 0000, '2015', 1, 13, '2022-06-03 05:24:17'),
+(661, 'Макро эдийн засаг зурагт ном дэд дэвтэр', 'Мон/Бүт-М13', 0000, '2015', 1, 13, '2022-06-03 05:24:17'),
+(662, 'Менежментийн шинэ Парадигма төлөвшил, хөгжлийн үндсэн хандлагууд', 'Мон/Бүт-М14', 0000, '2014', 1, 13, '2022-06-03 05:24:17'),
+(663, 'Монгол улсын ерөнхийлөгч Намбарын Энхбаяр “Хөгжлийн төлөө зүтгэл, хүний төлөө сэтгэл” II', 'Мон/Бүт-М15', 0000, '2006', 1, 13, '2022-06-03 05:24:17'),
+(664, 'Монгол улсын эрчим хүчний салбарын тогтвортой хөгжлийн стратегид /2003-2010/ оруулах хувь нэмэр', 'Мон/Бүт-М16', 0000, '2002', 1, 13, '2022-06-03 05:24:17'),
+(665, 'Монгол инженерүүдийн бүтээл', 'Мон/Бүт-М17', 0000, '2013', 1, 13, '2022-06-03 05:24:17'),
+(666, 'Монгол инженерийн ухаан', 'Мон/Бүт-М18', 0000, '2006', 1, 13, '2022-06-03 05:24:17'),
+(667, 'Мөнгө ба миний үнэ цэнэ санхүүгийн эрх чөлөөнд хүрэх 48 алхам', 'Мон/Бүт-М19', 0000, '2013', 1, 13, '2022-06-03 05:24:17'),
+(668, 'Мөнгө угаах гэж юу вэ', 'Мон/Бүт-М20', 0000, '2007', 1, 13, '2022-06-03 05:24:17'),
+(669, 'Мэргэн үгсийн чуулган 1.1', 'Мон/Бүт-М21', 0000, '2014', 1, 13, '2022-06-03 05:24:17'),
+(670, 'Мэргэн үгсийн чуулган II', 'Мон/Бүт-М22', 0000, '2015', 1, 13, '2022-06-03 05:24:17'),
+(671, 'Миний сумо', 'Мон/Бүт-М23', 0000, '2011', 1, 13, '2022-06-03 05:24:17'),
+(672, 'Мөнгө ярьдагсан бол', 'Мон/Бүт-М24', 0000, '2002', 2, 13, '2022-06-03 05:24:17'),
+(673, 'Монгол орон ба модернизаци', 'Мон/Бүт-М25', 0000, '1996', 1, 13, '2022-06-03 05:24:17'),
+(674, 'Нөхдөө өөртөө татах хүмүүст нөлөөлөх ур чадвар', 'Мон/Бүт-Н1', 0000, '', 1, 13, '2022-06-03 05:24:17'),
+(675, 'Ногоон бүтээмж', 'Мон/Бүт-Н2', 0000, '2002', 15, 13, '2022-06-03 05:24:17'),
+(676, 'Органик хүнсний тухай хууль', 'Мон/Бүт-О1', 0000, '2016', 1, 13, '2022-06-03 05:24:17'),
+(677, 'Органик хөдөө аж ахуйн гарын авлага', 'Мон/Бүт-О2', 0000, '2016', 3, 13, '2022-06-03 05:24:17'),
+(678, 'Олон улсын худалдаа', 'Мон/Бүт-О3', 0000, '2015', 9, 13, '2022-06-03 05:24:17'),
+(679, 'Органик хүнс үйлдвэрлэлд тавигдах шаардлагууд', 'Мон/Бүт-О4', 0000, '2016', 3, 13, '2022-06-03 05:24:17'),
+(680, 'Оролцоонд тулгуурлаж, манлайллаар жигүүрлэсэн хөдөлмөрийн аюулгүй байдал, эрүүл ахуй', 'Мон/Бүт-О5', 0000, '2018', 1, 13, '2022-06-03 05:24:17'),
+(681, 'Өөрчлөлтийн түлхүүр', 'Мон/Бүт-Ө1', 0000, '2014', 3, 13, '2022-06-03 05:24:17'),
+(682, 'Өдөр бүр Дракертай хамт зөв зүйлийг хийх урам зориг, шинэ санаа өгөх 366 өдрийн хичээл', 'Мон/Бүт-Ө2', 0000, '2004', 1, 13, '2022-06-03 05:24:17'),
+(683, 'Супер 5С бол танд зориулсан хөтөлбөр мөн', 'Мон/Бүт-С1', 0000, '', 1, 13, '2022-06-03 05:24:17'),
+(684, 'Сэтгэлгээний бүтээмж дууриах эс дууриахын нөлөө', 'Мон/Бүт-С2', 0000, '2010', 1, 13, '2022-06-03 05:24:17'),
+(685, 'Саналын системийн танилцуулга гарын авлага', 'Мон/Бүт-С3', 0000, '2004', 1, 13, '2022-06-03 05:24:17'),
+(686, 'Сэтгэлзүй', 'Мон/Бүт-С4', 0000, '1998', 1, 13, '2022-06-03 05:24:17'),
+(687, 'Түүхэн замнал 30 жил', 'Мон/Бүт-Т1', 0000, '2005', 1, 13, '2022-06-03 05:24:17'),
+(688, 'Технологийн менежмент', 'Мон/Бүт-Т2', 0000, '2007', 1, 13, '2022-06-03 05:24:17'),
+(689, 'Төрийн бус байгууллага ба татвар', 'Мон/Бүт-Т3', 0000, '2004', 1, 13, '2022-06-03 05:24:17'),
+(690, 'Товчит хэлцлийн цоожийг домгоор тайлагч түлхүүр', 'Мон/Бүт-Т4', 0000, '2004', 1, 13, '2022-06-03 05:24:17'),
+(691, 'Удирдлагын Ухаан хүн хүчний нөөцийн хөгжил /Японы туршлага/', 'Мон/Бүт-У1', 0000, '1995', 13, 13, '2022-06-03 05:24:17'),
+(692, 'Улс төрийн Он цаг II', 'Мон/Бүт-У2', 0000, '', 2, 13, '2022-06-03 05:24:17'),
+(693, 'Үндэсний бүтээмжийн шагнал /шагналын шалгуур/', 'Мон/Бүт-Ү1', 0000, '1998', 1, 13, '2022-06-03 05:24:17'),
+(694, 'Үндэсний тооцооны систем', 'Мон/Бүт-Ү2', 0000, '1995', 1, 13, '2022-06-03 05:24:17'),
+(695, 'Үндэсний бүтээмжийн хөдөлгөөний үүсэл, санаачилгаас', 'Мон/Бүт-Ү3', 0000, '2002', 7, 13, '2022-06-03 05:24:17'),
+(696, '“Үндэсний бүтээмжийн стратеги, бүх нийтийн бүтээмжийн ухамсар суулгах хөдөлгөөн”', 'Мон/Бүт-Ү4', 0000, '2002', 19, 13, '2022-06-03 05:24:17'),
+(697, 'Хүнс, хөдөө аж ахуйн салбарын шинжлэх ухаан, технологи, инноваци бүтээгдэхүүний эмхтгэл', 'Мон/Бүт-Х1', 0000, '2016', 2, 13, '2022-06-03 05:24:17'),
+(698, 'Хүнийг идэвхжүүлэх онол, арга зүй 1', 'Мон/Бүт-Х2', 0000, '1996', 1, 13, '2022-06-03 05:24:17'),
+(699, 'Хүний нөөцийн менежмент', 'Мон/Бүт-Х3', 0000, '1998', 1, 13, '2022-06-03 05:24:17'),
+(700, 'Хүнийг идэвхжүүлэх онол', 'Мон/Бүт-Х4', 0000, '1998', 1, 13, '2022-06-03 05:24:17'),
+(701, 'Цахиагийн Элбэгдорж онч үг', 'Мон/Бүт-Ц1', 0000, '2013', 1, 13, '2022-06-03 05:24:17'),
+(702, 'Чанарын нэгдсэн удирдлага', 'Мон/Бүт-Ч1', 0000, '2001', 210, 13, '2022-06-03 05:24:17'),
+(703, 'Шийдвэр гаргалтын тоон шинжилгээний аргууд', 'Мон/Бүт-Ш1', 0000, '2016', 1, 13, '2022-06-03 05:24:17'),
+(704, 'Эрдэм шинжилгээний бичиг', 'Мон/Бүт-Э1', 0000, '2014/2015', 1, 13, '2022-06-03 05:24:17'),
+(705, 'Эдийн засаг -зохион байгуулагч, менежер бэлтгэж эхэлсний 50 жил', 'Мон/Бүт-Э2', 0000, '2008', 1, 13, '2022-06-03 05:24:17'),
+(706, 'Эдийн засгийн ухаан эдүгээчлэгдсэн замнал', 'Мон/Бүт-Э3', 0000, '2016', 1, 13, '2022-06-03 05:24:17'),
+(707, '', '', 0000, '', 0, 13, '2022-06-03 05:24:17'),
+(708, 'Энгийнээс энгүй хүмүүсийн үнэн үгс', 'Мон/Бүт-Э4', 0000, '2012', 1, 13, '2022-06-03 05:24:17'),
+(709, '2006-2020 оны үндэсний бүтээмжийн бодлого', 'Мон/Бүт-2-1', 0000, '2006', 1, 13, '2022-06-03 05:24:17'),
+(710, 'Органик хүнсний үйлдвэрлэлд ашиглахыг зөвшөөрсөн бодисын каталоги', 'Мон/Бүт-Ю1', 0000, '2019', 1, 13, '2022-06-03 05:24:17'),
+(711, 'Газар тариалангийн салбарт мөрдөгдөж байгаа эрхзүйн баримт бичгийн эмхэтгэл', 'Мон/Бүт-Ю2', 0000, '2019', 1, 13, '2022-06-03 05:24:17'),
+(712, 'ХАА-н зохистой дадал /GAP/ -ын талаарх эрхзүйн баримт бичгийн эмхэтгэл', 'Мон/Бүт-Ю3', 0000, '2019', 1, 13, '2022-06-03 05:24:17'),
+(713, '“Монгол улсын засаг захиргаа, нутаг дэвсгэрийн нэгжийн удирдлагын тогтолцоог боловсронгуй болгох нь” судалгааны үр дүн, бодлогын зөвлөмж', 'Мон/Бүт-Ю4', 0000, '2019', 2, 13, '2022-06-03 05:24:17'),
+(714, 'Оновчтой шийдвэр гаргах / 7 хоног/', 'Мон/Бүт-Ю5', 0000, '2014', 1, 13, '2022-06-03 05:24:17'),
+(715, 'Эртний сургаалийн зохиолууд II боть', 'Мон/Бүт-Ю6', 0000, '2019', 1, 13, '2022-06-03 05:24:17'),
+(716, 'Дэлхийн гайхамшиг /100 баримт/', 'Мон/Бүт-Ю7', 0000, '2014', 1, 13, '2022-06-03 05:24:17'),
+(717, 'Дулааны IV ЦС ТӨХК-д ISO 9001:2015 олон улсын стандартын шаардлагад нийцсэн чанарын удирдлагын тогтолцоо нэвтрүүлэх зөвлөх үйлчилгээний эхлэлийн тайлан', 'Мон/Төс-Д1', 0000, '2016', 1, 14, '2022-06-03 05:25:48'),
+(718, 'Бүтээмж чанарын дугуйлангуудын 2011 оны төслүүд', 'Мон/Төс-Б1', 0000, '2012', 1, 14, '2022-06-03 05:25:48'),
+(719, 'Бүтээмж чанарын дугуйлангийн төслүүд', 'Мон/Төс-Б2', 0000, '2012', 1, 14, '2022-06-03 05:25:48'),
+(720, 'Монгол орсын хамтарсан Эрдэнэт үйлдвэр баяжуулах фабрикийн бүтээмж дээшлүүлэх эрдэнэт хөтөлбөр “Бүтээмж бүх нийтийн үйлс”', 'Мон/Төс-М1', 0000, '2011', 7, 14, '2022-06-03 05:25:48'),
+(721, 'Хөгжил дэвшил', 'Мон/Төс-Х1', 0000, '2003-2007', 1, 14, '2022-06-03 05:25:48'),
+(722, 'Төрөөс мөнгөний бодолгын талаар 2013 онд баримтлах үндсэн чиглэлийн төсөл', 'Мон/Төс-Т1', 0000, '2012', 1, 14, '2022-06-03 05:25:48'),
+(723, 'Өөрчлөлтийн менежмент хөтө', 'Мон/Төс-Ө1', 0000, '', 1, 14, '2022-06-03 05:25:48'),
+(724, 'Цахилгаан цехийн үйл ажиллагааны чадамжийг инноваци арга зүйгээр дээшлүүлэх хөтөлбөр', 'Мон/Төс-Ц1', 0000, '2013', 1, 14, '2022-06-03 05:25:48'),
+(725, 'Кайзен хэрэгжүүлэх нэг сарын аян', 'Мон/Төс-К1', 0000, '2007', 1, 14, '2022-06-03 05:25:48'),
+(726, 'Шинэ булган хөтөлбөр', 'Мон/Төс-Ш1', 0000, '2013', 1, 14, '2022-06-03 05:25:48'),
+(727, '2007 оны ажлын тайлан', 'Мон/Тайл-1', 0000, '2007', 3, 14, '2022-06-03 05:25:48'),
+(728, '2008 оны үйл ажиллагааны тайлан', 'Мон/Тайл-2', 0000, '2008', 1, 14, '2022-06-03 05:25:48'),
+(729, '2006 оны үйл ажиллагааны тайлан', 'Мон/Тайл-3', 0000, '2006', 5, 14, '2022-06-03 05:25:48'),
+(730, '2015 оны үйл ажиллагааны тайлан', 'Мон/Тайл-4', 0000, '2015', 1, 14, '2022-06-03 05:25:48'),
+(731, 'Хамтын хүчээр ажлаа төгөлдөржүүлье', 'Мон/Тайл-Х1', 0000, '2005', 8, 14, '2022-06-03 05:25:48'),
+(732, 'Energy conversation manual', 'Eng/Төс- E1', 0000, '', 1, 14, '2022-06-03 05:25:49'),
+(733, 'Handbook on material flow cost accounting demonstration company project', 'Eng/Төс- H1', 0000, '2016', 1, 14, '2022-06-03 05:25:49'),
+(734, 'Manual on energy conversation and energy management sytem', 'Eng/Төс- M1', 0000, '2017', 1, 14, '2022-06-03 05:25:49');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books_category`
+--
+
+CREATE TABLE `books_category` (
+  `id` int(3) NOT NULL,
+  `name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `dd` int(2) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `books_category`
+--
+
+INSERT INTO `books_category` (`id`, `name`, `dd`) VALUES
+(1, 'PRODUCTIVITY & QUALITY', 0),
+(2, 'Innovation & Knowledge management', 10),
+(3, 'Green productivity and Agriculture', 30),
+(4, 'Human Resource Development\r\n', 40),
+(5, 'News & Magazine', 60),
+(6, 'ECONOMICS\r\n', 70),
+(7, 'MARKETING', 80),
+(8, 'BUSINESS', 90),
+(9, 'STATISTIC', 100),
+(10, 'FINANCE', 11),
+(11, 'GOVERNMENT', 120),
+(12, 'OTHER', 130),
+(13, 'Монгол ном', 140),
+(14, 'Тайлан', 150),
+(15, 'Information Technology', 50);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `certificate`
+--
+
+CREATE TABLE `certificate` (
+  `id` int(11) NOT NULL,
+  `cert_no` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rd` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `lastname` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `firstname` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thumb` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `full_image` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `certificate`
+--
+
+INSERT INTO `certificate` (`id`, `cert_no`, `rd`, `createdAt`, `lastname`, `firstname`, `thumb`, `full_image`) VALUES
+(1, 'R0001', 'УС84092637', '2022-04-12 09:06:34', 'Солир', 'Тамир', 'uploads/202203/certthumb.jpg', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courses`
+--
+
+CREATE TABLE `courses` (
+  `id` int(3) NOT NULL,
+  `title` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
+  `category` int(3) NOT NULL,
+  `brief` text COLLATE utf8_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `image` varbinary(512) NOT NULL,
+  `thumb` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
+  `duration` int(3) NOT NULL DEFAULT '0',
+  `participants` int(3) NOT NULL DEFAULT '0',
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` date DEFAULT NULL,
+  `visited` int(4) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`id`, `title`, `category`, `brief`, `content`, `image`, `thumb`, `duration`, `participants`, `timestamp`, `date`, `visited`) VALUES
+(1, 'Бүтээмжийн ойлголт, зарчмууд', 1, 'Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон', '<p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>', 0x75706c6f6164732f3230323230362f303530323337333630636f75727365732e6a7067, '', 76, 25, '2022-06-02 20:04:15', NULL, 0),
+(2, 'Бүтээмжийн ойлголт, зарчмууд', 2, 'Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон', '<p>Бүтээмжийн тухай ойлголт жил өнгөрөх тусам хувьсан өөрчлөгдөж зөвхөн үр ашгийн харьцаагаар хязгаарлагдах зүйл биш болсон</p>', 0x75706c6f6164732f3230323230362f303530323238353530636f75727365732e6a7067, '', 76, 25, '2022-06-02 20:10:44', NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courses_category`
+--
+
+CREATE TABLE `courses_category` (
+  `id` int(3) NOT NULL,
+  `name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `dd` int(2) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `courses_category`
+--
+
+INSERT INTO `courses_category` (`id`, `name`, `dd`) VALUES
+(1, 'Анхан шат', 0),
+(2, 'Бүтээмж', 10),
+(3, 'Гүнзгийрүүлсэн', 20);
 
 -- --------------------------------------------------------
 
@@ -61,15 +961,103 @@ INSERT INTO `doctors` (`id`, `name`, `avatar`, `username`, `password`, `tel`, `e
 CREATE TABLE `events` (
   `id` int(3) NOT NULL,
   `date` date NOT NULL,
-  `title` varchar(512) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
   `category` int(3) DEFAULT NULL,
-  `brief` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `content` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `brief` text COLLATE utf8_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8_unicode_ci NOT NULL,
   `image` varbinary(512) NOT NULL,
-  `language` int(1) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `visited` int(4) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `date`, `title`, `category`, `brief`, `content`, `image`, `timestamp`, `visited`) VALUES
+(1, '2022-06-03', 'Бүтээмжийн ойлголт, зарчмууд', 1, 'Бүтээмжийн ойлголт, зарчмууд', '<p>Бүтээмжийн ойлголт, зарчмууд</p>', 0x75706c6f6164732f3230323230362f3035323332373838346576656e74312e6a7067, '2022-06-02 21:23:27', 0),
+(2, '2022-06-06', 'Бүтээмжийн ойлголт, зарчмууд', 2, 'Бүтээмжийн ойлголт, зарчмууд', '<p>Бүтээмжийн ойлголт, зарчмууд</p>', 0x75706c6f6164732f3230323230362f3035323335323533316576656e74312e6a7067, '2022-06-02 21:23:52', 0),
+(3, '2023-03-01', 'Азийн бүтээмжийн байгууллагын Үндэсний бүтээмжийн шагнал', 2, 'mpo-org.mn', '<p><strong>Азийн бүтээмжийн байгууллагын Үндэсний бүтээмжийн шагнал</strong></p><p>Монголын бүтээмжийн төв болон Азийн бүтээмжийн байгууллага&nbsp;(АББ) үндэсний/салбарын болон байгууллагын хэмжээнд бүтээмжийн хөдөлгөөнийг тасралтгүй өрнүүлж, бүтээмж ба чанарыг дээшлүүлэх санаачилгыг үр дүнтэй хэрэгжүүлэн үлгэр жишээ болсон манлайлагчийн хүчин чармайлтыг үнэлэх зорилготой Үндэсний бүтээмжийн шагналыг гардуулах арга хэмжээг зохион байгууллаа. &nbsp;АББ-ын Үндэсний бүтээмжийн шагнал нь бүтээмжийн хөдөлгөөний нэг хэсэг бөгөөд өмнө нь 5 жил тутамд 1 удаа олгогдож, Монгол улсаас 3 хүн тус шагналыг хүртээд байсан юм. Тэгвэл энэ жилээс жил бүр олгогдохоор болж 2022 оны Үндэсний бүтээмжийн шагналд нийт 6 нэр дэвшигчийн материал ирснээс Бүтээмжийн манлайлагч ангилалд&nbsp;Орхон аймгийн НДХ-ийн дарга Б.Анар, Бүтээмжийн экспертийн ангилалд Эрчим хүчний зөвлөх инженер С.Цэцгээ тус тус шалгарч АББ-ын алтан медаль, гэрчилгээ болон мөнгөн шагналыг &nbsp;гардан авлаа.&nbsp;</p><p>АББ-ын Үндэсний бүтээмжийн шагналтнууд нь бүтээмжийг хэрэгжүүлэгч байгууллага, хувь хүмүүст, бүтээмжийн дараагийн үеийнхэнд урам зориг өгч, үлгэр жишээ болсон хүмүүс юм. Энэхүү шагналд нэр дэвшихийг хүссэн хүн бүхэнд нээлттэй бөгөөд МБТ-тэй холбогдон дэлгэрэнгүй мэдээллийг авах боломжтой юм.</p><p>&nbsp;</p>', 0x75706c6f6164732f3230323330312f3032343831333330556e7469746c65642d312e6a7067, '2023-01-03 06:30:51', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events_category`
+--
+
+CREATE TABLE `events_category` (
+  `id` int(3) NOT NULL,
+  `name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `dd` int(2) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `events_category`
+--
+
+INSERT INTO `events_category` (`id`, `name`, `dd`) VALUES
+(1, 'Дотоод', 0),
+(2, 'Гадаад', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `experts`
+--
+
+CREATE TABLE `experts` (
+  `id` int(6) NOT NULL,
+  `avatar` varchar(123) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `position` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `worked` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tel` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `education` text COLLATE utf8_unicode_ci,
+  `experience` text COLLATE utf8_unicode_ci,
+  `fee` int(11) NOT NULL DEFAULT '0',
+  `dd` int(3) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `experts`
+--
+
+INSERT INTO `experts` (`id`, `avatar`, `name`, `position`, `worked`, `tel`, `email`, `education`, `experience`, `fee`, `dd`) VALUES
+(2, 'uploads/202206/122251117image0.jpeg', 'М.Анужин', NULL, NULL, '90141217', 'foreignrelations@mpo-org.mn', NULL, NULL, 0, 0),
+(3, 'uploads/202211/024021_688_3.jpg', 'Б.Ариунзаяа', 'Эксперт', '2014 оноос', '#########', 'consultancy@mpo-org.mn', 'Эдийн засагч мэргэжилтэй, Бизнесийн удирдлагын магистрын зэрэгтэй', 'Ажлын байрны эмх цэгц, зохион байгуулалт 5С\r\n7 алдагдал\r\nКайзен саналын систем\r\nЧанарын дугуйлан\r\nБенчмаркинг\r\nНогоон бүтээмж\r\nМэдлэгийн менежмент\r\nЧанарын нэгдсэн удирдлага\r\nБенчмаркинг\r\nБизнес процессын ре-инженерчлэл\r\nЛийн менежмент систем\r\nАжилчид, удирдлагын хамтын ажиллагаа\r\nЭрчим хүчний хэмнэлт\r\nЧМТ ISO 9001:2015\r\nПроцессын хандлага\r\nМатериалын урсгал зардлын тооцоолол\r\nИнновацын менежмент\r\nБизнесийн тасралтгүй байдал\r\nБизнесийн төгөлдөршил\r\nДижитал шилжилт\r\nТөрийн байгууллагын бүтээмж', 150000, 0),
+(4, 'uploads/202211/023814_332_4.jpg', 'М.Анхзаяа', 'Эксперт', '2020 оноос', '#########', 'info@mpo-org.mn', 'Менежмент чиглэлээр бакалавр, Санхүү менежмент чиглэлээр магистрын зэрэгтэй', 'Ажлын байрны эмх цэгц, зохион байгуулалт 5С\r\n7 алдагдал\r\nКайзен саналын систем\r\nЧанарын дугуйлан\r\nБенчмаркинг\r\nНогоон бүтээмж\r\nМэдлэгийн менежмент\r\nЧанарын нэгдсэн удирдлага\r\nБенчмаркинг\r\nБизнес процессын ре-инженерчлэл\r\n6 сигма\r\nЛийн менежмент систем\r\nАжилчид, удирдлагын хамтын ажиллагаа\r\nЭрчим хүчний хэмнэлт\r\nЧМТ ISO 9001:2015\r\nПроцессын хандлага\r\nМатериалын урсгал зардлын тооцоолол\r\nИнновацын менежмент\r\nБизнесийн тасралтгүй байдал\r\nБизнесийн төгөлдөршил\r\nДижитал шилжилт\r\nТөрийн байгууллагын бүтээмж', 150000, 0),
+(5, 'uploads/202211/024125_986_5.jpg', 'Д.Чинцэцэг', 'Гэрээт зөвлөх багш', '2008 оноос', '#########', 'chintsetseg2000@gmail.com', 'Хими-биологийн багш мэргэжилтэй, Бизнес менежерийн диплом, Бизнесийн удирдлагын магистр, Эдийн засгийн ухааны докторын зэрэгтэй \r\n', 'Ногоон бүтээмж\r\nМатериалын урсгал зардлын тооцоолол\r\n', 150000, 0),
+(6, 'uploads/202211/024256_445_6.jpg', 'Б.Атарцэцэг', 'Гэрээт зөвлөх багш', '2012 оноос', '#########', 'atartsetseg79@gmail.com', 'Үйлдвэрлэлийн менежмент, Бизнесийн удирдлагын бакалавр, Удирдахуйн ухааны магистр зэрэгтэй\r\n', 'Мэдлэгийн менежмент\r\n', 150000, 0),
+(7, 'uploads/202211/025344_683_7.jpg', 'Б.Гэрэл', 'Менежментийн системийн Зөвлөх', '2012 оноос', '######', 'gerelstd@gmail.com', 'Технологийн чиглэлээр бакалавр  магистрын\r\n', 'ЧМТ ISO 9001:2015,\r\nДотоод аудит\r\n Процессын хандлага\r\n', 150000, 0),
+(8, 'uploads/202212/050638_920_8.jpg', 'Ц.Батбилэг', 'Дэд захирал', '2006 оноос', '######', 'batbileg@mpo-org.mn', 'Техникийн орчуулга, хэл шинжлэлийн чиглэлээр бакалавр, Бизнесийн менежментийн магистрын зэрэгтэй\r\n', 'Ажлын байрны эмх цэгц, зохион байгуулалт 5С\r\n7 алдагдал\r\nКайзен саналын систем\r\nЧанарын дугуйлан\r\nБенчмаркинг\r\nНогоон бүтээмж\r\nМэдлэгийн менежмент\r\nЧанарын нэгдсэн удирдлага\r\nБенчмаркинг\r\nБизнес процессын ре-инженерчлэл\r\n6 сигма\r\nЛийн менежмент систем\r\nАжилчид, удирдлагын хамтын ажиллагаа\r\nЭрчим хүчний хэмнэлт\r\nЧМТ ISO 9001:2015\r\nПроцессын хандлага\r\nМатериалын урсгал зардлын тооцоолол\r\nИнновацын менежмент\r\nБизнесийн тасралтгүй байдал\r\nБизнесийн төгөлдөршил\r\nДижитал шилжилт\r\nТөрийн байгууллагын бүтээмж', 150000, 0),
+(9, 'uploads/202211/025735_156_9.jpg', 'М.Хишигдэлгэр', 'Эксперт', '2019 оноос', '######', 'foreignrelations@mpo-org.mn', 'Химич, нягтлан бодогч мэргэжилтэй\r\n', 'Ажлын байрны эмх цэгц, зохион байгуулалт 5С\r\n7 алдагдал\r\nКайзен саналын систем\r\nЧанарын дугуйлан\r\nБенчмаркинг\r\nНогоон бүтээмж\r\nМэдлэгийн менежмент\r\nЧанарын нэгдсэн удирдлага\r\nБенчмаркинг\r\nБизнес процессын ре-инженерчлэл\r\n6 сигма\r\nЛийн менежмент систем\r\nАжилчид, удирдлагын хамтын ажиллагаа\r\nЭрчим хүчний хэмнэлт\r\nЧМТ ISO 9001:2015\r\nПроцессын хандлага\r\nМатериалын урсгал зардлын тооцоолол\r\nИнновацын менежмент\r\nБизнесийн тасралтгүй байдал\r\nБизнесийн төгөлдөршил\r\nДижитал шилжилт\r\nТөрийн байгууллагын бүтээмж\r\n', 150000, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `expert_time`
+--
+
+CREATE TABLE `expert_time` (
+  `id` int(11) NOT NULL,
+  `expert` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `time` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `cust_name` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cust_tel` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cust_email` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `verified_date` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `expert_time`
+--
+
+INSERT INTO `expert_time` (`id`, `expert`, `date`, `time`, `status`, `created_date`, `cust_name`, `cust_tel`, `cust_email`, `verified_date`) VALUES
+(1, 2, '2022-12-30', '10:00-11:00', 0, '2022-12-26 05:06:03', '', '', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -79,10 +1067,19 @@ CREATE TABLE `events` (
 
 CREATE TABLE `faqs` (
   `id` int(5) NOT NULL,
-  `question` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `answer` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `question` text COLLATE utf8_unicode_ci NOT NULL,
+  `answer` text COLLATE utf8_unicode_ci NOT NULL,
   `dd` int(2) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `faqs`
+--
+
+INSERT INTO `faqs` (`id`, `question`, `answer`, `dd`) VALUES
+(1, 'Хэрхэн харилцагч болох вэ?', 'Сайтын Гишүүнлчлэл цэсэнд бүртгүүлэн харилцагч болно. Эсвэл 7000-0298 дугаарт хандан хүсэлт гаргах боломжой', 0),
+(2, 'Хаяг хаана вэ? ', 'Баянгол дүүрэг, 20-р хороо, Шуудангийн салбар/хайрцаг-26/354 Улаанбаатар-16081', 1),
+(3, 'Холбогдох утасны дугаар хэд вэ?', '7000-0298', 0);
 
 -- --------------------------------------------------------
 
@@ -92,14 +1089,14 @@ CREATE TABLE `faqs` (
 
 CREATE TABLE `feedback` (
   `id` int(6) NOT NULL,
-  `title` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `title` text COLLATE utf8_unicode_ci NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
   `read` int(1) NOT NULL DEFAULT '0',
-  `name` varchar(256) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `contact` varchar(256) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(256) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `contact` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `archive` int(1) NOT NULL DEFAULT '0' COMMENT '0-new, 1-done,2-not_done',
-  `ip` varchar(16) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `ip` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -124,9 +1121,9 @@ INSERT INTO `feedback` (`id`, `title`, `content`, `read`, `name`, `contact`, `em
 
 CREATE TABLE `links` (
   `id` int(2) NOT NULL,
-  `name` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `category` int(3) DEFAULT NULL,
-  `url` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
   `dd` int(3) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -163,17 +1160,91 @@ INSERT INTO `links_category` (`id`, `name`, `dd`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `magazine`
+--
+
+CREATE TABLE `magazine` (
+  `id` int(11) NOT NULL,
+  `title` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `number` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pdf` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `magazine`
+--
+
+INSERT INTO `magazine` (`id`, `title`, `number`, `image`, `date`, `pdf`, `timestamp`) VALUES
+(6, '№02/2022', '096', 'uploads/202206/033103575Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '05-25-2022', 'uploads/202206/0422165113-4 мэдээ.pdf', '2022-06-21 07:31:03'),
+(5, '№01/2022', '095', 'uploads/202206/032413367Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '02-25-2022', 'uploads/202206/0419091031-2 Мэдээ.pdf', '2022-06-21 07:24:13'),
+(9, '№01/2017', '057', 'uploads/202206/100453498Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '03-01-2017', 'uploads/202206/100453940MPO newspaper Jan, Feb - to print.pdf', '2022-06-22 02:04:53'),
+(10, '№01/2018', '064', 'uploads/202206/100742388Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '03-01-2018', 'uploads/202206/1007422192018 1-2.pdf', '2022-06-22 02:07:42'),
+(11, '№02/2018', '065', 'uploads/202206/101004815Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '05-25-2018', 'uploads/202206/1010046292018 3-4.pdf', '2022-06-22 02:10:04'),
+(14, '№04/2020', '081', 'uploads/202206/102617346Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '09-01-2020', 'uploads/202206/0259064787-8 MEDEE 20.pdf', '2022-06-22 02:26:17'),
+(13, '№05/2020', '082', 'uploads/202206/101712278Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '11-31-2020', 'uploads/202206/101712262news 9-10.pdf', '2022-06-22 02:17:12'),
+(15, '№03/2020', '080', 'uploads/202206/030006948Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '07-01-2020', 'uploads/202206/0300066455-6 MEDEE 20.pdf', '2022-06-22 07:00:06'),
+(16, '№02/2020', '079', 'uploads/202206/030223616Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '05-01-2020', 'uploads/202206/0302233193-4 MEDEE 20.pdf', '2022-06-22 07:02:24'),
+(17, '№01/2020', '078', 'uploads/202206/030341705Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '03-01-2020', 'uploads/202206/0303416211-2 MEDEE 20.pdf', '2022-06-22 07:03:41'),
+(18, '№06/2019', '077', 'uploads/202206/030554923Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '01-01-2020', 'uploads/202206/03055439911-12 MEDEE 19.pdf', '2022-06-22 07:05:54'),
+(19, '№05/2021', '090', 'uploads/202206/030808245Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '11-01-2021', 'uploads/202206/0308087389-10 MEDEE 21.pdf', '2022-06-22 07:08:08'),
+(20, '№01/2021', '085', 'uploads/202206/030911640Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '03-01-2021', 'uploads/202206/0309115841-2 MEDEE 21.pdf', '2022-06-22 07:09:11'),
+(21, '№01/2016', '050', 'uploads/202206/020734598Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '03-01-2016', 'uploads/202206/0207345201-2 MEDEE 16.pdf', '2022-06-23 06:07:34'),
+(22, '№02/2016', '051', 'uploads/202206/020849169Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '09-01-2016', 'uploads/202206/0208491496-8 MEDEE 16.pdf', '2022-06-23 06:08:49'),
+(23, '№01/2019', '071', 'uploads/202206/021734375Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '03-01-2019', 'uploads/202206/0217347021-2 MEDEE 19.pdf', '2022-06-23 06:17:34'),
+(24, '№06/2018', '069', 'uploads/202206/021842756Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '12-31-2018', 'uploads/202206/02184250711-12 MEDEE 18.pdf', '2022-06-23 06:18:42'),
+(27, '№03/2019', '073', 'uploads/202206/022114802Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '07-01-2019', 'uploads/202206/0221141325-6 MEDEE 19.pdf', '2022-06-23 06:21:14'),
+(26, '№02/2019', '072', 'uploads/202206/022011368Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '04-01-2019', 'uploads/202206/0220119343-4 MEDEE 19.pdf', '2022-06-23 06:20:11'),
+(28, '№04/2019', '075', 'uploads/202206/022148352Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '09-01-2019', 'uploads/202206/0221483387-8 Medee 19.pdf', '2022-06-23 06:21:48'),
+(29, '№05/2019', '076', 'uploads/202206/02230431Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '11-01-2019', 'uploads/202206/0223048679-10 MDEE 19.pdf', '2022-06-23 06:23:04'),
+(40, '№03/2017', '058', 'uploads/202206/011510873Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '06-01-2017', 'uploads/202206/01151056317-May-Aug.pdf', '2022-06-27 05:15:10'),
+(39, '№01/2015', '045', 'uploads/202206/011335336Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '03-01-2015', 'uploads/202206/0113358801-2 MEDEE 15.pdf', '2022-06-27 05:13:35'),
+(41, '№03/2022', '97', 'uploads/202208/100636195033103575Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '07-25-2022', 'uploads/202208/1006362125-6 Мэдээ.pdf', '2022-08-09 02:06:36'),
+(42, '№04/2022', '99', 'uploads/202211/015217287100636195033103575Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '10-25-2022', 'uploads/202211/0152171608 Мэдээ.pdf', '2022-11-02 05:52:17'),
+(44, '№5/2022', '100', 'uploads/202211/060111815100636195033103575Black Modern Minimalist Ripped Paper Aesthetic Album Cover.jpg', '11-02-2022', 'uploads/202211/0601114039-10 Мэдээ.pdf', '2022-11-02 10:01:11'),
+(45, '№06/2022', '101', 'uploads/202302/013938816 оруулах зураг.jpg', '12-31.2022', 'uploads/202302/013938916news 11-12.pdf', '2023-02-14 05:39:38'),
+(46, '№06/2022', '101', 'uploads/202302/014107912 оруулах зураг.jpg', '12-31.2022', 'uploads/202302/014107309news 11-12.pdf', '2023-02-14 05:41:07'),
+(47, '№06/2022', '101', 'uploads/202302/014200833 оруулах зураг.jpg', '12-31.2022', 'uploads/202302/013155253news 11-12.pdf', '2023-02-14 05:42:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mbtbb_application_bm`
+--
+
+CREATE TABLE `mbtbb_application_bm` (
+  `id` int(11) NOT NULL,
+  `fullname` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `signature` blob NOT NULL,
+  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `mbtbb_application_bm`
+--
+
+INSERT INTO `mbtbb_application_bm` (`id`, `fullname`, `description`, `signature`, `createdAt`) VALUES
+(2, 'Уранчимэг Алин ч яаахуу', 'Ilgeelee', 0x646174613a696d6167652f706e673b6261736536342c6956424f5277304b47676f414141414e53556845556741414164594141414534434159414141446d564e4b6f4141416741456c455156523458753264662b78585666334844346a6a553446475a644b676b47516c6d34444d6c7055796c5457534f55566e545a51743144574c35675a612f6c484a5071413163376c4262663351644d49475959756d4b4933704b45536f6c5a742b3545634751594b4e4b5356454169376a6833783958722f6e302b58442b3333764f666439372f74397a6e302f3776625a422f3263652b37725046376e2f58376563383772764d3667452b39636867734345494141424341416756494944454a59532b46494a5243414141516741494745414d4a4b523441414243414141516955534142684c52456d56554541416843414141515156766f4142434141415168416f4551434347754a4d4b6b4b4168434141415167674c445342794141415168414141496c456b42595334524a5652434141415167414147456c54344141516841414149514b4a4541776c6f69544b71434141516741414549494b7a3041516841414149516745434a42424457456d465346515167414145495141426870513941414149516741414553695341734a59496b366f6741414549514141434343743941414951674141454946416941595331524a685542514549514141434545425936514d51674141454941434245676b677243584370436f495141414345494141776b6f666741414549414142434a52494147457445535a565151414345494141424242572b67414549414142434543675241494961346b7771516f434549414142434341734e49484941414243454141416955535146684c68456c5645494141424341414159535650674142434541414168416f6b51444357694a4d716f4941424341414151676772505142434541414168434151496b45454e59535956495642434141415168414147476c44304141416843414141524b4a4943776c6769547169414141516841414149494b333041416843414141516755434942684c56456d465146415168414141495151466a70417843414141516741494553435343734a634b6b4b676841414149516741444353682b4141415167414145496c456741595330524a6c56424141495167414145454662364141516741414549514b424541676872695444725774572f2f2f3176382b4b4c4c78723966762f3733322f4f4f6565633549634c416843414141524f4a59437730697561456c69396572565a754843682b6574662f326f4f486a783453726e526f3065625938654f6d54466a78706a783438636e596e7670705a656179793637444b6f51674141457570594177747131726d2f65384765656563624d6d545048624e2b2b335a7734636149516f586e7a35706d35632b6379736931456a35736741494759435343734d5875765a4e736c714c6666666e7379375676574a59466474476852576456524477516741494867435343737762756f65674d6c704a727966667a7878797435324c527030387854547a31565364315543674549514341304167687261423570737a3053314d574c46796542535656653939787a6a376e7272727571664152315177414345416943414d49616842766162345345394f6162623635736c4471775261656666726f35637552492b78764b45794541415169306d514443326d62674954797533614a713236793156713235636b45414168436f4d7747457463376562644332546f6d71544e4565324c362b50694b4675367a503056774964427342684c584c504b34313151554c466e537331524c58646576576d517375754b426a4e76426743454141416c5553514669727042745933586665656165352f2f37376737424b346b6f6969534263675245516745444a424244576b6f4747577432393939357276764f643778524b2b4442793545696a6e2b50486a35737457376155306b534e584138634f46424b5856514341516841494351434347744933716a49466b332f617152362b5042687279646f756c625a6b3636353570706b6664526532766636687a2f3877627a77776774473062364442673079613961734d627433372f617166396575586179336568476a4d41516745414d42684455474c7857305559464b797153305a4d6b5372786f6b6f7232397665616d6d3234365356447a4b74467a31713564617a5a76336d794f486a3171746d33626c6e6b4c777070486c4c394441414978456b4259592f536167383053315775767664596f546148724a5547566d45705530794e55312f73486c73734b6c464c4366676b72467751674149473645554259362b625264396f6a556233383873753963763571327665525278347050567058776935623070644557382f5346444d584243414167626f5251466872356c477463307249584e6337547a76744e4b4e30677a724e706f785261694f6357704e647457705649765161716336655062743041612b5a47326b4f424341514d5147454e574c6e4454546464365371556572537055764e78496b5461305342706b41414168446f4c414745746250385333753637357171316c4b56597243715557707044614d6943454141417045525146676a6331677a63355651337a583656356d58464b4445425145495141414335524e41574d746e32765961646579627474573458435443643646454751684141414c464353437378646b4663616343676853736c4865654b7047345162674c4979414167533467674c4247374751665564564956657571584243414141516755433042684c566176705856726848715a7a2f3732647a73526f78554b334d4246554d414168426f534142686a62526a544a6b7978577a6375444854656b5131557564694e675167454455426844564339376d637159716f5275685954495a4146784651566a62746f3966733234775a4d327131564957775274615258534b41456458496e497135454f67694173304f42366e546a6757454e61494f37534b71505430395a73574b466554686a6369766d41714262694767674573644474496f355771647a6d684757435070305a6f325559664d326c597a65504467354e7856317a32746b5451644d79454167526f5130486658354d6d544d2f4f596e7a68786f6759744e515a686a63434e4c7474717a6a7a7a544b4d524c567471496e416f4a6b4b6743776c6f595044343434383362626c4f753372737363647151515a684464794e4c6d39356d6b4a686e3272676a735138434851786762786c724d737575797735536c4b6e58395868516c674439714a4556546d41733937795a50363865664d5359655743414151674542714272426b336657397070466f585162587345646251656d484b48713256366b307636304a5541335967706b4541416b6e4b56635749444c77305171337230685843476d6a483179685661784a5a563533574a414a3141325a426f4755436d6e6c53464b7957624f6f324d737544302b7837724f3444416f513172326430344f2f36454370364c69734357496555723175336a764e554f2b416648676b4246774c362f43715a6934357a744a396c6657343155745076756c3971733061726d67704f58393377335957774274693738364c6e394f62623139665864572b2f41626f4b6b7944516c45437a705a78752b667732436c6853327858357132436c4f6c3849613244657a5975653635614f475a68624d41634358675130536c586759624e4c6134736175646231306d6831374e697870387936745449467244723145384e304f734961554d396576587131756536363638795249306561576c576e744638426f636355434a524777475866655a327944445543313269304c6b4855544a7661376e4d7038456e3132536c6c54535872657a446b55532f43367550684373767154577a382b50466d37393639545a2f537974746568615a544e515167384134426659595672434d52794971504543794a7a4b35647532724a72646d4c525a464251624e346b39436e30784857514c7132706f303066645473366f59462f30426367526b5163435967415a575172462b2f50766e384e737142323669794f6b66304e346f52306665585271752b563962533249494643307876623639766c5730706a37433242585032512f4c57565963504832343262393463786470434144677841514b56454c44625a69536b6d7a5a744d6d7657724445376475777762372f397474667a4e4e70535248386449344f62626139526534744d33575946636f6238636f4b77656e306b79692b636c31782f304b4242356d632f2b356d3539645a62793338344e554967596749534f6e312b4a4849614b646f664e636e754762572f7834775a6b377959486a353832436976397637392b2f74486c322b383855597964617637423037683268476f445a7870465a664552564f69645252564d5a6f30615a4c352b392f2f66684b6d566751774b306c4f7945746a434775726e355157376e664a417a78723169797a624e6d79467037437252436f42774639586c617558476c2b383576666d4b3162743571644f336447307a414a764b59744a515a31765a724e76476b747557676b7233772b5973534955354346507570485744765579313379414f7674566e752b664b506f4f74516b4867754230676e594e6377662f7643485a75336174636d494d365a4c6e31324e324353715263556c68765932437a4b36367171727a424e50504e4653457761653453716d32716f6b7271466543477548504a4f3372716f506f64596c3676786837424236486873424153756f36573057455a6a6462364b2b2f5056694c45477434375476514638306d7249744f7a6245547458724f7a483077516243326f465061393636616778765a42334178694f37684d4441665975784e467443637547464635725a7332636e6f746f744c3858796c3149584472794b624b2b4a7864643564694b736559524b2f6e757a2f4a6e7078345163526c34794471714451442b4252726c315138656a6c2b44526f3065627558506e6d69392b385976426a365371344e6e6f394a70753378364973466252307a4c717a44734b72705549756a5933686364426f4451434776566f4c376672507444534875785a6b593079316f6830786f775a79545276364e4f536e6b33304b74347364614e6951304a65412f56715a494843434773426145567661545a6c5975765442315152644e33385153334b6c7676694a4b44414641556d5a5356487162706c39764f576e7272562f30762f6632335873644f37664437663955697a664d44697050695162723451316a5a355032384b6d4858564e6a6d4378775244514146385776625150744b714c7a76536c486a323950515962574d372f2f7a7a452f46454b4976523135463438742f4153786d57756946674b347361776c717354336e6631617754326f7059562f564779673052452f6a756437397235732b6658306f4c4a4a62364974655052705a574c4b3167576c4574355746556b68426f7472306d354b514e3758516477746f47326e6b486c374e667451314f34424842454e443072364a6e66564d423267596f63394a4850764952632f48464635766262727574363064485a54705776766e7a6e2f39734e6d3763614b362f2f76716d615167627052706b4b65742f6e6b4259792b79565465724b53724166656761524e7544684556314551457369536871674c32376679325976306c6d6d544e2f36307373754c372f6f4a5758353875556e46527732624a6a352b63392f626d624f6e4e6e2f2f35766c41326257445745747431646d314e617345397062756e6d765639756377494f43495a43334a4e4c49554153316576644e6e546f314d2b446f30556366545561777568707472796c36316d72314c65764d4578697856737864617a34446b314c6252374b31706d4c345642384d416274485651464c506c65646b396237634b6979624634574f443137794a416835756a526f386c3573356f47486e67707861426d45726a654a594377567467546d75337830694f5a4171345150465548513244446867314a354f6a7a7a7a2f764666336244556e7251334853656565645a375a76333535727a6f392f2f47507a71312f394b6a6c524b4830565057733139344552463042594b334a65737a3165396e4773523151456e6d6f37547341653536623971514f2f68504f4d30357265563737796c5353545562656b424d786a557558664661773065664a6b703064382b744f664e733839393977705a6273394755516a65416972553566794c35535659656c6a482f7459636f596b41526a2b584c6b6a44414c3266464a394d537671585874523964762b3938427a54624f73317235536577724d56372f3656614a38322b68696c326c676134366d673438644f336153645872355556496272704d4a494b7756394969734445743649332f797953656268724658594135565171416c4176616b6d5a646565696d5a306e3335355a6354416655527a325947734962616b6d746176726e5274686d66536c6c626255774c596658705251356c387a49734d515873414a4569485357676b61642b317139666e77696f5868544c454e46306f79536f6d753774356e7979485858794f772b58547a554e5844512f4d2f74576d33735159533235643264744a79416b76575459564e635367665230726b5130505a58625573555a4e30745164617961424a576c6b4b6f6f753957626c37733872785947435168725868387035653935475a625973316f4b5a696f7051454169616b65697131617436702f4b4c54706179544c427068533042314972616c516e7763527751485542744e4865556d525063627178576c736c77497970344d6f2f41466b5a6c74697a576a6c2b4870416959494f494e424c567945514357735a303767632b3841467a316c6c6e6d656e547079636a7a6b7376765454356262396747595847307730624a587077745a3454624c4a4a4d52587332704e7979755746726573594a5856474c676855516343756732714c53786d4252524a4b2b79507874502f6d4e4a6771764e662b4f764f2b722f4973496d674a5963337249365838505375366a684d66536b464d4a663950774b364e4c6c32364e426d4a4b68744f3064476f506168624c33334b4571622f5a7371322f6c337436312f2f75766e7054333961714b45454c65566a593853617a796933684c3755526f7759306241636e54415848775679434e6a315561324e2f76725876303745394e4368513837633750537352464d4371744e684f4c5462475638744335352b2b756d6e37456c31626168534632724579745763414d4a6151752f494367496763713445774631576864303371756b366a557174734c7069734e4f32456b3846445845657153753537696833393931336d39376533734b4e4a644e53506a71454e5a3952626f6d78593863323341756d4c37532b766a34693533494a646e63424b3578614a3758547536355475335930716c4745706e496c7068715a636b476747594570553659554f725a5039576d6b2b38392f2f704f74556a6e644332467438664f58645377636b6341747771337837546166726f5455527643364e50654d4d3834776f3065504e744f6d545574476f33614e314f5665796b416737786a4c504549365950375656312f4e4b39623166306459572b77434579644f4e46753262476c5943314d6d4c634b7430653132656c6662582f546c4a6a4631766578367144495636574a45366b714f636d6b43366e4d4b736d786c372f4a464631316b2f766a4850774b574557743166554164394a4f662f4b5135637554494b512f52794f4b5656313568797151362f4d485862434e3230776b5a584979576b4f706e3071524a79572f32687270516f30775741623359715438314f7876616c5a356d5370353636696e58346c31626a684672433637506d6c615a4d47474332627835637775316332754d424451716b4a43716237676d5a5643776b556168537657486b4d626f39664274767648474738324b465374614e70546c4c546545434b73627034616c737661754c6c75327a4d79614e61754632726b3142674a46706e6731417256702f6767326973484c636475345a4d6b536f2b5034477332732b62594d5958556a687243366354716c564e5a4235707933576842714a4c645a4d5658676b57747942676d70767054496d52754a6b794d33557a4d6e447a33306b466d2b66486e683543474e45434373626830445958586a64456f706f6f454c676f76304e70747631306278356d324873614e5375356555674b4e4948522b5a3258624c317371564b3833687734644c74313739574673497562494a494b7746653068575567696967517443446569326f6c4f38326b2b71334c71736c51626b7a4a71626f723671484e472b30655a704c47656666626235787a2f2b6b55744b6966742f39377666355a627239674949613845656b4c572b796e464b426146322b445a3951536c56323750505074742f4e6d6d6553545a4e6f414b50794c4762523673372f6d3566797452612f5474396349453942636a2b667a767a345875346755616d4e6a4f587a396174526834594f6e536f6d544e6e6a6c6d386548477567335336306637392b33504c64587342684c56674432695762556b6648416b72567877453941566c3935613652504553654253485839746c705552747a5a6f31356f6b6e6e756a5034667a6d6d323857666e785054342b5230436b52672f35746c78443076664c3636362b62332f2f2b393262763372334a54786d583674566e514876787237727171747771645753674d6939785a524e41574176306b4b796b2b3578545741426f47322b52377a526c5a73553062363155706b6c4d645549522b307262364b6941483256667868527432307179685534325558313630614a46526b7358756c777a4d6f30624e383773324c476a6b365a483857794574594362737334795246674c414b33776c6f46727053366a306d484468706c5066657054535151763232457164453545566473556c49717461485871745a504e486a353875506e474e3735686c4d55726e5868454c77746150383237644d2b4241776679696e583933784857416c306771784e79396d6f426f4358666b685a5431314746766a43306c554342522f704e74714f536e524a686454614873794c42375548794554596a4d586e496b43486d53312f366b766e4a5433375373473976334c6a524b446c2f336b565563423668642f2b4f734c70784f716d5546766c76762f3332686e6369724157416c6e424c6b665342576c2f53564a684e5a6c2b4347565152455145726e4f6f3762377a78526e4a4f7256366f66766e4c583572662f76613335756a526f78473170726d706d6e585274472f576c712b626237375a3643553037794b474a4938517775704771454770724537492b61762b574f32786166714338396d6d556a5477694c326c2f6a367179783371612f666464312b5350474866766e3131615662446475676c516565753675557862775a6d314b6852547166574d425873316d5559736270784f716c55316f6b32327135684177494b564e313174327a597343475a65763358762f3756332f5a6262726e4650507a777736657773464f38797356727478766b41624e52764e6f4f77785276487133362f7431755464476f7a4356674c5759534e74687534447071737a613572712f71666f545672576367724736635469716c4149426d575531494475454f564b662f6e4876757565623438654f6e3344522f2f6e787a393931334a312b432b754462785059755834716172724c70417a6d76314e30666453755a446a68794356714c76663032626161726f4e7232616c6e4c5a513872777572655178425764315a4a53583141745965313261572f6a786b7a787250573769782b777730336d456366666252683478567363636b6c6c7951526d4335696d733746532f724137757850617258367976652b3937336b61444f3975423038654c43324d477a306571744c473833323544634378346a5672547368724736632b6b746c545a756f6f783836644d697a78753473726939416a5662545538412b4a4e4b356547335749352f374b567366416e7235736a6c794f7a5579565838634f584a6b38714d7a533664506e393450324e6f6b6f5664696832336274706c6a7834345a37516c4e767a5271706b564a4958523938494d664e446252684e706d52347576766661614f662f3838354d6a426e55305a643761615a36587337594f49717835394a722f485748315a4a63564555776f756a764d427839384d446e4b7975646976645348566e334c46736e6a5842554e4f31703043524371796f5a5736733336506b4e5969354e465744335a5a655549316f644c7755746370784b776b623932726452316b37336458366f33644e5a4c7537646e46566c72723471572b7151455657755a2b68337a6c6656396872415739797a4336736b75617a32437254596e773951556d483773426e7666394739616637332b2b7573395055547875684451793564394553746a696a6539664b44306c467533626a564b4b762b357a333075366166367352486e61596261333672507655306755716358504a2f31565446685673377430345777756e464b536d586c434e6266757a30693249354b4a615250502f323032624e6e5430764249357753354e4535613142552f55664a34485573575374486f4b5652764f39393730737944766c6d314a4c4953746931376c6e5855347438313163525676635047634c717a6972356f453265504c6e704864306d42506f6974464e304f672f53436d73655570336538642f2f2f6a6576574a4b54744e58676a4e7948554b436a424f78367156374739474b714445697458414d506d4b2b724b4c6243794e37726d6e672f2f5378796f62755252316a644f43576c744c6c63575a6361586432533673734b6166716f4e52654534714e704a4b55502f4d4550666d426565756d6c334e744f6e44695257345943385247775971715873565a7a384e72315474753345464c332f754162754b536169534e7834347577756e464b536d5674704e623669393634363359566a6342554567317470786d344c705733447a6a4e6a78467276587154546654686d6a57725565735a6b5a62584a317a7a41366566534335304e2f34497178756e70465257424631644f6c795259395973776e533070463262476f6a58646671707a6a4d41396a78597364626158353154594e722b704a66536f6746494e766d48574e5570634d6a6a713665536f72345277544a4379667a31586365565451426839656768575246304d5163757062637961445468453731727a79753153527279316b526433354c724b717a4e76737a45305737687947496f3334684e364a66733146537658694a382b7050617054583430614e486d3974757534337a63437430744d356674636b6e58423854382f65636178764c4b496577656c41634d574a45302f52364d5155753659744f4879686c676e453972335467714e52475766702b796275473939637853434a726a543764446133493274535932376476542f7930662f2f2b2f71504d4a4c377069465839743335306a2f332f767237782b4367304c4a724f674f5336547a6c646b55616a656b486a63506c575065463276774978666633553139655865667963323550725877706864665278336c61626b4e63443759683030365a4e6862597870505077746849636b6864565066424c56682f694f6c32756f2f55793235775757663237544f4564324b2b4b545058715a55425434545942534a6c74703635734171347675656c6159687041644e4c2f434b736a2f53785243473361736c556872536f50722b7636716c7853783241776e314e45484c746c7938554737744f304c30373230472f31425232496f4b6e5a394c4639397439464459673946574452646f64306e362b776876593946784c4c676259677249376579524c57546b3962366b744f6f715770335349623639735661656b7a596a76767650504d582f3779463066767846484d64536f346a74595573314b664651584163414a524d58356c33705731744e586f4f5752646371655073447179307066424858666330624430315664666e61524361396556486a6e5959434f586f39585339746c397058594b72683372635435767948555556764576456a4453726e355631585073644b39793637616a6e3158566a7272564f326a51494b386d735966564852664336736a71336e76764e642f2b397263626c72376c6c6c764d7777382f37466954657a45726f426f744b794f4e6b6a496f762b6e7272372f7558736b374a5731676977304f3065393266384835724b2b71635664656561565a76587131567a746a4b61794e2b546242526977324637475436643469314e70336a362b77316d564c595473494936794f6c4c4f796c4f68456d3162324974705567424966546566613645726655656a4145616e574b5a567358454c6136616b336e2f565674614f4f6136794e7570716d687957792b6833374e58424a6f644e394c6e6165566476764f785863367664633165304a71583645316445625759456e5068314f6f6d6c5030744158717631334b794a715236513279354764356e5673576c754b2b61797664704f7757766a7146397233475a5041576947313651524a337443576a31497044386e623564446f49657868645565507344717979684b47646576576e58497559336f61563650516f6d75686a637a7236656b786e2f6e4d5a354a6e78704b4e786e6650584c654d5741663656774b37634f48434a4167747045755277526465654b475a506e31364d6773794d4a6f344a467578785932413731517757323363754b6f55777572494b6b74596457366f7373566f6e366756554e39734d336c6d3248534245744b705536656169524d6e357430537a4e2b4c764231337137426170306c5962527241546a6e536a6b6874306f5a327238743371743364386c7866595131357233356f506b4e59485433694f3558705747316d4d53756d4f68456d684858536f6d30717373326b323455314c62427a35737778652f66754c597266367a34727075707a38674669366f55767173492b777672653937375876506e6d6d314731723550474971784e364b656e636a55534c654f7353426448707a5052744a4c6c794f565a375370544a444543776e7179647a5246724331644e6757646674767a63467678492b756b7264434c2b393754546a764e765033323230364e754f53535338794744527563796c4b497165436b4439696f584a732f74387a31304c784f5a6e4f2b536b67305371694c6d4b626237624e2f31643548614839657a2f6e663332307151667462612f7136476931483241542f576c4a676e6453646352314c2b6f78597962726b31774f3663735261526f35545038776e6c3035507439553934626a762f6c5745745a57657862305163436567377948746a3365354f7031647a7358476b4d7255586c6a546f31464e3665714c33766445687a4963706a632b4f797274706d304a57526d7273726753326c394772364d4f4344516e77496931757435524f32464e483953744b563237466c55647773593164394f6f4e497574746758393655392f3873615073486f6a347759496542487757614c5239356d6967726e6343455176724a3265316b316a316b6a55706e4872706c4670566c63624e577155656658565639313659366f55652b61386b584544424c7749494b7865754c774b42793273646872585a6964535549623939332f2b38782b7a632b644f632f7a3463613847563146595a3178715a47774451367034527178312b715a4e557a733552534e5762324e335441515131757138465a5377707164787455472b794d484a5661465361486f7a45536469726a48316f6f464c645537415831582f704634492b424c7779596247564c4166335343453165375255794b42736a4d572b654834582b6c30516e4674545a672f6637375a7548466a772b726f64493070793564364b2f61394f4a374b6c786a6c49654250414748315a2b5a36523065465663654366664f62337a546274323933746265796376596f4e5a7451664f422b3071787a4e474d58566a745449434655354c5364626b2f44746f6e2b37572f6c693755764838327938785156316d584c6c706c5a73325a56356d7371686741452f4d3847506e4869424e676343585245575056466674313131786b6c722b2b4573327853686e51532b377a5562566e724554454a61785748413477634f644c4d6e446e546147744e2b69715349316a3345376a6b2b4f6d6c47415261494a4131574768554c626d433357473356566a31526176703367554c466a687654485a7653764f534e7564756f39476f5061374e546b4862674b6e304d573761524b337a574a736437545a382b48447a374c50503968386f37684c455a4f757961656e536474682f36376e707448554455396a707677632b793936722f352f2b2b35343965354944306c303368426668506d4843424b4e4433355531535664525965334579316152396e49504247496d634f3231313371646f6f5377756e753762634b715061564b5a4e2b4f4e565362735034546e2f69452b666a485032374f507676734a47725843745854547a2b64374d6c5355756e4267776333465578336a4b655774494a6e7863304b3355632f2b6c477a626473326f32436f7439353671355648424875762b4f754d577633325763645267346749447461744746597a417234486979437337683267636d47566f436b4a753453317175764d4d383830463139386352496f6f3230344c377a77516c4152785657314f2f52364e544d682f2f75634c55726755756865786236364550413948494d6c476e66505679617347716e7077475a4e2f546162516e5533382b53534776324e477a664f664f6844487a4c373975307a4f3362737148534b733669643347664d575765646c5578427531356b5848496c52546b497445624156316a372b7671534753577566414b56434b756d657a562f58315a4f586f31494e5272566230336e36733270797258436647795571494b4158706a303463304c4a4b76693264514a6757346a6f4947505a7056634c3454566c56514678385a4a56415054664f38414141377a53555242564c577531756f6f39543376655538793274456c455732486b4b594467644c2f56724a7169546c5874515134673756617674514f6754514252717a56395966535236792b49647a564e6533646d744e6e547471397164714461556446396e64574a472f656d393248502f786838384144442f51334a6631536f582f7270554270442b332f313737644930654f6d44504f4f4b4e2f4c54676448647a7153306e56544b7571583975767441574b43774951714a3641646a7049584630765271797570456f6573525a4e59656475626e5a4a477730733464515864466d4868756546705138624e7377634f6e536f72476163497441326b6a6f766f6a7139315561563249686b2b3376743272564a634e664c4c372b632f4b327371666f7947733742356d56517041344975424e51554b472b32317776684e5756564d6e43367673473547356d34354c744f6b314757336279706f4b3176555152725446654e744e536f35477948556d6e393953712f4e617457784e78506e6273574d744e31677551507251752b333962666867565141414343514666595756477962336a6c446f56374f736f647a4e4e387157724c2b424f484d7432305555586d65656565793754584e6d6c6a74654e6c38333137424d496b655a454a4841333968726133476b4332674b7070547658433246314a5658796946556a474356414f487a34734c73464455716d31305756414c2f4d61643069686c31393964586d795365667a4c3231327756434176766c4c332f5a624e6d794a5a65564c5544416b6a4d71436b4b6756414b2b53336349717a762b556b6573657579474452764d357a2f2f2b53513470396c6c45376e624e56424e36576f726a5154556a6b7a646d31423953646552654464764678456a5a584c7843627936386359627a664c6c7936743349452b414141524f49654237534162433674364a536864572b2b6748483379776639314d55366c704d56575a324e6254584138463772617a5753576b582f6a4346334b6e796764325359315574533464577a39772f32685245674a68452f444e355932777576757a4d6d46314e79474f6b6a36425764307976616b3333716c54702b5947647155394c4348743765337454395166682f657845674c314a4b41392b7135587479393175584a534f5954566735627271465656317230544b7642426f666f2b55372b613674665263715246382b683046495641685152476a426a682f426d752b3364616d5a675256672b61506c46305134594d4d63382f2f37795a4f484769787850694b4b72387a3970593769717145745335632b663272364848305571736845443943544259714d6248434b736e5635383059446f6f51416345314f6e796d524b3330373761333874616170313641573270437747665978305a73627037485746315a3956664d6938545537724b6d424e48704e756830616b6471626f676d7a5a7457704c6d6b5954364c72516f4134484f4550424a51597577757673495958566e64564a4a563348565345315a6d32496573556c55745a584739567a564b3636347771785973534c714e68667346747747676167492b4278326a72433675785a6864576431536b6c586354333333484f4e3876524b584a553859666a7734636e3670494a34516864636e2f5655496e356236457a63436f454f4550425a326b4a5933523245734c717a616c6a535a3432695551555349323350555959702f513542614358364b3165754e50666464352f5a75584f6e4579485a72576c767459454c41684349673044657956337056694373376a3546574e315a4e5332706332503337647458516b306d4763564b6e47624d6d4e483262536b535645552b33334848486435375537574e4a745a4443457078484a5641494549436d704853644c444c6862433655487133444d4c717a717070535a2f4f36664d344f354c566b5770565866623475505872317874462f4c70756f6248324d464b74796a5055433448714362696d6135556c434b7537507842576431615a4a5833326778563570456144733266504c6e7751754152546d5a4b55655075565631354a5271623674362b51706d3148564974346b6e7367454134426e337a42434b7537337842576431615a4a5833652f467039704537624754392b76506e6131373657564456775864594b35715a4e6d7849426665323131387a32376474626665784a3979767067395a55325535544b6c59716730426243666a6b43795a58734c747245465a3356726b6c6c546533376d65796b7651687478745141414c5245504152566b6173376d3546574e315a4f5a56557471572f2f653176546d566a4b74545430354f4d6b4a57616b464671544a37445667686b45334464326343493162306e49617a75724a784c2b75774e63363630677755567166796a482f3349544a6b7970594e5738476749514b414b41713743796f6a566e5437433673374b7136534341725248544775767251514965543230784d4b61387057676368704e6956437043674942456e444e7673534931643135434b73377138496c4655416b6f56323664476b53544254797061416b2f58526948323349584c414e416e556c3444724431746658312f6139396245795231673734446d4e596d33456271654556694e53725a587152794e545a58364b4963566942397a464979465161774b754a31625635554352646a675459573048355a786e5347685872567056366253785248506f304b484a6148546d7a4a6d4a6f496151506a45412f4a67416761346d344c70566b44565739323643734c717a616b744a54526c72464b73527266616a36722f316f3074437150586159634f476d6347444279662f6666446777565057634f3336714d52303071524a79556855503177516741414542684a7733584c44694e573937794373377179434c326d447042694a42753871444952415541514744527155613438434761744d7235707251455146454e61496e49577045494141424b6f674d474c45694e7a64437769724f336d45315a30564a53454141516a556b73446c6c312b6575324e687759494670726533743562744c3774524347765a524b6b504168434151475145584c6263614270596f31617566414949617a346a536b41414168436f4e51475841383931777059436d4c6a79435343732b59776f41514549514b44574246793233434373376c30415958566e52556b4951414143745353677258334b475a783149617a75726b645933566c52456749516745417443626a735a5656796d626f6669316d5763784857736b685344775167414947494365527475554659335a324c734c717a6f6951454941434232684c494f7a354f32647555694a38726e7744436d732b494568434141415271547944762b4469453162304c494b7a757243674a415168416f4c5945387661793675434f58627432316262395a54594d595332544a6e564241414951694a54416b69564c6a4561747a53376c494439773445436b725775763251687265336e7a4e41684141414a42456e445a7933726978496b6762512f4e4b4951314e493967447751674149454f4548445a636f4f77756a6b475958586a52436b495141414374536551742b554759585872416769724779644b51514143454b6739676277744e31706a35627a6e2f473641734f597a6f6751454941434272694351643379636f6f4956486379565451426870596441414149516745424349472f4c44634c71316c4551566a644f6c4949414243425165774b4c4679394f784c585a6862433664514745315930547053414141516a556e6b44656c68736c3456664f5943366d67756b444549414142434467514744333774316d374e6978545573697241345133796e43694e574e4536556741414549314a3541336c3557684e5774437943736270776f42514549514b417243476a45717046726f2b7542427834777439353661316477614b575243477372394c675841684341514d30495a4f316c76656565653878646439315673786158337879457458796d314167424345416757674a5a78386664634d4d4e3568652f2b455730625775583451687275306a7a484168414141495245466934634b465a7347424251307576754f494b7332624e6d67686130566b544564624f3875667045494141424949696b4856383349514a45387a6d7a5a7544736a644559784457454c32435452434141415136524342724c2b75346365504d6a6830374f6d525a50493946574f5078465a5a4341414951714a7a4169792b2b61425441314f6761506e79344f586a77594f553278503441684456324432492f424341416752494a5a4f316c4854703071486e727262644b66466f3971304a59362b6c5857675542434543674d49477363316b354f6934664b384b617a34675345494141424c714b514e5a653172362b506e50424252643046512f6678694b737673516f44774549514b446d424c4c4f5a5357745962377a45645a385270534141415167304655457373356c5862526f6b5a6b3362313558386642744c4d4c7153347a79454941414247704f494574596c54796974376533356752616178374332686f2f376f5941424342514f774a5a53534a7575756b6d3838676a6a3953757a575532434745746b795a3151514143454b67426761776b455664656561565a765870314456705a58524d5131757259556a4d45494143424b416b383838777a5267464d6a6135526f30615a50587632524e6d7564686d4e734c614c4e4d2b424141516745416d42724351523131787a6a586e737363636961556c6e7a4552594f384f6470304941416841496d73433376765574382f3376662f386b47776350486d79306a33586978496c423239357034784457546e754135304d41416841496c4d43646439357037722f2f2f7353366e7034653839424444356c5a73325946616d30345a694773346667435379414141516745535744333774336d6e48504f43644b324549314357455030436a5a424141495167454330424244576146324834524341414151674543494268445645723241544243414141516845537742686a645a314741344243454141416945535146684439416f32515141434549424174415151316d6864682b4551674141454942416941595131524b3967457751674141454952457341595933576452674f4151684141414968456b4259512f514b4e6b454141684341514c5145454e5a6f585966684549414142434151496747454e55537659424d45494141424345524c4147474e316e5559446745495141414349524a4157455030436a5a424141495167454330424244576146324834524341414151674543494268445645723241544243414141516845537742686a645a314741344243454141416945535146684439416f32515141434549424174415151316d6864682b4551674141454942416941595131524b3967457751674141454952457341595933576452674f4151684141414968456b4259512f514b4e6b454141684341514c5145454e5a6f585966684549414142434151496747454e55537659424d45494141424345524c4147474e316e5559446745495141414349524a4157455030436a5a424141495167454330424244576146324834524341414151674543494268445645723241544243414141516845537742686a645a314741344243454141416945535146684439416f32515141434549424174415151316d6864682b4551674141454942416941595131524b3967457751674141454952457341595933576452674f4151684141414968456b4259512f514b4e6b454141684341514c5145454e5a6f585966684549414142434151496747454e55537659424d45494141424345524c4147474e316e5559446745495141414349524a4157455030436a5a424141495167454330424244576146324834524341414151674543494268445645723241544243414141516845537742686a645a314741344243454141416945535146684439416f32515141434549424174415151316d6864682b4551674141454942416941595131524b3967457751674141454952457341595933576452674f4151684141414968456b4259512f514b4e6b454141684341514c5145454e5a6f585966684549414142434151496747454e55537659424d45494141424345524c4147474e316e5559446745495141414349524a4157455030436a5a424141495167454330424244576146324834524341414151674543494268445645723241544243414141516845537742686a645a314741344243454141416945535146684439416f32515141434549424174415151316d6864682b4551674141454942416941595131524b3967457751674141454952457341595933576452674f4151684141414968456b4259512f514b4e6b454141684341514c5145454e5a6f585966684549414142434151496747454e55537659424d45494141424345524c4147474e316e5559446745495141414349524a4157455030436a5a424141495167454330424244576146324834524341414151674543494268445645723241544243414141516845537742686a645a314741344243454141416945535146684439416f32515141434549424174415151316d6864682b4551674141454942416941595131524b3967457751674141454952457341595933576452674f4151684141414968456b4259512f514b4e6b454141684341514c5145454e5a6f585966684549414142434151496747454e55537659424d45494141424345524c4147474e316e5559446745495141414349524a4157455030436a5a424141495167454330424244576146324834524341414151674543494268445645723241544243414141516845537742686a645a314741344243454141416945535146684439416f32515141434549424174415151316d6864682b4551674141454942416941595131524b3967457751674141454952457341595933576452674f4151684141414968456b4259512f514b4e6b454141684341514c51452f673978454d537948474e7a6c4141414141424a52553545726b4a6767673d3d, '2022-04-12 08:19:20');
+INSERT INTO `mbtbb_application_bm` (`id`, `fullname`, `description`, `signature`, `createdAt`) VALUES
+(3, 'ЙЫбойрыббйло', 'өахбыөхбөахбөабө', 0x646174613a696d6167652f706e673b6261736536342c6956424f5277304b47676f414141414e53556845556741414164594141414534434159414141446d564e4b6f4141416741456c455156523458753164656242515666302f6f4b4167687379346a6f7849616d34736f69614f6f59535a706d4a573078386f466d343549564f34354a544f4b47704e4f746d34564771616d73786f324e536b434468714f73616734354a70434a6f5653726a6875455167696f4436666e3675762f4f3833486657653839647a7232664d384d38344a31376c7338353933374f647a3339656a3475676f554945414569514153494142486f52654471713638575a35393974684b5230614e48693265656555614c566a38534b33635345534143524941494549465045666a50662f346a786f30624a2f3733762f387059646c31313133463875584c53617a634e45534143424142496b4145584243417041714a5656656d544a6b693573795a51324a31415a4e316941415249414a456f4e7349324b545649554f47694a6466666c6c73733830324a4e5a756278584f6e67675141534a414246775173456d72382b624e45354d6e547a59325252757243394b73517753494142456741713148414e4c71794a456a7466506362626664784c4a6c793677346b466974454c454345534143524941496441474255303435526478363636334b7166627231302f4d6e7a39664848504d4d56596f534b78576946694243424142496b4145326f3741332f2f2b647a4670306953744a2f4265652b306c2f764750667a6a4251474a31676f6d566941415249414a456f4d30496d4779726b465952586a4e697841676e43456973546a437845684567416b5341434c515641556972694676566c594d50506c67382b75696a7a744d6e73547044785970456741675141534c515267532b2f76577669377675756b73377463574c463473785938593454353345366777564b784942496b414569454462454c424a71776364644a42342f50484876615a4e597657436935574a41424567416b536754516959704e582b2f66754c7558506e57754e5773336951574e7530517a6758496b41456941415263456241467264715337617636346a4536727745724567456941415249414a745175447777773858447a33306b484a4b6d32323257574a337457565a556a314d596d33544c7546636941415249414a4577416b42324659504f4f41413864464848796e72353556573052694a31576b4a57496b4945414569514154616849444a746a70677741447878424e506950333232792f586c456d737557446a513053414342414249684172416e2f357931384569465633332b6f6868787769486e6e6b6b647a544937486d686f3450456745695141534951497749324479423333373762654f31634c59356b31687443504833524941494541456930426f45494b30694a3743757a4a6778512f7a71563738714e463853617948342b44415249414a4567416a456849424a57743138383833466d322b2b575568614252596b31706832424d644b42496741455341437552477753617458586e6d6c51444c2b6f6f584557685242506b38456941415249414a5249474353567266646474744557673152534b77685547516252494149454145693047674562446d42723772714b6e4857575763466d514f4a4e51694d6249514945414569514153616a49424a5774317878783346797055726777326678426f4d536a5a454249674145534143545554414a713365647474745975725571634747546d494e4269556249674a456741675167535969634d6b6c6c34694c4c3735594f625264643931564c462b2b504f6977536178423457526a5249414945414569304351456b463170354d69523269784c6f6156567a4a334532715164774c455141534a41424968415541524d30757275752b38752f763376667766746a385161484534325341534941424567416b3142414e4c717548486a424f3564565a553737377854664f31725877732b584571737753466c6730534143424142497441454247363939565a7879696d6e4b49645335466f3432397849724461452b487369514153494142474945674649712f4149567058662f766133347553545479356c58695457556d426c6f3734495147574464474f4c4679394f314462344e3335757338303276582f677654643237466a787853392b7358417554392f787354345249414a78495844585858636c56384f7053686d65774f6c2b534b7878375a56576a52626b4356584e374e6d7a65386e55645949346966377054333853654546596941415249414a5a4245774a49637155566a454f45697633592b554967464468715963547063367077485651447a333055434c4273684142496b41454a414b6d5a5073346a442f39394e4f6c61723149724e794c6c534b414451396e67714b454b67653931565a626961564c6c314a797258515632526b52614459432b4d5a41473659715a5575726c466962765464614e62703737726c486e48767575654c353535385050693949724a4263575967414553414363465936354a4244784c7031362f714167644161684e6955585369786c6f3177783975586474547a7a6a74506650444242365768675a526b744c6557426938624a674c52494442392b6e547836312f2f576a6e65716b78484a4e5a6f746b7438413457364635634777355a6164676c353556505a59325837524941496c494d41704e5744446a7049624e7934735538487542494f33346b71436f6d3143705137324164737166444b6738526152616c4b78565046584e6748455341432b52434157576a68776f5639486b62594868795771744a716b566a7a72522b664d694277396456584a31362f565a4571686f49585a39577156567758496b41454f6f6f414e475237374c4748307553456d32316d7a5a70564754496b31737167376b5a48706f54585a534e516c66326b37486d7766534a414250775230486b43567846656b7830746964562f2f6669454267464971724370356932514f766662627a3878632b624d5247574466365041626e4c4c4c6265496566506d475a736550333638654f7978782f4a327a2b654941424749464146543347705a69665a4e554a465949393149545275324b58325962617844686777527035392b65692b68717571625868785a76312b2f66754c4646312b737a4935696d78642f5477534951445549344c375664477a38384f4844426136456d7a5a74576d6e3567456d73316178745a337578585352734167597641435252534b71326b6e313556505772435036326a5a4f2f4a774a456f446f456f435744746b77576645746746704961722b7047386d6c506c466a72514c316c665a70796375716d43696b564c38536c6c3137716a4d6235353538764c722f38636d4e396567633777386d4b524342364247416d6d6a527055712b6a4a4d6755682b7379376c6a3141597645366f4d57362f5a424949384b4743377832507835584e384844426867544452423732427555694c514851537968337063413464765339324678467233436b5463503154414f433371376a745554513142326e42377a36756d756536363638534d47544f4d7144454c55385362696b4d6e416f34495a4a306c63564348436a6a5067643278532b64714a465a6e714667786934437646334349374567673832484468686b584930512f5847306951415361697741636c58413338356f3161336f48326154336e735461334c3354364a4835537173684e7a326b5a48674a367772446268713964546734496c41596761774b75476d2b46535457776b76637a515a38704e58515755397748525343775530463663746350493237755871634e5247494677485674326678347356697a4a67786a5a6b556962557853784850514b4347475464756e46504b776a49535837756f672f665a5a782f78374c505078674d7152306f4569494156676177584d42356f6d72534b4d5a46597255764a436c6b45736e466a4f6f54672f5975734a336b646c557a4934344c7a393935377a3767346457526334573468416b5367484152303571636d4f697553574d765a413631743961616262684c662b63353372504d724f306837394f6a5259756e5370635a784d505447756b797351415369515542316f47394b6545305752424a724e4e75712f6f48697844687131436a783671757647676344556b5573575a6b32546c657075517856645030727752455167573468674868352b46566b62387871367355624a4e5a7537632f6373335831417136435644454a313851556b4671684b697044485a306254443549424969414d774b36623038546261747955695257352b5874626b5673624c69336d304a63674535567049712b584279593549714644505870376937677a496c4150516a6f72714a737375632f6962576576524a4e7279417771474167495a6f4b564d534c4669327156444a30536371504d534d544336525746694a41424f4a43514b655a617170746c524a72585075726c7447366b75714543524f5347327171567266714c6a5a57676456457a38466146705764456f46494544435a6e3570715779577852724b353668796d793630317348504155616c7155675575726e5a57314f5631636e58754a505a4e4250775230446b6f4e746d32536d4c31582b664f504f4571715a595a702b6f43746f2b644e5854324a3566787351345249414c354546416c677041744e646d32536d4c4e743936746677706b685a4d6930676161436879566b4943683770736b584f32734d5a787957372b354f4545693449434179566d7936625a5645717644416e6578696f766473696d6b697656786a5766466d4848535a534543524b445a434a6a796b446664746b706962666265716d56304c6952565a55694e43776736562f7a7373774d484468547231363933615a4a316941415271416b42557837796d4c524f444c657061514d31726476594a46574a6e367344552f2f2b2f635748483337594e4e673548694a41424649496d42776d593546574d5230534b376531634c6b4344725a55624f79366261725a35567178596f587a6d466174576c574c397a4b3347424567416e59455449646b4f4572692b784e4c49624847736c496c6a644f465642464b673031645a75376649744f446d6e666a786f33474a6f594d47534c65656565644974337757534a4142457043774a59794e535a706c524a72535a736b6c6d61526f6843716c327869362f54346d325a5456574637364b4748696f63666674674b653039506a37554f4b784142496c413941695a666964696b56524a723966756e4d5432365846626556505676466b5258427961716768757a2f5467514974434c674f3162464a7530536d4c74364f61327156304153354e43616d7a4c354f4c41784c745a62536a79393053674867524d6a704d785371736b316e72325565323932734a7159694a56674f6d6167596d71344e71334867644142445a42414f616f535a4d6d6156474a55566f6c73585a776b794f6a456b364975674a5378576175492f64766b6555594e6d79593056614d746b6d735252446d733051674c414b323679686a54757043722b43776536585272646c7347624859564655673439527275692b57717542476230304f726f4d493243495359723434673854616f513174437234473853446c5839506956463258783662654a72473649736c36524b4238424779482f4667315a784935456d763565366752505a684f687941646e4136524d697a5759764d4d356d586e73613473783931474247795a336d4b57566d6c6a62654f4f56637a4a6444707341366c69796a625059424a72527a593770396c344247774f5337463641716542703854612b4731596649433737373637654f47464635514e5858585656654b7373383471336b6e4e4c65442b786e486a786d6c4845624d6a524d3351736e7369454177426d384d534f6f725645356a45476d79624e4c38686b776f596841706962554f7845577362547346745743664f6f6473493242795732764b65556d4a7438543448326342625670577945505a5532444669433676524c5a63746c7255744c32794c7479756e316e49456241354c625a46574d5138536130733373306e6c737532323234712f2f76577630586f41363561735837392b3274574d365337486c6d354a5471766a434a69694567424e6d393552456d744c4e37764f5333627272626357643939397434414531375a6949746154547a34356b64425a69414152714234426d7771343654646f2b534a47597656464c494c364a672f5a69792b2b574d79614e537543576667506b6354716a786d6649414a6c492b4369416d376264346e45577661757172683930795a757539526d536d7559642b355171514e542f4a522f5837313664652b71446830364e506b375474777975515a2b7870706f6f2b4c74797534366749424e4259783342636c7032754c766753556c73625a6f592b50446a384272534b7a5a3073624e6d35336a794a456a45784a554664754a574a496d484c34574c31347338424e2f544866563272594f4d456559442f364d485473322b556e43746148473337634a415a734b47484f39383834376f30354f6f316f76456d754c647246754537636c4359527471557a456d673074416d47434f426375584a6763524b52556175736a784f2f68704147536e546878596974743353457759687678492b4369416d365477314a367855697338652f665a415967423069724b676d72546647717075557971594b42776252703038546375584d724a314c62466a767777415046354d6d54536251326f506a37714243777159427834462b2b66486d72564d42796755697355573156395742427073673670464b44777673587170593232533930533261535743456450764c49492b4b44447a356f2f497244486f7a783469634c455967524152635663467579766c4556484f4d4f6452697a376d54594e686432477851345845433971397a6f48386534786e67664b7735472b444e7a3573784f4849357361387a664e783842553249614f667132716f417073545a2f667a714e304851796a503247434363415570564d45717476573032736a342f52386363666e7a68366445454430635131344a6a4d43454237686d787675674d756e753743675a2b7134496a66464a4e7a5146667371756e6c73313132377276552b4144494d426f3447386d50676779787762385265704d4f79536e7153657736526b6d795642653749735a36565342677578635a5932697a4370675361785737724f512b644372674c6f5457714b413171594a745377454356595847354a454d516253344767734848336764342b3946776e5a73593863684371706968764c596b4f4c7679305467316c74765452776f546158744b6d415361356b3772494b325461453163465a71593870434736776d4c3852426777614a6465765739576b434c7a6f79555947553870436f62557a793979425a454378695a472b36365361786475316131306564363046366865647a46396665475352574c4155426c3943614c68333471516f755a5a75563279696b4839675456564b514c52464375534f72743357636c6e46715670567666764f62346f4548486c4269566f63742b7035373768482f2b74652f6b764166454737494967384c556e3064736d323252515379434c6a637359706e3270674951726362534b7752766963364f306158516d74557932615357454532554a656954684d504a4968446c6953727978376c753155785a39697a71434c325259373166524277436133706d7338486964566e427a5767726b376c416a566d56315841636c6c4d6a684d79567a436b517832353573306e48487062794578516f61525a664e536737693554315230614137595842774b6d78445279427443635050545151353361667954574f505a7637796831367334757134416c4f50444968514f54717544466c725a4855304b4e43524d6d69486e7a356a586d4934434446443565733266504e6f597775477a6a4f6c54654c754e696e546752654f615a5a385434386550462b2b2b2f7235314146304a72564a4d6e73556130703358587758584a4b63433258466d3146463573534b4a516957614c7a6f75347153703148427841734c416a352f5579687651417a51625677376164784e2b62454d442b2b2f7a6e50792b574c56746d424b7172687a6b53613054766a383647324e584e71317336454a423043414a4a6d7078345443464c6b484b62536b4253696c58645a4f537970616e686345474a645851496d42774635544e647336756d73534b7852764c75674369514143466275684958567559794858333030654c65652b2f743077576b586477543256527978594278694c6a6d6d6d75303374416d33484467774b474d33734e6c3771373274653369724e52467579714a4e634b3972704b73756d712f4b4750354c726e6b456745704c6c74696367724442772f7a3846555464316d794b474d7674626c4e6e546b71506565424177654b7878392f764e4d484e6b71734562774675715457546646696a5142437079476154754978786543355342525a514342687741374e35424a4f573657546c56795336774f59482f336f522b4b79797937724a455a7930695457434a5a664655595367356f79416d6a37444e47556c693232484b6435434a62536134793774767778777a7364706968626a5057787878347235732b66582f364147743444696258684336544c736b546e6b2f4957546d6650526f387834713554632b7351784b454e6877676d2b4339766a3858554d723542634661794f6371312b654a79332f556973666f69566e46393155655247376a38525443707661417568636477544155665232672b64436b6656585042504f48633147546e725a6a57494e6178756e6741593234786d55764b5867735361396b494632782f324c4268665a78525970536143734a51792b4d67567a694e71645266736361445969343472506b514c5064624c6474766b3036526a4f48464631394d39694c32586c573263466474423030496d2b3452456d76393734783242436f6247543242713130773038584e4d612b466235674f6e5a7571335865794e35676c6347505279792b2f4c487036656a595a68457838556c6171536c63626664644461315137673852617a2f7669314b73717849596e5179666f676c6179336434527330546e533744346d4d7472396f4b437a4d593251634256645639574f4a684c446d414d4f4f62445a5a6c626a7352614a726f4632746246697931667670773272774b34466e6e556c4f532f71576b515865667271794b4f2b544468696b6c64395777487565793451704f626131674e786847627033785661307069725170707a3337776f563634634f456d5431466139515378684f6f6d39566a6f4431774a773763324b664d52593536325176577744614638767a6464663668724551356d4f4851584c6135684e65694833794d39326954576f6a7578684f6478596f585455726f4d4744424133482f2f2f5a55354c5a51777264593061627036726b326e654666486c564e5050565663654f4746314b5145324f4775646b31565630574a7a6e54725537592f58767868586d7753613443584958515471672f61345963664c683538384d4851586247396e4169596e4a72515a4a73634f7542426a467431354d55474f7369517478723231794b3568325536526b684f38752f5a464931705a783338586634372b2f3859703378572f67372f6c762f587444416948785773626730574c313473786f775a3437327258574e563058425a646c33765154663441524a7277785a486432704d3379666173434633656a676d75327662506b43772b2b50796456756f44737759353535377273446474704c493545385a7576544949342b494e577657694130624e765153585a704d5132307172494570647a4a2b44344c465951412f6a7a2f2b2b45494867377a6a786867504f2b77777357544a6b72784e4a4d396848726734777166346b437261705833646a69364a3159355270545655717141384c30756c672b35345a7a62566346455658645067785966343873737654354a48765048474730306258754878674741686653504d70596a3037544f5150485a5658667572567133716c654a7459334431507062744d442b3544644650666b396964634f70736c724978356c567554476a53575877352b374935736b5a6130494a7a4173715376794274417170307059764e6a65494458787772373332456a2f383451394c54653849624138363643437863654e474c514a3737726d6e2b4f632f2f2b6d456b493932797a5772456a716d5864554a66684b724f307a56314d514c4e6d3763754530363432617542767451765a68557731684c68436441476d70797754344565654b65562f7a64397871364a732b74794e67676f59664f6e3277376b4747385546646a48567874777134684d4b61396d735770445237765264626539316c4b724c36496c5668667051366950614e45774574713270514b455630325454574d6a2f7543425175534a4f764c6c69314c50754a316c4c51546b697162454d5a5a743751632b6f4943467939674b5947713070757131736e6c6d2b456a71574c4f4f4651302f5542597835375639556c696263687136473678386247584e475171484d6248434e6873563776767672763477782f2b554a6b4e4c37306f4742764d4459695478733851524371646747512f2b506672723738756e6e2f2b6565312b4744783473446a7a7a4450466a426b7a45716e4d4a7a576664485353456a58557050677a644f6a51586f6370586366536f616b49555964513762754574787835354a486976767675533661694d684f703567674368506c4956317a44714f547a5454734978764342496245325a4a56554a316336436a526b63516f4d412b754b44356c4b6e5270612b74454e55784970624b5453587070335368677a764835424c424d6e546b7a49554b6f6f6463526f776b434f7730584b796a746d3233507963414638624346463262614b7149647442416537366d4f5050645a37344843564d6e5845616a7673715844694e3869326539532f4a37486d7779333455367254714938545176414273634667434e68557736452f58744c6843424970314c7446776c6a6b54536f6755526d576b68655970684f736e4264736a7a6665654b4e34373733336e4b61616c3178486a68797056573272624a71754e6c4864745961757843776e33615a59624b65464446694a78426f517a4c784e715a795738474a4244637a534867536d547030716676653733796b6e564653316d4a5a4b51615a354859364744426b696a6a6a69694353654578396f5634635a6e315779325257783936462b524c4b4a4f677477684654706f6972334a566449786a684d3634724b41636d56574c506865586b6b5661773744765a6c72482b64613170563379545771704132394b4e5343645770476d73414a4b30644170497234414f70557733374f6f6e67417932544e75516c55306c6b6b4572785566617864525a5a4b42417350493931446b6b59683777617255672f525a3846787044326249355450686f6d6b7870594a796d3653707870696455332b514f776f676477305233444f4e626943415a6f51615553346930324159427461424f32524f653251355755546c326c4b52554d2b486a44466c6458707148306d46774974676b53724d306d436b4a4331694d584b632b55454549584c754e4b724e4b306b4a645534666855315558714458314643772b4c456d7468434973316f4649444d394e534d55786a656472306f5654744158776f705872534a6a316c4d6342484832314b465739564759563831734b46594b456542736e5756577771584a31394d7a7465552b694d376c4474537177346d4d32634f564f417648326373526857453235586b566a44595a6d724a617142633848576d6f64637236474443686c37785964513032514b366452466b6d6f437343344543366b75644c494731376e72376b71577a3975633056534861666d733656447453717858586e6d6c2b4d55766675473956337a4e454b3534646245656962586d56616361754f594661454433746c744e73456438377471453149512f7948556243356d716c734647734a67624a4e6736434e5a4763694133324e4a5635627272726b746964315846524d7132506d56377734635046362b38386f727a7a713471374d74355143326f53474b74635245686665436a6d533555413965344944563244584c466839504641315531544f6d4131415362615767596251534c647761717a366f4a31685175417778676231577033453838385551785a3834634a55776d2b37704c6f76372b2f66754c6a7a373679486b4a534b724f55486c564a4c4636775257324d7452372b4a696d43374f63684d55347474596d54353663704264304c5a44614a4b6c55356333724f726251395a7047734b71446358724f5742755670734730786944634b564f6d4b4b467a44626478785a30325656656b2f4f755257503078432f6145537258446d32794377527456513949785352654b6b35314d6c7767314f2f636d4561794e3746525a6b45795370796d4636556b6e6e535275762f33324950756170426f45526d306a4a4e5a79385457326e6c556c5962506a684e743279614e477942765a4e5477334563384a70786a584d6e333664414662585a644c5577683278496752347157585874497552666177724d7635617a4d446e58626161654b5757323470764f516b316349515768736773566f684b716543796a50516c6a79376e4a477731626f51674a523677676b6e69487676765466584550416868764e4f31323864635348594d6e487956516e6a616b69564c64305771714d7948666c7548435a2f3845557358333053617a3763436a2b6c656b6c736951454b64386f47476f4541434255534b676a426c69304a48384a426777614a6c5374586173634f707830515238776577434557786f566779334a79737046654f6975546a6c687459547175587345364c49756d7a517978526c31706738526130307254766c6f5438445633362b503943776b47385a7234494e727936324a6164487a375a484664434c594d43565a486d4268546d6a547a4571754c567a424a746559582f502b374a374857744136307239594566453364516a4a46676764494e6935534b6f4c31516178706537734c4b54636c7632354e4d472f53725332705275677748565069694c534873493467626159676d793158687a6e617858366937305a3175354c455768335776543368773471555a756c6973362f554d45783247516742317954754177594d45442f37326338533663623045585352586a46306d425a695478495259676c416550446531575774436b5777382b66504638636464357879794f6e62716e53657843626e4a564f324a684e47386849446b6d71496e655465426f6e56486174674e565835526d6c6644515a76597870796c564c78305273316170533439747072785a677859357a4737336f566d45776341647469317a2b75654f396d7a3536646141315570536a42486e333030555a484e426c4b6f30766d62376f713070616a574455666d676163587156534b70465953344856334b6a7178574c386167304c55574b58726a654c514555494f3270657a313538634c4766584a4b74492b505064372f375858486f6f5965574f50506d4e7733704438356a6f516e3273352f39724462314a44496966666a6868776b344a70567854302b50456b4166596756423133315a51664e3351626b6a4a4c475769362b793961794e686647724e537843674335426e7668494c3179344d4345322f42767152715355652f2f393938574744527530766369506e303374367a704d6d376f7a335936384d7137756938526435315a5750617956394d34754b734669375846495772313674584b34573279785262496e5545787158563243434a5835534e55525578535774567638326957782b75465675445a654544677570523159614638744447756c44667a2b393738584e39353459354955594e6d795a6435397037313976522b32504f416a7761497045447679432b65566d454f5076363732544a3745557031754f6f6a596272795a4d474743574c526f55544939553979724b664f537a5374347136323245726664646c766e31374b75505a54756c3852613853716f547175306856533843446d377739716463383435416a474a6563764f4f2b38736c693564577271394578393632424e39736a6c6848384c5a71596c3374656246322f63356d7965787648413961362f575a564f532f616666635a50307162754c466533677564476a5279747672746c75752b33454530383830666c595a742f314c71732b696255735a445874716a77363038486a46512b4833546b6941456b515570314f3165665954464b74796f4d5544674e5858484746754f4f4f4f357876505a45684f784d6e5475797339494d44796479356337563257456d7757452f59755046656d3072364863394c724c4a39394858444454654931313537545942516a7a6e6d47484870705a6557666c6a7a32654e647230746972586748304c35614d654142756e4d4e623348746175444167574c392b76577531595055737a6e736d4472426751496b437856323136525a3441624a58306563734a3361316a4c723756755557494e7343445a534b67496b316c4c68336252787646444975704b4f70374f6c4d617477654f784b6755426f556b55582f667231633559655179394b45594b5659774852676d44486a6832622f4f784b4b6b5873425a4373373532354b673046396f43716d4779736f6663433279735041524a7265646a3261566e6c4d6f2b4d4b46566630467a686c4b50757970622f4e652f6b4e74393863374678343861386a776435446f63376d516b7152494d675730686d49466c49742f6a5a42734b566e7437344365397671496839694657583942372f6e7a5572664f597a6e776c69616769786e6d796a4741496b316d4c3465543274696c38314f5374344e63374b51524541385543375945732f6d4b66547449646f6e756444506d4e5464526274432b514b46544a2b496955664a4e7979314d6c594b7841573167342f38572b58395a4e685538432f71334d414143414153555242564f7657725250333333392f377a4e53732b54536867346e6c625371557758724c6b597675675a38766e6f45534b7756596e3741415165497035353671726448322f324c4651364e5857555173495532324144626676767478527476764e476e476b49696b506f4f5a4e4f6b676f2b39394967745169537563344a334b78787639743537623348676751663253726367524f6c784b346c52536f30725671784970455535766a5278347539446867775261396575645231435a66577971535631784d7177753871577050534f534b796c512f784a4233695a6474707070393467636678666c6436684655327a466433345a4c6c5254526971554b674e565357474e59653645346b54584c493574574c424b356f45314f5579647a4f3049646c436634754b46714b43626b69734659434d4c6c514235416a6d6e6a7031616b556a594465754342535256714746514f71364a557557394f6b4f7630505952557735652b4777673741546b717a72376846696e3333324558506d7a456c5356654b397a326f41494b452f2b6553546652714d3464446c6a6b4b3361354a594b31722f374d63613970536e6e333436716f397352564456326f30714d3562726745435969426e397751392b6f4852436954316547535378655048696847524a744f70644d587a34384354446b6e5463776e34436272682f325661594c3979475544792f4a374657734661714d42766155796f41506b63587474523070695a6853304f4d36675558584e436e6d7532757a527844726630525941554848326e373744725a51684c3934782f2f6d4468707151707332416a58306547457041396e6e4846473765764b41525248674d526148454e7243366f30686c41545166584430697745387361743471414569655062332f36326d4464765870394a64535773436b534c2f64346c776f574b482b767236753138326d6d6e695674757555573538644547374c44384e6a5472752b413747684b724c324935366d6644624b4179684271344458462b4f65426f39434e35374b75626262615a654f434242784a505839796e71724b76676d68306b6b796a41516b304f476874494b6b42423669544833373434567758474151615470426d734e36343578592f66657a6d7576745973344e69377559677931524c49795457436d434842324136714a78684e6857416e724d4c334479557a6f7a6c30677a754f4c332b2b7575547171726e476669765231464b754342622f44324e765854366b596b6e38424f48457878495a56694f2f496e6e3846374a6d4654354c5034666952686b32396e59316e513761506546463134514f436a4267332f6c797057624f42374a6363694d55363453616e62324b6d49644e47695132485050505a584a4a3044636b474b5a534d626c6257784748524a72796576413232784b426a686738365a374d6e58645a443139687730623173634c6c4165706749765567715a553567615a5478685350657977756b7659496356435371613271396b6267635261387672774e707553415137592f45392b38684e783459555865725759397654563362504a2b45517653467466576563676c383054624c6f6a6c6c4a737337634a6962586b395648645a6f4d58694b5635434a782f2f766e6938737376647835596c6a423145692f6a4535306837555246585149532b46326f314d737556396a687376716d5a66507178474a714a6b6c694c58483156616e4c3268683255534b456c546174557550714271424b726b3569725853356f75314d6c394c514a564c414a4d57436c5046396761725978356b71576941625048415361346d4c6f314c35644358736f6b525953326e614e3334564d61757a5a7333615a437736596c58564c57555362445161424653484f4a393959704e695a6670452f4753704867455361346d5971304933654a744e69594158614e6f3142454a326f626f335530664f4c704a496761487a3051675255483062786f38664c78353737444876325a6a756959586b43704d46485a36385953333041496d3145487a6d68374f68462f514f4c524873676b3337784b2f7131506b3632786d3146415558703457506e33333232514b456d43356262726d6c774e563165517632482f493677364e5964554d52485a37794975762f48496e56487a4f6e4a78686d3477525459797235784b2f71637271535742757a6e4930664350494a48336259595833473264505445325473304a34676241632f565156534c474a6a36664155424f342b6a5a4259793845314f593369564a6f75544c4a64457467466d3957467961696168576f4e366e79566377694a74654243644f68785666357754442b3071556a65733474724146574a543642466b786d6b4742736262674f53574d4e6875556c4c744b2b574247774a7a667263763271365045466e592b5742716f5246613047547550456d6d7768434633495459727053565a78565163753259654a413241347a504256486d38526148454e6c433753766c6752734363333665415362596c4a314366786a76793675424d6a5a354d634971505a4c565935754a6c55784a46635a746b4d704e7439574a62486d773833346c4d712b797577374a51416471456b66596a564a6e7a6f48714e4471765544545a6a4d314936434b5a2f554a75516b3166464e734c4b585966436954575050685a6e784b64524b743434557059577174624e4b485745306b71584b416f6964344b37644d73456c6c3930796443575359707a6a5973676f53617a6773653174535353363073355541644b416d66653567315247727a6b354c54555767525770704d316b3761314d4f596e676e454c716a75705264716f6e7055617a666c435457456c35596c6552436457414a514164713070565959572f434f71714b7968454639586967437252494c573147705331524a522b70612f6f77613446676f58484c466841726e4a31344b58766631534778427436784b72754a36594d63754873326c774f424d383838732f632b5664506a4f6f396772446b4f55396d6766464e6f546f35683870475749704139694463316f51674f41516a62795571784d727354556e7779522f456e6d3554454776686c56616b45545345616762746e637a6b5132482f2f2f515843484778463578477349326265616d4e446c4c384841746b7354504a753171616941796b57337a6d6b416330654a706d6a6d4d526179723639364b4b4c7849392f2f4f4e4e327161647252536f677a58716571754e4b6851434835596464746842624e6977595a5078344f4d49736d61345172426c616d31444b6931585657453352554646484334795047576c574f7837534c41673269354b735a5259692b36737a504f4848333634514e786975747877777733696a44504f434e77546d777542674f344b4c315862716e68556e57325668366b5171394f644e6c5335673250797934415543344c4e4a702f6f7170715978427234335a303061564b663078736457414b44484c41353356567671693679487a7163307545426e6c57486262625a5a754b4242783567487461413639534670724b3231716172684856726f704a694d52643450454d535631336d487650363476324837526c465869564a596732386f69713159704f382f414a504e2f726d584432432b2f66764c7a3738384d4e4e35717336524b45437442595050766867394e6877417455696f4d705a335a54776d7a78493646496f6675557258784648485856554b37794a6354434872566c6564694439615569736558614d35686e566978487271544d674c4931755371664b7a5135366e3333324563382b2b327a76662b73496d6262565269393334776348615139374d6c337154426f52416a4235455142557853436977594d48692f666565792b52584546454d586f54593034344f4543466e373763514559436b466844374a7a2f62304f6c566d536f5455434153326a4b39627134744d3155463136443464455475495246366c69546b49437963614e48486e6d6b754f2b2b2b364a48416d523034595558696f636666726a5034514858324f4551556254672f5154426f533938662f46762f4d543357546f5479762f7a6461795368496f31516e765a496739424a4e6169713568365868587348624d714a7941306a577a4b78334570545a69366e4d4355566875357a46454f5375584d564b5644484b53774e4f6c4971517a456c4a62514a496e3567767a616136384a4f48552b3863515434765858582b3939664b757474684a662b4d4958784a353737706d5956475266713165763776566c6b474e44332f67377869524a464753484e7435393931336e4957476561414d2f355a7a546630632f736938566d61496a31496639574870426b316964346264585642457256634632334f7171345a4d6a574162746d3279797a4164643130713272313938794538343451527837373333626a493532505552306f6676696e53615330746e714c783438574978644f685141544c437a34554c463472526f30654c4a5575574a4151434d704c6b4a4b55345357426f4b30316337554d32374979414639545a494e56306142324a4e53444f4b7673496d71667a556b4351417a616c55726e706d6b656f44563469664e69795873423442693856346c5a395655734270384f6d536b524172726d55584e4a3751456f30494c4a3041554770396f7271776e48562f366d657a54764667514d48396f6d317a7474576e63384e47544a457246323764705033544234575148427676665757514a30646439777847615a5542655076387341674477397053645148612b6e686a503667766c624671704e59412b34536e545444634a7541494164735371665356585778594d45434d5750476a453355594f6c3676484d31344d4b55324a5438674572536738516d435647534a7270502f3131466569554f7356445455704c465278397a77302b6f53622f3172572b4a6c31392b4f584559537174763866654a4579636d2f7966746a6d6c4a4f473254784d4238443436795864756b704f6f3154585a3470353538386b6b4274584736374c4c4c4c754962332f694732474f505063534a4a35376f50536254574e4c3751754b5174744f6d3163616d646b6973746858332b4c324f574f6e5134674669685656644d79374a6b362f7541387631725844524646326c7051325169535246454b6271512b6b6a6e5a51394d2f6d687a704b5774506c682f4c415a346d43584854636337323635355a5a6532324461506c6a32754b74735831356e42394f4e617531673138546841496549707354496b6c67443770444c4c72744d58484442425831614844353865484a615a476b4f416a364a4966723136796436656e71556738654c4c4e58457a5a6c64653061535672336937394a2b434c73686941547271464f35686b5242536c527069533072766544664930614d534c724e3173732b37797635595a3751734751506431317a6d414f35597533785533665162514c526b6c6744766e3148483331304832634432547a7472414742447443557a683775307a52734f644968784f63353176314531596f69535647534a763450483830747439785350502f3838776c4268566246516871554571456b51556c384945625637374a6b57636361366a4a3959657734334456465771734b472b41685356626e7253746a5a6156453633756779547358456d746535425450545a34384f56485a7141707463414742447443556a2b4f53726a756f36463535355a57674e7034415532744d453549383851474570436d6c542f77374e47464b3279462b53707659324c466a6b37394c4f3248617961537144327a6f785644646e69564a4837346358623538584249744473306d61525a3752424a7436505752375a465941794b72696a32547a634e6a7447736e796f4451426d2f4b7833484a31486b7374354145427a445649416754487a5838584c466952664c337443536170323949724f2b2f2f3337797a714174784844694a7a36494b43424a6b416a2b723276766c593563675176333479653744667443716f336c33737a7551787975734b2f67325274364435465938377a316d6d644d78457250344942414232684b6c2b6658742b6e59303833357a46643662454c744268576374472f6d5664564b47795549456d3144777051664f506b7a56736e53423963386455336b536d6536766f69435a4b45314157375a4b2b366b78412b536e546c7a706a4a38786e654e534b792b69426e716d2f4c4f5a6e504e4275795754655641774457566f6133704e684d7243424d6649536d46536f396247796270333074567250774a3870527867504b4435744d653633364b67496c633656536e33796b3478454664504866755843584a3470302b2f766a6a45326b3262794778356b564f385a784e76646a6d6a334241474374704370362b49557062316c53534a695252664c42395346524b6c644b2b43585574694a52535a3467645a6d3744354e324f64656d363364573241704a6b3551554236667259763542673878417369645747764d66767a7a7a7a54484839396463626e354370385479615a645841434f426c5167787269464a6c2f745951343055626b45536c4768656e646c385378516448537030343261646a4d554f4e6b6532344936414c785a45744d4e576d4735597958686253624a5a67635542525a566a53745578696463506371645a353535306e6676377a6e317672496c76494d63636349365a4f6e577174797772684551684a7245302b4b4b5739634b484f54524f714b366f67546468417052646c4f685446745133574b783842724330305a716177453139794b482f557a65774257434a714945757750725a72456d764174635848792b6455672f79646b484c687963645348514b4c4669305368783132574a414f6d2b4b554a6830795a4677664a716637794f6f6d4c7457332b416c4a4e423271456751734e6c4936416a5a7a464c3247335a636765346b356e6f533278755741516d4a3178396d70357334373739776e7436584c67397a774c69675672774d70446e6c47455663636f69786676747a724d4a57335434786245695849553461343543465150434d6c555a4a6f33685670376e4f3247473158636d6a75444b736457645a4a444f384f4e46576d75324e4a72494858794f53705a2b734b437761437a574d737437584e333338697753456b537556756e7765667a337a6d4d37304a33504d384c352b526952536b366c596d686f644b366d392f2b35763437332f2f4b3135393964566358615244577642337148545458726d35477556446a5564416c36557050584165357432584565386d744148706234644a5730566964636657756159706e74576c455a776f635271435278726a2b4677517339664243344677714c77786c366f6573445a4956656c5330696e384d425a3563624f3065364b4e76474f543666696b2f544f6456535a30344c764c58466d6e4751696f794341374d6b7176666d75562f6262724469636b566a39636e577662624232754463467842483967382b4a4830685731542b76683479496445554c6661724c54546a76317176335478436d7a4469456758524b6e544b376750774d685949736650486877627735626166744558747473516f553837664f5a64694f6775335572505774364472767667577965635256324a465a33504c3171757077577652723875444c53764833705331385352787878524b4f7553504b645231583149526e69684f6e72784f4d36766b4744426f6d6a6a6a6f714955394a707137503675724a554a5a30516f577570753472696957662f78514276415051324a6a654265773932413535674c66766e4379355a7458434a465937686f56714646554c327a71487972694b704e4b32635454703979425578476669704e36306b6b366d6748575474366c494e61365056336e54357362784e423842462b6e564a36796b2b544d75623452704c4c504a4f45697335654865327a492b39456365656154597548466a3662337474646465416b34313438655046306a624e3237637545536151696a51304b464465353174704770536675685242332f50716b7456483372555131736f36642f4c763165564d41426a6c62656b494a50536e2f2f385a334874746465574a7147364c70374556446f4a4152655a6a61677162467a48796e72645138444669592f537139752b5341744f36657637534b78752b425775685873376b52686936644b6c6864754b705947303435574b674f5538514a4479393549733862733079595034555164684d72413576766e6d6d386d2f38663962624c4746574c392b6665577770496b5459384668413270626b6d666c5338454f63794241365455486149704830686436794a7a776e534a5761516554306c6e6f73414d5a4c694674627041535a627134554461344d4675427259524167466342686b43526264534a414b585834756a4c6d356c6565756d6c704445344d375761574e4f33474a6a796f63714d4d31422f794d755273775a384b54334a647554467a544c6e616847767a2b4a4c79785a7343454256334e50545936766d2f487673447841724378466f4177497530697339682f55724463454a706a645a576b6d73756d544b6556364149554f474a4b454f62377a7852703748572f454d4a487667414a55722f6e7a303055646977494142435647392b2b36375974323664614a2f2f2f356937647131597332614e626e6e7650585757347433336e6c48624c5856566f6b3639653233337861626237353563754831427839386b4b7464744850363661654c332f7a6d4e30374a4844417646317334507a4b356c6f4d504e5267426b414d386830304a564f41736964684e4f746e315863693076625656784172564b354c62502f66636377336576687861465168416f70773262567153785371624d555858763674556937436e6c5374584d6e6c484651764a50697048774361393472423778525658434867507333794b515070796a3959514b30355a5278393964434c64734851544155696e4946496b3034415445597274493546474368384d46386c3479705170597336634f6430456d62507542414967435568673252746530704f4839497134563261482b7851566d52696f46635236313131334a52395570496d4c74556850556d6e766c546c6438653846437861495a6375574a53716155486c75593855704f32366f6a622f383553386e34537a59412b6d58484b6f74684275467a4c67457a312f702f4e595744446b5049714244414164545a43347a76554e4e766a717836705756422f6e6f6952554c44714e787949396e325973424e61584d724a4f2b4b4e723135496544424a796e514c492b6c31535850612b713267644f6f30614e537249656e58545353567037543669306b756c354d5846355661764d6670714341413653707274654d55346361764675754837446d6a4b33304f504174786c5952552b734d4c61623142576867584e744c793242676b54686253774a4e66546d6b3165493451575133736f793943633758686b6e4b73634170365333336e6f72696346456972366d45725655383049796c546961316b4a75634e663163713048664d654d47654e616e6657495147735173475752777a7471753036744e57426f4a694a764e347561574d745139626b737643516c4b5858695a7a6f316e55785035394a57552b756b6b3866444b5577536466716e536b75517a6a714576384f624772624c3762666658677766506a795a726b7749495a39585a587643737a4c4a764d545a46537530683644744d6e49454d3362566452565972343049344a32435247613669616e4c4b524662496248614c7651747372487859643968687832534c44387730752b2f2f2f364a7968482f4c2f3855615a2f506c6f65413757526470476571676f7567783266626749434c59784f2b6c5a426570524e68472b62744d67655a6e4439716964584868675a564a39544736617532306b436c302b713151654a30325152747246506b6f6e6b585042692f366f495336335142415266487071354a7239493047545778446873327a4f7130744f3232323472703036654c63383435702f4f473962612f37475771674356323046376769696757496b414552474a7573563148427730664e443177634770376b5a77554c6246695152464b5953715150474554432b30733150624e45657638584658417550306e6234596f374b565671316246436848485451524b5163446c335774373171613077325330784f6f532b4e38314e5551706230776b6a66703441574e66354c32726c635161795962674d437448774d577843594e71363363356663744e744d534b6b41646378575971325676644b393970374c4153424b41436c76664f326a7045714d377332624f54384b6538425249727453423530654e7a625566414e5153795466344b57642b4f4b496b567274363737625a626b677a65564a59765838356b3057312f697a2b656e36735447386751687932514b32776865517675684f326174324e65725068634e784541305942675457453545706e59435259482b33512b637169386f795257467a55777649426a797362557a6465762b4b7864396f4c71426435737338324d427a4d6b7a734274506172436b4a766936385957756f4741692b3156496745563861785a73364c54426d58445075485845795778756b676f32323233586165766575764361777562447577614c67636f534a69514e47585a643939396a626367345758425336347162625552645748506349375649344433464f38542f434263437436766d544e6e527146747a4b714134666d4d2b4e306f6952573567573071686d4f505056624d6e7a2f665a52315a4a30494566454a726f414947716159767230633271633939376e4e697734594e66575950315252794f4f75387a686c79452b4747345a42725277444543676e5739753257413856684749666270707064736e6e71455957433777782b526b6d7375446654566a41353246685a326f6d416a34724a354d513266767a3452484c46356562594d356466666e6d53615374397432495751586f4774334e50635662564941447a7a545858584f4e4d7344675151344a7455687973796d45796663745061346d5648373971587049366576477871785a5232356f4f6350514d726d506c3257656245454436503669495853585977594d48697a504f4f434e4a4e6c466e77586a686d4a572b776a4f7278576f7473514a3466767a713348376c3949334e44427537693130564a31326f5a764b4778706779657a455a667a6e727931613768774255784a4267666536617273734f697a48694d4a41654b37347a304970423479564c6c4d54716b736f5145325259524c74655570775534617a6b63734a5632565639305444744d336f472b364c4a2b6b54416a4143636e4543775074654156756c4a724472557978432b72423034536d4a4e5a3767774c52552f667531356c53476851763369346c6b59366c3549307a364c50666175505475444d326b62416e6a5849525743594630305535682f455a4f5044542f6465457a666d53694a3164567868635271327a4c782f4e35317a54476a554b526e437575695a3341386534636a6a5263422b465067665636396572563145694136654247445a454d565861494c3943576c5a56566655524b72367a32737035353671726a353570744459637832616b4b674b6d656c3750524d5a45376e754a6f32413776744a41492b6f54717764594a6769336752673144782f6b4d396e533032556b58394b496e565658715a4f4847696c3047386b7a7532345a4f2b374c4c4c7845392f2b6c4e7446715430384973364b3257687342336736427a58384d33443462554f415a6337594f576b66634e306f504b462b766e61613638567935597455324c6e4b68564853617975457379554b5650456e446c7a57726535756a4b68652b363552337a3171313856483337346f58584b4b73383836304f5743725962632b675a58425268506b3845386946674f2f526d44397a54706b314c347450546e727579447154537558506e69687476764647383974707232674835334373624a62476167766654714e44476d6d2f544e7545707250487734635046752b2b2b6178324f7a6a50502b71436c516a5a64576259363931645268506b38456369505142347659684172447548345a754162677767442f4c453553666b3652455a4a7246694b45534e47694a646565736d344b767a7735642b30645437706d363451475539774767316462416534554535536f63664e396f68416c78447775556b6e4479344970634533526958743674714c6c6c6864516d37343463757a6a6570397869657342694e4e70784572592b536d374576304443344463625a4a4250496834474e2f64653042446c4151304879547a45524c7243344f54507a77755736665a74514471574a6458515045717a67344952472f796a4d51694e457a75426e3768714d67416d6b45516844736741454478446e6e6e4a506b447339546f6956576d324d4a774741692f6a78626f72356e584a33534d4d496a6a7a78533348666666615550316e5a4659553950542b6c6a5941644567416a34492b436237463979686b7a343779756c706b63594c62486137462b554b507733597031502b4a4171504958687856644673576c4763494f536a2b326c696a477a44794a414244354641446259685173584a71475832587a4549452b3876394275496a777a31425631305249725948504a47637859772b612f59693761427a6b4c6248776b764335796d7652424247707070464c5546644f56644437397343345249414c56494a4432414337724f784931735a727358334b4a6d49692f6d733261747866594c2b47495a6e4e33522f746c784b726178733251477874432f44305249414a5a424b496d31704e4f4f6b6e6366767674786c5664744769526d444268416c652b6751696f4c67765744525071476b6948494e63716938336b514165354b6c6544665247424f4243496d6c692f2f2f337669312f2b3870644770436d784e6e4d6a67724467474f527942324e5a435342636b54475a484b43617868356a49514a4567416849424b496d5670733067556b7937567a7a4e72747672477264646b79473344527644334645524b444a4345524e72414457357342553930653579597466313968736e7262706354556865355a747650514d726d736e73563869304577456f6964575777616d6777382b57447a36364b504e524c2b446f2f4a4a6e6c336d3563552b304e764754484f4444357173537754616a304430784772373650587633392f70647054324c3358394d2f534a56595654454e49566c75554f37344f474c52796f43564b317a3378596c77675167584952694a355958657973754d2f7a2f5050504c78644a746d35457743664e574e57787172616c772b30584930654f31465a72696d52746d77642f547753495144554952452b7367476e79354d6c697759494657735159456c484e5a744c3134694f7068723673504d544d62596333377138514b4c4d4e49744165424670427244614a41737446372b42364e71307671554c3957335773716773793941783251596c316941415241414b7449465a4d784a597341676b47514b354e734e6c3159657635336c5344395945545546507a3774715338544e315a6864324e656449424e775161413278756d54785954432f3236596f5773733354685748485278366d6b7171774d4d57636b4f4e534e4664772b654a5148735161413278596b6c73655631525a39536f55574c4a6b695874576347477a5153356679486451543376557572492f2b7379726d7764577a4c2b736939637a7a4e6d506b4d4569454139434c534b5746306b4339513537726a6a784e313333313050346933753163667a467a444551716f597179336b35745254547855333333787a6931655855794d43524d4156676459524b795a75537871424f705177584c6549765a367650525574496b526c3171785a30646938625a37424177634f464f7658723765447852704567416930486f4657456974577a65564b4f64724669753976714e397858366d7236686632564241716944576d34754a357a734e615443764b73524b423868426f4c6247366b43732b3876424562574a3452336c4c48715a6c53484449656758626f387464717567567a6d4d676e7959374b656e5163624866307a6b757a4e35694b30516764675261546178596e483333335663383939787a326e57712b3071794744635153415a65736e425563696e4147476e2f546a37355a4a66716a61786a7337484b51544d6866794f586a344d694170556930487069425a713255416e557755642f32725270695654466f6b59416b756d35353534725a732b65375a522f576170396757337338634d327232434a474f594b715a79464342434237694c5143574c463874715339637374634f797878347144446a70495848545252643364465a6d5a67314376756559614161396646375576534252702f6d424c6a5648747131703456324c46737a30395064773752494149644269427a68417231746a4654706265433343774f663734347a737278655968564568734d32664f62413268797633676b357152743931302b49764b71524f426a78486f464c466978583054474f415a53463067444a4273327832646741384f4948506e7a6b312b75685370386f57553268594a4e54747648324c46486f48484f51735249414c64524b427a784371583263587571746f532b476a43447474305352594543596c54716d37546638653856717859305473392f41373145564c696f757156442b36303030376965392f376e70672b665872304e6c5462362b2f71764354626f524f544456482b6e6769304634484f457175555869475a58587a7878626c584743514c4b51312f526f77596b6679454246656d5a41767941776c4b496c79386548487939366565656b7173584c6c53624e79344d666438584237453347412f7864786a643070796d532f712b4a6f5271413532525a623169454437454f67307363726c424648424f655747473234517a7a2f2f664e425642676d423943573450674141424a644a52454655624546326139657554524a5867497947446832612f4a522f30436e2b6e705977385838675445695855674c316c53704454675a7a676630554b742b75454770366a7777624e73775a54743752366777564b784b4231694641597330734b51697371425462746c304379525368534448486f595a596b35456a527a706e6d454a2f76456f75424f707367776a456877434a3162426d6b4749584c6c7959534c4e644b6c4b564c516d317251354a766d76716135646e696b4e6668466d66434c514441524b72347a72436551574a4566417a6c694c5674566c31633372382b4a306b5474694970633234613670656c7a583169575646653151487536444b4f6b53676651695157484f734b636756746b37704e4f51616c704b6a4b2b4d6a6b6852682b385466783434644b3362626254657839645a623935496c4354496336725962627249394158756f67316d494142486f4667496b316f447244624a4e68376e413655673649793164756a5168347730624e6f6731613959343953714a5536706d38524e5370585349496d6b36775269306b712b646c5745335165466e593051674367524972445575557a61325641346c72634b7463586a73576f454137617a63466b5341434e6751494c4861454f4c766955414b41643945455866656557646961325568416b53674f776951574c757a317078704141523837617855425163416e55305167636751494c4647746d4163627630496e484c4b4b553468574c76737373736d71535072487a6c4851415349514255496b466972514a6c3974416f42534b313737373233655033313134337a516e59746e397a4c72514b4a6b79454348556141784e72687865665538794d41776b5234303073767657527368456b69386d504d4a346c417241695157474e644f59363745516963634d494a346f34373774434f68556b694772464d4841515271425142456d756c634c4f7a4e6949776164496b376432314a4e5932726a6a6e5241544d434a425975554f4951454545544b6b4f635355687274686a49514a456f4473496b4669377339616361596b49714b5257534b757773544a44566f6e4173326b6930454145534b774e5842514f4b55344572723736367551324a4a534a4579636d312b7952564f4e635334366143425242674d52614244302b5377534941424567416b51676777434a6c56754343424142496b414569454241424569734163466b5530534143424142496b4145534b7a634130534143424142496b414541694a41596730494a707369416b534143424142496b426935523467416b5341434241424968415141524a725144445a46424567416b5341434241424569763341424567416b5341434243426741695157414f437961614941424567416b5341434a42597551654941424567416b534143415245674d5161454577325251534941424567416b5341784d6f395141534941424567416b51674941496b316f426773696b6951415349414245674169525737674569514153494142456741674552494c4547424a4e4e455145695141534941424567735849504541456951415349414245496941434a4e53435962496f49454145695141534941496d5665344149454145695141534951454145534b774277575254524941494541456951415249724e7744524941494541456951415143496b42694451676d6d794943524941494541456951474c6c48694143524941494541456945424142456d74414d4e6b554553414352494149454145534b2f6341455341435249414945494741434a425941344c4a706f674145534143524941496b4669354234674145534143524941494245534178426f5154445a46424967414553414352494445796a314142496741455341435243416741695457674743794b534a4142496741455341434a46627541534a41424967414553414341524567735159456b30305241534a4142496741455343786367385141534a41424967414551694941496b31494a68736967675141534a4142496741695a56376741675141534a414249684151415249724148425a464e456741675141534a414245697333414e456741675141534a41424149695147494e4343616249674a456741675141534a415975556549414a4567416751415349514549482f41355876316e4f695a6674524141414141456c46546b5375516d4343, '2022-04-12 08:21:31');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `news`
 --
 
 CREATE TABLE `news` (
   `id` int(3) NOT NULL,
-  `title` varchar(512) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
   `category` int(3) NOT NULL,
-  `brief` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `content` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `brief` text COLLATE utf8_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8_unicode_ci NOT NULL,
   `image` varbinary(512) NOT NULL,
-  `thumb` varchar(512) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `thumb` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date` date DEFAULT NULL,
   `visited` int(4) NOT NULL DEFAULT '0'
@@ -196,7 +1267,7 @@ INSERT INTO `news` (`id`, `title`, `category`, `brief`, `content`, `image`, `thu
 
 CREATE TABLE `news_category` (
   `id` int(3) NOT NULL,
-  `name` varchar(256) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `dd` int(2) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -205,11 +1276,12 @@ CREATE TABLE `news_category` (
 --
 
 INSERT INTO `news_category` (`id`, `name`, `dd`) VALUES
-(6, 'Мэдээ', 0),
-(7, 'Зөвлөгөө', 0),
-(9, 'Зарлал', 0),
+(6, 'Дотоод мэдээ', 0),
+(7, 'Зөвлөгөө', 100),
+(9, 'Зарлал', 90),
 (12, 'Хичээл', 100),
-(13, 'Дэлхийн мэдээ', 50);
+(13, 'Гадаад мэдээ', 10),
+(14, 'mpo awards', 0);
 
 -- --------------------------------------------------------
 
@@ -219,22 +1291,22 @@ INSERT INTO `news_category` (`id`, `name`, `dd`) VALUES
 
 CREATE TABLE `organisation` (
   `id` int(4) NOT NULL,
-  `name` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `type` int(3) DEFAULT NULL,
   `industry` int(3) DEFAULT NULL,
-  `presenter_name` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `presenter_position` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tel` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `presenter_name` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `presenter_position` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tel` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `city` int(3) DEFAULT NULL,
   `district` int(4) DEFAULT NULL,
-  `web` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `instagram` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `facebook` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `youtube` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `twitter` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `other` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `logo` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `web` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `instagram` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `youtube` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `twitter` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `other` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `logo` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -246,11 +1318,11 @@ CREATE TABLE `organisation` (
 
 CREATE TABLE `pages` (
   `page_id` int(2) NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `image` varchar(256) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `updated_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `content` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `content` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -258,7 +1330,8 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`page_id`, `name`, `image`, `updated_date`, `timestamp`, `content`) VALUES
-(1, 'Бидний тухай', '', '2022-03-16 06:15:59', '2021-04-01 15:33:26', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu.</p><h2>How we can help</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu.</p>'),
+(1, 'МОНГОЛЫН БҮТЭЭМЖИЙН ТӨВИЙН <br>БАТАЛГААЖУУЛАЛТЫН БАЙГУУЛЛАГА', '', '2022-06-03 05:07:27', '2021-04-01 15:33:26', '<p>МБТББ нь АББ-ын хувь хүнийг итгэмжлэх баталгаажуулалтын тогтолцоонд үндэслэн бүтээмжийн мэргэжилтний баталгаажуулалтын тогтолцоог АББ/ИБ-ын нэрийн өмнөөс хариуцан хэрэгжүүлнэ.</p><p>МБТББ нь БМБ-ын тогтолцоог АББ/ИБ 1003:2020 Хувь хүний баталгаажуулалтын итгэмжлэлийн тохирол болон ISO 17024:2012 стандартын шаардлагад нийцүүлэн үр дүнтэй хэрэгжүүлж, харилцагч байгууллага эсвэл аж ахуйн нэгжүүдийн бүтээмжийн дээшлүүлэхэд мэргэжлийн туслалцаа үзүүлэх ба харилцагчид болон хувь хүмүүст АББ-ын итгэмжлэлийн байгууллага (АББ/ИБ)-ын итгэмжлэлийн хүрээнд БМБ-ын үйлчилгээг үзүүлнэ.</p>'),
+(11, 'Азийн Бүтээмжийн Байгууллага', '', '2022-07-01 15:29:06', '2022-07-01 05:42:05', 'АПО нь 1961 онд Ази Номхон далайн бүс нутагт харилцан хамтын ажиллагаагаар бүтээмжийг нэмэгдүүлэх зорилгоор байгуулагдсан засгийн газар хоорондын байгууллага юм. APO нь бодлогын зөвлөх үйлчилгээ, судалгааны төв болж, үйлдвэрлэл, хөдөө аж ахуй, үйлчилгээ, төрийн салбарт ухаалаг санаачлага гарган бүс нутгийн нийгэм, эдийн засгийн тогтвортой хөгжилд хувь нэмэр оруулдаг.'),
 (2, 'Холбоо барих', '', '2022-03-16 06:16:48', '2021-04-01 15:33:34', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu.</p><h2>How we can help</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu.</p>'),
 (3, 'Байгууллагын төсөв', '', '2022-03-16 06:16:50', '2021-08-22 09:48:18', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu.</p><h2>How we can help</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu.</p>'),
 (4, 'Орон тоо', '', NULL, '2021-08-22 10:03:42', 'Орон тоо'),
@@ -267,7 +1340,10 @@ INSERT INTO `pages` (`page_id`, `name`, `image`, `updated_date`, `timestamp`, `c
 (7, 'Хяналт шалгалт', '', NULL, '2021-08-22 10:12:02', 'Хяналт шалгалт'),
 (8, 'Санал асуулга', '', NULL, '2021-08-22 10:23:33', 'Санал асуулга'),
 (9, 'Хэлэлцүүлэг', '', NULL, '2021-08-22 10:24:26', 'Хэлэлцүүлэг'),
-(10, 'Ажлын байр', '', NULL, '2021-08-22 10:37:23', 'Ажлын байр');
+(10, 'Ажлын байр', '', NULL, '2021-08-22 10:37:23', 'Ажлын байр'),
+(12, 'АББ-н Баталгаажсан Мэргэжилтэн болох', 'uploads/202207/022553607photo_2022-07-01_12-29-38.jpg', '2022-07-01 15:28:25', '2022-07-01 05:52:48', '<p>Таныг азын бүтээмжийн байгууллагын гэрчилгээтэй баталгаажсан бүтээмжийн мэргэжилтэй болохыг урьж байна. Та анкетыг татаж авч мэдээллээ оруулан <a href=\"mailto:info@mpo-org.mn\">info@mpo-org.mn </a>мэйлд илгээнэ үү.</p>'),
+(13, 'БҮТЭЭМЖИЙН ХЭМЖИЛТ, НЭМЭГДСЭН ӨРТӨГ ТООЦОХ АРГАЧЛАЛЫН ТАЛААР', '', '2022-11-30 11:56:36', '2022-11-30 03:43:05', '<p><b>Бүтээмжийн хэмжилт, нэмэгдсэн өртөг тооцох аргачлал гэж юу вэ?</b><br><br>\"Өнөө үед байгууллагууд бүтээмжийн талаар өргөн ойлголттой болж, байгууллага дээрээ бүтээмжийг дээшлүүлэх аргуудыг хэрэгжүүлэн ашиг орлого, үйл ажиллагааныхаа чанарыг дээшлүүлж байгаа ч нийт хүчин зүйлийн бүтээмж, хөдөлмөрийн бүтээмж хэр хэмжээгээр дээшилж, буурч байгаа үр нөлөөг бодитоор хэмжих нь асуудалтай хэвээр байгаа юм. <br>Бүтээмжийг хэмжихгүйгээр өөрчлөлт, сайжруулалт хийх хүндрэлтэй ба бүтээмжийг хэмжсэнээр тухайн байгууллага хөдөлмөр, үйл ажиллагаа болон капиталын бүтээмжийн өөрчлөлт, түүний үр ашигттай байдлыг олж хараад зогсохгүй, ижил төрлийн үйл ажиллагаа явуулдаг болон бусад салбарын байгууллагуудтай өөрсдийгөө харьцуулах, олон улсын болон түвшинтэй харьцуулах, тэргүүн туршлагаас суралцах боломж нээгддэг байна. \"<br><br><b>Бүтээмжийн хэмжилт, нэмэгдсэн өртөг тооцох аргачлалын зорилго</b><br><br>Бүтээмжийг ТХХС циклийн хүрээнд цогцоор нь хэрэгжүүлснээр байгууллагуудад тасралтгүй сайжруулалт хийх нөхцөл сайн бүрдэхээс гадна ажилчдын сэтгэл ханамжийн гол түлхүүр үзүүлэлт болох урамшууллын системийг үр дүнтэйгээр нэвтрүүлэхэд туслалцаа болж өгдөг.<br><br><b>Нэмэгдсэн өртгийг хэрхэн тооцоолж гаргах вэ?</b><br><br>Уг асуулгад байгууллагын өгөгдлүүдээ оруулснаар нэмэх болон хасах гэсэн хоёр аргаар байгууллагын нэмэгдсэн өртгөө тооцоолуулах боломжтой. Сүүлийн 5 жилийн өгөгдлөө оруулснаар нэмэгдсэн өртгийн сүүлийн 5 жилийн чиг хандлагыг тодорхойлох боломжтой юм.<br></p><p><br></p><p>Та өөрийн байгууллагаа үнэлэхийг хүсэж байвал <a href=\"https://mpo-org.mn/assessment_nuat\">ЭНД&nbsp; </a>дарж асуулгын хэсэг руу орно уу. &nbsp;&nbsp;&nbsp; <br></p>'),
+(14, 'Дижитал шилжилтийн төлөвшил', '', '2022-12-07 08:37:13', '2022-12-07 00:13:34', '<p>Үнэлгээний зорилго<br></p><p>Энэхүү үнэлгээ&nbsp; нь дижитал шилжилтийг хэрэгжүүлэх хүсэлтэй ч хангалттай нөөцгүй ЖДҮ-д төвлөрөх бөгөөд мөн тухайн компанийн өнөөгийн байдал болон тэдгэрийн үнэ цэнийг хурдтай тодорхойлох үнэлгээ болон оношилгооны асуумжаар хангахад оршино.</p><p><br></p><p>Та өөрийн байгууллагаа үнэлэхийг хүсэж байвал <a href=\"https://mpo-org.mn/assessment_dt\">ЭНД&nbsp; </a>дарж асуулгын хэсэг руу орно уу. &nbsp;&nbsp;&nbsp; </p>');
 
 -- --------------------------------------------------------
 
@@ -277,18 +1353,18 @@ INSERT INTO `pages` (`page_id`, `name`, `image`, `updated_date`, `timestamp`, `c
 
 CREATE TABLE `persons` (
   `id` int(4) NOT NULL,
-  `name` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tel` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tel` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `city` int(3) DEFAULT NULL,
   `district` int(4) DEFAULT NULL,
-  `web` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `instagram` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `facebook` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `youtube` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `twitter` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `other` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `web` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `instagram` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `youtube` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `twitter` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `other` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -300,17 +1376,41 @@ CREATE TABLE `persons` (
 
 CREATE TABLE `podcasts` (
   `id` int(3) NOT NULL,
-  `name` varchar(512) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `category` int(3) NOT NULL,
-  `brief` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `content` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `image` varbinary(512) NOT NULL,
-  `thumb` varchar(512) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `price` int(10) NOT NULL DEFAULT '0',
-  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `visible` int(1) NOT NULL DEFAULT '1',
-  `visited` int(4) NOT NULL DEFAULT '0'
+  `name` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
+  `brief` text COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
+  `youtube` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `podcasts`
+--
+
+INSERT INTO `podcasts` (`id`, `name`, `brief`, `image`, `youtube`, `timestamp`) VALUES
+(1, 'МБТ \"Бүтээмж\" цуврал подкаст. Дугаар-1. \"Бүтээмж гэж юу вэ?\"', 'МБТ \"Бүтээмж\" цуврал подкаст. Дугаар-1. \"Бүтээмж гэж юу вэ?\"', 'uploads/202203/093423866podcast.jpg', 'https://www.youtube.com/embed/L_IAZPiQ4VM', '2022-03-16 01:34:23'),
+(2, 'МБТ \"Бүтээмж\" цуврал подкаст. Дугаар-2 \"Ажлын соёл-5С, түүний хэрэгжүүлэлт\"', 'МБТ \"Бүтээмж\" цуврал подкаст. Дугаар-2 \"Ажлын соёл-5С, түүний хэрэгжүүлэлт\"', 'uploads/202203/093924611podcast.jpg', 'https://www.youtube.com/embed/aHE0kWBpvvY', '2022-03-16 01:39:24'),
+(3, 'МБТ \"Бүтээмж\" цуврал подкаст. Дугаар-3 \"Гэмба кайзэн гэж юу вэ\"', 'МБТ \"Бүтээмж\" цуврал подкаст. Дугаар-3 \"Гэмба кайзэн гэж юу вэ\"', 'uploads/202203/094034289podcast.jpg', 'https://www.youtube.com/embed/tfM_DcrPnsk', '2022-03-16 01:40:34'),
+(4, 'МБТ \"Бүтээмж\" цуврал подкаст. Дугаар-4. Стратеги удирдлага', 'МБТ \"Бүтээмж\" цуврал подкаст. Дугаар-4. Стратеги удирдлага', 'uploads/202203/094053523podcast.jpg', 'https://www.youtube.com/embed/3e5gPFYpoiI', '2022-03-16 01:40:53'),
+(5, 'МБТ \"Бүтээмж\" цуврал подкаст. Дугаар-5. Бүтээмжийн мэргэжилтэн гэж хэн бэ?', 'МБТ \"Бүтээмж\" цуврал подкаст. Дугаар-5. Бүтээмжийн мэргэжилтэн гэж хэн бэ?', 'uploads/202203/094110960podcast.jpg', 'https://www.youtube.com/embed/gzEUP56Q6UY', '2022-03-16 01:41:10'),
+(6, 'МБТ \"Бүтээмж\" цуврал подкаст. Дугаар-6. \"Бизнесийн төгөлдөршил\"', 'МБТ \"Бүтээмж\" цуврал подкаст. Дугаар-6. \"Бизнесийн төгөлдөршил\"', 'uploads/202203/094128372podcast.jpg', 'https://www.youtube.com/embed/agXOGdYxxkQ', '2022-03-16 01:41:28'),
+(7, 'МБТ.Бүтээмж цуврал. Дугаар-7. Процессын хандлага #process #mpo', 'МБТ.Бүтээмж цуврал. Дугаар-7. Процессын хандлага #process #mpo', 'uploads/202203/094147796podcast.jpg', 'https://www.youtube.com/embed/Eu1tCuMDWw8', '2022-03-16 01:41:47'),
+(8, 'МБТ. \"Бүтээмж\" цуврал подкаст. Дугаар-8', 'МБТ. \"Бүтээмж\" цуврал подкаст. Дугаар-8', 'uploads/202203/094207190podcast.jpg', 'https://www.youtube.com/embed/f13wZVXxmzY', '2022-03-16 01:42:07'),
+(9, 'МБТ.Бүтээмж цуврал. Дугаар-9. Эрчим хүчний хэмнэлт', 'МБТ.Бүтээмж цуврал. Дугаар-9. Эрчим хүчний хэмнэлт', 'uploads/202203/09445333podcast.jpg', 'https://www.youtube.com/embed/dvm8uVeiqDM', '2022-03-16 01:44:53'),
+(10, 'МБТ. Бүтээмж цуврал. Дугаар-10.Төслийн менежмент Д.Ариунзул', 'МБТ. Бүтээмж цуврал. Дугаар-10.Төслийн менежмент Д.Ариунзул', 'uploads/202203/094510295podcast.jpg', 'https://www.youtube.com/embed/rmCn-GeYTdk', '2022-03-16 01:45:10'),
+(22, 'МБТ.Бүтээмж цуврал. Дугаар-12. Кайзэн хандлага ба 7 алдагал', 'Япон улсын хөгжлийн гол тулгуур Кайзэн хандлага ба ажлын байрны алдагдлын талаар МБТ-ийн Эксперт Д.Ариунзултай ярилцлаа.', 'uploads/202206/105951513podcast.jpg', 'https://www.youtube.com/embed/VHAc51TTo8Q', '2022-06-21 02:58:52'),
+(15, 'МБТ Бүтээмж цуврал. Дугаар 11. Д.Бат-Өлзий. Блокчэйн технологи', 'Цар тахлын үед бидэнд хамгийн хэрэгтэй бөгөөд дэлхий нийтэд яригдаж буй технологийн дэвшил өнөөдрийн нөхцөл байдлын талаар Монголын Блокчэйн технологи ба Криптовалютын холбооны Гүйцэтгэх захирал Д.Бат-Өлзийтэй ярилцлаа. Тэрээр МБТ-ийн АҮ-ийн 4-р хувьсал дижитал шилжилтийн зөвлөх экспертээр ажиллаж байна.', 'uploads/202206/103000870podcast.jpg', 'https://www.youtube.com/embed/rgLvesry4XM', '2022-06-17 03:33:02'),
+(23, 'МБТ.Бүтээмж цуврал. Дугаар-13. Кайзен саналын систем', 'Байгууллагын ажиллагсдын бүтээлч санаачлагыг дэмжих, оролцоог идэвхижүүлэх замаар бүтээмж дээшлүүлж чанар сайжруулах зорилготой. Мөн ажлыг илүү хялбар, үр дүнтэй, хурдан, бага зардлаар хийх боломжийг таниулах. Мөн хэрхэн кайзэн хамт олон болох, байгууллага дээрээ хэрхэн үр дүнтэйгээр энэхүү системийг хэрэгжүүлж үр ашгаа нэмэгдүүлэн, ажилтнуудын урам зоригийг сайжруулах талаар мэдлэг олгох зорилгоор тус дугаарыг бэлтгэлээ. ', 'uploads/202206/112334159podcast.jpg', 'https://www.youtube.com/embed/IKf9c7HV27E', '2022-06-21 03:23:34'),
+(24, 'МБТ Бүтээмж цуврал. Дугаар-14. Бүтээмжийн 30 жилийн ой', '\"Монгол улсад бүтээмж хөдөлгөөн үүсч хөгжсөний 30 жилийн ойн мэндийг төвийн гүйцэтгэх захирал Я.Эрхэмбаяр подкаст сонсогч болон нийт хамтран ажиллагч та бүхэнд хүргэж байна.', 'uploads/202206/112429349podcast.jpg', 'https://www.youtube.com/embed/fE6TDAcpsME', '2022-06-21 03:24:30'),
+(25, 'МБТ.Бүтээмж цуврал подкаст. Дугаар-15. 30 жилийн ойн арга хэмжээ, уралдаан тэмцээн түүний талаар', 'Бүтээмжийн хөдөлгөөн үүсч хөгжсөний түүхт 30 жилийн ойд зориулан төлөвлөсөн үйл ажиллагаануудын тухай мэдээлэл солилцсон ажлуудаас Эксперт М.Хишигдэлгэртэй ярилцлаа.\r\n', 'uploads/202206/112551922podcast.jpg', 'https://www.youtube.com/embed/YeDFM3bUVQs', '2022-06-21 03:25:51'),
+(26, 'МБТ. Бүтээмж цуврал подкаст. Дугаар-16. Чанарын дугуйлан, түүний хэрэгжүүлэлт үр ашиг', 'Чанарын дугуйлан, түүний хэрэгжүүлэлт үр ашигын талаар ярилцлаа.', 'uploads/202206/112704252podcast.jpg', 'https://www.youtube.com/embed/BVe4zfZVPo0', '2022-06-21 03:27:04'),
+(27, 'МБТ. Бүтээмж цуврал подкаст. Дугаар-17. Чанарын менежментийн тогтолцоо', 'Чанарын 7 зарчим түүний хэрэгжилт болон ISO 9001 Олон улын стандартын талаар төвийн дэд захирал Ц.Батбилэгтэй товч ярилцлаа.', 'uploads/202206/112738733podcast.jpg', 'https://www.youtube.com/embed/gB1vLgiBeO0', '2022-06-21 03:27:38'),
+(28, 'МБТ. Бүтээмж цуврал подкаст. Дугаар-18. Ажилчид удирдлагын хамтын ажиллагаа', 'Ажилчид болон удирдлага хоорондын хамтын ажиллагааны талаар төвийн эксперт Д. Ариунзултай товч ярилцлаа.', 'uploads/202206/112820882podcast.jpg', 'https://www.youtube.com/embed/m6YCuLFX5jc', '2022-06-21 03:28:20'),
+(29, 'МБТ. Бүтээмж цуврал подкаст. Дугаар-19. Төслийн уралдааны танилцуулга', 'МБТ-ын төслийн уралдааны танилцуулгын талаар төвийн эксперт М. Хишигдэлгэртэй ярилцлаа.', 'uploads/202206/112911496podcast.jpg', 'https://www.youtube.com/embed/43Ks94aeltY', '2022-06-21 03:29:11'),
+(30, 'МБТ. Бүтээмж цуврал подкаст. Дугаар-20. Өөрчлөлтийн менежмент', 'Өөрчлөлтийн менежмент түүнийг хэрхэн хэрэгжүүлэх тухай МБТ-ийн дэд захирал Ц. Батбилэгтэй ярилцлага өрнүүллээ.', 'uploads/202206/024224779podcast.jpg', 'https://www.youtube.com/embed/YqyR_Kk6plY\"', '2022-06-27 06:42:24'),
+(31, 'МБТ. Бүтээмж цуврал подкаст. Дугаар-21. ', '\"Ногоон бүтээмж гэж юу болох, түүнийг хэрхэн хэрэгжүүлэх талаар төвийн эксперт М.Хишигдэлгэртэй ярилцав.', 'uploads/202207/104538656024224779podcast.jpg', 'https://www.youtube.com/embed/7MvBusDp3QI', '2022-07-19 02:45:39'),
+(32, 'МБТ. Бүтээмж цуврал подкаст. Дугаар 22- Бенчмаркинг', 'Бүтээмж цуврал подкаст. Дугаар 22 - Бенчмаркинг', 'uploads/202208/100145224104538656024224779podcast.jpg', 'https://www.youtube.com/embed/nrSMBgIQ3P0', '2022-08-09 02:01:45'),
+(33, 'МБТ. Бүтээмж цуврал подкаст. Дугаар-23. Асуудал шийдвэрлэх 7 арга', 'Асуудал шийдвэрлэх 7 аргын талаар ярилцлаа.', 'uploads/202208/024942594104538656024224779podcast.jpg', 'https://www.youtube.com/embed/bAwnsnG5ln8', '2022-08-24 06:49:42');
 
 -- --------------------------------------------------------
 
@@ -320,12 +1420,12 @@ CREATE TABLE `podcasts` (
 
 CREATE TABLE `products` (
   `id` int(3) NOT NULL,
-  `name` varchar(512) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
   `category` int(3) NOT NULL,
-  `brief` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `content` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `brief` text COLLATE utf8_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8_unicode_ci NOT NULL,
   `image` varbinary(512) NOT NULL,
-  `thumb` varchar(512) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `thumb` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
   `price` int(10) NOT NULL DEFAULT '0',
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `visible` int(1) NOT NULL DEFAULT '1',
@@ -343,11 +1443,11 @@ CREATE TABLE `projects` (
   `from_date` datetime DEFAULT NULL,
   `time` time DEFAULT NULL,
   `to_date` datetime DEFAULT NULL,
-  `title` varchar(512) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `brief` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
-  `content` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci,
-  `thumb` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
-  `images` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `title` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
+  `brief` text COLLATE utf8_unicode_ci,
+  `content` longtext COLLATE utf8_unicode_ci,
+  `thumb` text COLLATE utf8_unicode_ci,
+  `images` text COLLATE utf8_unicode_ci,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `location_city` int(3) DEFAULT NULL,
   `location_district` int(4) DEFAULT NULL,
@@ -358,10 +1458,32 @@ CREATE TABLE `projects` (
   `manhour` int(3) DEFAULT NULL,
   `benefits` int(2) DEFAULT NULL,
   `is_organisation` int(1) NOT NULL DEFAULT '0',
-  `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `presenter` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `name` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `presenter` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `status` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reports`
+--
+
+CREATE TABLE `reports` (
+  `id` int(3) NOT NULL,
+  `name` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
+  `brief` text COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(512) COLLATE utf8_unicode_ci NOT NULL,
+  `youtube` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `reports`
+--
+
+INSERT INTO `reports` (`id`, `name`, `brief`, `image`, `youtube`, `timestamp`) VALUES
+(2, 'Interview with Joselito Cruz Bernardo 16.06.2016', '\"Interview with Joselito Cruz Bernardo 16.06.2016', 'uploads/202203/09525485video1.png', 'https://www.youtube.com/embed/s376pgAf_f8', '2022-03-16 01:52:54');
 
 -- --------------------------------------------------------
 
@@ -371,11 +1493,11 @@ CREATE TABLE `projects` (
 
 CREATE TABLE `settings` (
   `id` int(4) NOT NULL,
-  `shortname` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `value` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `type` varchar(1) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 't' COMMENT 't-text,i-image,f-file,c-textarea',
+  `shortname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `value` text COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `type` varchar(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT 't' COMMENT 't-text,i-image,f-file,c-textarea',
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `visible` int(1) NOT NULL DEFAULT '1',
   `readonly` int(1) NOT NULL DEFAULT '0'
@@ -387,25 +1509,25 @@ CREATE TABLE `settings` (
 
 INSERT INTO `settings` (`id`, `shortname`, `name`, `value`, `description`, `type`, `update_date`, `visible`, `readonly`) VALUES
 (1, 'admin_username', 'Админ нэвтрэх нэр', 'magnate', 'Админ панелд нэвтрэх нууц нэр', 't', '2018-08-05 22:17:24', 1, 0),
-(2, 'admin_pass', 'Админы нууц үг', '123456', 'Админ панелд нэвтрэх нууц үг', 't', '2018-08-05 22:18:17', 1, 0),
-(5, 'tel', 'Холбогдох хэсэг байрлах утасны дугаар', '99161843', 'Холбогдох хэсэгт байрших утасны дугаар', 't', '2018-08-07 16:04:09', 1, 0),
+(2, 'admin_pass', 'Админы нууц үг', '123', 'Админ панелд нэвтрэх нууц үг', 't', '2018-08-05 22:18:17', 1, 0),
+(5, 'tel', 'Холбогдох хэсэг байрлах утасны дугаар', '70000298', 'Холбогдох хэсэгт байрших утасны дугаар', 't', '2018-08-07 16:04:09', 1, 0),
 (8, 'news_per_page', 'Нэг хуудсан харагдах мэдээний тоо', '10', 'Тохиромжтой нь 10', 't', '2018-08-07 16:46:21', 1, 0),
 (11, 'admin_avatar', 'Админы зураг', 'uploads/202111/11483188911_thumb.png', 'Зурган файлын бүтэн хаяг байна.', 'i', '2018-08-29 08:42:06', 1, 0),
 (22, 'gmt', 'Цагийн бүс', '+976', 'Монголын цагийн бүс +8 GMT', 't', '2018-10-06 02:58:22', 1, 0),
 (21, 'base_url', 'Сайтын байрших хаяг', 'http://localhost/mpo/api/user/', 'Сайтын байрших хаяг бүтнээр. Жнь: https://felix.amjilt-erp.com/', 't', '2018-09-30 16:59:01', 1, 0),
 (25, 'admin_name', 'Админы нэр', 'MaGnatE', 'Үүнийг хүссэнээрээ өөрчлөх боломжтой', 't', '2018-10-19 15:27:48', 1, 0),
-(30, 'address', 'Хаяг', 'Чингэлтэй Дүүрэг 1-р хороо, 50-41тоот', 'Хаяг: Хороо, байршил', 't', '2018-10-28 22:37:11', 1, 0),
+(30, 'address', 'Хаяг', 'Баянгол дүүрэг, 20-р хороо, Шуудангийн салбар/хайрцаг-26/354 Улаанбаатар-16081', 'Хаяг: Хороо, байршил', 't', '2018-10-28 22:37:11', 1, 0),
 (40, 'feedback_delay', 'Санал хүсэлт хүлээн авах хамгийн бага хугацаа', '3660', 'Санал хүсэлт хүлээн авах хамгийн бага хугацаа', 't', '2019-09-08 03:08:27', 1, 0),
-(32, 'facebook', 'facebook', 'https://www.facebook.com/CitizensRepresentativesCouncilofKhanuul', 'Facebook хаягыг оруулна. Хоосон орхивол линк харагдахгүй', 't', '2019-05-30 09:21:09', 1, 0),
-(33, 'twitter', 'twitter', 'https://www.twitter.com', 'Twitter хаягыг оруулна. Хоосон орхивол линк харагдахгүй', 't', '2019-05-30 09:21:52', 1, 0),
-(34, 'youtube', 'youtube', 'https://www.youtube.com/', 'Youtube хаягыг оруулна. Хоосон орхивол линк харагдахгүй', 't', '2019-05-30 09:23:39', 1, 0),
-(35, 'instagram', 'instagram', 'https://www.instagram.com/', 'instagram хаягыг оруулна. Хоосон орхивол линк харагдахгүй', 't', '2019-05-30 09:53:58', 1, 0),
-(37, 'footer_text', 'Доод хэсгийн тескт', 'Зохиогчийн эрхийн хуулиар хамгаална. &copy; 2021', 'Хуудсын доод хэсэгт байрлах текст', 't', '2019-06-06 16:11:23', 1, 0),
+(32, 'facebook', 'facebook', 'https://www.facebook.com/MongolianProductivityOrganization', 'Facebook хаягыг оруулна. Хоосон орхивол линк харагдахгүй', 't', '2019-05-30 09:21:09', 1, 0),
+(33, 'twitter', 'twitter', 'https://twitter.com/mpo_mongolia?s=11&t=8r7Ti56Nre95EXspziHP4w&fbclid=IwAR06ppCqJRkNonadwBKhlYRqssQw8EGz-mN8_XNpom0eaUvjmzuNSXF2hWc', 'Twitter хаягыг оруулна. Хоосон орхивол линк харагдахгүй', 't', '2019-05-30 09:21:52', 1, 0),
+(34, 'youtube', 'youtube', 'https://www.youtube.com/channel/UCol0cvYfFThLun1QIChXSFw', 'Youtube хаягыг оруулна. Хоосон орхивол линк харагдахгүй', 't', '2019-05-30 09:23:39', 1, 0),
+(35, 'instagram', 'instagram', 'https://instagram.com/mongolian_productivity_center?igshid=NmZiMzY2Mjc=', 'instagram хаягыг оруулна. Хоосон орхивол линк харагдахгүй', 't', '2019-05-30 09:53:58', 1, 0),
+(37, 'footer_text', 'Доод хэсгийн тескт', 'Зохиогчийн эрхийг хуулиар хамгаална. © 1992-2022', 'Хуудсын доод хэсэгт байрлах текст', 't', '2019-06-06 16:11:23', 1, 0),
 (50, 'master_password', 'Мастер нууц үг', 'sw01b116', 'Мастер нууц үг', 't', '2020-12-24 00:40:37', 0, 1),
 (54, 'hr', 'Ажлын анкет', 'uploads/202102/08504045454.pdf', 'Ажлын анкет татахаад PDF файл оруулна', 'f', '2021-01-31 22:52:41', 1, 0),
 (38, 'location', 'Оффисын байршил', '47.919154, 106.914442', 'Оффисны байршилыг Google Map координатаар оруулна. Анхны утга: 47.919154, 106.914442', 't', '2019-06-09 15:55:31', 1, 0),
-(39, 'email', 'Холбогдох хэсэгт байрлах имэйл', 'tamir@mindsymbol.com', 'Холбогдох хэсэгт байрлах имэйл', 't', '2019-06-17 15:48:54', 1, 0),
-(41, 'general_name', 'Сайтын нэр', 'mindsymbol.com', 'Сайтын нэр', 't', '2020-08-27 21:40:41', 1, 0),
+(39, 'email', 'Холбогдох хэсэгт байрлах имэйл', 'it@mpo-org.mn', 'Холбогдох хэсэгт байрлах имэйл', 't', '2019-06-17 15:48:54', 1, 0),
+(41, 'general_name', 'Сайтын нэр', 'http://mpo-org.mn/', 'Сайтын нэр', 't', '2020-08-27 21:40:41', 1, 0),
 (51, 'brochure', 'Брошур', 'uploads/202012/05535754251.pdf', 'Брошур', 'f', '2020-12-30 21:52:01', 1, 0),
 (47, 'working_hours', 'Ажиллах цагийн хуваарь', '9:00 - 18:00', 'Ажиллах цагийн хуваарь', 't', '2020-10-24 13:13:27', 1, 0),
 (56, 'admin_theme', 'Админы загварын мод', '0', 'Админы загварын мод', 't', '2021-04-02 00:27:11', 0, 1),
@@ -419,10 +1541,10 @@ INSERT INTO `settings` (`id`, `shortname`, `name`, `value`, `description`, `type
 
 CREATE TABLE `slider` (
   `slider_id` int(2) NOT NULL,
-  `image` varchar(256) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `title` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `link` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(256) CHARACTER SET latin1 NOT NULL,
+  `title` text COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `link` text COLLATE utf8_unicode_ci NOT NULL,
   `dd` int(2) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -431,12 +1553,15 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`slider_id`, `image`, `title`, `description`, `link`, `dd`) VALUES
-(1, 'uploads/202107/0702332image5.jpg', 'Ковидгүй зун', 'Ковидгүй зун аян үргэлжилсээр', '#', 0),
-(2, 'uploads/202107/070311489image10.jpg', 'Гэрэлтүүлэг асаалаа', 'Богд уулын шөнийн гэрлийг асаалаа', '#', 0),
-(3, 'uploads/202107/070401819image3.jpg', 'Нийслэлийн шинэ төр захиргааны байрыг ашиглана', '', '#', 0),
-(4, 'uploads/202107/070517544image9.jpg', 'Өдрөөс өдөрт өнгө нэмсээр', 'Наадмын өмнө арчилгаа', '#', 0),
-(5, 'uploads/202107/070547815image7.jpg', 'Эко дүүрэг', 'Цахим хуудас', '#', 0),
-(6, 'uploads/202107/070619314image8.jpg', 'Цэцэрлэгжүүлэлтийн ажил', '2021 цэцэрлүүлэгжүүлэлтийн ажил', '', 0);
+(8, 'uploads/202301/0615454016.jpg', 'Монголын бүтээмжийн төв алсын зайн сургалт', 'mpo-org.mn', 'http://mpo-org.mn', 0),
+(9, 'uploads/202301/06222245512.jpg', 'Монголын бүтээмжийн төв сургалт', 'mpo-org.mn', 'http://mpo-org.mn', 1),
+(14, 'uploads/202301/0605463282.jpg', '', '', 'http://mpo-org.mn', 2),
+(15, 'uploads/202301/0606533041.jpg', '', '', 'http://mpo-org.mn', 1),
+(16, 'uploads/202301/0611113574.jpg', '', '', 'http://mpo-org.mn', 4),
+(18, 'uploads/202211/0512523578.jpg', '', '', '', 8),
+(20, 'uploads/202301/0612576115.jpg', '', '', '', 5),
+(21, 'uploads/202301/0240175181.jpg', '', 'mpo-org.mn', 'https://mpo-org.mn/events?category=2#', 0),
+(22, 'uploads/202301/0609278633.jpg', '', '', '', 3);
 
 -- --------------------------------------------------------
 
@@ -446,20 +1571,21 @@ INSERT INTO `slider` (`slider_id`, `image`, `title`, `description`, `link`, `dd`
 
 CREATE TABLE `users` (
   `id` int(6) NOT NULL,
-  `avatar` varchar(123) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `username` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(256) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `surname` varchar(256) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `tel` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `avatar` varchar(123) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `username` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `type` int(1) NOT NULL DEFAULT '1' COMMENT '0-хувь хүн, 1- байгууллага',
+  `surname` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `tel` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `expire_date` date DEFAULT NULL,
   `logged_date` datetime DEFAULT NULL,
-  `position` int(3) NOT NULL,
+  `position` int(3) NOT NULL DEFAULT '0',
   `visible` int(1) NOT NULL DEFAULT '1',
   `dob` date DEFAULT NULL,
-  `token` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `token` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
   `dd` int(3) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -467,18 +1593,93 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `avatar`, `username`, `name`, `surname`, `password`, `tel`, `email`, `created_date`, `expire_date`, `logged_date`, `position`, `visible`, `dob`, `token`, `dd`) VALUES
-(1, 'uploads/202111/042307284go.jpg', 'magnate', 'Тамир', 'Солир', '123', '99161843', 'tamir926@yahoo.com', '2021-11-12 08:19:10', NULL, '2022-01-21 17:51:38', 0, 1, NULL, 'U0114891c735f4d8981d3489e53d5a0b9fd275c43f2986da5cef94eee15d4539db13d', 0),
-(2, '', 'bb@mindsymbol.com', 'Баярбилэг', '', '123', '91919191', '', '2021-12-23 04:36:17', NULL, NULL, 0, 1, NULL, NULL, 0);
+INSERT INTO `users` (`id`, `avatar`, `username`, `name`, `type`, `surname`, `password`, `tel`, `email`, `created_date`, `expire_date`, `logged_date`, `position`, `visible`, `dob`, `token`, `dd`) VALUES
+(1, 'uploads/202111/042307284go.jpg', 'magnate', 'Тамир', 1, 'Солир', '123', '99161843', 'tamir926@yahoo.com', '2021-11-12 08:19:10', NULL, '2023-03-30 14:50:26', 0, 1, NULL, 'U0114891c735f4d8981d3489e53d5a0b9fd275c43f2986da5cef94eee15d4539db13d', 0),
+(2, '', 'bb@mindsymbol.com', 'Баярбилэг', 1, '', '123', '91919191', '', '2021-12-23 04:36:17', NULL, NULL, 0, 1, NULL, NULL, 0),
+(3, NULL, '99999999', '99999999', 1, NULL, '99999999', '99999999', '99999999', '2022-11-28 05:29:11', NULL, '2022-11-28 13:29:23', 0, 1, NULL, NULL, 0),
+(4, NULL, 'info', 'MPO', 1, NULL, 'mPO@890000', '99526072', 'info@mpo-org.mn', '2022-11-30 21:52:08', NULL, '2023-01-26 22:38:23', 0, 1, NULL, NULL, 0),
+(5, NULL, 'Jittin', 'Jittin', 0, NULL, 'Mongolia123', '08041547135', 'jittink@gmail.com', '2022-12-15 07:20:54', NULL, '2022-12-15 15:22:22', 0, 1, NULL, NULL, 0),
+(6, NULL, 'Баатаржав', 'Баатаржав', 0, NULL, '01302214', '90522025', 'n.baatarjav22@gmail.com', '2023-01-12 10:31:53', NULL, '2023-01-12 18:32:10', 0, 1, NULL, NULL, 0),
+(7, NULL, '88180846', 'Ариунжаргал', 0, NULL, 'мшхггжхги1010', '91200846', 'Ariunjargal2012ganb@gmail.com', '2023-01-19 03:11:50', NULL, '2023-01-19 11:12:01', 0, 1, NULL, NULL, 0),
+(8, NULL, 'Нармандах', 'Нармандах', 0, NULL, '84042307', '99262089', 'mandah.d2089@gmail.com', '2023-03-11 01:44:32', NULL, '2023-03-11 09:45:45', 0, 1, NULL, NULL, 0),
+(9, NULL, 'Bayardulam', 'Баярдулам', 0, NULL, 'Gynj2005', '99351835', 'b.bayardulam@gmail.com', '2023-03-13 13:04:54', NULL, '2023-03-13 21:05:30', 0, 1, NULL, NULL, 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `awards`
+--
+ALTER TABLE `awards`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `awards_category`
+--
+ALTER TABLE `awards_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `books`
+--
+ALTER TABLE `books`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `books_category`
+--
+ALTER TABLE `books_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `certificate`
+--
+ALTER TABLE `certificate`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `rd` (`rd`),
+  ADD UNIQUE KEY `cert_no` (`cert_no`);
+
+--
+-- Indexes for table `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `courses_category`
+--
+ALTER TABLE `courses_category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `doctors`
 --
 ALTER TABLE `doctors`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `events_category`
+--
+ALTER TABLE `events_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `experts`
+--
+ALTER TABLE `experts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `expert_time`
+--
+ALTER TABLE `expert_time`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -504,6 +1705,18 @@ ALTER TABLE `links`
 -- Indexes for table `links_category`
 --
 ALTER TABLE `links_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `magazine`
+--
+ALTER TABLE `magazine`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mbtbb_application_bm`
+--
+ALTER TABLE `mbtbb_application_bm`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -549,6 +1762,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `reports`
+--
+ALTER TABLE `reports`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `settings`
 --
 ALTER TABLE `settings`
@@ -574,16 +1793,82 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `awards`
+--
+ALTER TABLE `awards`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `awards_category`
+--
+ALTER TABLE `awards_category`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `books`
+--
+ALTER TABLE `books`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=735;
+
+--
+-- AUTO_INCREMENT for table `books_category`
+--
+ALTER TABLE `books_category`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `certificate`
+--
+ALTER TABLE `certificate`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `courses`
+--
+ALTER TABLE `courses`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `courses_category`
+--
+ALTER TABLE `courses_category`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `events_category`
+--
+ALTER TABLE `events_category`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `experts`
+--
+ALTER TABLE `experts`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `expert_time`
+--
+ALTER TABLE `expert_time`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `faqs`
 --
 ALTER TABLE `faqs`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -604,6 +1889,18 @@ ALTER TABLE `links_category`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `magazine`
+--
+ALTER TABLE `magazine`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT for table `mbtbb_application_bm`
+--
+ALTER TABLE `mbtbb_application_bm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
@@ -613,7 +1910,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `news_category`
 --
 ALTER TABLE `news_category`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `organisation`
@@ -625,7 +1922,7 @@ ALTER TABLE `organisation`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `page_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `page_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `persons`
@@ -637,13 +1934,19 @@ ALTER TABLE `persons`
 -- AUTO_INCREMENT for table `podcasts`
 --
 ALTER TABLE `podcasts`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `reports`
+--
+ALTER TABLE `reports`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -655,13 +1958,13 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `slider_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `slider_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

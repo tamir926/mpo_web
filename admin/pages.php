@@ -303,8 +303,8 @@
                 if ($action=="editing")
                 {
                     $page_id = $_POST["page_id"];
-                    $name = $_POST["name"];
-                    $content = $_POST["content"];
+                    $name = mysqli_escape_string($conn,$_POST["name"]);
+                    $content = mysqli_escape_string($conn,$_POST["content"]);
 
                     if(isset($_FILES['image']) && $_FILES['image']['name']!="")
                     {
