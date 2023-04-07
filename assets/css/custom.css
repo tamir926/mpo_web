@@ -386,6 +386,8 @@ table.mpo_assessment *
 {
     border:1px solid #d9d9d9;
 }
+
+table.mpo_assessment td p {border: none !important;} 
 thead 
 {
     background: #d9d9d9;

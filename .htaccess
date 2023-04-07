@@ -92,6 +92,8 @@ RewriteRule ^assessment_climate?$ assessment_climate.php
 RewriteRule ^assessment_bc?$ assessment_bc.php
 RewriteRule ^assessment_dt_intro?$ assessment_dt_intro.php
 RewriteRule ^assessment_dt?$ assessment_dt.php
+RewriteRule ^assessment_mm?$ assessment_mm.php
+RewriteRule ^amm?$ amm.php
 
 
 RewriteRule ^journals?$ journals.php

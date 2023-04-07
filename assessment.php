@@ -18,6 +18,36 @@
                 <div class="row mt-3">
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="cause-items">
+                            <a href="assessment_mm"><img src="assets/images/mm.jpg" alt="cause-img-1" class="img-responsive" /></a>
+                            <div class="cause-content">
+                                <div class="price-title">
+                                    <div class="price-left">
+                                        <h5>Асуулт:<span>42 асуулт</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                    <div class="price-right">
+                                        <h5>Өгөгдөл:<span>35</span></h5>
+                                    </div>
+                                    <!-- .price-left -->
+                                </div>
+                                <!-- .price-title -->
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                                    </div>
+                                    <!-- .progress-bar -->
+                                </div>
+                                <!-- .progress -->
+                                <h4><a href="assessment_mm">ММ үнэлгээ</a></h4>
+                                <p>ММ-ийн одоогийн түвшний үнэлгээ: ДАВУУ ТАЛ БА САЙЖРУУЛАХ БОЛОМЖУУДЫН МАТРИЦ</p>
+                                <a href="assessment_mm" class="btn btn-default">Үнэлгээ</a>
+                            </div>
+                            <!-- .cause-content -->
+                        </div>
+                        <!-- .cause-items -->
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="cause-items">
                             <a href="assessment_dt_intro"><img src="assets/images/dt.jpg" alt="cause-img-1" class="img-responsive" /></a>
                             <div class="cause-content">
                                 <div class="price-title">
