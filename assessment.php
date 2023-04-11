@@ -129,7 +129,7 @@
                                 <!-- .progress -->
                                 <h4><a href="assessment_bt">Бизнесийн төгөлдөршил</a></h4>
                                 <p>Бизнесийн төгөлдөршлийн тасралтгүй сайжруулалтын үнэлгээ</p>
-                                <a href="assessment_bt" class="btn btn-default">Үнэлэх</a>
+                                <a href="assessment_bt_intro" class="btn btn-default">Үнэлэх</a>
                             </div>
                             <!-- .cause-content -->
                         </div>
