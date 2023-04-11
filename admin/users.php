@@ -86,13 +86,15 @@
                                                 <th>Нэр</th>
                                                 <th>Утас</th>
                                                 <th>Имэйл</th>
+                                                <th>Нэвтрэх нэр</th>
+                                                <th>Төрөл</th>
                                                 <th>Үйлдэл</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?
                                                 $count =0;
-                                                $sql = "SELECT *FROM users";
+                                                $sql = "SELECT *FROM users ORDER BY id DESC";
                                                 $result = mysqli_query($conn,$sql);
                                                 while ($data = mysqli_fetch_array($result))
                                                 {
@@ -102,6 +104,8 @@
                                                         <td><?=$data["name"];?></td>
                                                         <td><?=$data["tel"];?></td>
                                                         <td><?=$data["email"];?></td>
+                                                        <td><?=$data["username"];?></td>
+                                                        <td><?=($data["type"])?'Байгууллага':'Хувь хүн';?></td>
                                                         <td>
                                                             <a class="btn btn-success" href="users?action=edit&id=<?=$data["id"];?>">Засах</a>
                                                             <a class="btn btn-primary" href="users?action=detail&id=<?=$data["id"];?>">Дэлгэрэнгүй</a>
@@ -114,43 +118,7 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Modal to add new record -->
-                        <div class="modal modal-slide-in fade" id="modals-slide-in">
-                            <div class="modal-dialog sidebar-sm">
-                                <form class="add-new-record modal-content pt-0">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
-                                    <div class="modal-header mb-1">
-                                        <h5 class="modal-title" id="exampleModalLabel">New Record</h5>
-                                    </div>
-                                    <div class="modal-body flex-grow-1">
-                                        <div class="form-group">
-                                            <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
-                                            <input type="text" class="form-control dt-full-name" id="basic-icon-default-fullname" placeholder="John Doe" aria-label="John Doe" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label" for="basic-icon-default-post">Post</label>
-                                            <input type="text" id="basic-icon-default-post" class="form-control dt-post" placeholder="Web Developer" aria-label="Web Developer" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label" for="basic-icon-default-email">Email</label>
-                                            <input type="text" id="basic-icon-default-email" class="form-control dt-email" placeholder="john.doe@example.com" aria-label="john.doe@example.com" />
-                                            <small class="form-text text-muted"> You can use letters, numbers & periods </small>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-label" for="basic-icon-default-date">Joining Date</label>
-                                            <input type="text" class="form-control dt-date" id="basic-icon-default-date" placeholder="MM/DD/YYYY" aria-label="MM/DD/YYYY" />
-                                        </div>
-                                        <div class="form-group mb-4">
-                                            <label class="form-label" for="basic-icon-default-salary">Salary</label>
-                                            <input type="text" id="basic-icon-default-salary" class="form-control dt-salary" placeholder="$12000" aria-label="$12000" />
-                                        </div>
-                                        <button type="button" class="btn btn-primary data-submit mr-1">Submit</button>
-                                        <button type="reset" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                        </div>                      
                     </section>
                     <?
                 }
@@ -168,6 +136,7 @@
                         $user_name = $data["name"];
                         $user_tel = $data["tel"];
                         $user_email = $data["email"];
+                        $user_username = $data["username"];
                         $user_avatar = $data["avatar"];
                     }
                     ?>
@@ -188,29 +157,38 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="user"></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="name" value="<?=$user_name;?>" placeholder="Нэр..." required />
+                                                    <input type="text" class="form-control" name="name" value="<?=$user_name;?>" placeholder="Нэр" required />
                                                 </div>
 
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="phone"></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="tel" value="<?=$user_tel;?>" placeholder="Утас..." required/>
+                                                    <input type="text" class="form-control" name="tel" value="<?=$user_tel;?>" placeholder="Утас"/>
                                                 </div>
 
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="mail"></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="email" value="<?=$user_email;?>" placeholder="Имэйл..." required/>
+                                                    <input type="text" class="form-control" name="email" value="<?=$user_email;?>" placeholder="Имэйл"/>
+                                                </div>
+
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="lock"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="username" value="<?=$user_username;?>" placeholder="Нэвтрэх нэр" required/>
                                                 </div>
                                              
-                                                <div class="input-group mb-2">
+                                                <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather='database'></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="password" placeholder="Нууц үг..." />
+                                                    <input type="text" class="form-control" name="password" placeholder="Нууц үг" />
                                                 </div>
+                                                <label class="text-danger">Нууц үг солих бол оруулна уу</label>
+
 
                                         </div>
 
@@ -242,6 +220,9 @@
 
                         </form>
                     </section>
+
+                    <a class="btn btn-danger waves-effect waves-float waves-light mt-3" href="?action=delete&id=<?=$user_id;?>">Устгах</a>
+
                     <?
                 }
                 ?>
@@ -254,6 +235,7 @@
                     $name = $_POST["name"];
                     $tel = $_POST["tel"];
                     $email = $_POST["email"];
+                    $username = $_POST["username"];
                     $password = $_POST["password"];
                     if ($password<>"") 
                     {
@@ -285,7 +267,7 @@
                               }
                       }
 
-                    $sql = "UPDATE users SET name='$name',tel='$tel',email='$email' WHERE id='$user_id'";
+                    $sql = "UPDATE users SET name='$name',tel='$tel',email='$email',username='$username' WHERE id='$user_id'";
 
                     if (mysqli_query($conn,$sql))
                     {
@@ -335,28 +317,36 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="user"></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="name" placeholder="Нэр..." required />
+                                                    <input type="text" class="form-control" name="name" placeholder="Нэр" required />
                                                 </div>
 
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="phone"></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="tel" placeholder="Утас..." required/>
+                                                    <input type="text" class="form-control" name="tel" placeholder="Утас" required/>
                                                 </div>
 
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="mail"></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="email" placeholder="Имэйл..." required/>
+                                                    <input type="text" class="form-control" name="email" placeholder="Имэйл" required/>
                                                 </div>
+
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="lock"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="username" value="" placeholder="Нэвтрэх нэр" required/>
+                                                </div>
+
 
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather='database'></i></span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="password" placeholder="Нууц үг..." required />
+                                                    <input type="text" class="form-control" name="password" placeholder="Нууц үг" required />
                                                 </div>
 
                                         </div>
@@ -397,6 +387,7 @@
                     $name = $_POST["name"];
                     $tel = $_POST["tel"];
                     $email = $_POST["email"];
+                    $username = $_POST["username"];
                     $password = $_POST["password"]; 
                     $target_file ="";
                    
@@ -420,7 +411,7 @@
                               }
                       }
 
-                    $sql = "INSERT INTO users (name,tel,email,password,avatar) VALUES ('$name','$tel','$email','$password','$target_file')";
+                    $sql = "INSERT INTO users (name,tel,email,password,username,avatar) VALUES ('$name','$tel','$email','$password','$username','$target_file')";
 
                     if (mysqli_query($conn,$sql))
                     {
@@ -463,6 +454,7 @@
                         $user_name = $data["name"];
                         $user_tel = $data["tel"];
                         $user_email = $data["email"];
+                        $user_username = $data["username"];
                         $user_avatar = $data["avatar"];
 
                     }
@@ -500,6 +492,14 @@
                                                 <p class="card-text mb-0"><?=$user_email;?></p>
                                             </div>
 
+                                            <div class="d-flex flex-wrap">
+                                                <div class="user-info-title mr-3 w-10">
+                                                    <i data-feather="lock" class="mr-1"></i>
+                                                    <span class="card-text user-info-title font-weight-bold mb-0">Нэвтрэх нэр</span>
+                                                </div>
+                                                <p class="card-text mb-0"><?=$user_username;?></p>
+                                            </div>
+
                                             
                                         </div>
                                     </div>
@@ -522,6 +522,49 @@
                         <a class="btn btn-primary" href="users">Жагсаалт</a>
                     </section>
                     <?
+                }
+                ?>
+
+                <?
+                if ($action=="delete")
+                {
+                    $user_id = $_GET["id"];
+                    $sql = "SELECT *FROM users WHERE id='$user_id'";
+                    $result = mysqli_query($conn,$sql);
+                    if (mysqli_num_rows($result)==1)
+                    {
+                        $data = mysqli_fetch_array($result);
+                        
+                        $user_avatar = $data["avatar"];
+                        
+                        if (mysqli_query($conn,"DELETE FROM users WHERE id=$user_id")) 
+                        {
+                            if (file_exists("../".$user_avatar)) unlink("../".$user_avatar);
+
+                            ?>
+                            <div class="alert alert-success" role="alert">
+                                <div class="alert-body"><strong>Устгагдлаа </strong> </div>
+                            </div>
+                            <?
+                        }
+                        else 
+                        {
+                            ?>
+                            <div class="alert alert-danger" role="alert">
+                                <div class="alert-body"><strong>Алдаа гарлаа </strong> <?=mysqli_error($conn);?></div>
+                            </div>
+                            <?
+                        }                   
+
+                    }
+                   else 
+                   {
+                    ?>
+                        <div class="alert alert-danger" role="alert">
+                            <div class="alert-body"><strong>Гишүүн олдсонгүй </strong> <?=mysqli_error($conn);?></div>
+                        </div>
+                    <?
+                   }
                 }
                 ?>
 
