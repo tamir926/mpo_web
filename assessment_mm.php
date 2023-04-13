@@ -81,7 +81,7 @@
                                 }
 
                                 $sql = "SELECT id FROM assessment_mm WHERE member_id='$g_logged_id'";
-                                mysqli_query($conn,$sql);
+                                $result = mysqli_query($conn,$sql);
                                 $total = mysqli_num_rows($result);
 
                                 ?>
