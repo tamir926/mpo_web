@@ -35,4 +35,5 @@ RewriteRule ^courses?$ courses.php
 RewriteRule ^magazine?$ magazine.php
 RewriteRule ^books?$ books.php
 RewriteRule ^awards?$ awards.php
+RewriteRule ^candidates?$ candidates.php
 

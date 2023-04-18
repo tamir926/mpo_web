@@ -62,9 +62,9 @@
                         <div class="dropdown">
                             <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="grid"></i></button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="courses?action=new"><i class="mr-1" data-feather="plus-square"></i><span class="align-middle">Шинэ мэдээ</span></a>
-                                <a class="dropdown-item" href="courses?action=category_new"><i class="mr-1" data-feather="plus-square"></i><span class="align-middle">Шинэ ангилал</span></a>
-                                <a class="dropdown-item" href="courses?action=category"><i class="mr-1" data-feather="plus-square"></i><span class="align-middle">Ангилал</span></a>
+                                <a class="dropdown-item" href="?action=new"><i class="mr-1" data-feather="plus-square"></i><span class="align-middle">Шинэ сургалт</span></a>
+                                <a class="dropdown-item" href="?action=category_new"><i class="mr-1" data-feather="plus-square"></i><span class="align-middle">Шинэ ангилал</span></a>
+                                <a class="dropdown-item" href="?action=category"><i class="mr-1" data-feather="plus-square"></i><span class="align-middle">Ангилал</span></a>
                             </div>
                         </div>
                     </div>
@@ -81,64 +81,70 @@
                             
                                 $sql = "SELECT * FROM courses ORDER BY timestamp DESC";
                           
-                            $result = mysqli_query($conn,$sql);
-                            while ($data = mysqli_fetch_array($result))
-                            {
-                                $courses_id = $data["id"];
-                                $courses_title = $data["title"];
-                                $courses_brief = $data["brief"];
-                                $courses_content = $data["content"];
-                                $courses_image = $data["image"];
-                                $courses_timestamp = $data["timestamp"];
-                                $courses_duration = $data["duration"];
-                                $courses_participants = $data["participants"];
-                               
-                                ?>
-                                <div class="col-md-6 col-12">
-                                    <div class="card">
-                                        <a href="courses?action=detail&id=<?=$courses_id;?>">
-                                            <img class="card-img-top img-fluid" src="../<?=$courses_image;?>" alt="<?=$courses_title;?>" />
-                                        </a>
-                                        <div class="card-body">
-                                            <h4 class="card-title">
-                                                <a href="courses?action=detail&id=<?=$courses_id;?>" class="blog-title-truncate text-body-heading"><?=$courses_title;?></a>
-                                            </h4>
-                                            <div class="media">
-                                                <div class="avatar mr-50">
-                                                    <img src="../<?=$admin_avatar;?>" alt="Avatar" width="24" height="24" />
+                                $result = mysqli_query($conn,$sql);
+                                while ($data = mysqli_fetch_array($result))
+                                {
+                                    $courses_id = $data["id"];
+                                    $courses_title = $data["title"];
+                                    $courses_brief = $data["brief"];
+                                    $courses_content = $data["content"];
+                                    $courses_image = $data["image"];
+                                    $courses_timestamp = $data["timestamp"];
+                                    $courses_duration = $data["duration"];
+                                    $courses_date = $data["date"];
+                                    $courses_participants = $data["participants"];
+                                
+                                    ?>
+                                    <div class="col-md-6 col-12">
+                                        <div class="card">
+                                            <a href="?action=detail&id=<?=$courses_id;?>">
+                                                <img class="card-img-top img-fluid" src="../<?=$courses_image;?>" alt="<?=$courses_title;?>" />
+                                            </a>
+                                            <div class="card-body">
+                                                <h4 class="card-title">
+                                                    <a href="?action=detail&id=<?=$courses_id;?>" class="blog-title-truncate text-body-heading"><?=$courses_title;?></a>
+                                                </h4>
+                                                <div class="media">
+                                                    <div class="avatar mr-50">
+                                                        <img src="../<?=$admin_avatar;?>" alt="Avatar" width="24" height="24" />
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <small class="text-muted mr-25">Оруулсан: </small>
+                                                        <small><?=$admin_name;?></small>
+                                                        <span class="text-muted ml-50 mr-25">|</span>
+                                                        <small class="text-muted"><?=substr($courses_timestamp,0,10);?></small>
+                                                    </div>
                                                 </div>
-                                                <div class="media-body">
-                                                    <small class="text-muted mr-25">Оруулсан: </small>
-                                                    <small><?=$admin_name;?></small>
-                                                    <span class="text-muted ml-50 mr-25">|</span>
-                                                    <small class="text-muted"><?=substr($courses_timestamp,0,10);?></small>
-                                                </div>
-                                            </div>
-                                            
-                                            <p class="card-text blog-content-truncate mt-2">
-                                                <?=$courses_brief;?>
-                                            </p>
-                                            <hr />
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="d-flex align-items-center">
-                                                    <i data-feather="users" class="font-medium-1 text-body mr-50"></i>
-                                                    <span class="text-body font-weight-bold"><?=$courses_participants;?>хүн</span>
-                                                </div>
+                                                
+                                                <p class="card-text blog-content-truncate mt-2">
+                                                    <?=$courses_brief;?>
+                                                </p>
+                                                <hr />
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="d-flex align-items-center">
+                                                        <i data-feather="users" class="font-medium-1 text-body mr-50"></i>
+                                                        <span class="text-body font-weight-bold"><?=$courses_participants;?>хүн</span>
+                                                    </div>
 
-                                                <div class="d-flex align-items-center">
-                                                    <i data-feather="watch" class="font-medium-1 text-body mr-50"></i>
-                                                    <span class="text-body font-weight-bold"><?=$courses_duration;?>ц</span>
+                                                    <div class="d-flex align-items-center">
+                                                        <i data-feather="watch" class="font-medium-1 text-body mr-50"></i>
+                                                        <span class="text-body font-weight-bold"><?=$courses_duration;?>ц</span>
+                                                    </div>
+
+                                                    <div class="d-flex align-items-center">
+                                                        <i data-feather="calendar" class="font-medium-1 text-body mr-50"></i>
+                                                        <span class="text-body font-weight-bold"><?=$courses_date;?></span>
+                                                    </div>
+
+                                                    <a href="?action=edit&id=<?=$courses_id;?>" class="font-weight-bold">Засах</a>
+
+                                                    <a href="?action=detail&id=<?=$courses_id;?>" class="font-weight-bold">Дэлгэрэнгүй</a>
                                                 </div>
-
-                                                <a href="courses?action=edit&id=<?=$courses_id;?>" class="font-weight-bold">Засах</a>
-
-                                                <a href="courses?action=detail&id=<?=$courses_id;?>" class="font-weight-bold">Дэлгэрэнгүй</a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <?
-                            }
+                                    <?
+                                }
                             ?>
                         </div>
                     </section>
@@ -202,8 +208,8 @@
                                     </div>
                                 </div>
                                 <div class="btn-group">
-                                    <a href="courses?action=edit&id=<?=$courses_id;?>" class="btn btn-success">Засах</a>
-                                    <a href="courses?action=grid" class="btn btn-primary">Жагсаалт</a>
+                                    <a href="?action=edit&id=<?=$courses_id;?>" class="btn btn-success">Засах</a>
+                                    <a href="?action=grid" class="btn btn-primary">Жагсаалт</a>
                                 </div>
                                 <?
                             }
@@ -238,12 +244,14 @@
                         $courses_visited = $data["visited"];
                         $courses_participants = $data["participants"];
                         $courses_duration = $data["duration"];
+                        $courses_date = $data["date"];
+
 
                        
 
                         ?>
                         <section id="input-group-basic">
-                            <form action="courses?action=editing" method="post" enctype="multipart/form-data">
+                            <form action="?action=editing" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <!-- Basic -->
                                     <div class="col-md-6">
@@ -254,6 +262,7 @@
                                             <div class="card-body">
                                                 <input type="hidden" name="courses_id" value="<?=$courses_id;?>">
 
+                                                <label class="form-label">Сургалтын нэр</label>
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="home"></i></span>
@@ -261,6 +270,7 @@
                                                     <input type="text" class="form-control" name="title" value="<?=$courses_title;?>" placeholder="Нэр..." />
                                                 </div>
 
+                                                <label class="form-label">Ангилал</label>
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="tag"></i></span>
@@ -279,7 +289,7 @@
                                                     </select>
                                                 </div>
 
-
+                                                <label class="form-label">Товч танилцуулга</label>
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="pause"></i></span>
@@ -287,6 +297,7 @@
                                                     <textarea class="form-control"  name="brief" placeholder="Товчхон"><?=$courses_brief;?></textarea>
                                                 </div>
 
+                                                <label class="form-label">Оролцогч</label>
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="users"></i></span>
@@ -294,11 +305,20 @@
                                                     <input type="number" class="form-control" name="participants" placeholder="Оролцогч" value="<?=$courses_participants;?>" />
                                                 </div>
 
+                                                <label class="form-label">Үргэлжлэх хугацаа</label>
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text" id="basic-addon-search1"><i data-feather="watch"></i></span>
                                                     </div>
                                                     <input type="number" class="form-control" name="duration" placeholder="Үргэлжлэх хугацаа" value="<?=$courses_duration;?>" />
+                                                </div>
+
+                                                <label class="form-label">Хэзээ</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="calendar"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="date" placeholder="хэзээ" value="<?=$courses_date;?>" />
                                                 </div>
                                                 
 
@@ -307,7 +327,7 @@
                                             </div>
 
                                         </div>
-                                        <a href="courses?action=delete&id=<?=$courses_id;?>" class="btn btn-danger">Устгах</a>
+                                        <a href="?action=delete&id=<?=$courses_id;?>" class="btn btn-danger">Устгах</a>
 
                                     </div>
 
@@ -322,14 +342,17 @@
                                                 if ($courses_image<>"")
                                                 {
                                                     ?>
-                                                    <img src="../<?=$courses_image;?>" style="max-width:100%;">
+                                                    <div class="d-flex">
+                                                        <img src="../<?=$courses_image;?>" style="max-width:100%;">
+                                                    </div>
                                                     <?
-                                                    
                                                 }
                                                 ?>
-                                                <input type="file" class="form-control" name="image"/>
+                                                <label class="form-label">Зураг</label>
+                                                <input type="file" class="form-control mb-3" name="image"/>
 
-                                                <div class="input-group mt-2 mb-2">
+                                                <label class="form-label">Дэлгэрэнгүй</label>
+                                                <div class="input-group mb-2">
                                                     <textarea class="form-control"  name="content" id="editor"><?=$courses_content;?></textarea>
                                                 </div>
 
@@ -348,7 +371,7 @@
                         </section>
                     <?
                     }
-                    else header("location:courses?action=grid");
+                    else header("location:?action=grid");
                 }
                 ?>
 
@@ -362,6 +385,7 @@
                     $content = $_POST["content"];
                     $participants = $_POST["participants"];
                     $duration = $_POST["duration"];
+                    $date = $_POST["date"];
 
                     if(isset($_FILES['image']) && $_FILES['image']['name']!="")
                     {
@@ -386,7 +410,8 @@
                     brief='$brief',
                     content='$content',
                     participants='$participants',
-                    duration='$duration' 
+                    duration='$duration', 
+                    date='$date' 
                     WHERE id='$courses_id'";
 
 
@@ -411,9 +436,9 @@
                         <?
                     }
                     ?>
-                    <a class="btn btn-success" href="courses?action=edit&id=<?=$courses_id;?>">Засах</a>
-                    <a class="btn btn-primary" href="courses?action=detail&id=<?=$courses_id;?>">Дэлгэрэнгүй</a>
-                    <a class="btn btn-primary" href="courses">Бүх сургалт</a>
+                    <a class="btn btn-success" href="?action=edit&id=<?=$courses_id;?>">Засах</a>
+                    <a class="btn btn-primary" href="?action=detail&id=<?=$courses_id;?>">Дэлгэрэнгүй</a>
+                    <a class="btn btn-primary" href="?action=grid">Бүх сургалт</a>
                     <?
                     
                 }
@@ -422,100 +447,113 @@
                 <?
                 if ($action=="new")
                 {
-                    ?>
-                    <section id="input-group-basic">
-                        <form action="courses?action=adding" method="post" enctype="multipart/form-data">
-                            <div class="row">
-                                <!-- Basic -->
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4 class="card-title">Үндсэн мэдээлэл</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="input-group mb-2">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="home"></i></span>
-                                                </div>
-                                                <input type="text" class="form-control" name="title" placeholder="Нэр..." />
+                        ?>
+                        <section id="input-group-basic">
+                            <form action="?action=adding" method="post" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Үндсэн мэдээлэл</h4>
                                             </div>
+                                            <div class="card-body">
 
-                                            <div class="input-group mb-2">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="tag"></i></span>
+                                                <label class="form-label">Сургалтын нэр</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="home"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="title" value="" placeholder="Нэр..." />
                                                 </div>
-                                                <select class="form-control" name="category">
-                                                    <?
-                                                    $sql = "SELECT *FROM courses_category ORDER BY dd";
-                                                    $result= mysqli_query($conn,$sql);
-                                                    while ($data = mysqli_fetch_array($result))
-                                                    {
-                                                        ?>
-                                                        <option value="<?=$data["id"];?>"><?=$data["name"];?></option>
+
+                                                <label class="form-label">Ангилал</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="tag"></i></span>
+                                                    </div>
+                                                    <select class="form-control" name="category">
                                                         <?
-                                                    }
-                                                    ?>
-                                                </select>
-                                            </div>
-
-
-
-
-                                            <div class="input-group mb-2">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="pause"></i></span>
+                                                        $sql = "SELECT *FROM courses_category ORDER BY dd";
+                                                        $result= mysqli_query($conn,$sql);
+                                                        while ($data = mysqli_fetch_array($result))
+                                                        {
+                                                            ?>
+                                                            <option value="<?=$data["id"];?>"><?=$data["name"];?></option>
+                                                            <?
+                                                        }
+                                                        ?>
+                                                    </select>
                                                 </div>
-                                                <textarea class="form-control"  name="brief" placeholder="Товчхон"></textarea>
-                                            </div>
 
-                                            <div class="input-group mb-2">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="users"></i></span>
+                                                <label class="form-label">Товч танилцуулга</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="pause"></i></span>
+                                                    </div>
+                                                    <textarea class="form-control"  name="brief" placeholder="Товчхон"></textarea>
                                                 </div>
-                                                <input type="number" class="form-control" name="participants" placeholder="Оролцогч" />
-                                            </div>
 
-                                            <div class="input-group mb-2">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="basic-addon-search1"><i data-feather="watch"></i></span>
+                                                <label class="form-label">Оролцогч</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="users"></i></span>
+                                                    </div>
+                                                    <input type="number" class="form-control" name="participants" placeholder="Оролцогч" value="" />
                                                 </div>
-                                                <input type="number" class="form-control" name="duration" placeholder="Үргэлжлэх хугацаа" />
-                                            </div>
 
-                                            <input type="submit" class="btn btn-success waves-effect waves-float waves-light mt-1" value="Үүсгэх">
+                                                <label class="form-label">Үргэлжлэх хугацаа</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="watch"></i></span>
+                                                    </div>
+                                                    <input type="number" class="form-control" name="duration" placeholder="Үргэлжлэх хугацаа" value="" />
+                                                </div>
+
+                                                <label class="form-label">Хэзээ</label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon-search1"><i data-feather="calendar"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="date" placeholder="хэзээ" value="" />
+                                                </div>
+                                                
+
+                                                <input type="submit" class="btn btn-success waves-effect waves-float waves-light mt-1" value="Хадгалах">
+
+                                            </div>
 
                                         </div>
-
                                     </div>
-                                </div>
 
-                                <!-- Merged -->
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4 class="card-title">Зураг</h4>
-                                        </div>
-                                        <div class="card-body">
-                                           
-                                            <input type="file" class="form-control" name="image"/>
+                                    <!-- Merged -->
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Зураг</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <label class="form-label">Зураг</label>
+                                                <input type="file" class="form-control mb-3" name="image"/>
 
-                                            <div class="input-group mt-2 mb-2">
-                                                <textarea class="form-control"  name="content"  id="editor"></textarea>
+                                                <label class="form-label">Дэлгэрэнгүй</label>
+                                                <div class="input-group mb-2">
+                                                    <textarea class="form-control"  name="content" id="editor"></textarea>
+                                                </div>
+
+                                                
                                             </div>
 
-                                            
+                                        
                                         </div>
-
-                                    
                                     </div>
-                                </div>
 
-                            
-                            
-                            </div>
-                        </form>
-                    </section>
-                    <?
+                                
+                                
+                                </div>
+                            </form>
+
+                        </section>
+                    <?                    
                 }
                 ?>
 
@@ -528,7 +566,8 @@
                     $content = $_POST["content"];
                     $participants = $_POST["participants"];
                     $duration = $_POST["duration"];
-
+                    $date = $_POST["date"];
+                    $image = "";
 
                     if(isset($_FILES['image']) && $_FILES['image']['name']!="")
                     {
@@ -543,7 +582,7 @@
                                 $image= substr($target_file,3);        
                             }
                     }
-                    $sql = "INSERT INTO courses (title,brief,content,image,participants,duration)  VALUES ('$title','$brief','$content','$image','$participants','$duration')";
+                    $sql = "INSERT INTO courses (title,brief,content,image,participants,duration,date)  VALUES ('$title','$brief','$content','$image','$participants','$duration','$date')";
 
                     if (mysqli_query($conn,$sql))
                     {
@@ -567,9 +606,9 @@
                         <?
                     }
                     ?>
-                    <a class="btn btn-success" href="courses?action=edit&id=<?=$courses_id;?>">Засах</a>
-                    <a class="btn btn-primary" href="courses?action=detail&id=<?=$courses_id;?>">Дэлгэрэнгүй</a>
-                    <a class="btn btn-primary" href="courses">Жагсаалт</a>
+                    <a class="btn btn-success" href="?action=edit&id=<?=$courses_id;?>">Засах</a>
+                    <a class="btn btn-primary" href="?action=detail&id=<?=$courses_id;?>">Дэлгэрэнгүй</a>
+                    <a class="btn btn-primary" href="?action=grid">Жагсаалт</a>
                     <?
                     
                 }
@@ -596,6 +635,7 @@
     
                         if (mysqli_query($conn,$sql))
                         {
+                            if ($courses_image<>"")
                             if(file_exists('../'.$courses_image))
                             unlink('../'.$courses_image);
 
@@ -618,10 +658,10 @@
                             <?
                         }
                         ?>
-                        <a class="btn btn-primary" href="courses">Бүх сургалт</a>
+                        <a class="btn btn-primary" href="?action=grid">Бүх сургалт</a>
                         <?
                     }
-                    else header("location:courses?action=grid");
+                    else header("location:?action=grid");
                 }
                 ?>
 
@@ -654,7 +694,7 @@
                                                         <td><?=++$count;?></td>
                                                         <td><?=$data["name"];?></td>
                                                         <td>
-                                                            <a class="btn btn-success" href="courses?action=category_edit&id=<?=$data["id"];?>">Засах</a>
+                                                            <a class="btn btn-success" href="?action=category_edit&id=<?=$data["id"];?>">Засах</a>
                                                         </td>
                                                     </tr>
                                                     <?
@@ -684,7 +724,7 @@
                     }
                     ?>
                     <section id="input-group-basic">
-                        <form action="courses?action=category_editing" method="post" enctype="multipart/form-data">
+                        <form action="?action=category_editing" method="post" enctype="multipart/form-data">
                             <div class="row">
                             
                                 <!-- Basic -->
@@ -722,6 +762,8 @@
 
                         </form>
                     </section>
+
+                    <a class="btn btn-danger waves-effect waves-float waves-light" href="?action=category_delete&id=<?=$courses_category_id;?>">Устгах</a>
                     <?
                 }
                 ?>
@@ -758,8 +800,8 @@
                         <?
                     }
                     ?>
-                    <a class="btn btn-success" href="courses?action=category_edit&id=<?=$courses_category_id;?>">Засах</a>
-                    <a class="btn btn-primary" href="courses?action=category">Жагсаалт</a>
+                    <a class="btn btn-success" href="?action=category_edit&id=<?=$courses_category_id;?>">Засах</a>
+                    <a class="btn btn-primary" href="?action=category">Жагсаалт</a>
                     <?
                     
                 }
@@ -770,7 +812,7 @@
                 {
                     ?>
                     <section id="input-group-basic">
-                        <form action="courses?action=category_adding" method="post" enctype="multipart/form-data">
+                        <form action="?action=category_adding" method="post" enctype="multipart/form-data">
                             <div class="row">
                             
                                 <!-- Basic -->
@@ -843,9 +885,53 @@
                         <?
                     }
                     ?>
-                    <a class="btn btn-success" href="courses?action=category_edit&id=<?=$courses_category_id;?>">Засах</a>
-                    <a class="btn btn-primary" href="courses?action=category">Жагсаалт</a>
+                    <a class="btn btn-success" href="?action=category_edit&id=<?=$courses_category_id;?>">Засах</a>
+                    <a class="btn btn-primary" href="?action=category">Жагсаалт</a>
                     <?
+                }
+                ?>
+
+                <?
+                if ($action=="category_delete")
+                {
+                    $courses_category_id = $_GET["id"];
+                    $sql = "SELECT *FROM courses_category WHERE id='$courses_category_id'";
+                    $result = mysqli_query($conn,$sql);
+                    if (mysqli_num_rows($result)==1)
+                    {
+                        $data = mysqli_fetch_array($result);
+                        $image = $data["image"];
+                        $dd = $data["dd"];
+
+                        $sql = "DELETE FROM courses_category WHERE id='$courses_category_id'";
+
+                        if (mysqli_query($conn,$sql))
+                        {
+                            if (file_exists('../'.$image)) unlink('../'.$image);
+                            ?>
+                            <div class="alert alert-success" role="alert">
+                                <div class="alert-body">
+                                Амжилттай устгалаа
+                                </div>
+                            </div>
+                            <?
+                        }
+                        else 
+                        {
+                            ?>
+                            <div class="alert alert-danger" role="alert">
+                                <div class="alert-body">
+                                Алдаа гарлаа. <?=mysqli_error($conn);?>
+                                </div>
+                            </div>
+                            <?
+                        }
+                        ?>
+                        <a class="btn btn-primary" href="?action=category">Жагсаалт</a>
+                        <?
+
+                        
+                    }
                 }
                 ?>
 

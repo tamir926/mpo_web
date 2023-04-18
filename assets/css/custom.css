@@ -435,3 +435,50 @@ a.mpo_a:hover {color:#FAA61A;}
 .assesstment_intro {}
 .assesstment_intro *{ text-align: justify !important;}
 .assesstment_intro a {color: #FAA61A; font-weight: bold;}
+
+
+.training-form {
+    border: 1px solid #999999;
+    padding: 20px;
+    background-color: #eeeeee;
+}
+
+.training-form .form-control{
+	height: 50px;
+	border: 1px solid #f0f0f0;
+	border-radius: 0;
+	box-shadow: none;
+	padding-left: 25px;
+	/* width: 200px; */
+	/* margin-bottom: 30px; */
+}
+.training-form input[type="text"]:focus, 
+.training-form input[type="email"]:focus, 
+.training-form input[type="url"]:focus, 
+.training-form input[type="password"]:focus, 
+.training-form input[type="search"]:focus, 
+.training-form input[type="tel"]:focus, 
+.training-form input[type="number"]:focus, 
+.training-form textarea:focus{
+	border: 1px solid #53a92c;
+}
+.text-area{
+	height: 150px!important;
+	border-radius: none;
+	padding-top: 20px;
+}
+.training-form .btn-default{
+	background: #65ac4c;
+	color: #fff;
+	padding: 13px 27px;
+}
+.training-form .btn-default:before, 
+.training-form .btn-default:after{
+	background: #fff;
+}
+.training-form .btn-default:hover, 
+.training-form .btn-default:focus, 
+.training-form .btn-default.focus, 
+.training-form .btn-default:active{
+	color: #53a92c;
+}
