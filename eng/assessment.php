@@ -1,4 +1,4 @@
-<? require_once("config.php");?>
+<? require_once("../config.php");?>
 <? require_once("views/login_check.php");?>
 <? require_once("views/helper.php");?>
 <? require_once("views/init.php");?>
@@ -351,21 +351,21 @@
 
 
 
-    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
-    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
-    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="assets/js/lightcase.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/custom.map.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="../assets/js/swiper.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plugins.isotope.js"></script>
+    <script type="text/javascript" src="../assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="../assets/js/lightcase.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.nstSlider.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.isotope.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.map.js"></script>
 
-    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.js"></script>
 
 
 </body>

@@ -1,4 +1,4 @@
-<? require_once("config.php");?>
+<? require_once("../config.php");?>
 <? require_once("views/helper.php");?>
 <? require_once("views/init.php");?>
 
@@ -8,7 +8,7 @@
 
         <div class="submenu">
             <div class="container d-flex justify-content-between">
-                <h3 class="text-black">Сургалт</h3>
+                <h3 class="text-black">Training</h3>
                 <ul class="submenu-ul">
                     <?
                     $sql = "SELECT *FROM courses_category";
@@ -20,7 +20,7 @@
                         <?
                     }
                     ?>                    
-                    <li><a href="experts">Мэргэжилтнүүд</a></li>
+                    <li><a href="experts">Experts</a></li>
                 </ul>
             </div>
           
@@ -68,13 +68,13 @@
                                         <div class="event<?=($category_id>1)?$category_id:'';?>-img wrapper-img">
                                             <a href="#"><img src="<?=$courses["image"];?>" alt="upcoming-events-img-1" class="img-responsive" /></a>
                                             <div class="date-box">
-                                                <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> <?=$courses["duration"];?>h / <i class="fa fa-user" aria-hidden="true"></i> <?=$courses["participants"];?> хүмүүс</h5>
+                                                <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> <?=$courses["duration"];?>h / <i class="fa fa-user" aria-hidden="true"></i> <?=$courses["participants"];?> people</h5>
                                             </div>
                                         </div>
                                         <div class="events-content">
                                             <h3><a href="#" data-bs-toggle="modal" data-bs-target="#modal_id_<?=$courses["id"];?>"><?=$courses["title"];?></a></h3>
                                             <p><?=$courses["brief"];?></p>
-                                            <a href="#" class="btn btn-success btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#modal_id_<?=$courses["id"];?>">Дэлгэрэнгүй мэдээлэл</a>
+                                            <a href="#" class="btn btn-success btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#modal_id_<?=$courses["id"];?>">Details</a>
                                         </div>
                                     </div>
                                     
@@ -89,7 +89,7 @@
                                                 <?=$courses["content"];?>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Хаах</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             </div>
                                             </div>
                                         </div>
@@ -131,19 +131,19 @@
     <!-- End Pre-Loader -->
 
 
-    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-2.2.3.min.js"></script>
     <!-- <script type="text/javascript" src="assets/js/bootstrap.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
-    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
-    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="assets/js/lightcase.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/custom.map.js"></script>
-    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>    <script type="text/javascript" src="../assets/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="../assets/js/swiper.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plugins.isotope.js"></script>
+    <script type="text/javascript" src="../assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="../assets/js/lightcase.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.nstSlider.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.isotope.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.map.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.js"></script>
 
 
 </body>

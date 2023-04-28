@@ -13,7 +13,7 @@
                                         </li>
                                         <li>
                                             <div class="h-adress-content">
-                                                <h6><a href="assessment">E-Бүтээмж</a></h6>
+                                                <h6><a href="assessment">E-Productivity</a></h6>
                                             </div>
                                             <!-- .h-adress-content -->
                                         </li>
@@ -23,7 +23,7 @@
 
                             <div class="col-lg-2 col-12">
                                 <div class="d-flex flex-wrap justify-content-between">
-                                    <a href="index"><img src="assets/images/logo_org.png" alt="Монголын Бүтээмжийн Төв 30 жил" class="img-responsive" /></a>
+                                    <a href="index"><img src="../assets/images/logo_org.png" alt="Productivity Center of Mongolia" class="img-responsive" /></a>
                                     <button type="button" class="navbar-toggler collapsed d-lg-none" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false">
                                         <span class="navbar-toggler-icon">
                                             <i class="fa fa-bars"></i>
@@ -37,13 +37,13 @@
                                     <ul class="header-contact">
                                         <li>
                                             <div class="h-adress-content">                                                
-                                                <h6><i class="fa fa-search first_click"></i> Хайлт</h6>
+                                                <h6><i class="fa fa-search first_click"></i> Search</h6>
                                             </div>
                                             <!-- .h-adress-content -->
                                         </li>
                                         <li>
                                             <div class="h-adress-content">
-                                                <h6><a href="dashboard">Гишүүнчлэл</a></h6>
+                                                <h6><a href="dashboard">Membership</a></h6>
                                             </div>
                                             <!-- .h-adress-content -->
                                         </li>
@@ -65,14 +65,14 @@
                                 <div class="main-menu-area">
                                     <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
                                         <ul>
-                                            <li><a href="training" class="active">Сургалт</a></li>
-                                            <li><a href="projects">Төсөл</a></li>
-                                            <li><a href="events">Арга хэмжээ</a></li>
-                                            <li><a href="knowledge">Мэдлэгийн сан</a></li>
-                                            <li><a href="cases">Туршлага</a></li>
-                                            <li><a href="abb" target="new">АББ</a></li>
-                                            <li><a href="awards">Шагнал</a></li>
-                                            <li><a href="eng/index">Eng</a></li>
+                                            <li><a href="training" class="active">Training</a></li>
+                                            <li><a href="projects">Project</a></li>
+                                            <li><a href="events">Measures</a></li>
+                                            <li><a href="knowledge">Knowledge base</a></li>
+                                            <li><a href="cases">Experience</a></li>
+                                            <li><a href="abb" target="new">APO</a></li>
+                                            <li><a href="awards">Reward</a></li>
+                                            <li><a href="../">Монгол</a></li>
                                         </ul>                                       
                                     </div>
                                 </div>

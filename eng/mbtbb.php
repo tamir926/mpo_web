@@ -1,4 +1,4 @@
-<? require_once("config.php");?>
+<? require_once("../config.php");?>
 <? require_once("views/helper.php");?>
 <? require_once("views/init.php");?>
 <body>
@@ -20,10 +20,10 @@
                         <p class="text-justify"><?=$page["content"];?></p>
 
                         <div class="pt-50">
-                            <a class="btn btn-warning" href="assets/images/mbbtb_structure.png" data-rel="lightcase:myCollection">БҮТЭЦ</a>
-                            <a class="btn btn-warning" href="assets/images/brochure1.jpg" data-rel="lightcase:brochure" >БРОШУР</a>
+                            <a class="btn btn-warning" href="assets/images/mbbtb_structure.png" data-rel="lightcase:myCollection">Structure</a>
+                            <a class="btn btn-warning" href="assets/images/brochure1.jpg" data-rel="lightcase:brochure" >Brochure</a>
                             <a href="assets/images/brochure2.jpg" data-rel="lightcase:brochure"></a>
-                            <a href="assets/images/uz.png" data-rel="lightcase:uz" class="btn btn-warning">УДИРДАХ ЗӨВЛӨЛ</a>
+                            <a href="assets/images/uz.png" data-rel="lightcase:uz" class="btn btn-warning">Management Board</a>
                         </div>
                     </div>
                 </div>
@@ -37,20 +37,20 @@
             <div class="container text-center pt-50 pb-50">
                 <div class="row">
                     <div class="col-lg-4 mx-auto">
-                        <h4 class="text-black">Хөтөлбөрийн зорилго</h4>
-                        <p>а. Бүтээмж дээшлүүлэх шийдэл, сайжруулалтын төсөл хэрэгжүүлэх чиглэлээр мэргэшсэн хүний чадамжийг баталгаажуулах</p>
-                        <p>б. Сургалтын хөтөлбөр, зохицуулалт, чиглүүлэг, зөвлөх үйлчилгээ үзүүлэх замаар  бүтээмжийг сайжруулах асуудлыг шийдвэрлэх мэргэшлийн мэдлэг/ мэдээллийг үйлдвэр, байгууллагад дамжуулан түгээх</p>
+                        <h4 class="text-black">Projects Purpose</h4>
+                        <p>а. Certificaion the completency of an expert in implementing productivity improve solution and impovement projects</p>
+                        <p>б. Dissenubation of soecialized knowledge/informat ion though factories and orgazanions to solve productivity improvement problems by providing training programs, coordination, guidance, and consulting services</p>
                     </div>
                     <div class="col-lg-4  mx-auto">
-                        <h4 class="text-black">Ач холбогдол</h4>
-                        <p>Шаардлагыг хангасан хувь хүнд бүтээмжийн мэргэжилтний түвшин, шатлалын дагуу мэргэшсэн түвшинг хүлээн зөвшөөрч “Баталгаажсан бүтээмжийн мэргэжилтэн”-ий гэрчилгээ олгох ба мэргэжлийн болон бизнесийн хэтийн төлөвийг сайжруулах, бусад бүтээмжийн мэргэжилтнүүдтэй холбоо тогтоох, АББ-ын олон улсын төсөлд хамрагдах боломж зэрэг давуу талтай. Түүнчлэн баталгаажсан БМ нь ҮБТ-ийн ижил төстэй итгэмжлэлийн тогтолцоотой гишүүн орнуудад хүлээн зөвшөөрөгдөх болно. Баталгаажсан БМ нь МБТББ-ийн  лавлагаа болон АББ портал дээр дэлхийн түвшний бүтээмжийн мэргэжилтнээр бүртгүүлэх болно.</p>
+                        <h4 class="text-black">Signifation</h4>
+                        <p>Individuals who meet the requirements will be awarded the certificate of "Certified Productivity Specialist" in accordance with the level and hierarchy og the productivity specialist, and will have the opportunity to improve their professional and bussiness prospects, connect with other productivity specialist , and participate in international projects of APO. In addition , certified PS will be recognized in member states with similar acceditation system of thw NPT. A ceritified PS will be registered as a word-class productivity professional on the MPOCB directory and the APO portal.</p>
                     </div>
                     <div class="col-lg-4  mx-auto">
-                        <h4 class="text-black text-left">Баталгаажуулалтын төрөл</h4>
-                        <p>МБТББ-ын хариуцаж хэрэгжүүлдэг Бүтээмжийн мэргэжилтний баталгаажуулах тогтолцооны гурван түвшин байна. Үүнд:</p>
-                            <p>1.  АББ-ын баталгаажсан бүтээмжийн мэргэжилтэн</p>
-                            <p>2.  АББ-ын баталгаажсан бүтээмжийн ахлах мэргэжилтэн</p>
-                            <p>3.  АББ-ын баталгаажсан мастер бүтээмжийн мэргэжилтэн</p>
+                        <h4 class="text-black text-left">Type Of Certification</h4>
+                        <p>MPOCB provides responsible Productivity Specialist Certification of Scheme on the 3 level: </p>
+                            <p>1.  Certified Productivity Specialist attested of the APO</p>
+                            <p>2.  Certified Senior Productivity Specialist attested of APO</p>
+                            <p>3.  Certified Master Productivity Specialist</p>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
         <div class="container mt-20">
             <section id="content" class="pb-200 text-center">
                     <div class="content-info pb-200">
-                            <h4 class="fw-100">Хэрхэн баталгаажуулалтын мэргэжилтэн болох вэ?</h4>
+                            <h4 class="fw-100">How to become a Certification Professional?</h4>
                             <div class="banner-btn">
 								<div class="video-btn">
 									<a href="https://www.youtube.com/embed/P7egbt4gYKw" data-rel="lightcase" title="Watch Now" class="video-icon">
@@ -77,18 +77,19 @@
                     <div class="container gray-bg pt-100 pb-100 jambotron">
                         <div class="row">
                             <div class="col-lg-8 mx-auto">
-                                <h4 class="text-black text-center">Баталгаажуулалт</h4>
+                                <h4 class="text-black text-center">Certification</h4>
                                 <p>
                                     <ul class="mpo-ul">
-                                        <li>Бүтээмж сайжруулах шийдэл болон бүтээмж сайжруулах арга зүйг тодорхойлох, хэрэгжүүлэх, тайлбарлах </li>
-                                        <li>Бүтээмжийн асуудалд дүн шинжилгээ хийх, сайжруулах арга замыг тодорхойлох, хэрэгжүүлэх үе шат бүхий бүтээмжийн цогц хөтөлбөрийг байгууллагад хэрэгжүүлэх</li>
-                                        <li>Үндэсний бүтээмжийн төвүүд, харилцагч байгууллага болон бусад байгууллагуудад сурталчилгаа, сургалт, судалгаа, зөвлөх үйлчилгээг үзүүлэх</li>
+                                        <li>Indentify, implement, and explain productivity improvement solutions and productivity improvement methodologies</li>
+                                        <li>Implement a comprehensive productivity programin the organization with stages to analyze productivity issues, indentify ways to improve, and implement them 
+                                        </li>
+                                        <li>Providing promotion, training, research and consulting services to national productivity centers, customer organizations and other organizations</li>
                                     </ul>
                                 </p>
                                 <div class="text-center">
-                                    <a href="assets/images/roadmap.jpg" data-rel="lightcase:roadmap" class="btn btn-success btn-xl mt-10 ">ТӨЛӨВЛӨГӨӨ</a>
-                                    <a href="mbbtb_brochure" class="btn btn-success btn-xl mt-10" target="new">ГАРЫН АВЛАГА</a>
-                                    <a href="application" class="btn btn-success btn-xl mt-10">ӨРГӨДӨЛ ГАРГАХ</a>
+                                    <a href="assets/images/roadmap.jpg" data-rel="lightcase:roadmap" class="btn btn-success btn-xl mt-10 ">Plan</a>
+                                    <a href="mbbtb_brochure" class="btn btn-success btn-xl mt-10" target="new">Manual</a>
+                                    <a href="application" class="btn btn-success btn-xl mt-10">Application</a>
                                 </div>
 
                             </div>
@@ -105,8 +106,8 @@
                 <div class="row">
                     <div class="our-services-option">
                         <div class="section-header">
-                            <h2>Баталгаажсан мэргэжилтэнгүүд</h2>
-                            <p>Таныг Азийн бүтээмжийн байгууллагын гэрчилгээтэй баталгаажсан бүтээмжийн мэргэжилтэн болохыг урьж байна. Та анкетыг татаж авч мэдээллээ оруулан <a href="maito:info@mpo-org.mn">info@mpo-org.mn</a> мэйлд илгээнэ үү.</p>
+                            <h2>Certified Professionals</h2>
+                            <p>You are invited to become a Certified Productivity Professional certified by the Asian Productivit Organization. Please download the application form, enter your infornation and send it to <a href="maito:info@mpo-org.mn">info@mpo-org.mn</a>.</p>
                         </div>
                         <!-- .section-header -->
                         <div class="row">
@@ -115,7 +116,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Даваагийн Ариунзул</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -130,7 +131,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Нэргүйн Ариунжаргал</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -145,7 +146,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Лхайзамын Уранцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -160,7 +161,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Очирвааны Урангоо</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -175,7 +176,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Бямбын Уранчимэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -190,7 +191,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Таванжингийн Оюунцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -204,7 +205,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Цэнд-Аюушын Хишигжаргал</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -219,7 +220,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Мягмарсүрэнгийн Хишигдэлгэр</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -234,7 +235,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Лозолын Оюун</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -249,7 +250,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Лхагвасүрэнгийн Бадамцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -264,7 +265,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Жаргалын Ариунзул</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -279,7 +280,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Алтанцэцэгийн Оюунгэрэл</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -294,7 +295,7 @@
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Баттулгын Балжинням</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                            <p class="yellow">Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -319,11 +320,11 @@
                     <div class="container gray-bg pt-100 pb-100 text-center jambotron">
                         <div class="row">
                             <div class="col-lg-6 mx-auto">
-                                <h4 class="text-black text-center">Сертификат</h4>
+                                <h4 class="text-black text-center">Certificate</h4>
                                 <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis odio ac felis aliquam tincidunt. Praesent non lacus a tortor consequat aliquam at et libero. Suspendisse congue, purus at congue sagittis, tellus nibh elementum mauris, nec tincidunt tortor sapien id nibh. 
                                 </p>
-                                <a href="certificate" class="btn btn-success btn-xl mt-10">Сертификат татах</a>
+                                <a href="certificate" class="btn btn-success btn-xl mt-10">Download the certificate</a>
 
                             </div>
                         </div>
@@ -387,20 +388,20 @@
     <!-- End Pre-Loader -->
 
 
-    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-2.2.3.min.js"></script>
     <!-- <script type="text/javascript" src="assets/js/bootstrap.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
-    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
-    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="assets/js/lightcase.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/custom.map.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>    <script type="text/javascript" src="../assets/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="../assets/js/swiper.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plugins.isotope.js"></script>
+    <script type="text/javascript" src="../assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="../assets/js/lightcase.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.nstSlider.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.isotope.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.map.js"></script>
 
-    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.js"></script>
 
 
 </body>
