@@ -72,7 +72,7 @@
                                             <li><a href="cases">Туршлага</a></li>
                                             <li><a href="abb" target="new">АББ</a></li>
                                             <li><a href="awards">Шагнал</a></li>
-                                            <li><a href="eng/index">Eng</a></li>
+                                            <li><a href="eng/">🇬🇧 Eng</a></li>
                                         </ul>                                       
                                     </div>
                                 </div>

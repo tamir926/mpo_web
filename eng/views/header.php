@@ -72,7 +72,7 @@
                                             <li><a href="cases">Experience</a></li>
                                             <li><a href="abb" target="new">APO</a></li>
                                             <li><a href="awards">Reward</a></li>
-                                            <li><a href="../">Монгол</a></li>
+                                            <li><a href="../">🇲🇳 Монгол хэл</a></li>
                                         </ul>                                       
                                     </div>
                                 </div>

@@ -55,50 +55,6 @@
 
         <section class="bg-upcoming-events">
             <div class="container">
-<<<<<<< HEAD
-                <div class="row">
-                    <div class="upcoming-events">
-                        <div class="row">
-                            <?
-                            $sql = "SELECT *FROM courses WHERE category='$category_id'";
-                            $result = mysqli_query($conn,$sql);
-                            while ($courses = mysqli_fetch_array($result))
-                            {
-                                ?>
-                                <div class="col-lg-4">
-                                    <div class="event<?=($category_id>1)?$category_id:'';?>-items">
-                                        <div class="event<?=($category_id>1)?$category_id:'';?>-img wrapper-img">
-                                            <a href="#"><img src="<?=$courses["image"];?>" alt="upcoming-events-img-1" class="img-responsive" /></a>
-                                            <div class="date-box">
-                                                <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> <?=$courses["duration"];?>h / <i class="fa fa-user" aria-hidden="true"></i> <?=$courses["participants"];?> хүмүүс</h5>
-                                            </div>
-                                        </div>
-                                        <div class="events-content">
-                                            <h3><a href="#" data-bs-toggle="modal" data-bs-target="#modal_id_<?=$courses["id"];?>"><?=$courses["title"];?></a></h3>
-                                            <p><?=$courses["brief"];?></p>
-                                            <a href="#" class="btn btn-success btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#modal_id_<?=$courses["id"];?>">Дэлгэрэнгүй мэдээлэл</a>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="modal fade" id="modal_id_<?=$courses["id"];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel"><?=$courses["title"];?></h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <?=$courses["content"];?>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Хаах</button>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-=======
                 <?
                 if ($action == "list")
                 {
@@ -106,7 +62,6 @@
                     <div class="row">
                         <div class="upcoming-events">
                             <div class="row">
->>>>>>> 8b5d661faed4cffef085932e058bd70ebaeebd2d
                                 <?
                                 $sql = "SELECT *FROM courses WHERE category='$category_id'";
                                 $result = mysqli_query($conn,$sql);
