@@ -127,58 +127,7 @@
 
                 if ($action == "register")
                 {
-                    if (isset($_POST["course_id"]))
-                    {
-                        $course_id = protect($_POST["course_id"]);
-                        $surname = protect($_POST["surname"]);
-                        $name = protect($_POST["name"]);
-                        $rd = protect($_POST["rd"]);
-                        $city = protect($_POST["city"]);
-                        $dob = protect($_POST["dob"]);
-                        $gender = protect($_POST["gender"]);
-                        $position = protect($_POST["position"]);
-
-                        $org_name = protect($_POST["org_name"]);
-                        $org_address = protect($_POST["org_address"]);
-                        $org_tel = protect($_POST["org_tel"]);
-                        $org_email = protect($_POST["org_email"]);
-                        $org_type = protect($_POST["org_type"]);
-                        $org_employees = protect($_POST["org_employees"]);
-
-
-                        $everbefore = protect($_POST["everbefore"]);
-                        $payment_type = protect($_POST["payment_type"]);
-                        $whichone = protect($_POST["whichone"]);
-                        $whenisit = protect($_POST["whenisit"]);
-                        $wherewasit = protect($_POST["wherewasit"]);
-
-                        $participant_address = protect($_POST["participant_address"]);
-                        $participant_mobile = protect($_POST["participant_mobile"]);
-                        $participant_email = protect($_POST["participant_email"]);
-                        $participant_referrer_name = protect($_POST["participant_referrer_name"]);
-                        $participant_referrer_type = protect($_POST["participant_referrer_type"]);
-                        $participant_referrer_tel = protect($_POST["participant_referrer_tel"]);
-                        $participant_referrer_email = protect($_POST["participant_referrer_email"]);
-                        $participant_referrer_address = protect($_POST["participant_referrer_address"]);
-                        $participant_referrer = $participant_referrer_name."|".$participant_referrer_type."|".$participant_referrer_tel."|".$participant_referrer_email."|".$participant_referrer_address;
-                        $sql = "INSERT INTO courses_candidates 
-                        (course,surname,name,rd,gender,city,dob,position,org_name,org_address,org_tel,org_email,org_type,org_employees,everbefore,payment_type,whichone,whenisit,wherewasit,participant_address,participant_mobile,participant_email,participant_referrer) VALUES 
-                        ('$course_id','$surname','$name','$rd','$gender','$city','$dob','$position','$org_name','$org_address','$org_tel','$org_email','$org_type','$org_employees','$everbefore','$payment_type','$whichone','$whenisit','$wherewasit','$participant_address','$participant_mobile','$participant_email','$participant_referrer')";
-                        if (mysqli_query($conn,$sql))
-                        {
-                            ?>
-                            <div class="alert alert-success">Амжилттай бүртгэлээ</div>
-                            <?
-                        }
-                        else 
-                        {
-                            echo mysqli_error($conn);
-                            ?>
-                            <div class="alert alert-danger">Алдаа гарлаа</div>
-                            <?
-                        }
-                    }
-
+                    
                     
                     $course_id = $_GET["id"];
                     $sql = "SELECT *FROM courses WHERE id='$course_id'";
@@ -208,27 +157,98 @@
                                     </table>
                                 </td>
                                 <td width="60%">
-                                    <form action="?action=register&id=<?=$course_id;?>" method="post">
+                                    <?
+                                    if (isset($_POST["course_id"]))
+                                    {
+                                        $course_id = protect($_POST["course_id"]);
+                                        $surname = protect($_POST["surname"]);
+                                        $name = protect($_POST["name"]);
+                                        $rd = protect($_POST["rd"]);
+                                        $city = protect($_POST["city"]);
+                                        $dob = protect($_POST["dob"]);
+                                        $gender = protect($_POST["gender"]);
+                                        $position = protect($_POST["position"]);
+                
+                                        $org_name = protect($_POST["org_name"]);
+                                        $org_address = protect($_POST["org_address"]);
+                                        $org_tel = protect($_POST["org_tel"]);
+                                        $org_email = protect($_POST["org_email"]);
+                                        $org_type = protect($_POST["org_type"]);
+                                        $org_employees = protect($_POST["org_employees"]);
+                
+                
+                                        $everbefore = protect($_POST["everbefore"]);
+                                        $payment_type = protect($_POST["payment_type"]);
+                                        $whichone = protect($_POST["whichone"]);
+                                        $whenisit = protect($_POST["whenisit"]);
+                                        $wherewasit = protect($_POST["wherewasit"]);
+                
+                                        $participant_address = protect($_POST["participant_address"]);
+                                        $participant_mobile = protect($_POST["participant_mobile"]);
+                                        $participant_email = protect($_POST["participant_email"]);
+                                        $participant_referrer_name = protect($_POST["participant_referrer_name"]);
+                                        $participant_referrer_type = protect($_POST["participant_referrer_type"]);
+                                        $participant_referrer_tel = protect($_POST["participant_referrer_tel"]);
+                                        $participant_referrer_email = protect($_POST["participant_referrer_email"]);
+                                        $participant_referrer_address = protect($_POST["participant_referrer_address"]);
+                                        $participant_referrer = $participant_referrer_name."|".$participant_referrer_type."|".$participant_referrer_tel."|".$participant_referrer_email."|".$participant_referrer_address;
+                                        $sql = "INSERT INTO courses_candidates 
+                                        (course,surname,name,rd,gender,city,dob,position,org_name,org_address,org_tel,org_email,org_type,org_employees,everbefore,payment_type,whichone,whenisit,wherewasit,participant_address,participant_mobile,participant_email,participant_referrer) VALUES 
+                                        ('$course_id','$surname','$name','$rd','$gender','$city','$dob','$position','$org_name','$org_address','$org_tel','$org_email','$org_type','$org_employees','$everbefore','$payment_type','$whichone','$whenisit','$wherewasit','$participant_address','$participant_mobile','$participant_email','$participant_referrer')";
+                                        if (mysqli_query($conn,$sql))
+                                        {
+                                            $candidate_id = mysqli_insert_id($conn);
+                                            if(isset($_FILES['image']) && $_FILES['image']['name']!="")
+                                            {
+                                                if ($_FILES['image']['name']!="")
+                                                    {                        
+                                                        @$folder = date("Ym");
+                                                        if(!file_exists('uploads/'.$folder))
+                                                        mkdir ( 'uploads/'.$folder);
+                                                        $target_dir = 'uploads/'.$folder;
+                                                        $target_file = $target_dir."/"."candidate_".$candidate_id."_".basename($_FILES["image"]["name"]);
+                                                        move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+                                                        $sql = "UPDATE courses_candidates SET image='$target_file' WHERE id='$candidate_id'";
+                                                        mysqli_query($conn,$sql);
+                                
+                                                    }
+                                            }
+                                            
+                                            ?>
+                                            <div class="alert alert-success">Амжилттай бүртгэлээ</div>
+                                            <?
+                                        }
+                                        else 
+                                        {
+                                            echo mysqli_error($conn);
+                                            ?>
+                                            <div class="alert alert-danger">Алдаа гарлаа</div>
+                                            <?
+                                        }
+                                    }
+
+                                    ?>
+                                    <form action="?action=register&id=<?=$course_id;?>" method="post" enctype="multipart/form-data">
                                         <div class="training-form">
                                             <input type="hidden" name="course_id" value="<?=$course_id;?>">
                                             <table class="table table-border">
                                                 <tr>
-                                                    <td colspan="3"><h4>A. Ерөнхий мэдээлэл</h4></td>
+                                                    <td colspan="3"><h4>A. Ерөнхий мэдээлэл ***</h4></td>
                                                 </tr>
                                                 <tr>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="surname" placeholder="Овог">
+                                                        <input type="text" class="form-control" name="surname" placeholder="Овог" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="name" placeholder="Нэр">
+                                                        <input type="text" class="form-control" name="name" placeholder="Нэр" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="rd" placeholder="Регистрийн дугаар">
+                                                        <input type="text" class="form-control" name="rd" placeholder="Регистрийн дугаар" required>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td width="30%">
-                                                        <select name="city" class="form-control">                                                            
+                                                        <select name="city" class="form-control" required>                                                            
                                                             <option value="" selected disabled>Харьяалал</option>
                                                             <option value="1">Багануур</option>
                                                             <option value="2">Багахангай</option>
@@ -264,43 +284,45 @@
                                                         </select>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="date" class="form-control" name="dob" placeholder="Төрсөн өдөр">
+                                                        <input type="date" class="form-control" name="dob" placeholder="Төрсөн өдөр" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <select name="gender" class="form-control">
+                                                        <select name="gender" class="form-control" required>
                                                             <option value="0">Эмэгтэй</option>
                                                             <option value="1">Эрэгтэй</option>
                                                         </select>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="3">
+                                                    <td colspan="2">
                                                         <input type="text" class="form-control" name="position" placeholder="Албан тушаал">
-                                                    </td>                                                   
+                                                    </td>   
+                                                    <td>Цээж зураг: <input type="file" name="image" accept="image/png, image/jpeg" >
+                                                    </td>                                                  
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="3"><h4>Б. Байгууллага/ компанийн ерөнхий мэдээлэл</h4></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="30%">
-                                                        <input type="text" class="form-control" name="org_name" placeholder="Байгууллага/ компанийн нэр">
-                                                    </td>
-                                                    <td width="30%">
-                                                        <input type="text" class="form-control" name="org_address" placeholder="Хаяг">
-                                                    </td>
-                                                    <td width="30%">
-                                                        <input type="text" class="form-control" name="org_tel" placeholder="Утас">
-                                                    </td>
+                                                    <td colspan="3"><h4>Б. Байгууллага/ компанийн ерөнхий мэдээлэл ***</h4></td>
                                                 </tr>
                                                 <tr>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="org_email" placeholder="Э-шуудан">
+                                                        <input type="text" class="form-control" name="org_name" placeholder="Байгууллага/ компанийн нэр" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="org_type" placeholder="Бизнесийн төрөл">
+                                                        <input type="text" class="form-control" name="org_address" placeholder="Хаяг" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="number" class="form-control" name="org_employees" placeholder="Нийт ажиллагсдын тоо" min="0" step="1">
+                                                        <input type="text" class="form-control" name="org_tel" placeholder="Утас" required>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="30%">
+                                                        <input type="text" class="form-control" name="org_email" placeholder="Э-шуудан" required>
+                                                    </td>
+                                                    <td width="30%">
+                                                        <input type="text" class="form-control" name="org_type" placeholder="Бизнесийн төрөл" required>
+                                                    </td>
+                                                    <td width="30%">
+                                                        <input type="number" class="form-control" name="org_employees" placeholder="Нийт ажиллагсдын тоо" min="0" step="1" required>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -339,17 +361,17 @@
                                                 </tr>
 
                                                 <tr>
-                                                    <td colspan="3"><h4>Г. Оролцогчийн мэдээлэл</h4></td>
+                                                    <td colspan="3"><h4>Г. Оролцогчийн мэдээлэл ***</h4></td>
                                                 </tr>
                                                 <tr>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="participant_address" placeholder="Хаяг">
+                                                        <input type="text" class="form-control" name="participant_address" placeholder="Хаяг" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="participant_mobile" placeholder="Гар утас">
+                                                        <input type="text" class="form-control" name="participant_mobile" placeholder="Гар утас" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="participant_email" placeholder="Э-шуудан: /өөрийн/">
+                                                        <input type="text" class="form-control" name="participant_email" placeholder="Э-шуудан: /өөрийн/" required>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -376,6 +398,7 @@
                                                     </td>                                                  
                                                 </tr>
                                             </table>
+                                            <i>*** - заавал бөглөх талбарууд</i>
                                         </div>
                                         <button class="btn-default mt-3" type="submit">Илгээх</button>
                                     </form>

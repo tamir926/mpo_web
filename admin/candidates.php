@@ -453,6 +453,7 @@
                     {
                         $data = mysqli_fetch_array($result);
                         $course_id = $data["course"];
+                        $image = $data["image"];
                         $surname = $data["surname"];
                         $name = $data["name"];
                         $rd = $data["rd"];
@@ -556,8 +557,13 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="3">
+                                            <td colspan="2">
                                                 <input type="text" class="form-control" name="position" placeholder="Албан тушаал" value="<?=$position;?>" disabled>
+                                            </td>                                                   
+                                            <td>
+                                                <?
+                                                if ($image<>"") echo '<img src="../'.$image.'" width="300" height="400">';
+                                                ?>
                                             </td>                                                   
                                         </tr>
                                         <tr>
