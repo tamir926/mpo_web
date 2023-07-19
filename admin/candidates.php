@@ -21,6 +21,12 @@
     <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/pickers/form-flat-pickr.css">
 
 
+
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/js/tables/datatable_1.10.24/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/js/tables/datatable_1.10.24/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/js/tables/datatable_1.10.24/Bootstrap-4-4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/js/tables/datatable_1.10.24/Buttons-1.7.0/css/buttons.dataTables.min.css">
+
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -68,15 +74,15 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
-                                    <table class="datatables-basic table">
+                                    <table class="dt-responsive table" id="bsoft_orders">
                                         <thead>
                                             <tr>
                                                 <th>№</th>
-                                                <th>Нэр</th>
-                                                <th>Утас</th>
-                                                <th>Имэйл</th>
-                                                <th>Байгуулага</th>                                            
-                                                <th>Сургалт</th>                                            
+                                                <th class="with_filter">Нэр</th>
+                                                <th class="with_filter">Утас</th>
+                                                <th class="with_filter">Имэйл</th>
+                                                <th class="with_filter">Байгуулага</th>                                            
+                                                <th class="with_filter">Сургалт</th>                                            
                                                 <th>Үйлдэл</th>
                                             </tr>
                                         </thead>
@@ -738,9 +744,13 @@
     <!-- BEGIN: Page Vendor JS-->
     <script src="app-assets/vendors/js/vendors.min.js"></script>
     <script src="app-assets/vendors/js/ui/jquery.sticky.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable_1.10.24/datatables.min.js"></script>
+
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
+    <!-- <script src="app-assets/js/scripts/tables/table-datatables-advanced.js"></script> -->
+
     
     <script src="app-assets/js/core/app-menu.js"></script>
     <script src="app-assets/js/core/app.js"></script>
@@ -760,6 +770,81 @@
             }
         })
     </script>
+
+    <script>
+
+    $(document).ready(function() {
+        $('#bsoft_orders thead tr').clone(true).appendTo( '#bsoft_orders thead' );
+        $('#bsoft_orders thead tr:eq(1) th.with_filter').each( function (i) {
+            var title = $(this).text();
+            $(this).html( '<input type="text" class="form-control" placeholder="'+title+'" />' );
+
+            $( 'input', this ).on( 'keypress', function (e) {
+                if(e.which == 13) 
+                {
+                    if ( table.column(i).search() !== this.value ) {
+                        table
+                            .column(i)
+                            .search( this.value )
+                            .draw();
+                    }
+                }
+            } );
+        } );
+        
+        var table = $('#bsoft_orders').DataTable( {
+            orderCellsTop: true,
+            fixedHeader: true,
+            ordering: true,
+            //dom: 'Bfrtip',
+            order: [[0, 'desc']],
+            dom:
+                '<"card-header border-bottom p-1"<"head-label"><"dt-action-buttons text-right"B>><"d-flex justify-content-between align-items-center mx-0 row"<"col-sm-12 col-md-9"l><"col-sm-12 col-md-3"f>>t<"d-flex justify-content-between mx-0 row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
+            displayLength: 20,
+            lengthMenu: [10, 20, 50, 100],
+            buttons: [
+                {
+                    extend: 'print',
+                    text: feather.icons['printer'].toSvg({ class: 'font-small-4 mr-50' }) + 'Print',
+                    className: 'btn btn-warning'
+                },
+                {
+                    extend: 'copy',
+                    text: feather.icons['copy'].toSvg({ class: 'font-small-4 mr-50' }) + 'Copy',
+                    className: 'btn'
+                },
+                {
+                    extend: 'excel',
+                    text: feather.icons['file'].toSvg({ class: 'font-small-4 mr-50' }) + 'Excel',
+                    className: 'btn btn-secondary'
+                },
+                {
+                    extend: 'pdf',
+                    text: feather.icons['file'].toSvg({ class: 'font-small-4 mr-50' }) + 'Pdf',
+                    className: 'btn'
+                }
+         
+            ]
+        
+            
+        } );
+        $('div.head-label').html('<h6 class="mb-0">Сургалтанд бүртгүүлэгсэд</h6>');
+        $('.dropdown-toggle').dropdown();
+        $('.single_price').change(function(){
+            //$('.single_price').next('form-control').val($(this).val()*$(this).attr('alt'));
+            $(this).parent('td').next('td').children('input').val($(this).val()*$(this).attr('alt'));
+            //$('.single_price').next('form-control').hide();
+        });
+
+
+        $("#task_select").chained("#project_select");
+
+
+    
+    })
+
+    </script>
+
 
 </body>
 <!-- END: Body-->

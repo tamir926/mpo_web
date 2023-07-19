@@ -281,6 +281,17 @@ $(function () {
           })
         }
       },
+        buttons: [{
+          text: 'Export To Excel',                      
+          extend: 'excelHtml5',
+          exportOptions: {
+              modifier: {
+                  selected: true
+              },
+          
+          }
+        
+      }],
       language: {
         paginate: {
           // remove previous & next text from pagination
