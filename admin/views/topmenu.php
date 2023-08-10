@@ -83,6 +83,8 @@
                             <li><a class="dropdown-item d-flex align-items-center" href="experts?action=time" data-toggle="dropdown" ><i data-feather="watch"></i><span >Экспертийн цаг</span></a></li>
                             <li><a class="dropdown-item d-flex align-items-center" href="courses" data-toggle="dropdown" ><i data-feather="users"></i><span >Сургалт</span></a></li>
                             <li><a class="dropdown-item d-flex align-items-center" href="candidates" data-toggle="dropdown" ><i data-feather="users"></i><span >Сургалтанд бүртгүүлэгсэд</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="project" data-toggle="dropdown" ><i data-feather="users"></i><span >Төсөл</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="candidate" data-toggle="dropdown" ><i data-feather="users"></i><span >Төсөлд бүртгүүлэгсэд</span></a></li>
                         </ul>
                     </li>
 
