@@ -21,7 +21,7 @@ RewriteRule ^pages?$ pages.php
 RewriteRule ^slider?$ slider.php
 RewriteRule ^partners?$ partners.php
 
-RewriteRule ^projects?$ projects.php
+RewriteRule ^project?$ project.php
 RewriteRule ^membership?$ membership.php
 
 RewriteRule ^organisations?$ organisations.php
@@ -36,4 +36,4 @@ RewriteRule ^magazine?$ magazine.php
 RewriteRule ^books?$ books.php
 RewriteRule ^awards?$ awards.php
 RewriteRule ^candidates?$ candidates.php
-
+RewriteRule ^candidate?$ candidate.php
