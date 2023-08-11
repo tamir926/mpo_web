@@ -235,9 +235,9 @@
             <div class="container">
                 <div class="row">
                     <div class="people-work-section">
-                        <h5>For Clients </h5>
+                        <h5>Арга хэмжээ  </h5>
                         <h2><b>Interested Skills</b></h2>
-                        <!-- .section-header -->
+                        <!-- .section-header --> 
                         <div class="row">
                             <div class="col-lg-6 col-sm-6 col-12">
                                 <div class="d-flex justify-content-between mpo-list">
@@ -344,14 +344,14 @@
                             <div class="col-lg-4 col-sm-6 col-12">
                                 <div class="blog-items">
                                     <div class="blog-img">
-                                        <a href="#"><img src="https://news.mn/wp-content/uploads/2021/06/Хүүхдүүд-болон-жирэмсэн-эхчүүдийн-вакцинжуулалт-11-250x156.jpg" alt="blog-img-1" class="img-responsive" /></a>
+                                        <a href="https://news.mn/r/2664723/"><img src="https://news.mn/wp-content/uploads/2023/08/agriculture-money.shutterstock_1506944648-scaled-1-810x500.jpg" alt="blog-img-1" class="img-responsive" /></a>
                                     </div>
                                     <!-- .blog-img -->
                                     <div class="blog-content-box">
                                         <div class="blog-content">
-                                            <h6><a href="#">2021-12-15</a></h6>
-                                            <h4><a href="#">Томоохон захуудад вакцины 14 түр цэг ажиллана</a></h4>
-                                            <p>Completely actuaze cent centric coloration an sharing without ainstalled and base awesome event PSD Template.</p>
+                                            <h6><a href="#">2023-08-02</a></h6>
+                                            <h4><a href="#">Хүнсний үйлдвэрлэлийг дэмжихэд хөнгөлттэй зээл олгож байна</a></h4>
+                                            <p>УИХ-ын  2022 оны “Хүнсний хангамж, аюулгүй байдлыг хангах талаар авах зарим арга хэмжээний тухай” 36 дугаар тогтоол, Засгийн газрын 2023 оны “Хүнсний хангамж, хөдөө аж ахуйн салбарын технологит ажлын талаар авах зарим арга хэмжээний тухай” 63 дугаар тогтоолоор арилжааны банкны эх үүсвэрээр, хүнс, хөдөө аж ахуйн үйлдвэрлэлийг эргэлтийн хөрөнгөөр дэмжих хүрээнд жилийн нийт 18 хувь (зээлдэгчээс 5 хувь, Засгийн газраас хариуцан төлөх 13 хувь)-ийн хүүтэй, 24 хүртэл  сарын хугацаатай, хөрөнгө оруулалтын, жилийн нийт 19 хувь (зээлдэгчээс 6 хувь, Засгийн газраас хариуцан төлөх 13 хувь)-ийн хүүтэй, 60 хүртэл   сарын хугацаатай хөнгөлөлттэй зээлийг олгохоор шийдвэрлэсэн.</p>
                                         </div>
                                         <!-- .blog-content -->
                                     </div>
@@ -363,14 +363,14 @@
                             <div class="col-lg-4 col-sm-6 col-12">
                                 <div class="blog-items">
                                     <div class="blog-img">
-                                        <a href="#"><img src="https://news.mn/wp-content/uploads/2021/12/Шинэ-жил-талбай-цаг-агаар-250x156.jpg" alt="blog-img-1" class="img-responsive" /></a>
+                                        <a href="https://news.mn/r/2665169/"><img src="https://news.mn/wp-content/uploads/2022/07/%D0%9C%D0%BE%D0%BD%D0%B3%D0%BE%D0%BB-%D0%A3%D0%BB%D1%81%D1%8B%D0%BD-%D0%A5%D3%A9%D0%B3%D0%B6%D0%BB%D0%B8%D0%B9%D0%BD-%D0%B1%D0%B0%D0%BD%D0%BA-810x500.jpg" alt="blog-img-1" class="img-responsive" /></a>
                                     </div>
                                     <!-- .blog-img -->
                                     <div class="blog-content-box">
                                         <div class="blog-content">
-                                            <h6><a href="#">2021-12-15</a></h6>
-                                            <h4><a href="#">Томоохон захуудад вакцины 14 түр цэг ажиллана</a></h4>
-                                            <p>Completely actuaze cent centric coloration an sharing without ainstalled and base awesome event PSD Template.</p>
+                                            <h6><a href="#">2023-08-04</a></h6>
+                                            <h4><a href="#">Хөгжлийн банкнаас зээл авсан компаниуд 335.6 тэрбумыг төлжээ</a></h4>
+                                            <p>Монгол Улсын Хөгжлийн банкны зээлийн эргэн төлөлт энэ оны наймдугаар сарын 1-ний байдлаар 335,6 тэрбум төгрөгт хүрсэн байна. Үүнээс 1,4 тэрбумыг өмчлөх бусад үл хөдлөх хөрөнгөөр, үлдсэн 334,2 тэрбумыг бэлэн мөнгөөр төлжээ.</p>
                                         </div>
                                         <!-- .blog-content -->
                                     </div>
@@ -382,14 +382,14 @@
                             <div class="col-lg-4 col-sm-6 col-12">
                                 <div class="blog-items">
                                     <div class="blog-img">
-                                        <a href="#"><img src="https://news.mn/wp-content/uploads/2020/04/онгоц-250x156.jpg" alt="blog-img-1" class="img-responsive" /></a>
+                                        <a href="https://news.mn/r/2664830/"><img src="https://news.mn/wp-content/uploads/2023/08/tumur-zam-800x500.jpg" alt="blog-img-1" class="img-responsive" /></a>
                                     </div>
                                     <!-- .blog-img -->
                                     <div class="blog-content-box">
                                         <div class="blog-content">
-                                            <h6><a href="#">2021-12-15</a></h6>
-                                            <h4><a href="#">Улаанбаатар-Франкфурт чиглэлийн зорчигч 75.5 хувиар нэмэгджээ</a></h4>
-                                            <p>Completely actuaze cent centric coloration an sharing without ainstalled and base awesome event PSD Template.</p>
+                                            <h6><a href="#">2023-08-02</a></h6>
+                                            <h4><a href="#">Тавантолгой-Зүүнбаян чиглэлийн төмөр зам байнгын ашиглалтад орлоо</a></h4>
+                                            <p>Тавантолгой-Зүүнбаян чиглэлийн төмөр зам байнгын ашиглалтад орсноор үндэсний төмөр замын сүлжээг 416,1 километрээр өргөтгөжээ.</p>
                                         </div>
                                         <!-- .blog-content -->
                                     </div>
@@ -406,14 +406,18 @@
                             <div class="col-lg-4 col-sm-6 col-12">
                                 <div class="blog-items">
                                     <div class="blog-img">
-                                        <a href="#"><img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/138E2/production/_122489008_mediaitem122489006.jpg" alt="blog-img-1" class="img-responsive" /></a>
+                                        <a href="https://news.mn/r/2665771/"><img src="https://news.mn/wp-content/uploads/2023/08/pZCDoDnexqRskdnhDT8UAY-780x470-1.jpeg" alt="blog-img-1" class="img-responsive" /></a>
                                     </div>
                                     <!-- .blog-img -->
                                     <div class="blog-content-box">
                                         <div class="blog-content">
-                                            <h6><a href="#">2021-12-15</a></h6>
-                                            <h4><a href="#">US and Russia to talk as Putin hits out on Ukraine</a></h4>
-                                            <p>Completely actuaze cent centric coloration an sharing without ainstalled and base awesome event PSD Template.</p>
+                                            <h6><a href="#">2023-08-08</a></h6>
+                                            <h4><a href="#">Саран дээр газардахтай холбоотойгоор иргэдийг нүүлгэнэ</a></h4>
+                                            <p>ОХУ ойрын нэг жилийн хугацаанд "Luna-25" хөлгөө саран дээр газардуулахаар төлөвлөж буй. ОХУ хамгийн сүүлд 1976 онд саран дээр газардсан. Энэ удаад Москвагаас зүүн зүгт 5550 км зайд орших Восточный Космодром станцаас "Союз-2 Фрегат" хөөргөгч онгоцоор "Luna-25" хөлгийг хөөргөх аж.
+
+Бараг 50 жилийн дараа дахин саран дээр газардах гэж буйтай холбоотойгоор Хабаровск мужийн Шахтинский суурингийн оршин суугчдыг наймдугаар сарын 11-нд нүүлгэн шилжүүлэх болжээ. Шахтинский нь ОХУ-ын зүүн хязгаарын тосгон юм. Пуужин хөөргөгч онгоц Шахтинский орчимд унана гэж таамаглаж буй тул ийнхүү нүүлгэн шилжүүлэлт хийх шийдвэр гаргасан байна. "Умалта, Уссамах, Лепикан, Тастах, Саганар голуудын амсар, Бурея голын гатлага онгоцны гарцын хэсэг нь урьдчилан таамагласан уналтын бүсэд багтаж байна" гэж Хабаровск мужийн Верхнебурейн дүүргийн дарга Алексей Маслов хэллээ. 
+
+"Luna-25" хөлгийг хөөргөж буй гол зорилго нь зөөлөн газардах технологийг хөгжүүлэх, сарны дотоод бүтцийг судлах, нөөц, тэр дундаа усны хайгуул хийх юм.</p>
                                         </div>
                                         <!-- .blog-content -->
                                     </div>
@@ -425,14 +429,14 @@
                             <div class="col-lg-4 col-sm-6 col-12">
                                 <div class="blog-items">
                                     <div class="blog-img">
-                                        <a href="#"><img src="https://ichef.bbc.co.uk/wwhp/304/ibroadcast/images/live/p0/9w/hc/p09whcp6.jpg" alt="blog-img-1" class="img-responsive" /></a>
+                                        <a href="https://news.mn/r/2665677/"><img src="https://news.mn/wp-content/uploads/2023/08/collage-maker-27-jul-2023-07-32-am-3640-1690423359-810x500.jpg" alt="blog-img-1" class="img-responsive" /></a>
                                     </div>
                                     <!-- .blog-img -->
                                     <div class="blog-content-box">
                                         <div class="blog-content">
-                                            <h6><a href="#">2021-12-15</a></h6>
-                                            <h4><a href="#">The four pillars of happiness</a></h4>
-                                            <p>Completely actuaze cent centric coloration an sharing without ainstalled and base awesome event PSD Template.</p>
+                                            <h6><a href="#">2023-08-07</a></h6>
+                                            <h4><a href="#">Пёньян: ОХУ руу зэвсэг экспортлоход анхаарлаа хандуулна</a></h4>
+                                            <p>Хойд Солонгосын удирдагч Ким Жон Ун өнгөрсөн долоо хоногийн Пүрэв гаригаас Бямба гариг хооронд улсынхаа зэвсгийн үйлдвэрүүдээр зочлов. Тэрбээр энэ үеэрээ пуужингийн хөдөлгүүр, их буу болон бусад зэвсгийн үйлдвэрлэлийн хүчин чадлыг нэмэгдүүлэх зааварчилгааг өгчээ. Тус улс стратегийн болон ердийн төрөл бүрийн зэвсэг бүтээхийг эрмэлзэж, төрөл бүрийн үзэсгэлэн дэлгэж буй цаг үед олон өдөр үргэлжилсэн энэхүү онцгой айлчлал тохиолоо.</p>
                                         </div>
                                         <!-- .blog-content -->
                                     </div>
@@ -444,14 +448,14 @@
                             <div class="col-lg-4 col-sm-6 col-12">
                                 <div class="blog-items">
                                     <div class="blog-img">
-                                        <a href="#"><img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/E6F9/production/_122492195_gettyimages-1279883614.jpg" alt="blog-img-1" class="img-responsive" /></a>
+                                        <a href="https://news.mn/r/2664716/"><img src="https://news.mn/wp-content/uploads/2023/08/YDZA5MBTZZJD7NWVLRS5X6BJQ4-810x500.jpg" alt="blog-img-1" class="img-responsive" /></a>
                                     </div>
                                     <!-- .blog-img -->
                                     <div class="blog-content-box">
                                         <div class="blog-content">
-                                            <h6><a href="#">2021-12-15</a></h6>
-                                            <h4><a href="#">US literary icon Joan Didion dies at 87 </a></h4>
-                                            <p>Completely actuaze cent centric coloration an sharing without ainstalled and base awesome event PSD Template.</p>
+                                            <h6><a href="#">2023-08-02</a></h6>
+                                            <h4><a href="#">Ван Иг АНУ-д айлчлахыг албан ёсоор урьжээ </a></h4>
+                                            <p>Хятадын Гадаад хэргийн сайдаар буцаан томилогдсон Ван Иг Вашингтонд айлчлахыг албан ёсоор урьсан талаар АНУ-ын төрийн департментын төлөөлөгч Матт Миллер мэдэгджээ. Тэрбээр Даваа гарагт АНУ-ын Зүүн Ази, Номхон далайн асуудал эрхэлсэн нарийн бичгийн даргын туслах Даниел Критенбринк болон Хятадын Гадаад хэргийн яамны Хойд Америк, Далайн асуудал эрхэлсэн ерөнхий захирал Ян Тао нартай уулзах үеэрээ урилгыг өгсөн гэж мэдэгдэв. Гэхдээ Ван И урилгыг хүлээж авах эсэх нь хараахан тодорхойгүй байна</p>
                                         </div>
                                         <!-- .blog-content -->
                                     </div>
@@ -479,12 +483,12 @@
                     <div class="col-lg-5 pt-100">  
                         <div class="d-flex justify-content-between">
                             <div >
-                                <h1 class="text-white">Join Us</h1>
-                                <p class="text-white">if you interested</p>
+                                <h1 class="text-white">Гишүүнчлэл</h1>
+                                <p class="text-white">Хэрэв та сонирхож байгаа бол</p>
                             </div>
                             <div>
-                                <a href="#" class="btn btn-lg btn-default-2">Register</a>
-                                <a href="#" class="btn btn-lg btn-default-2">Login</a>
+                                <a href="https://mpo-org.mn/register" class="btn btn-lg btn-default-2">Бүртгүүлэх</a>
+                                <a href="https://mpo-org.mn/login" class="btn btn-lg btn-default-2">Нэвтрэх</a>
                             </div>
                         </div>
                     </div>
