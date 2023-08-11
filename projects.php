@@ -21,7 +21,7 @@
                     {
                         if ($data["id"] == $category_id) echo '<b>';
                         ?>
-                        <li><a href="project?category=<?=$data["id"];?>"><?=$data["name"];?></a></li>
+                        <li><a href="projects?category=<?=$data["id"];?>"><?=$data["name"];?></a></li>
                         <?
                         if ($data["id"] == $category_id) echo '</b>';
                     }
@@ -229,7 +229,7 @@
 
                                     ?>
                                     <form action="?action=register&id=<?=$course_id;?>" method="post" enctype="multipart/form-data">
-                                        <div class="project-form">
+                                        <div class="projects-form">
                                             <input type="hidden" name="course_id" value="<?=$course_id;?>">
                                             <table class="table table-border">
                                                 <tr>
