@@ -89,6 +89,7 @@
                                     <a href="assets/images/roadmap.jpg" data-rel="lightcase:roadmap" class="btn btn-success btn-xl mt-10 ">ТӨЛӨВЛӨГӨӨ</a>
                                     <a href="mbbtb_brochure" class="btn btn-success btn-xl mt-10" target="new">ГАРЫН АВЛАГА</a>
                                     <a href="application" class="btn btn-success btn-xl mt-10">ӨРГӨДӨЛ ГАРГАХ</a>
+                                    <a href="contact_mbtbb" class="btn btn-success btn-xl mt-10">САНАЛ ХҮСЭЛТ ИЛГЭЭХ</a>
                                 </div>
 
                             </div>

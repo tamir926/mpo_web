@@ -30,6 +30,7 @@ RewriteRule ^podcasts?$ podcasts.php
 RewriteRule ^reports?$ reports.php
 
 RewriteRule ^feedback?$ feedback.php
+RewriteRule ^feedback_mbtbb?$ feedback_mbtbb.php
 RewriteRule ^experts?$ experts.php
 RewriteRule ^courses?$ courses.php
 RewriteRule ^magazine?$ magazine.php

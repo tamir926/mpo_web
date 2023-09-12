@@ -17,7 +17,9 @@ ErrorDocument 404 underconstruction
 
 RewriteRule ^faqs?$ faqs.php
 RewriteRule ^contact?$ contact.php
+RewriteRule ^contact_mbtbb?$ contact_mbtbb.php
 RewriteRule ^contacting?$ contacting.php
+RewriteRule ^contacting_mbtbb?$ contacting_mbtbb.php
 RewriteRule ^login?$ login.php
 RewriteRule ^logining?$ views/logining.php
 RewriteRule ^logout?$ views/logout.php
