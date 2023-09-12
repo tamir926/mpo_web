@@ -568,6 +568,7 @@
                     $participants = $_POST["participants"];
                     $duration = $_POST["duration"];
                     $date = $_POST["date"];
+                    $category = $_POST["category"];
                     $image = "";
 
                     if(isset($_FILES['image']) && $_FILES['image']['name']!="")
@@ -583,7 +584,7 @@
                                 $image= substr($target_file,3);        
                             }
                     }
-                    $sql = "INSERT INTO project (title,brief,content,image,participants,duration,date)  VALUES ('$title','$brief','$content','$image','$participants','$duration','$date')";
+                    $sql = "INSERT INTO project (title,brief,content,image,participants,duration,date,category)  VALUES ('$title','$brief','$content','$image','$participants','$duration','$date','$category')";
 
                     if (mysqli_query($conn,$sql))
                     {
