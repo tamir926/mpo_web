@@ -36,7 +36,7 @@
                mysqli_query($conn,$sql);
                //echo $sql;
                //var_dump($_SESSION);
-               header('Location: dashboard');
+               header('Location: assessment');
               
             }
                else
