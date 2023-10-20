@@ -129,8 +129,8 @@
                 {
                     
                     
-                    $course_id = $_GET["id"];
-                    $sql = "SELECT *FROM project WHERE id='$course_id'";
+                    $project_id = $_GET["id"];
+                    $sql = "SELECT *FROM project WHERE id='$project_id'";
                     $result = mysqli_query($conn,$sql);
                     if (mysqli_num_rows($result)==1)
                     {
@@ -158,9 +158,9 @@
                                 </td>
                                 <td width="60%">
                                     <?
-                                    if (isset($_POST["course_id"]))
+                                    if (isset($_POST["project_id"]))
                                     {
-                                        $course_id = protect($_POST["course_id"]);
+                                        $course_id = protect($_POST["project_id"]);
                                         $surname = protect($_POST["surname"]);
                                         $name = protect($_POST["name"]);
                                         $rd = protect($_POST["rd"]);
@@ -193,8 +193,8 @@
                                         $participant_referrer_address = protect($_POST["participant_referrer_address"]);
                                         $participant_referrer = $participant_referrer_name."|".$participant_referrer_type."|".$participant_referrer_tel."|".$participant_referrer_email."|".$participant_referrer_address;
                                         $sql = "INSERT INTO project_candidate 
-                                        (course,surname,name,rd,gender,city,dob,position,org_name,org_address,org_tel,org_email,org_type,org_employees,everbefore,payment_type,whichone,whenisit,wherewasit,participant_address,participant_mobile,participant_email,participant_referrer) VALUES 
-                                        ('$course_id','$surname','$name','$rd','$gender','$city','$dob','$position','$org_name','$org_address','$org_tel','$org_email','$org_type','$org_employees','$everbefore','$payment_type','$whichone','$whenisit','$wherewasit','$participant_address','$participant_mobile','$participant_email','$participant_referrer')";
+                                        (project,surname,name,rd,gender,city,dob,position,org_name,org_address,org_tel,org_email,org_type,org_employees,everbefore,payment_type,whichone,whenisit,wherewasit,participant_address,participant_mobile,participant_email,participant_referrer) VALUES 
+                                        ('$project_id','$surname','$name','$rd','$gender','$city','$dob','$position','$org_name','$org_address','$org_tel','$org_email','$org_type','$org_employees','$everbefore','$payment_type','$whichone','$whenisit','$wherewasit','$participant_address','$participant_mobile','$participant_email','$participant_referrer')";
                                         if (mysqli_query($conn,$sql))
                                         {
                                             $candidate_id = mysqli_insert_id($conn);
@@ -228,9 +228,9 @@
                                     }
 
                                     ?>
-                                    <form action="?action=register&id=<?=$course_id;?>" method="post" enctype="multipart/form-data">
+                                    <form action="?action=register&id=<?=$project_id;?>" method="post" enctype="multipart/form-data">
                                         <div class="projects-form">
-                                            <input type="hidden" name="course_id" value="<?=$course_id;?>">
+                                            <input type="hidden" name="project_id" value="<?=$project_id;?>">
                                             <table class="table table-border">
                                                 <tr>
                                                     <td colspan="3"><h4>A. Ерөнхий мэдээлэл ***</h4></td>
