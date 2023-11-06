@@ -37,4 +37,4 @@ RewriteRule ^magazine?$ magazine.php
 RewriteRule ^books?$ books.php
 RewriteRule ^awards?$ awards.php
 RewriteRule ^candidates?$ candidates.php
-RewriteRule ^candidate?$ candidate.php
+RewriteRule ^p_candidate?$ p_candidate.php

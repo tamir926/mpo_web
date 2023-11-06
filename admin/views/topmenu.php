@@ -11,19 +11,19 @@
                         <ul class="dropdown-menu">                            
                             <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-toggle="dropdown" data-i18n="Invoice"><i data-feather="file-text"></i><span data-i18n="Invoice">Мэдлэгийн сан</span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item d-flex align-items-center" href="podcasts" data-toggle="dropdown" data-i18n="Basic"><i data-feather="play"></i><span data-i18n="Basic">Подкаст</span></a></li>
-                                    <li><a class="dropdown-item d-flex align-items-center" href="reports" data-toggle="dropdown" data-i18n="Basic"><i data-feather="play"></i><span data-i18n="Basic">Тайлан</span></a></li>
-                                    <li><a class="dropdown-item d-flex align-items-center" href="magazine" data-toggle="dropdown" data-i18n="Basic"><i data-feather="book"></i><span data-i18n="Basic">Сэтгүүл</span></a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center" href="podcasts"  data-i18n="Basic"><i data-feather="play"></i><span data-i18n="Basic">Подкаст</span></a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center" href="reports"  data-i18n="Basic"><i data-feather="play"></i><span data-i18n="Basic">Тайлан</span></a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center" href="magazine"  data-i18n="Basic"><i data-feather="book"></i><span data-i18n="Basic">Сэтгүүл</span></a></li>
                                     <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-toggle="dropdown" data-i18n="Cards"><i data-feather="credit-card"></i><span data-i18n="Мэдээ">Мэдээ</span></a>
                                         <ul class="dropdown-menu">
                                             <li data-menu="">
-                                                <a class="dropdown-item d-flex align-items-center" href="news?action=new" data-toggle="dropdown" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Шинэ мэдээ</span></a>
+                                                <a class="dropdown-item d-flex align-items-center" href="news?action=new" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Шинэ мэдээ</span></a>
                                             </li>
                                             <li data-menu="">
-                                                <a class="dropdown-item d-flex align-items-center" href="news?action=grid" data-toggle="dropdown" data-i18n="Advance"><i data-feather="circle"></i><span data-i18n="Advance">Бүх мэдээ</span></a>
+                                                <a class="dropdown-item d-flex align-items-center" href="news?action=grid"  data-i18n="Advance"><i data-feather="circle"></i><span data-i18n="Advance">Бүх мэдээ</span></a>
                                             </li>
                                             <li data-menu="">
-                                                <a class="dropdown-item d-flex align-items-center" href="news?action=category" data-toggle="dropdown" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Мэдээний ангилал</span></a>
+                                                <a class="dropdown-item d-flex align-items-center" href="news?action=category"  data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Мэдээний ангилал</span></a>
                                             </li>
                                             
                                         </ul>
@@ -32,10 +32,10 @@
                                     <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-toggle="dropdown" data-i18n="Cards"><i data-feather="book"></i><span data-i18n="Мэдээ">Номын сан</span></a>
                                         <ul class="dropdown-menu">
                                             <li data-menu="">
-                                                <a class="dropdown-item d-flex align-items-center" href="books?action=list" data-toggle="dropdown" data-i18n="Advance"><i data-feather="book"></i><span data-i18n="Advance">Бүх ном</span></a>
+                                                <a class="dropdown-item d-flex align-items-center" href="books?action=list"  data-i18n="Advance"><i data-feather="book"></i><span data-i18n="Advance">Бүх ном</span></a>
                                             </li>
                                             <li data-menu="">
-                                                <a class="dropdown-item d-flex align-items-center" href="books?action=category" data-toggle="dropdown" data-i18n="Basic"><i data-feather="tag"></i><span data-i18n="Basic">Номын ангилал</span></a>
+                                                <a class="dropdown-item d-flex align-items-center" href="books?action=category"  data-i18n="Basic"><i data-feather="tag"></i><span data-i18n="Basic">Номын ангилал</span></a>
                                             </li>
                                             
                                         </ul>
@@ -47,26 +47,26 @@
 
                             <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-toggle="dropdown" data-i18n="eCommerce"><i data-feather="shopping-cart"></i><span data-i18n="eCommerce">Арга хэмжээ</span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item d-flex align-items-center" href="events?action=new" data-toggle="dropdown" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Шинэ арга хэмжээ</span></a></li>
-                                    <li><a class="dropdown-item d-flex align-items-center" href="events?action=grid" data-toggle="dropdown" data-i18n="Advance"><i data-feather="circle"></i><span data-i18n="Advance">Бүх арга хэмжээ</span></a></li>
-                                    <li><a class="dropdown-item d-flex align-items-center" href="events?action=category" data-toggle="dropdown" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Аргэ хэмжээний ангилал</span></a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center" href="events?action=new"  data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Шинэ арга хэмжээ</span></a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center" href="events?action=grid"  data-i18n="Advance"><i data-feather="circle"></i><span data-i18n="Advance">Бүх арга хэмжээ</span></a></li>
+                                    <li><a class="dropdown-item d-flex align-items-center" href="events?action=category" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Аргэ хэмжээний ангилал</span></a></li>
                                 </ul>
                             </li>
 
 
-                            <li><a class="dropdown-item d-flex align-items-center" href="faqs" data-toggle="dropdown" ><i data-feather="help-circle"></i><span >Түгээмэл асуулт</span></a></li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="pages" data-toggle="dropdown" ><i data-feather="circle"></i><span >Хуудсууд</span></a></li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="slider" data-toggle="dropdown" ><i data-feather="image"></i><span >Солигддог зураг</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="faqs"  ><i data-feather="help-circle"></i><span >Түгээмэл асуулт</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="pages"  ><i data-feather="circle"></i><span >Хуудсууд</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="slider"  ><i data-feather="image"></i><span >Солигддог зураг</span></a></li>
                             <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-toggle="dropdown" data-i18n="Cards"><i data-feather="thumbs-up"></i><span data-i18n="Шагнал">Шагнал</span></a>
                                 <ul class="dropdown-menu">
                                     <li data-menu="">
-                                        <a class="dropdown-item d-flex align-items-center" href="awards?action=new" data-toggle="dropdown" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Шинэ шагнал</span></a>
+                                        <a class="dropdown-item d-flex align-items-center" href="awards?action=new" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Шинэ шагнал</span></a>
                                     </li>
                                     <li data-menu="">
-                                        <a class="dropdown-item d-flex align-items-center" href="awards?action=list" data-toggle="dropdown" data-i18n="Advance"><i data-feather="circle"></i><span data-i18n="Advance">Бүх шагналтан</span></a>
+                                        <a class="dropdown-item d-flex align-items-center" href="awards?action=list"  data-i18n="Advance"><i data-feather="circle"></i><span data-i18n="Advance">Бүх шагналтан</span></a>
                                     </li>
                                     <li data-menu="">
-                                        <a class="dropdown-item d-flex align-items-center" href="awards?action=category" data-toggle="dropdown" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Шагналын ангилал</span></a>
+                                        <a class="dropdown-item d-flex align-items-center" href="awards?action=category" data-i18n="Basic"><i data-feather="circle"></i><span data-i18n="Basic">Шагналын ангилал</span></a>
                                     </li>
                                     
                                 </ul>
@@ -79,12 +79,12 @@
 
                     <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-toggle="dropdown"><i data-feather="compass"></i><span data-i18n="Apps">E-бүтээмж</span></a>
                         <ul class="dropdown-menu">                            
-                            <li><a class="dropdown-item d-flex align-items-center" href="experts" data-toggle="dropdown" ><i data-feather="users"></i><span >Экспертүүд</span></a></li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="experts?action=time" data-toggle="dropdown" ><i data-feather="watch"></i><span >Экспертийн цаг</span></a></li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="courses" data-toggle="dropdown" ><i data-feather="users"></i><span >Сургалт</span></a></li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="candidates" data-toggle="dropdown" ><i data-feather="users"></i><span >Сургалтанд бүртгүүлэгсэд</span></a></li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="project" data-toggle="dropdown" ><i data-feather="users"></i><span >Төсөл</span></a></li>
-                            <li><a class="dropdown-item d-flex align-items-center" href="candidate" data-toggle="dropdown" ><i data-feather="users"></i><span >Төсөлд бүртгүүлэгсэд</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="experts" ><i data-feather="users"></i><span >Экспертүүд</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="experts?action=time" ><i data-feather="watch"></i><span >Экспертийн цаг</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="courses"  ><i data-feather="users"></i><span >Сургалт</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="candidates" ><i data-feather="users"></i><span >Сургалтанд бүртгүүлэгсэд</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="project"  ><i data-feather="users"></i><span >Төсөл</span></a></li>
+                            <li><a class="dropdown-item d-flex align-items-center" href="p_candidate"  ><i data-feather="users"></i><span >Төсөлд бүртгүүлэгсэд</span></a></li>
                         </ul>
                     </li>
 
@@ -95,17 +95,17 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-toggle="dropdown"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chrome"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="21.17" y1="8" x2="12" y2="8"></line><line x1="3.95" y1="6.06" x2="8.54" y2="14"></line><line x1="10.88" y1="21.94" x2="15.46" y2="14"></line></svg><span data-i18n="Apps">Гишүүнчлэл</span></a>
+                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-toggle="dropdown"><span data-i18n="Apps">Гишүүнчлэл</span></a>
                         <ul class="dropdown-menu">
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="users" data-toggle="dropdown"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Бүх бүртгэл</span></a>
+                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="users"><span>Бүх бүртгэл</span></a>
                             </li>
                         </ul>
                     </li>
 
                     <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-toggle="dropdown"><i data-feather="settings"></i><span data-i18n="Apps">Админ</span></a>
                         <ul class="dropdown-menu">
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="feedback" data-toggle="dropdown" ><i data-feather="coffee"></i><span >Санал хүсэлт</span></a></li>
-                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="settings" data-toggle="dropdown" ><i data-feather="settings"></i><span >Тохиргоо</span></a></li>
+                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="feedback"  ><i data-feather="coffee"></i><span >Санал хүсэлт</span></a></li>
+                            <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="settings"  ><i data-feather="settings"></i><span >Тохиргоо</span></a></li>
                         </ul>
                     </li>
 

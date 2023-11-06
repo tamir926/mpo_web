@@ -198,21 +198,21 @@
                                         if (mysqli_query($conn,$sql))
                                         {
                                             $candidate_id = mysqli_insert_id($conn);
-                                            if(isset($_FILES['image']) && $_FILES['image']['name']!="")
-                                            {
-                                                if ($_FILES['image']['name']!="")
-                                                    {                        
-                                                        @$folder = date("Ym");
-                                                        if(!file_exists('uploads/'.$folder))
-                                                        mkdir ( 'uploads/'.$folder);
-                                                        $target_dir = 'uploads/'.$folder;
-                                                        $target_file = $target_dir."/"."candidate_".$candidate_id."_".basename($_FILES["image"]["name"]);
-                                                        move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
-                                                        $sql = "UPDATE project_candidate SET image='$target_file' WHERE id='$candidate_id'";
-                                                        mysqli_query($conn,$sql);
+                                            // if(isset($_FILES['image']) && $_FILES['image']['name']!="")
+                                            // {
+                                            //     if ($_FILES['image']['name']!="")
+                                            //         {                        
+                                            //             @$folder = date("Ym");
+                                            //             if(!file_exists('uploads/'.$folder))
+                                            //             mkdir ( 'uploads/'.$folder);
+                                            //             $target_dir = 'uploads/'.$folder;
+                                            //             $target_file = $target_dir."/"."candidate_".$candidate_id."_".basename($_FILES["image"]["name"]);
+                                            //             move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+                                            //             $sql = "UPDATE project_candidate SET image='$target_file' WHERE id='$candidate_id'";
+                                            //             mysqli_query($conn,$sql);
                                 
-                                                    }
-                                            }
+                                            //         }
+                                            // }
                                             
                                             ?>
                                             <div class="alert alert-success">Амжилттай бүртгэлээ</div>
@@ -220,7 +220,7 @@
                                         }
                                         else 
                                         {
-                                            echo mysqli_error($conn);
+                                            // echo mysqli_error($conn);
                                             ?>
                                             <div class="alert alert-danger">Алдаа гарлаа</div>
                                             <?
@@ -412,7 +412,7 @@
                     {
                         ?>
                         <div class="alert alert-danger">
-                            Сургалтын дугаар олдсонгүй
+                            Төслийн дугаар олдсонгүй
                         </div>
                         <?
                     }

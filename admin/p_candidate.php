@@ -52,12 +52,12 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-left mb-0">Сургалтанд бүртгүүлэгсэд</h2>
+                            <h2 class="content-header-title float-left mb-0">Төсөлд бүртгүүлэгсэд</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="dashboard">Нүүр хуудас</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Сургалтанд бүртгүүлэгсэд
+                                    <li class="breadcrumb-item active">Төсөлд бүртгүүлэгсэд
                                     </li>
                                 </ol>
                             </div>
@@ -78,32 +78,34 @@
                                         <thead>
                                             <tr>
                                                 <th>№</th>
-                                                <th class="with_filter">Нэр</th>
+                                                <th class="with_filter">Байгууллага</th>
+                                                <th class="with_filter">Төлөөлөгч</th>
                                                 <th class="with_filter">Утас</th>
                                                 <th class="with_filter">Имэйл</th>
-                                                <th class="with_filter">Байгуулага</th>                                            
-                                                <th class="with_filter">Сургалт</th>                                            
+                                                <th class="with_filter">РД</th>                                            
+                                                <th class="with_filter">Төсөл</th>                                            
                                                 <th>Үйлдэл</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?
                                                 $count =0;
-                                                $sql = "SELECT courses_candidates.*,courses.title course_name 
-                                                FROM courses_candidates 
-                                                LEFT JOIN courses ON courses_candidates.course=courses.id 
-                                                ORDER BY courses_candidates.id DESC LIMIT 50";
+                                                $sql = "SELECT project_candidate.*,project.title project_name 
+                                                FROM project_candidate 
+                                                LEFT JOIN project ON project_candidate.project=project.id 
+                                                ORDER BY project_candidate.id DESC LIMIT 50";
                                                 $result = mysqli_query($conn,$sql);
                                                 while ($data = mysqli_fetch_array($result))
                                                 {
                                                     ?>
                                                     <tr>
                                                         <td><?=++$count;?></td>
-                                                        <td><?=$data["name"];?></td>
-                                                        <td><?=$data["participant_mobile"];?></td>
-                                                        <td><?=$data["participant_email"];?></td>
-                                                        <td><?=$data["org_name"];?></td>
-                                                        <td><?=$data["course_name"];?></td>
+                                                        <td><?=$data["comname"];?></td>
+                                                        <td><?=$data["pname"];?></td>
+                                                        <td><?=$data["ptel"];?></td>
+                                                        <td><?=$data["pmail"];?></td>
+                                                        <td><?=$data["comrd"];?></td>
+                                                        <td><?=$data["project_name"];?></td>
                                                         <td width="300px">
                                                             <div class="btn-group">                                                                
                                                                 <a class="btn btn-primary btn-sm" href="?action=detail&id=<?=$data["id"];?>">Харах</a>
@@ -129,7 +131,7 @@
                 if ($action=="edit")
                 {
                     $candidate_id = $_GET["id"];
-                    $sql = "SELECT *FROM courses_candidates WHERE id='$candidate_id'";
+                    $sql = "SELECT *FROM project_candidate WHERE id='$candidate_id'";
                     $result = mysqli_query($conn,$sql);
                     if (mysqli_num_rows($result)==1)
                     {
@@ -275,7 +277,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan="3">
-                                                <label class="form-label">Бүтээмжийн чиглэлээр сургалтанд оролцож байсан эсэх</label>
+                                                <label class="form-label">Бүтээмжийн чиглэлээр Төсөлд оролцож байсан эсэх</label>
                                                 <select name="everbefore" class="form-control">                                                            
                                                     <option value="1" <?=($everbefore==1)?'SELECTED':'';?>>Тийм</option>
                                                     <option value="0" <?=($everbefore==0)?'SELECTED':'';?>>Үгүй</option>
@@ -285,7 +287,7 @@
                                         
                                         <tr>
                                             <td width="30%">
-                                                <input type="text" class="form-control" name="whichone" placeholder="Хэрэв тийм бол ямар нэртэй сургалтанд оролцож байсан бэ?" value="<?=$whichone;?>">
+                                                <input type="text" class="form-control" name="whichone" placeholder="Хэрэв тийм бол ямар нэртэй Төсөлд оролцож байсан бэ?" value="<?=$whichone;?>">
                                             </td>
                                             <td width="30%">
                                                 <input type="text" class="form-control" name="whenisit" placeholder="Хэзээ" value="<?=$whenisit;?>">
@@ -393,7 +395,7 @@
                     $participant_referrer_address = $_POST["participant_referrer_address"];
 
                     $participant_referrer = $participant_referrer_name."|".$participant_referrer_type."|".$participant_referrer_tel."|".$participant_referrer_email."|".$participant_referrer_address;
-                    $sql = "UPDATE courses_candidates SET
+                    $sql = "UPDATE project_candidate SET
                     course='$course_id',
                     surname='$surname',
                     name='$name',
@@ -453,7 +455,7 @@
                 if ($action=="detail")
                 {
                     $candidate_id = $_GET["id"];
-                    $sql = "SELECT *FROM courses_candidates WHERE id='$candidate_id'";
+                    $sql = "SELECT *FROM project_candidate WHERE id='$candidate_id'";
                     $result = mysqli_query($conn,$sql);
                     if (mysqli_num_rows($result)==1)
                     {
@@ -602,7 +604,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan="3">
-                                                <label class="form-label">Бүтээмжийн чиглэлээр сургалтанд оролцож байсан эсэх</label>
+                                                <label class="form-label">Бүтээмжийн чиглэлээр Төсөлд оролцож байсан эсэх</label>
                                                 <select name="everbefore" class="form-control" disabled>                                                            
                                                     <option value="1" <?=($everbefore==1)?'SELECTED':'';?>>Тийм</option>
                                                     <option value="0" <?=($everbefore==0)?'SELECTED':'';?>>Үгүй</option>
@@ -612,7 +614,7 @@
                                         
                                         <tr>
                                             <td width="30%">
-                                                <input type="text" class="form-control" name="whichone" placeholder="Хэрэв тийм бол ямар нэртэй сургалтанд оролцож байсан бэ?" value="<?=$whichone;?>" disabled>
+                                                <input type="text" class="form-control" name="whichone" placeholder="Хэрэв тийм бол ямар нэртэй Төсөлд оролцож байсан бэ?" value="<?=$whichone;?>" disabled>
                                             </td>
                                             <td width="30%">
                                                 <input type="text" class="form-control" name="whenisit" placeholder="Хэзээ" value="<?=$whenisit;?>" disabled>
@@ -682,12 +684,12 @@
                 if ($action=="delete")
                 {
                     $candidate_id = $_GET["id"];
-                    $sql = "SELECT *FROM courses_candidates WHERE id='$candidate_id'";
+                    $sql = "SELECT *FROM project_candidate WHERE id='$candidate_id'";
                     $result = mysqli_query($conn,$sql);
                     if (mysqli_num_rows($result)==1)
                     {
                         $data = mysqli_fetch_array($result);
-                        $sql = "DELETE FROM courses_candidates WHERE id='$candidate_id'";
+                        $sql = "DELETE FROM project_candidate WHERE id='$candidate_id'";
 
                         if (mysqli_query($conn,$sql))
                         {
@@ -828,7 +830,7 @@
         
             
         } );
-        $('div.head-label').html('<h6 class="mb-0">Сургалтанд бүртгүүлэгсэд</h6>');
+        $('div.head-label').html('<h6 class="mb-0">Төсөлд бүртгүүлэгсэд</h6>');
         $('.dropdown-toggle').dropdown();
         $('.single_price').change(function(){
             //$('.single_price').next('form-control').val($(this).val()*$(this).attr('alt'));
