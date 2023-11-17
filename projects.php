@@ -161,40 +161,39 @@
                                     if (isset($_POST["project_id"]))
                                     {
                                         $course_id = protect($_POST["project_id"]);
-                                        $surname = protect($_POST["surname"]);
-                                        $name = protect($_POST["name"]);
-                                        $rd = protect($_POST["rd"]);
+                                        $comname = protect($_POST["comname"]);
+                                        $comdate = protect($_POST["comdate"]);
+                                        $comrd = protect($_POST["comrd"]);
+                                        $ceogender = protect($_POST["ceogender"]);
+                                        $field_action = protect($_POST["field_action"]);
+                                        $workers = protect($_POST["workers"]);
+                                        $woman = protect($_POST["woman"]);
+                
+                                        $department = protect($_POST["department"]);
+                                        $location = protect($_POST["location"]);
+                                        $ceoname = protect($_POST["ceoname"]);
                                         $city = protect($_POST["city"]);
-                                        $dob = protect($_POST["dob"]);
-                                        $gender = protect($_POST["gender"]);
-                                        $position = protect($_POST["position"]);
-                
-                                        $org_name = protect($_POST["org_name"]);
-                                        $org_address = protect($_POST["org_address"]);
-                                        $org_tel = protect($_POST["org_tel"]);
-                                        $org_email = protect($_POST["org_email"]);
-                                        $org_type = protect($_POST["org_type"]);
-                                        $org_employees = protect($_POST["org_employees"]);
+                                        $reqiust = protect($_POST["reqiust"]);
+                                        $advice = protect($_POST["advice"]);
                 
                 
-                                        $everbefore = protect($_POST["everbefore"]);
-                                        $payment_type = protect($_POST["payment_type"]);
-                                        $whichone = protect($_POST["whichone"]);
-                                        $whenisit = protect($_POST["whenisit"]);
-                                        $wherewasit = protect($_POST["wherewasit"]);
+                                        $result = protect($_POST["result"]);
+                                        $start_date = protect($_POST["start_date"]);
+                                        $end_date = protect($_POST["end_date"]);
+                                        $meeting_location = protect($_POST["meeting_location"]);
+                                        $level = protect($_POST["level"]);
                 
-                                        $participant_address = protect($_POST["participant_address"]);
-                                        $participant_mobile = protect($_POST["participant_mobile"]);
-                                        $participant_email = protect($_POST["participant_email"]);
-                                        $participant_referrer_name = protect($_POST["participant_referrer_name"]);
-                                        $participant_referrer_type = protect($_POST["participant_referrer_type"]);
-                                        $participant_referrer_tel = protect($_POST["participant_referrer_tel"]);
-                                        $participant_referrer_email = protect($_POST["participant_referrer_email"]);
-                                        $participant_referrer_address = protect($_POST["participant_referrer_address"]);
-                                        $participant_referrer = $participant_referrer_name."|".$participant_referrer_type."|".$participant_referrer_tel."|".$participant_referrer_email."|".$participant_referrer_address;
+                                        $pname = protect($_POST["pname"]);
+                                        $pnamee = protect($_POST["pnamee"]);
+                                        $pposition = protect($_POST["pposition"]);
+                                        $pmail = protect($_POST["pmail"]);
+                                        $ptel = protect($_POST["ptel"]);
+                                        $pdate = protect($_POST["pdate"]);
+                                        //$updated_date = protect($_POST["updated_date"]);
+                                        //$created_date = protect($_POST["created_date"]);
                                         $sql = "INSERT INTO project_candidate 
-                                        (project,surname,name,rd,gender,city,dob,position,org_name,org_address,org_tel,org_email,org_type,org_employees,everbefore,payment_type,whichone,whenisit,wherewasit,participant_address,participant_mobile,participant_email,participant_referrer) VALUES 
-                                        ('$project_id','$surname','$name','$rd','$gender','$city','$dob','$position','$org_name','$org_address','$org_tel','$org_email','$org_type','$org_employees','$everbefore','$payment_type','$whichone','$whenisit','$wherewasit','$participant_address','$participant_mobile','$participant_email','$participant_referrer')";
+                                        (project,comname,comdate,comrd,workers,ceogender,field_action,woman,department,location,ceoname,city,reqiust,advice,result,start_date,end_date,meeting_location,level,pname,pnamee,pposition,pmail,ptel,pdate) VALUES 
+                                        ('$project_id','$comname','$comdate','$comrd','$workers','$ceogender','$field_action','$woman','$department','$location','$ceoname','$city','$reqiust','$advice','$result','$start_date','$end_date','$meeting_location','$level','$pname','$pnamee','$pposition','$pmail','$ptel','$pdate')";
                                         if (mysqli_query($conn,$sql))
                                         {
                                             $candidate_id = mysqli_insert_id($conn);
@@ -233,172 +232,140 @@
                                             <input type="hidden" name="project_id" value="<?=$project_id;?>">
                                             <table class="table table-border">
                                                 <tr>
-                                                    <td colspan="3"><h4>A. Ерөнхий мэдээлэл ***</h4></td>
+                                                    <td colspan="3"><h4>A. Аж ахуйн нэгжийн мэдээлэл</h4></td>
                                                 </tr>
                                                 <tr>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="surname" placeholder="Овог" required>
+                                                        <input type="text" class="form-control" name="comname" placeholder="Байгууллагын нэр" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="name" placeholder="Нэр" required>
+                                                        <input type="text" class="form-control" name="comrd" placeholder="Байгууллагын регистрийн дугаар" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="rd" placeholder="Регистрийн дугаар" required>
+                                                        <input type="text" class="form-control" name="comdate" placeholder="Үүсгэн байгуулсан он" required>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td width="30%">
-                                                        <select name="city" class="form-control" required>                                                            
-                                                            <option value="" selected disabled>Харьяалал</option>
-                                                            <option value="1">Багануур</option>
-                                                            <option value="2">Багахангай</option>
-                                                            <option value="3">Баянгол</option>
-                                                            <option value="4">Баянзүрх</option>												
-                                                            <option value="5">Налайх</option>												
-                                                            <option value="6">Сонгинохайрхан</option>												
-                                                            <option value="7">Сүхбаатар</option>												
-                                                            <option value="8">Хан-Уул</option>												
-                                                            <option value="9">Чингэлтэй</option>		
-                                                            <option value="" disabled>Хөдөө орон нутаг</option>
-                                                            <option value="102">Архангай</option>
-                                                            <option value="103">Баян-Өлгий</option>
-                                                            <option value="104">Баянхонгор</option>
-                                                            <option value="105">Булган</option>												
-                                                            <option value="106">Говь-Алтай</option>												
-                                                            <option value="107">Говьсүмбэр</option>												
-                                                            <option value="108">Дархан-Уул </option>												
-                                                            <option value="109">Дорноговь</option>												
-                                                            <option value="110">Дорнод</option>																												
-                                                            <option value="111">Дундговь</option>																												
-                                                            <option value="112">Завхан</option>																												
-                                                            <option value="113">Орхон</option>																												
-                                                            <option value="114">Өвөрхангай</option>																												
-                                                            <option value="115">Өмнөговь</option>																												
-                                                            <option value="116">Сүхбаатар</option>																												
-                                                            <option value="117">Сэлэнгэ</option>																												
-                                                            <option value="118">Төв</option>																												
-                                                            <option value="119">Увс</option>																												
-                                                            <option value="120">Ховд</option>																												
-                                                            <option value="121">Хөвсгөл</option>																												
-                                                            <option value="122">Хэнтий</option>	
-                                                        </select>
+                                                        <input type="text" class="form-control" name="field_action" placeholder="Үйл ажиллагааны чиглэл" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="date" class="form-control" name="dob" placeholder="Төрсөн өдөр" required>
+                                                        <input type="text" class="form-control" name="workers" placeholder="Нийт ажилчдын тоо" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <select name="gender" class="form-control" required>
+                                                        <input type="text" class="form-control" name="woman" placeholder="Эмэгтэй ажилчдын тоо" required>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="30%">
+                                                        <input type="text" class="form-control" name="department" placeholder="Хэлтэс, нэгжийн тоо" required>
+                                                    </td>
+                                                    <td width="30%">
+                                                        <input type="text" class="form-control" name="location" placeholder="Байршил" required>
+                                                    </td>
+                                                    <td width="30%">
+                                                        <input type="text" class="form-control" name="ceoname" placeholder="Захирлын овог, нэр" required>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="30%">
+                                                        <select name="ceogender" class="form-control" required>
                                                             <option value="0">Эмэгтэй</option>
                                                             <option value="1">Эрэгтэй</option>
                                                         </select>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="2">
-                                                        <input type="text" class="form-control" name="position" placeholder="Албан тушаал">
-                                                    </td>   
-                                                    <td>Цээж зураг: <input type="file" name="image" accept="image/png, image/jpeg" >
-                                                    </td>                                                  
+                                                    <td colspan="3"><h4>Б. Аж ахуйн нэгжийн мэдээлэл</h4></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="3"><h4>Б. Байгууллага/ компанийн ерөнхий мэдээлэл ***</h4></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="30%">
-                                                        <input type="text" class="form-control" name="org_name" placeholder="Байгууллага/ компанийн нэр" required>
-                                                    </td>
-                                                    <td width="30%">
-                                                        <input type="text" class="form-control" name="org_address" placeholder="Хаяг" required>
-                                                    </td>
-                                                    <td width="30%">
-                                                        <input type="text" class="form-control" name="org_tel" placeholder="Утас" required>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="30%">
-                                                        <input type="text" class="form-control" name="org_email" placeholder="Э-шуудан" required>
-                                                    </td>
-                                                    <td width="30%">
-                                                        <input type="text" class="form-control" name="org_type" placeholder="Бизнесийн төрөл" required>
-                                                    </td>
-                                                    <td width="30%">
-                                                        <input type="number" class="form-control" name="org_employees" placeholder="Нийт ажиллагсдын тоо" min="0" step="1" required>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="3"><h4>В. Бүтээмжийн Төсөл</h4></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="3">
-                                                        <label class="form-label">Бүтээмжийн чиглэлээр сургалтанд оролцож байсан эсэх</label>
-                                                        <select name="everbefore" class="form-control">                                                            
-                                                            <option value="1">Тийм</option>
-                                                            <option value="0">Үгүй</option>
+                                                    <td>
+                                                        <select name="city" class="form-control" required>                                                            
+                                                            <option value="" selected disabled>Төслийн сэдвийг сонгох /олон сэдвүүдийг нэгтгэн багц төсөл болгох боломжтой</option>
+                                                            <option value="1">Бүтээмж, чанарын менежмент</option>
+                                                            <option value="2">Ажлын байрны соёл 5С</option>
+                                                            <option value="3">Кайзэн хандлага, саналын систем</option>
+                                                            <option value="4">Чанарын менежментийн тогтолцоо ISO9001:2015</option>												
+                                                            <option value="5">Баримтжуулсан тогтолцоо /ЧМТ ISO9001:2015 ОУ-ын стандартын шаардлагын хүрээнд/</option>												
+                                                            <option value="6">Процессын хандлага /ЧМТ ISO9001:2015 ОУ-ын стандартын шаардлагын хүрээнд/</option>												
+                                                            <option value="7">Ногоон бүтээмж</option>												
+                                                            <option value="8">Материалын урсгал зардлын тооцоолол</option>												
+                                                            <option value="9">Мэдлэгийн менежмент</option>		
+                                                            <!-- <option value="" disabled>Хөдөө орон нутаг</option> -->
+                                                            <option value="10">Чанарын дугуйлан</option>
+                                                            <option value="11">7 алдагдал</option>
+                                                            <option value="12">Стратеги менежмент</option>
+                                                            <option value="13">Эрсдлийн удирдлага /ЧМТ ISO9001:2015 ОУ-ын стандартын шаардлагын хүрээнд/</option>												
+                                                            <option value="14">Бизнесийн төгөлдөршил</option>												
+                                                            <option value="15">Балансалсан үнэлгээний систем</option>												
+                                                            <option value="16">Эрчим хүчний хэмнэлт </option>												
+                                                       
                                                         </select>
                                                     </td>
                                                 </tr>
-                                               
                                                 <tr>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="whichone" placeholder="Хэрэв тийм бол ямар нэртэй сургалтанд оролцож байсан бэ?">
+                                                        <input type="text" class="form-control" name="reqiust" placeholder="Төслийн хүрээнд ямар асуудлыг шийдвэрлэхийг хүсч байна вэ?" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="whenisit" placeholder="Хэзээ">
+                                                        <input type="text" class="form-control" name="advice" placeholder="Ямар төрлийн бизнесийн зөвлөгөө шаардлагатай байна вэ?" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="wherewasit" placeholder="Хаана">
+                                                        <input type="text" class="form-control" name="result" placeholder="Дээрх зөвлөгөөг авснаар танай компани ямар үр дүн хүлээж байна вэ?" required>
                                                     </td>
                                                 </tr>
-
                                                 <tr>
-                                                    <td colspan="3">
-                                                        <label class="form-label">Төлбөр төлөх хэлбэр</label>
-                                                        <select name="payment_type" class="form-control">                                                            
-                                                            <option value="1">Бэлнээр</option>
-                                                            <option value="2">Нэхэмжлэх авах</option>
+                                                    <td width="30%">
+                                                        <input type="text" class="form-control" name="start_date" placeholder="Төслийг эхлүүлэхээр төлөвлөж буй огноо: " required>
+                                                    </td>
+                                                    <td width="30%">
+                                                        <input type="text" class="form-control" name="end_date" placeholder="Төслийн нийт үргэлжлэх хугацаа: " required>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="30%">
+                                                        <select name="meeting_location" class="form-control" required>
+                                                            <option value="" selected disabled>Төслийн уулзалтуудыг зохион байгуулах байршил</option>
+                                                            <option value="0">Байгууллага дээрээ</option>
+                                                            <option value="1">Зайнаас холбогдох /Zoom/</option>
+                                                        </select>
+                                                    </td>
+                                                    <td width="30%">
+                                                        <select name="level" class="form-control" required>
+                                                            <option value="" selected disabled>Хамрагдах оролцогчдын түвшин</option>
+                                                            <option value="0">Дээд түвшний удирдлага</option>
+                                                            <option value="1">Дунд түвшний ажилтнууд</option>
+                                                            <option value="2">Анхан шатны ажилчид</option>
+                                                            <option value="3">Бүтээмжийн багийн гишүүд</option>
                                                         </select>
                                                     </td>
                                                 </tr>
-
                                                 <tr>
-                                                    <td colspan="3"><h4>Г. Оролцогчийн мэдээлэл ***</h4></td>
+                                                    <td><h5 style="color: gray;"><b>Танай компанийг төлөөлж төслийг хариуцах хүн:</b></h5></td>
                                                 </tr>
                                                 <tr>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="participant_address" placeholder="Хаяг" required>
+                                                        <input type="text" class="form-control" name="pnamee" placeholder="Овог" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="participant_mobile" placeholder="Гар утас" required>
+                                                        <input type="text" class="form-control" name="pname" placeholder="Нэр" required>
                                                     </td>
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="participant_email" placeholder="Э-шуудан: /өөрийн/" required>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="3">Шаардлагатай үед холбоо барих хүн</td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="30%">
-                                                        <input type="text" class="form-control" name="participant_referrer_name" placeholder="Нэр">
-                                                    </td>
-                                                    <td width="30%">
-                                                        <input type="text" class="form-control" name="participant_referrer_type" placeholder="Таны хэн болох">
-                                                    </td>
-                                                    <td width="30%">
-                                                        <input type="text" class="form-control" name="participant_referrer_tel" placeholder="Утас:">
+                                                        <input type="text" class="form-control" name="pposition" placeholder="Албан тушаал" required>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    
                                                     <td width="30%">
-                                                        <input type="text" class="form-control" name="participant_referrer_email" placeholder="Э-шуудан:">
-                                                    </td>  
-                                                    <td colspan="2">
-                                                        <input type="text" class="form-control" name="participant_referrer_address" placeholder="Хаяг:">
-                                                    </td>                                                  
+                                                        <input type="text" class="form-control" name="pmail" placeholder="И-мэйл хаяг" required>
+                                                    </td>
+                                                    <td width="30%">
+                                                        <input type="text" class="form-control" name="ptel" placeholder="Утасны дугаар" required>
+                                                    </td>
+                                                    <td width="30%">
+                                                        <input type="text" class="form-control" name="pdate" placeholder="Хүсэлт илгээсэн огноо" required>
+                                                    </td>
                                                 </tr>
                                             </table>
-                                            <i>*** - заавал бөглөх талбарууд</i>
                                         </div>
                                         <button class="btn-default mt-3" type="submit">Илгээх</button>
                                     </form>
