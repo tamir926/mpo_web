@@ -12,7 +12,8 @@
                         <div class="row">
                             <div class="col-lg-6 mx-auto">
                                 <h4 class="text-black text-center">Certificate</h4>
-                                <p>You can get the certificate information by entering your certificate number and registration number and can get it again for a fee.</p>
+                                <p>You can get the certificate information by entering your certificate number and registration number.</p>
+                                <p>Redeem fee may apply </p>
                                 <form action="certificate_redeem" method="post">
                                     <input type="text" required name="search" class="form-control" style="padding: 5px; max-width:200px; border-radius: 5px; margin:30px auto; display:block;">
                                     <button class="btn btn-success btn-xl mt-10" onclick="submit();">Search</button>

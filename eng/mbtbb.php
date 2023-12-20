@@ -9,9 +9,9 @@
             <div class="container text-center pt-100 pb-100">
                 <div class="row">
                     <div class="col-8 mx-auto text-justify">
-                        <img src="assets/images/logos.jpg" class="mt-50">
+                        <img src="../assets/images/logos.jpg" class="mt-50">
                         <?
-                        $sql = "SELECT *FROM pages WHERE page_id=1";
+                        $sql = "SELECT *FROM pages WHERE page_id=18";
                         $result = mysqli_query($conn,$sql);
                         $page = mysqli_fetch_array($result);
                         ?>
@@ -20,10 +20,10 @@
                         <p class="text-justify"><?=$page["content"];?></p>
 
                         <div class="pt-50">
-                            <a class="btn btn-warning" href="assets/images/mbbtb_structure.png" data-rel="lightcase:myCollection">Structure</a>
-                            <a class="btn btn-warning" href="assets/images/brochure1.jpg" data-rel="lightcase:brochure" >Brochure</a>
-                            <a href="assets/images/brochure2.jpg" data-rel="lightcase:brochure"></a>
-                            <a href="assets/images/uz.png" data-rel="lightcase:uz" class="btn btn-warning">Management Board</a>
+                            <a href="missionvision_eng.php" class="btn btn-success btn-xl mt-10">Mission vision</a>
+                            <a href="structure_eng.php" class="btn btn-success btn-xl mt-10">Structure</a>
+                            <a href="introduction_eng.php" class="btn btn-success btn-xl mt-10">Introduction</a>
+                            <a href="management_eng.php" class="btn btn-success btn-xl mt-10">Management</a>
                         </div>
                     </div>
                 </div>
@@ -37,20 +37,19 @@
             <div class="container text-center pt-50 pb-50">
                 <div class="row">
                     <div class="col-lg-4 mx-auto">
-                        <h4 class="text-black">Projects Purpose</h4>
-                        <p>а. Certificaion the completency of an expert in implementing productivity improve solution and impovement projects</p>
-                        <p>б. Dissenubation of soecialized knowledge/informat ion though factories and orgazanions to solve productivity improvement problems by providing training programs, coordination, guidance, and consulting services</p>
+                        <h4 class="text-black">Certification purpose</h4>
+                        <p>This PSC is introduced by APO-AB as a scheme owner with the objective to build up pools ofproductivity specialist for all national productivity organisations members countries, includingMPO, a sole representative of national productivity organisation (NPO) in Mongolia.</p>
                     </div>
                     <div class="col-lg-4  mx-auto">
-                        <h4 class="text-black">Signifation</h4>
-                        <p>Individuals who meet the requirements will be awarded the certificate of "Certified Productivity Specialist" in accordance with the level and hierarchy og the productivity specialist, and will have the opportunity to improve their professional and bussiness prospects, connect with other productivity specialist , and participate in international projects of APO. In addition , certified PS will be recognized in member states with similar acceditation system of thw NPT. A ceritified PS will be registered as a word-class productivity professional on the MPOCB directory and the APO portal.</p>
+                        <h4 class="text-black">CERTIFICATION BENEFIT</h4>
+                        <p>Individuals who meet the requirements will be awarded the certificate of "Certified Productivity Specialist" in accordance with the level and hierarchy of the productivity specialist, and will have the opportunity to improve their professional and bussiness prospects, connect with other productivity specialists, and participate in international projects of APO. In addition,  CPS will be recognized in member states with similar acceditation system of the NPO. A ceritified PS will be registered as a word-class productivity professional on the MPOCB directory and the APO portal.</p>
                     </div>
                     <div class="col-lg-4  mx-auto">
-                        <h4 class="text-black text-left">Type Of Certification</h4>
-                        <p>MPOCB provides responsible Productivity Specialist Certification of Scheme on the 3 level: </p>
-                            <p>1.  Certified Productivity Specialist attested of the APO</p>
-                            <p>2.  Certified Senior Productivity Specialist attested of APO</p>
-                            <p>3.  Certified Master Productivity Specialist</p>
+                        <h4 class="text-black text-left">Tiers of Productivity Specialist Certification</h4>
+                        <p>MPOCB provides responsible Productivity Specialist Certification Scheme according to the following 3 levels:</p>
+                            <a href="productivity_specialist_eng.php"><p class="green">1. Certified Productivity Specialist attested of the APO</p></a>
+                            <a href="senior_productivity_eng.php"><p class="green">2. Certified Senior Productivity Specialist attested of APO</p></a>
+                            <a href="master_productivity_eng.php"><p class="green">3. Certified Master Productivity Specialist</p></a>
                     </div>
                 </div>
             </div>
@@ -77,8 +76,9 @@
                     <div class="container gray-bg pt-100 pb-100 jambotron">
                         <div class="row">
                             <div class="col-lg-8 mx-auto">
-                                <h4 class="text-black text-center">Certification</h4>
+                                <h4 class="text-black text-center">CERTIFICATION, RE-CERTIFICATION, AND CPD</h4>
                                 <p>
+                                    <a>CPS is expected to transfer knowledge of a wide range of productivity solutions to enterprises and organizations through training, facilitating, coaching, and consulting activities as follows:</a>
                                     <ul class="mpo-ul">
                                         <li>Indentify, implement, and explain productivity improvement solutions and productivity improvement methodologies</li>
                                         <li>Implement a comprehensive productivity programin the organization with stages to analyze productivity issues, indentify ways to improve, and implement them 
@@ -87,9 +87,11 @@
                                     </ul>
                                 </p>
                                 <div class="text-center">
-                                    <a href="assets/images/roadmap.jpg" data-rel="lightcase:roadmap" class="btn btn-success btn-xl mt-10 ">Plan</a>
-                                    <a href="mbbtb_brochure" class="btn btn-success btn-xl mt-10" target="new">Manual</a>
+                                    <a href="plan_eng.php" class="btn btn-success btn-xl mt-10">Plan</a>
                                     <a href="application" class="btn btn-success btn-xl mt-10">Application</a>
+                                    <a href="cdp_eng.php" class="btn btn-success btn-xl mt-10">CPD</a>
+                                    <a href="process_eng.php" class="btn btn-success btn-xl mt-10" target="new">Process</a>
+                                    <a href="appeal_eng.php" class="btn btn-success btn-xl mt-10" target="new">Appeal</a>
                                 </div>
 
                             </div>
@@ -106,8 +108,9 @@
                 <div class="row">
                     <div class="our-services-option">
                         <div class="section-header">
-                            <h2>Certified Professionals</h2>
-                            <p>You are invited to become a Certified Productivity Professional certified by the Asian Productivit Organization. Please download the application form, enter your infornation and send it to <a href="maito:info@mpo-org.mn">info@mpo-org.mn</a>.</p>
+                            <h2>Certified Productivity Specialists</h2>
+                            <p>SCOPE OF CERTIFICATION</p>
+                            <p>You are invited to become a Certified Productivity Specialist accredited by the Asian Productivity Organization. Please download the application form, enter your information and send it to <a href="maito:info@mpo-org.mn"> info@mpo-org.mn </a></p>
                         </div>
                         <!-- .section-header -->
                         <div class="row">
@@ -115,8 +118,8 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Даваагийн Ариунзул</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
+                                            <h4><a href="../cb_D_Ariunzul_eng.php">Ariunzul Davaa</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -130,8 +133,8 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Нэргүйн Ариунжаргал</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
+                                            <h4><a href="../cb_N_Ariunjargal_eng.php">Ariunjargal Nergui</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -145,8 +148,8 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Лхайзамын Уранцэцэг</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
+                                            <h4><a href="../cb_L_Urantsetseg_eng.php">Urantsetseg Lkhaizam</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -160,8 +163,8 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Очирвааны Урангоо</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
+                                            <h4><a href="../cb_O_Urangoo_eng.php">Urangoo Ochirvaani</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -175,8 +178,8 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Бямбын Уранчимэг</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
+                                            <h4><a href="../cb_B_Uranchimeg_eng.php">Uranchimeg Byamba</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -190,8 +193,8 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Таванжингийн Оюунцэцэг</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
+                                            <h4><a href="../cb_T_Oyuntsetseg_eng.php">Oyuntsetseg Tavanjin</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -204,23 +207,8 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Цэнд-Аюушын Хишигжаргал</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Мягмарсүрэнгийн Хишигдэлгэр</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
+                                            <h4><a href="../cb_Ts_Khishigjargal_eng.php">Hishigjargal Tsend-Ayush</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -234,8 +222,8 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Лозолын Оюун</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
+                                            <h4><a href="../cb_M_Khishigdelger_eng.php">Hishigdelger Myagmarsuren</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -249,8 +237,8 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Лхагвасүрэнгийн Бадамцэцэг</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
+                                            <h4><a href="../cb_L_Oyun_eng.php">Oyun Lozol</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -264,8 +252,8 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Жаргалын Ариунзул</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
+                                            <h4><a href="../cb_L_Badamtsetseg_eng.php">Badamtsetseg Lkhagvasuren</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -279,8 +267,23 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Алтанцэцэгийн Оюунгэрэл</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
+                                            <h4><a href="../cb_J_Ariunzul_eng.php">Ariunzul Jargal</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="../cb_A_Oyungerel_eng.php">Oyungerel Altantsetseg</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -294,8 +297,98 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Баттулгын Балжинням</a></h4>
-                                            <p class="yellow">Productivity Specialist</p>
+                                            <h4><a href="../cb_B_Baljinnyam_eng.php">Baljinnyam Battulga</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="../cb_O_Sergelen_eng.php">Sergelen Orgilbulag</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+                            
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="../cb_H_Davaasuren_eng.php">Davaasuren Hashbaatar</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="../cb_B_Erdenechimeg_eng">Erdenechimeg Bold</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="../cb_D_Narmandah_eng.php">Narmandah Davaadorj</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="../cb_G_Ganzorigt_eng.php">Galbadrah Ganzorig</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+                            
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="#">Batgerel Luvsanchultem</a></h4>
+                                            <p class="yellow">Certified Productivity Specialist</p>
                                         </div>
                                         <!-- .our-services-content -->
                                     </div>
@@ -320,11 +413,10 @@
                     <div class="container gray-bg pt-100 pb-100 text-center jambotron">
                         <div class="row">
                             <div class="col-lg-6 mx-auto">
-                                <h4 class="text-black text-center">Certificate</h4>
-                                <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis odio ac felis aliquam tincidunt. Praesent non lacus a tortor consequat aliquam at et libero. Suspendisse congue, purus at congue sagittis, tellus nibh elementum mauris, nec tincidunt tortor sapien id nibh. 
-                                </p>
-                                <a href="certificate" class="btn btn-success btn-xl mt-10">Download the certificate</a>
+                                <h4 class="text-black text-center">Certificate Database</h4>
+                                <p>Certification of CPS is valid for 3 years. Re-certification is subjected to candidates who meet continued conformity requirements.</p>
+                                <p>Current valid certification can be provided upon request.</p>
+                                <a href="certificate" class="btn btn-success btn-xl mt-10">Download Certificate</a>
 
                             </div>
                         </div>
@@ -341,7 +433,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
-                            <img src="assets/images/image2.PNG" alt="MPO" class="img-responsive" />
+                            <img src="../assets/images/image2.PNG" alt="MPO" class="img-responsive" />
                     </div>
                     <div class="col-lg-5 pt-100">  
                         <div class="d-flex justify-content-between">

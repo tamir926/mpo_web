@@ -5,6 +5,15 @@ RewriteEngine On
 RewriteRule ^home?$ index.php
 RewriteRule ^index?$ index.php
 RewriteRule ^mbtbb?$ mbtbb.php
+RewriteRule ^introduction_eng?$ introduction_eng.php
+RewriteRule ^missionvision_eng?$ missionvision_eng.php
+RewriteRule ^structure_eng?$ structure_eng.php
+RewriteRule ^management_eng?$ management_eng.php
+RewriteRule ^productivity_specialist_eng?$ productivity_specialist_eng.php
+RewriteRule ^senior_productivity_eng?$ senior_productivity_eng.php
+RewriteRule ^master_productivity_eng?$ master_productivity_eng.php
+RewriteRule ^plan_eng?$ plan_eng.php
+RewriteRule ^process_eng?$ process_eng.php
 RewriteRule ^mbbtb_brochure?$ mbbtb_brochure.php
 RewriteRule ^application?$ application.php
 RewriteRule ^application_bm?$ application_bm.php
@@ -13,6 +22,8 @@ RewriteRule ^application_bmm?$ application_bmm.php
 RewriteRule ^application_re?$ application_re.php
 RewriteRule ^certificate?$ certificate.php
 RewriteRule ^certificate_redeem?$ certificate_redeem.php
+RewriteRule ^cdp_eng?$ cdp_eng.php
+RewriteRule ^appeal_eng?$ appeal_eng.php
 ErrorDocument 404 underconstruction
 
 RewriteRule ^faqs?$ faqs.php

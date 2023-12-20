@@ -49,69 +49,10 @@
             <section>
                 <div class="container text-center pt-100 pb-100">
                     <div class="row">
-                        <div class="col-lg-4 col-md-12 mx-auto text-justify col-sm-12">
-                            <div class="donate-form">
-                                <form action="application_bm" method="POST" class="contact-form" enctype="multipart/form-data" onSubmit="submitForm();" >
-                                    <input type="hidden" name="timestamp" value="<?=date("Y-m-d H:i:s");?>
-                                    <div class="select-amount">
-                                        <!-- .select-amount -->
+                        <div class="col-lg-4 col-md-5 mx-auto text-justify col-sm-5">
                                         <div class="login-form">
-                                            <h3>F-CB-10 Application form PS</h3>
-                                            <p>Please download the application form as an excel file, fill it and submit it. <a href="../files/Application_10_eng.xlsx" target="new">Download the Excel file here.</a></p>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="form-group mt-30">
-                                                    Select your completed excel file
-                                                        <input type="file" class="form-control" name="excel" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required/>
-                                                    </div>
-
-                                                    <div class="form-group mt-30">
-                                                    If there are additional files to attach, please include them.
-                                                        <input type="file" class="form-control" name="additional"/>                                                    
-                                                    </div>
-
-                                                    <div class="form-group mt-30">
-                                                        <textarea class="form-control" name="description" placeholder="Нэмэлт тайлбар"></textarea>                                                    
-                                                    </div>
-
-                                                    <div class="form-group mt-30">   
-                                                        <p>
-                                                        <input type="checkbox" name="confidential" required> 
-                                                        I,  <a href="#" class="mpo_a"><b>Terms of Service</b> </a> I agree.
-                                                        </p>                                                 
-                                                    </div>
-
-                                                    <div class="form-group mt-30">   
-                                                        <p>
-                                                        <input type="checkbox" name="confidential" required> 
-                                                        I,  <a href="#" class="mpo_a"><b>Privacy Policy</b> </a> I agree.
-                                                        </p>                                                 
-                                                    </div>
-
-                                                    <div class="form-group mt-30">   
-                                                        <div id="signature-pad" class="m-signature-pad">
-                                                            <div class="m-signature-pad--body">
-                                                                <canvas></canvas>
-                                                                <input type="hidden" name="signature" id="signature" value="">
-                                                            </div>
-                                                        </div>
-                                    
-                                                    </div>
-
-
-                                                    
-
-                                                    <div class="form-group">
-                                                        <input type="submit" class="btn btn-default w-100 mt-30" value="Send">
-                                                    </div>
-                                                    <!-- .form-group -->
-                                                </div>
-                                                                                            <!-- .col-lg-6 -->
-                                            </div>
-                                            <!-- .row -->
-                                        </div>
-                                    </div>
-                                </form>
+                                            <h3>Appeal notice form</h3>
+                                            <p> Please dowload the Appeal Notice Form and, enter your information and send it to secretary@mpo-org.mn<a href="../files/CB_appeal_eng.xlsx" target="new">Download the Excel file here.</a></p>
                             </div>
                                 
                         </div>

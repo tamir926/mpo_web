@@ -11,7 +11,7 @@
         
         <script src="https://unpkg.com/pdfobject@2.2.7/pdfobject.min.js"></script>
         
-        <script>PDFObject.embed("pdfs/mbbtb_ug.pdf", "#pdf");</script>
+        <script>PDFObject.embed("../pdfs/mbbtb_ug.pdf", "#pdf");</script>
 
         <style>
         .pdfobject-container { height: 100vh; border: none; }

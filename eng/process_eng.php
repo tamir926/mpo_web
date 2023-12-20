@@ -5,59 +5,49 @@
     <div class="box-layout">       
         <? require_once("views/header.php");?>
 
-       <!-- Start People working Section -->
-       <section class="bg-people-work-section mt-50">
+
+        <div class="container mt-20">
+            <section class="pb-200 text-center">
+                            <div class="col-lg-10 mx-auto">
+                                    <img src="../assets/images/process1.jpg" class="img-responsive" />
+                                    <img src="../assets/images/process2.jpg" class="img-responsive" />
+                                    <img src="../assets/images/process3.jpg" class="img-responsive" />
+                            </div>
+            </section>
+        </div>
+
+
+
+        <!-- Start About Greenforest Section -->
+        <section class="bg-green pt-50">
             <div class="container">
                 <div class="row">
-                    <div class="people-work-section">
-                        <h5>CPS application starts here</h5>
-                        <h2><b>You are invited to become a…</b></h2>
-                        <!-- .section-header -->
-                        <div class="row">        
-
-                            <div class="col-lg-12 col-sm-6 col-12">
-                                <div class="d-flex justify-content-between mpo-list">
-                                    <a href="application_bm">F-CB-10 Application form PS</a>
-                                    <a href="application_bm"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-sm-6 col-12">
-                                <div class="d-flex justify-content-between mpo-list">
-                                    <a href="application_bam">F-CB-11 Application form SPS</a>
-                                    <a href="application_bam"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-sm-6 col-12">
-                                <div class="d-flex justify-content-between mpo-list">
-                                    <a href="application_bmm">F-CB-12 Application form MPS </a>
-                                    <a href="application_bmm"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-12 col-sm-6 col-12">
-                                <div class="d-flex justify-content-between mpo-list">
-                                    <a href="application_re">F-CB-13 Application form /ReCertificate/</a>
-                                    <a href="application_re"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <!-- .row -->
+                    <div class="col-lg-5">
+                            <img src="../assets/images/image2.PNG" alt="MPO" class="img-responsive" />
                     </div>
-                    <!-- .people-work-section -->
+                    <div class="col-lg-5 pt-100">  
+                        <div class="d-flex justify-content-between">
+                            <div >
+                                <h1 class="text-white">Join Us</h1>
+                                <p class="text-white">if you interested</p>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-lg btn-default-2">Register</a>
+                                <a href="#" class="btn btn-lg btn-default-2">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .col-lg-8 -->
+                    
+                    <!-- .col-md-4 -->
                 </div>
-                <!-- .row -->
             </div>
-
-           
             <!-- .container -->
         </section>
-        <!-- End People working Section -->
-    
+        <!-- End About Greenforest Section -->
+
+
+
         <? require_once("views/footer.php");?>
 
 
@@ -96,7 +86,6 @@
     <script type="text/javascript" src="../assets/js/custom.js"></script>
 
 
-    
 </body>
 
 </html>

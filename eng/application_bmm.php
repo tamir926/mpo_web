@@ -51,13 +51,13 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-12 mx-auto text-justify col-sm-12">
                             <div class="donate-form">
-                                <form action="application_bm" method="POST" class="contact-form" enctype="multipart/form-data" onSubmit="submitForm();" >
+                                <form action="application_bmm" method="POST" class="contact-form" enctype="multipart/form-data" onSubmit="submitForm();" >
                                     <input type="hidden" name="timestamp" value="<?=date("Y-m-d H:i:s");?>
                                     <div class="select-amount">
                                         <!-- .select-amount -->
                                         <div class="login-form">
-                                            <h3>F-CB-10 Application form PS</h3>
-                                            <p>Please download the application form as an excel file, fill it and submit it. <a href="../files/Application_10_eng.xlsx" target="new">Download the Excel file here.</a></p>
+                                            <h3>F-CB-12 Application form MPS</h3>
+                                            <p>Please download the application form as an excel file, fill it and submit it. <a href="../files/Application_12_eng.xlsx" target="new">Download the Excel file here.</a></p>
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group mt-30">

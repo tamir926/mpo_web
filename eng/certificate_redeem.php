@@ -38,7 +38,7 @@
                                                     onclick="Swal.fire({
                                                     title: 'Qpay төлбөр',
                                                     text: 'Төлбөр төлөгдсөнөөр сертификат татагдах болно.',
-                                                    imageUrl: 'assets/images/qpay.png',
+                                                    imageUrl: '../assets/images/qpay.png',
                                                     imageWidth: 300,
                                                     imageHeight: 300,
                                                     imageAlt: 'Qpay',

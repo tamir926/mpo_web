@@ -20,7 +20,7 @@
                             ?>
                             <div class="carousel-item <?=($count==1)?'active':'';?>" data-bs-interval="2000">
                                 <div class="slider-item">
-                                    <img src="<?=$slider["image"];?>" alt="<?=$slider["title"];?>">
+                                    <img src="<?=$slider["../image"];?>" alt="<?=$slider["title"];?>">
                                     <div class="slider-content-area">
                                         <div class="container">
                                             <div class="row">
