@@ -130,7 +130,7 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Нэргүйн Ариунжаргал</a></h4>
+                                            <h4><a href="cb_N_Ariunjargal.php">Нэргүйн Ариунжаргал</a></h4>
                                             <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
@@ -145,7 +145,7 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Лхайзамын Уранцэцэг</a></h4>
+                                            <h4><a href="cb_L_Urantsetseg.php">Лхайзамын Уранцэцэг</a></h4>
                                             <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
@@ -160,7 +160,7 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Очирвааны Урангоо</a></h4>
+                                            <h4><a href="cb_O_Urangoo.php">Очирвааны Урангоо</a></h4>
                                             <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
@@ -175,7 +175,7 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Бямбын Уранчимэг</a></h4>
+                                            <h4><a href="cb_B_Uranchimeg.php">Бямбын Уранчимэг</a></h4>
                                             <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
@@ -190,7 +190,7 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Таванжингийн Оюунцэцэг</a></h4>
+                                            <h4><a href="cb_T_Oyuntsertseg.php">Таванжингийн Оюунцэцэг</a></h4>
                                             <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
@@ -204,22 +204,7 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Цэнд-Аюушын Хишигжаргал</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Мягмарсүрэнгийн Хишигдэлгэр</a></h4>
+                                            <h4><a href="cb_Ts_Khishigjargal.php">Цэнд-Аюушын Хишигжаргал</a></h4>
                                             <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
@@ -234,7 +219,7 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Лозолын Оюун</a></h4>
+                                            <h4><a href="cb_M_Khishigdelger.php">Мягмарсүрэнгийн Хишигдэлгэр</a></h4>
                                             <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
@@ -249,7 +234,7 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Лхагвасүрэнгийн Бадамцэцэг</a></h4>
+                                            <h4><a href="cb_L_Oyun.php">Лозолын Оюун</a></h4>
                                             <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
@@ -264,7 +249,22 @@
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
-                                            <h4><a href="#">Жаргалын Ариунзул</a></h4>
+                                            <h4><a href="cb_L_Badamtsetseg.php">Лхагвасүрэнгийн Бадамцэцэг</a></h4>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="cb_J_Ariunzul.php">Жаргалын Ариунзул</a></h4>
                                             <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
@@ -289,12 +289,102 @@
                                 <!-- .our-services-box -->
                             </div>
                             <!-- .col-md-4 -->
-                            
+
                             <div class="col-lg-4 col-sm-6 col-12">
                                 <div class="our-services-box">
                                     <div class="our-services-items">
                                         <div class="our-services-content">
                                             <h4><a href="#">Баттулгын Балжинням</a></h4>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="#">Оргилбулагийн Сэргэлэн</a></h4>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+                            
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="#">Хашбаатарын Даваасүрэн</a></h4>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="#">Болдын Эрдэнэчимэг</a></h4>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="#">Даваадоржийн Нармандах</a></h4>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="#">Ганзоригтийн Галбадрах</a></h4>
+                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
+                                        </div>
+                                        <!-- .our-services-content -->
+                                    </div>
+                                    <!-- .our-services-items -->
+                                </div>
+                                <!-- .our-services-box -->
+                            </div>
+                            <!-- .col-md-4 -->
+                            
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="our-services-box">
+                                    <div class="our-services-items">
+                                        <div class="our-services-content">
+                                            <h4><a href="#">Лувсанчүлтэмийн Батгэрэл</a></h4>
                                             <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
                                         </div>
                                         <!-- .our-services-content -->
@@ -322,8 +412,7 @@
                             <div class="col-lg-6 mx-auto">
                                 <h4 class="text-black text-center">Сертификат</h4>
                                 <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis odio ac felis aliquam tincidunt. Praesent non lacus a tortor consequat aliquam at et libero. Suspendisse congue, purus at congue sagittis, tellus nibh elementum mauris, nec tincidunt tortor sapien id nibh. 
-                                </p>
+                               </p>
                                 <a href="certificate" class="btn btn-success btn-xl mt-10">Сертификат татах</a>
 
                             </div>

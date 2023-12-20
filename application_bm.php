@@ -1,3 +1,4 @@
+
 <? require_once("config.php");?>
 <? require_once("views/helper.php");?>
 <? require_once("views/init.php");?>
@@ -95,11 +96,7 @@
                                                                 <input type="hidden" name="signature" id="signature" value="">
                                                             </div>
                                                         </div>
-                                    
                                                     </div>
-
-
-                                                    
 
                                                     <div class="form-group">
                                                         <input type="submit" class="btn btn-default w-100 mt-30" value="Илгээх">
