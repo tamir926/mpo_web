@@ -45,6 +45,7 @@ RewriteRule ^application_bam?$ application_bam.php
 RewriteRule ^application_bmm?$ application_bmm.php
 RewriteRule ^application_re?$ application_re.php
 RewriteRule ^certificate?$ certificate.php
+RewriteRule ^cdp?$ cdp.php
 RewriteRule ^certificate_redeem?$ certificate_redeem.php
 ErrorDocument 404 underconstruction
 
