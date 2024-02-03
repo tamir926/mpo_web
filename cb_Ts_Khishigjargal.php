@@ -12,7 +12,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="single-team-img">
-                                    <img src="assets/images/team/single-team-img-1.jpg" class="img-responsive" />
+                                    <img src="assets/images/team/sCb_person.png" class="img-responsive" />
                                 </div>
                                 <!-- .single-team-img -->
                             </div>
