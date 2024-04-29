@@ -34,7 +34,7 @@
                                     <div class="event-items mb-20">
                                         <div class="event-img wrapper-img">
                                             <a href="news?id=<?=$news["id"];?>">
-                                                <img src="<?=$news["image"];?>" alt="upcoming-events-img-1" class="img-responsive" />
+                                                <img src="../<?=$news["image"];?>" alt="upcoming-events-img-1" class="img-responsive" />
                                             </a>
                                         </div>
                                         <div class="events-content">

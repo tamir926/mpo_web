@@ -66,7 +66,7 @@
                                 <div class="col-lg-4">
                                     <div class="event<?=($category_id>1)?$category_id:'';?>-items">
                                         <div class="event<?=($category_id>1)?$category_id:'';?>-img wrapper-img">
-                                            <a href="#"><img src="<?=$courses["image"];?>" alt="upcoming-events-img-1" class="img-responsive" /></a>
+                                            <a href="#"><img src="../<?=$courses["image"];?>" alt="upcoming-events-img-1" class="img-responsive" /></a>
                                             <div class="date-box">
                                                 <h5> <i class="fa fa-clock-o" aria-hidden="true"></i> <?=$courses["duration"];?>h / <i class="fa fa-user" aria-hidden="true"></i> <?=$courses["participants"];?> people</h5>
                                             </div>

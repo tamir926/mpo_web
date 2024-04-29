@@ -29,7 +29,7 @@
                                                 <!-- .form-group -->
 
                                                 <div class="form-group">
-                                                    <input type="submit" class="btn btn-default w-100 mt-30" value="Нэвтрэх">
+                                                    <input type="submit" class="btn btn-default w-100 mt-30" value="Login">
                                                 </div>
                                                 <!-- .form-group -->
                                             </div>
