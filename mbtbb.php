@@ -1,4 +1,4 @@
-<? require_once("config.php");?>
+<? require_once("../config.php");?>
 <? require_once("views/helper.php");?>
 <? require_once("views/init.php");?>
 <body>
@@ -9,9 +9,9 @@
             <div class="container text-center pt-100 pb-100">
                 <div class="row">
                     <div class="col-8 mx-auto text-justify">
-                        <img src="assets/images/logos.jpg" class="mt-50">
+                        <img src="../assets/images/logos.jpg" class="mt-50">
                         <?
-                        $sql = "SELECT *FROM pages WHERE page_id=1";
+                        $sql = "SELECT *FROM pages WHERE page_id=18";
                         $result = mysqli_query($conn,$sql);
                         $page = mysqli_fetch_array($result);
                         ?>
@@ -20,10 +20,10 @@
                         <p class="text-justify"><?=$page["content"];?></p>
 
                         <div class="pt-50">
-                            <a class="btn btn-warning" href="assets/images/mbbtb_structure.png" data-rel="lightcase:myCollection">БҮТЭЦ</a>
-                            <a class="btn btn-warning" href="assets/images/brochure1.jpg" data-rel="lightcase:brochure" >БРОШУР</a>
-                            <a href="assets/images/brochure2.jpg" data-rel="lightcase:brochure"></a>
-                            <a href="assets/images/uz.png" data-rel="lightcase:uz" class="btn btn-warning">УДИРДАХ ЗӨВЛӨЛ</a>
+                            <a href="introduction_eng.php" class="btn btn-success btn-xl mt-10">Introduction</a>
+                            <a href="missionvision_eng.php" class="btn btn-success btn-xl mt-10">Mission vision</a>
+                            <a href="structure_eng.php" class="btn btn-success btn-xl mt-10">Structure</a>
+                            <a href="management_eng.php" class="btn btn-success btn-xl mt-10">Management</a>
                         </div>
                     </div>
                 </div>
@@ -37,20 +37,19 @@
             <div class="container text-center pt-50 pb-50">
                 <div class="row">
                     <div class="col-lg-4 mx-auto">
-                        <h4 class="text-black">Хөтөлбөрийн зорилго</h4>
-                        <p>а. Бүтээмж дээшлүүлэх шийдэл, сайжруулалтын төсөл хэрэгжүүлэх чиглэлээр мэргэшсэн хүний чадамжийг баталгаажуулах</p>
-                        <p>б. Сургалтын хөтөлбөр, зохицуулалт, чиглүүлэг, зөвлөх үйлчилгээ үзүүлэх замаар  бүтээмжийг сайжруулах асуудлыг шийдвэрлэх мэргэшлийн мэдлэг/ мэдээллийг үйлдвэр, байгууллагад дамжуулан түгээх</p>
+                        <h4 class="text-black">Certification purpose</h4>
+                        <p>This PSC is introduced by APO-AB as a scheme owner with the objective to build up pools ofproductivity specialist for all national productivity organisations members countries, includingMPO, a sole representative of national productivity organisation (NPO) in Mongolia.</p>
                     </div>
                     <div class="col-lg-4  mx-auto">
-                        <h4 class="text-black">Ач холбогдол</h4>
-                        <p>Шаардлагыг хангасан хувь хүнд бүтээмжийн мэргэжилтний түвшин, шатлалын дагуу мэргэшсэн түвшинг хүлээн зөвшөөрч “Баталгаажсан бүтээмжийн мэргэжилтэн”-ий гэрчилгээ олгох ба мэргэжлийн болон бизнесийн хэтийн төлөвийг сайжруулах, бусад бүтээмжийн мэргэжилтнүүдтэй холбоо тогтоох, АББ-ын олон улсын төсөлд хамрагдах боломж зэрэг давуу талтай. Түүнчлэн баталгаажсан БМ нь ҮБТ-ийн ижил төстэй итгэмжлэлийн тогтолцоотой гишүүн орнуудад хүлээн зөвшөөрөгдөх болно. Баталгаажсан БМ нь МБТББ-ийн  лавлагаа болон АББ портал дээр дэлхийн түвшний бүтээмжийн мэргэжилтнээр бүртгүүлэх болно.</p>
+                        <h4 class="text-black">CERTIFICATION BENEFIT</h4>
+                        <p>Individuals who meet the requirements will be awarded the certificate of "Certified Productivity Specialist" in accordance with the level and hierarchy of the productivity specialist, and will have the opportunity to improve their professional and bussiness prospects, connect with other productivity specialists, and participate in international projects of APO. In addition,  CPS will be recognized in member states with similar acceditation system of the NPO. A ceritified PS will be registered as a word-class productivity professional on the MPOCB directory and the APO portal.</p>
                     </div>
                     <div class="col-lg-4  mx-auto">
-                        <h4 class="text-black text-left">Баталгаажуулалтын төрөл</h4>
-                        <p>МБТББ-ын хариуцаж хэрэгжүүлдэг Бүтээмжийн мэргэжилтний баталгаажуулах тогтолцооны гурван түвшин байна. Үүнд:</p>
-                            <p>1.  АББ-ын баталгаажсан бүтээмжийн мэргэжилтэн</p>
-                            <p>2.  АББ-ын баталгаажсан бүтээмжийн ахлах мэргэжилтэн</p>
-                            <p>3.  АББ-ын баталгаажсан мастер бүтээмжийн мэргэжилтэн</p>
+                        <h4 class="text-black text-left">Tiers of Productivity Specialist Certification</h4>
+                        <p>MPOCB provides responsible Productivity Specialist Certification Scheme according to the following 3 levels:</p>
+                            <a href="productivity_specialist_eng.php"><p class="green">1. Certified Productivity Specialist attested of the APO</p></a>
+                            <a href="senior_productivity_eng.php"><p class="green">2. Certified Senior Productivity Specialist attested of APO</p></a>
+                            <a href="master_productivity_eng.php"><p class="green">3. Certified Master Productivity Specialist</p></a>
                     </div>
                 </div>
             </div>
@@ -60,7 +59,7 @@
         <div class="container mt-20">
             <section id="content" class="pb-200 text-center">
                     <div class="content-info pb-200">
-                            <h4 class="fw-100">Хэрхэн баталгаажуулалтын мэргэжилтэн болох вэ?</h4>
+                            <h4 class="fw-100">How to become a Certification Professional?</h4>
                             <div class="banner-btn">
 								<div class="video-btn">
 									<a href="https://www.youtube.com/embed/P7egbt4gYKw" data-rel="lightcase" title="Watch Now" class="video-icon">
@@ -77,20 +76,22 @@
                     <div class="container gray-bg pt-100 pb-100 jambotron">
                         <div class="row">
                             <div class="col-lg-8 mx-auto">
-                                <h4 class="text-black text-center">Баталгаажуулалт</h4>
+                                <h4 class="text-black text-center">CERTIFICATION, RE-CERTIFICATION, AND CPD</h4>
                                 <p>
+                                    <a>CPS is expected to transfer knowledge of a wide range of productivity solutions to enterprises and organizations through training, facilitating, coaching, and consulting activities as follows:</a>
                                     <ul class="mpo-ul">
-                                        <li>Бүтээмж сайжруулах шийдэл болон бүтээмж сайжруулах арга зүйг тодорхойлох, хэрэгжүүлэх, тайлбарлах </li>
-                                        <li>Бүтээмжийн асуудалд дүн шинжилгээ хийх, сайжруулах арга замыг тодорхойлох, хэрэгжүүлэх үе шат бүхий бүтээмжийн цогц хөтөлбөрийг байгууллагад хэрэгжүүлэх</li>
-                                        <li>Үндэсний бүтээмжийн төвүүд, харилцагч байгууллага болон бусад байгууллагуудад сурталчилгаа, сургалт, судалгаа, зөвлөх үйлчилгээг үзүүлэх</li>
+                                        <li>Indentify, implement, and explain productivity improvement solutions and productivity improvement methodologies</li>
+                                        <li>Implement a comprehensive productivity programin the organization with stages to analyze productivity issues, indentify ways to improve, and implement them 
+                                        </li>
+                                        <li>Providing promotion, training, research and consulting services to national productivity centers, customer organizations and other organizations</li>
                                     </ul>
                                 </p>
                                 <div class="text-center">
-                                    <a href="assets/images/roadmap.jpg" data-rel="lightcase:roadmap" class="btn btn-success btn-xl mt-10 ">ТӨЛӨВЛӨГӨӨ</a>
-                                    <a href="mbbtb_brochure" class="btn btn-success btn-xl mt-10" target="new">ГАРЫН АВЛАГА</a>
-                                    <a href="application" class="btn btn-success btn-xl mt-10">ӨРГӨДӨЛ ГАРГАХ</a>
-                                    <a href="cdp.php" class="btn btn-success btn-xl mt-10">CPD</a>
-                                    <a href="contact_mbtbb" class="btn btn-success btn-xl mt-10">САНАЛ ХҮСЭЛТ ИЛГЭЭХ</a>
+                                    <a href="plan_eng.php" class="btn btn-success btn-xl mt-10">Plan</a>
+                                    <a href="application" class="btn btn-success btn-xl mt-10">Application</a>
+                                    
+                                    <a href="process_eng.php" class="btn btn-success btn-xl mt-10" target="new">Process</a>
+                                    <a href="appeal_eng.php" class="btn btn-success btn-xl mt-10" target="new">Appeal</a>
                                 </div>
 
                             </div>
@@ -98,323 +99,260 @@
                     
                     </div>
             </section>
-        </div>
+        </div>  
 
-
-
-        <section class="bg-servicesstyle2-section">
+    <!-- Start Certified Productivity Section -->
+    <section class="bg-recent-project">
             <div class="container">
                 <div class="row">
-                    <div class="our-services-option">
+                    <div class="recent-project">
                         <div class="section-header">
-                            <h2>Баталгаажсан мэргэжилтэнгүүд</h2>
-                            <p>Таныг Азийн бүтээмжийн байгууллагын гэрчилгээтэй баталгаажсан бүтээмжийн мэргэжилтэн болохыг урьж байна. Та анкетыг татаж авч мэдээллээ оруулан <a href="maito:info@mpo-org.mn">info@mpo-org.mn</a> мэйлд илгээнэ үү.</p>
+                            <h2>Certified Productivity</h2>
+                            <p>Professionally mesh enterprise wide imperatives without world class paradigms.Dynamically deliver ubiquitous leadership awesome skills.</p>
                         </div>
                         <!-- .section-header -->
-                        <div class="row">
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Даваагийн Ариунзул</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
 
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="cb_N_Ariunjargal.php">Нэргүйн Ариунжаргал</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="cb_L_Urantsetseg.php">Лхайзамын Уранцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="cb_O_Urangoo.php">Очирвааны Урангоо</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="cb_B_Uranchimeg.php">Бямбын Уранчимэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="cb_T_Oyuntsertseg.php">Таванжингийн Оюунцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="cb_Ts_Khishigjargal.php">Цэнд-Аюушын Хишигжаргал</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="cb_M_Khishigdelger.php">Мягмарсүрэнгийн Хишигдэлгэр</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="cb_L_Oyun.php">Лозолын Оюун</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="cb_L_Badamtsetseg.php">Лхагвасүрэнгийн Бадамцэцэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="cb_J_Ariunzul.php">Жаргалын Ариунзул</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Алтанцэцэгийн Оюунгэрэл</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Баттулгын Балжинням</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Оргилбулагийн Сэргэлэн</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-                            
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Хашбаатарын Даваасүрэн</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Болдын Эрдэнэчимэг</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Даваадоржийн Нармандах</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Ганзоригтийн Галбадрах</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
-                            
-                            <div class="col-lg-4 col-sm-6 col-12">
-                                <div class="our-services-box">
-                                    <div class="our-services-items">
-                                        <div class="our-services-content">
-                                            <h4><a href="#">Лувсанчүлтэмийн Батгэрэл</a></h4>
-                                            <p class="yellow">Бүтээмжийн мэргэжилтэн</p>
-                                        </div>
-                                        <!-- .our-services-content -->
-                                    </div>
-                                    <!-- .our-services-items -->
-                                </div>
-                                <!-- .our-services-box -->
-                            </div>
-                            <!-- .col-md-4 -->
+                        <div id="filters" class="button-group ">
+                            <button class="button is-checked" data-filter="*">show all</button>
+                            <button class="button" data-filter=".cat-1">Master</button>
+                            <button class="button" data-filter=".cat-2">Senior</button>
+                            <button class="button" data-filter=".cat-3">Specialists</button>
                         </div>
-                        <!-- .row -->
+
+                        <div class="portfolio-items">
+                            <div class="item cat-1" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="../cb_Ch_Unurtsetseg_eng.php">Unurtsetseg. Ch</a></h4>
+                                        <p>LVL : <span><a href="../cb_Ch_Unurtsetseg_eng.php">CMPS0001</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+                            <div class="item cat-1" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="../cb_B_Anar_eng.php">Anar. B</a></h4>
+                                        <p>LVL: <span><a href="#">CMPS0002</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+                            <div class="item cat-1" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="../cb_B_Oyun_eng.php">Oyun. B</a></h4>
+                                        <p>LVL : <span><a href="../cb_B_Oyun_eng.php">CMPS0003</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+
+                            <div class="item cat-2" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="../cb_B_Uranchimeg_eng.php">Uranchimeg Byamba</a></h4>
+                                        <p>LVL : <span><a href="../cb_B_Uranchimeg_eng.php">CSPS0001</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+                            <div class="item cat-2" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="../cb_L_Urantsetseg_eng.php">Urantsetseg Lkhayemaz</a></h4>
+                                        <p>LVL : <span><a href="../cb_L_Urantsetseg_eng.php">CSPS000002</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->                            
+
+                            <div class="item cat-3" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="../cb_D_Ariunzul_eng.php">Ariunzul Davaa</a></h4>
+                                        <p>LVL : <span><a href="../cb_D_Ariunzul_eng.php">PS000001</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+                            <div class="item cat-3" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="../cb_L_Badamtsetseg_eng.php">Badamtsetseg Lkhagvasuren</a></h4>
+                                        <p>LVL : <span><a href="../cb_L_Badamtsetseg_eng.php">PS000011</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+                            <div class="item cat-3" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="../cb_L_Oyun_eng.php">Oyun Lozol</a></h4>
+                                        <p>LVL : <span><a href="../cb_L_Oyun_eng.php">PS000009</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+                            <div class="item cat-3" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="../cb_A_Oyungerel_eng.php">Oyungerel Altantsetseg </a></h4>
+                                        <p>LVL : <span><a href="../cb_A_Oyungerel_eng.php">PS000010</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+                            <div class="item cat-3" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="../cb_Ts_Khishigjargal_eng.php">Khishigjargal Tsendayush</a></h4>
+                                        <p>LVL : <span><a href="../cb_Ts_Khishigjargal_eng.php">PS000007</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+
+                            <!-- .items -->
+                            <div class="item cat-3" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="../cb_T_Oyuntsetseg_eng.php">Oyuntsetseg Tavanjin</a></h4>
+                                        <p>LVL : <span><a href="../cb_T_Oyuntsetseg_eng.php">PS000006</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+                            <div class="item cat-3" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="../cb_N_Ariunjargal_eng.php">Ariunjargal Nerdui</a></h4>
+                                        <p>LVL : <span><a href="../cb_N_Ariunjargal_eng.php">PS000002</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+
+                            <div class="item cat-3" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="*">Erdenedavaa. G</a></h4>
+                                        <p>LVL : <span><a href="#">Certified Productivity Specialist</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+                            <div class="item cat-3" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="*">Oyunbileg. G</a></h4>
+                                        <p>LVL : <span><a href="#">Certified Productivity Specialist</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+                            <div class="item cat-3" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="*">Erdenedavaa. G</a></h4>
+                                        <p>LVL : <span><a href="#">Certified Productivity Specialist</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+                            <div class="item cat-3" data-category="transition">
+                                <div class="item-inner">
+                                        <!-- .overlay-project -->
+                                    <!-- /.portfolio-img -->
+                                    <div class="recent-project-content">
+                                        <h4><a href="*">Oyunbileg. G</a></h4>
+                                        <p>LVL : <span><a href="#">Certified Productivity Specialist</a></span></p>
+                                    </div>
+                                    <!-- .latest-port-content -->
+                                </div>
+                                <!-- .item-inner -->
+                            </div>
+                            <!-- .items -->
+
+                        </div>
+                        <!-- .isotope-items -->
                     </div>
-                    <!-- .our-services-option -->
+                    <!-- .recent-project -->
                 </div>
                 <!-- .row -->
             </div>
             <!-- .container -->
         </section>
-
+        <!-- End Recent Project Section -->
 
         <div class="pb-50">
             <section>
                     <div class="container gray-bg pt-100 pb-100 text-center jambotron">
                         <div class="row">
                             <div class="col-lg-6 mx-auto">
-                                <h4 class="text-black text-center">Сертификат</h4>
-                                <p>
-                               </p>
-                                <a href="certificate" class="btn btn-success btn-xl mt-10">Сертификат татах</a>
+                                <h4 class="text-black text-center">Certificate Database</h4>
+                                <p>Certification of CPS is valid for 3 years. Re-certification is subjected to candidates who meet continued conformity requirements.</p>
+                                <p>Current valid certification can be provided upon request.</p>
+                                <a href="certificate" class="btn btn-success btn-xl mt-10">Download Certificate</a>
 
                             </div>
                         </div>
@@ -431,7 +369,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
-                            <img src="assets/images/image2.PNG" alt="MPO" class="img-responsive" />
+                            <img src="../assets/images/image2.PNG" alt="MPO" class="img-responsive" />
                     </div>
                     <div class="col-lg-5 pt-100">  
                         <div class="d-flex justify-content-between">
@@ -478,20 +416,20 @@
     <!-- End Pre-Loader -->
 
 
-    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-2.2.3.min.js"></script>
     <!-- <script type="text/javascript" src="assets/js/bootstrap.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
-    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
-    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="assets/js/lightcase.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/custom.map.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>    <script type="text/javascript" src="../assets/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="../assets/js/swiper.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plugins.isotope.js"></script>
+    <script type="text/javascript" src="../assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="../assets/js/lightcase.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.nstSlider.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.isotope.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.map.js"></script>
 
-    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.js"></script>
 
 
 </body>
